@@ -1,12 +1,14 @@
 import './App.styled';
 import { AppStyled } from './App.styled';
+import { Footer } from './components/Footer/Footer';
+import { Header } from './components/Header/Header';
 
 export const App = () => {
   return (
     <AppStyled>
-      <div className="container">
-        <h1>qwerty</h1>
-      </div>
+      <Header/>
+
+      <Footer/>
     </AppStyled>
   );
 }

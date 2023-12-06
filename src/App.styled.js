@@ -6,7 +6,6 @@ export const AppStyled = styled.div`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Urbanist', sans-serif;
-    font-weight: 400;
   }
   
   body {
