@@ -1,9 +1,12 @@
 import './App.styled';
+import { AppStyled } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
-      <h1>Start proj</h1>
-    </div>
+    <AppStyled>
+      <div className="container">
+        <h1>qwerty</h1>
+      </div>
+    </AppStyled>
   );
 }
