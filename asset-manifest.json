@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Learning-Quotes/static/js/main.e4491499.js",
+    "main.js": "/Learning-Quotes/static/js/main.9bb1597e.js",
     "index.html": "/Learning-Quotes/index.html",
-    "main.e4491499.js.map": "/Learning-Quotes/static/js/main.e4491499.js.map"
+    "main.9bb1597e.js.map": "/Learning-Quotes/static/js/main.9bb1597e.js.map"
   },
   "entrypoints": [
-    "static/js/main.e4491499.js"
+    "static/js/main.9bb1597e.js"
   ]
 }
