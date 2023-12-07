@@ -1,3 +1,4 @@
+import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
 
 export const routes = () => {
@@ -12,7 +13,7 @@ export const routes = () => {
         },
         {
             path: '/login',
-            element: 'login'
+            element: <Login/>
         },
         {
             path: '*',
