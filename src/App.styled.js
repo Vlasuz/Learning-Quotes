@@ -9,7 +9,6 @@ export const AppStyled = styled.div`
   }
   
   body {
-    margin: 0;
     font-size: 16px;
     /* line-height: Line-height(24)/font-size(16)=1.5 */
     line-height: 1.5;

@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const HeaderStyle = styled.div`
     padding: 28px 0 19px;
     border-bottom: 1px solid #D8D8D8;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
 
     .header__inner{
         display: flex;
