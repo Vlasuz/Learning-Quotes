@@ -11,5 +11,12 @@ export const HeroStyle = styled.div`
         img{
             height: 100%;
         }
+
+        @media screen and (max-width: 768px) {
+            padding: 32px 32px 0;
+        }
+        @media screen and (max-width: 575px) {
+            padding: 15px 15px 0;
+        }
     }
 `

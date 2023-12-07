@@ -5,9 +5,11 @@ import mainMap from '../../../../assets/img/map-main.jpg'
 export const Hero = () => {
   return (
     <HeroStyle>
+      <div className="container">
         <div className='hero'>
             <img src={mainMap} alt="main Map" />
         </div>
+      </div>
     </HeroStyle>
   )
 }

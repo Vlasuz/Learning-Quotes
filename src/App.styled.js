@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AppStyled = styled.div`
-    * {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,11 +25,28 @@ export const AppStyled = styled.div`
   }
   
   .container {
-    max-width: calc(1280px + 30px);
+    max-width: calc(1280px + 60px);
     margin: 0 auto;
     width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @media screen and (max-width: 768px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .container-main {
+    max-width: calc(1150px + 60px);
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @media screen and (max-width: 768px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
   
   h1,

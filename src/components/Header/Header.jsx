@@ -4,7 +4,7 @@ import { HeaderStyle } from './Header.styled'
 export const Header = () => {
   return (
     <HeaderStyle>
-        <div className='container'>
+        <div className='container-main'>
             <div className="header__inner">
                 <a href='foo'>
                     <h2>
