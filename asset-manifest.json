@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Learning-Quotes/static/js/main.42e4422f.js",
+    "main.js": "/Learning-Quotes/static/js/main.0b09ed31.js",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
     "static/media/Gamepad.svg": "/Learning-Quotes/static/media/Gamepad.cde3051a409fb9d5ed208f8e9b06f56b.svg",
@@ -8,9 +8,9 @@
     "static/media/Folder.svg": "/Learning-Quotes/static/media/Folder.1d2def5b027f02fdab418dc4e04f667e.svg",
     "static/media/header_menu.svg": "/Learning-Quotes/static/media/header_menu.7deea540b602600dee78ca9653dcb5a0.svg",
     "index.html": "/Learning-Quotes/index.html",
-    "main.42e4422f.js.map": "/Learning-Quotes/static/js/main.42e4422f.js.map"
+    "main.0b09ed31.js.map": "/Learning-Quotes/static/js/main.0b09ed31.js.map"
   },
   "entrypoints": [
-    "static/js/main.42e4422f.js"
+    "static/js/main.0b09ed31.js"
   ]
 }
