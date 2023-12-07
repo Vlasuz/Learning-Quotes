@@ -1,17 +1,18 @@
 import React from 'react'
 import { HeaderStyle } from './Header.styled'
 import headerMenu from '../../assets/img/icons/header_menu.svg'
+import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
     <HeaderStyle>
         <div className='container-main'>
             <div className="header">
-                <a href='foo'>
+                <NavLink to={'/'}>
                     <h2>
                         Learning Quotes
                     </h2>
-                </a>
+                </NavLink>
                 <div className="header__review">
                     <a href="foo">
                         Features
@@ -24,9 +25,9 @@ export const Header = () => {
                     <a href="foo">
                         Sign Up
                     </a>
-                    <a className='header__login_log' href="foo">
+                    <NavLink to={'/login'} className='header__login_log'>
                         Login
-                    </a>
+                    </NavLink>
                 </div>
                 <img className='header__burger' src={headerMenu} alt="menu icon" />
             </div>
