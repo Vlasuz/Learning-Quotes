@@ -6,10 +6,8 @@ export const Footer = () => {
     <FooterStyle>
         <div className='container'>
             <div className="footer__inner">
-                <a href="foo">
-                    <h2>
-                        Language Quests
-                    </h2>
+                <a className='footer__logo' href="foo">
+                    Language Quests
                 </a>
                 <p>
                     © 2023  Company Name. All rights reserved.

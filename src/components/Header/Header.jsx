@@ -1,11 +1,12 @@
 import React from 'react'
 import { HeaderStyle } from './Header.styled'
+import headerMenu from '../../assets/img/icons/header_menu.svg'
 
 export const Header = () => {
   return (
     <HeaderStyle>
         <div className='container-main'>
-            <div className="header__inner">
+            <div className="header">
                 <a href='foo'>
                     <h2>
                         Learning Quotes
@@ -27,6 +28,7 @@ export const Header = () => {
                         Login
                     </a>
                 </div>
+                <img className='header__burger' src={headerMenu} alt="menu icon" />
             </div>
         </div>
     </HeaderStyle>

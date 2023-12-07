@@ -32,7 +32,9 @@ export const BannerStyle = styled.div`
             gap: 24px;
 
             a{
-                padding: 16px 60px;
+                width: 100%;
+                max-width: 171px;
+                padding: 16px;
                 border-radius: 20px;
                 font-size: 20px;
                 font-weight: 700;
@@ -56,6 +58,36 @@ export const BannerStyle = styled.div`
                     background: #F2CCB3;
                     border: 1px solid #F2CCB3;
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        padding: 50px 0;
+
+        .banner__inner{
+            h1{
+                font-size: 56px;
+                line-height: 60px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    @media screen and (max-width: 575px) {
+        .banner__inner{
+            h1{
+                font-size: 38px;
+                line-height: normal;
+            }
+        }
+        .banner__buttons {
+            a{
+                max-width: 132px;
+                padding: 10px;
+                font-size: 16px;
             }
         }
     }

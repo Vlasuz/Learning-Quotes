@@ -8,20 +8,20 @@ export const FooterStyle = styled.div`
         &__inner{
             display: flex;
             align-items: center;
-
-            h2{
-                font-size: 20px;
-                font-weight: 700;
-                line-height: 28px;
-                color: #1F2937;
-                margin-right: 40px;
-            }
+            gap: 10px;
 
             p{
                 font-size: 12px;
                 line-height: 140%;
                 color: #111827;            
             }
+        }
+        &__logo{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            color: #1F2937;
+            margin-right: 40px;
         }
 
 
@@ -35,6 +35,39 @@ export const FooterStyle = styled.div`
                 line-height: 140%;
                 color: #111827;
             }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 20px 0;
+        .footer{
+            &__inner{
+                justify-content: space-between;
+            }
+            &__list{ 
+                gap: 20px;
+                margin-left: 0;
+            }
+            &__logo{
+                margin-right: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 620px) {
+        .footer{
+            &__inner{
+                flex-direction: column;
+                p{
+                    order: 3;
+                }
+            }
+            &__logo{
+                order: 1;
+            }
+            &__list{
+                order: 2;
+            }
+
         }
     }
 `
