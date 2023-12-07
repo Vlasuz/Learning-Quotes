@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/Learning-Quotes/static/js/main.7be066da.js",
+    "main.js": "/Learning-Quotes/static/js/main.42a2a016.js",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
     "static/media/Gamepad.svg": "/Learning-Quotes/static/media/Gamepad.cde3051a409fb9d5ed208f8e9b06f56b.svg",
     "static/media/Cup-First.svg": "/Learning-Quotes/static/media/Cup-First.3b8240421b25877c1d0bff93df805966.svg",
     "static/media/Folder.svg": "/Learning-Quotes/static/media/Folder.1d2def5b027f02fdab418dc4e04f667e.svg",
     "index.html": "/Learning-Quotes/index.html",
-    "main.7be066da.js.map": "/Learning-Quotes/static/js/main.7be066da.js.map"
+    "main.42a2a016.js.map": "/Learning-Quotes/static/js/main.42a2a016.js.map"
   },
   "entrypoints": [
-    "static/js/main.7be066da.js"
+    "static/js/main.42a2a016.js"
   ]
 }
