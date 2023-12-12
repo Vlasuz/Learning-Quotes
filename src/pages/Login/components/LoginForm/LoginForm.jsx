@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { LoginFormStyle } from './LoginForm.styled'
 import Letter from '../../../../assets/img/icons/Letter.svg'
 import Lock from '../../../../assets/img/icons/Lock.svg'
+import Apple from '../../../../assets/img/icons/apple.svg'
+import Facebook from '../../../../assets/img/icons/facebook.svg'
+import Google from '../../../../assets/img/icons/google.svg'
+import Discors from '../../../../assets/img/icons/discorc.svg'
+
 
 export const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -48,16 +53,58 @@ export const LoginForm = () => {
             </div>
         </div>
         <div className='form__input__check'>
-            <input
-            type="checkbox"
-            id="rememberMe"
-            //   checked={rememberMe}
-            //   onChange={handleRememberMeChange}
-            />
-            <label htmlFor="rememberMe">Remember me</label>
+            <div className="form__input__check_in">
+                <input
+                    type="checkbox"
+                    id="rememberMe"
+                    //   checked={rememberMe}
+                    //   onChange={handleRememberMeChange}
+                />
+                <label htmlFor="rememberMe">Remember me</label>
+            </div>
+            <button type='button'>
+                Forgot Password?
+            </button>
         </div>
-        <button type="submit">Log In</button>
-        <button type="button">Sign Up</button>
+        <div className="form__input__buttons">
+            <button className='log' type="submit">
+                Log In
+            </button>
+            <button className='sign' type="button">
+                Sign Up
+            </button>
+        </div>
+        <div className="form__input__pay">
+            <h3>
+                Continue with social network
+            </h3>
+            <ul>
+                <li>
+                    <a href="foo">
+                        <img src={Google} alt="google" />
+                        Google
+                    </a>
+                </li>
+                <li>
+                    <a href="foo">
+                        <img src={Apple} alt="apple" />
+                        Apple
+                    </a>
+                </li>
+                <li>
+                    <a href="foo">
+                        <img src={Facebook} alt="faceboock" />
+                        Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="foo">
+                        <img src={Discors} alt="discors" />
+                        Discors
+                    </a>
+                </li>
+            </ul>
+        </div>
     </LoginFormStyle>
   )
 }
