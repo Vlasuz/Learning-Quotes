@@ -7,7 +7,7 @@ import { LoginMain } from './components/LoginMain/LoginMain'
 export const Login = () => {
   return (
     <>
-        <HeaderLogin />
+        {/* <HeaderLogin /> */}
 
         <div className="container-main-pages">
             <LoginContainer>
