@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.js": "/Learning-Quotes/static/js/main.e2ce45d7.js",
+    "main.js": "/Learning-Quotes/static/js/main.edc550ee.js",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
+    "static/media/discorc.svg": "/Learning-Quotes/static/media/discorc.364e8e4d8c5d3c61e4ade2b57f341719.svg",
     "static/media/Gamepad.svg": "/Learning-Quotes/static/media/Gamepad.cde3051a409fb9d5ed208f8e9b06f56b.svg",
     "static/media/Cup-First.svg": "/Learning-Quotes/static/media/Cup-First.3b8240421b25877c1d0bff93df805966.svg",
     "static/media/Folder.svg": "/Learning-Quotes/static/media/Folder.1d2def5b027f02fdab418dc4e04f667e.svg",
     "static/media/header_menu.svg": "/Learning-Quotes/static/media/header_menu.7deea540b602600dee78ca9653dcb5a0.svg",
+    "static/media/apple.svg": "/Learning-Quotes/static/media/apple.0a3686187f8b2716c9d76ad307ac9416.svg",
+    "static/media/google.svg": "/Learning-Quotes/static/media/google.a18df9f1a58430f4ee0ea37ecfc43077.svg",
+    "static/media/facebook.svg": "/Learning-Quotes/static/media/facebook.98a0a34e07ccaf4d6aaf2955dc40f6a6.svg",
     "index.html": "/Learning-Quotes/index.html",
-    "main.e2ce45d7.js.map": "/Learning-Quotes/static/js/main.e2ce45d7.js.map"
+    "static/media/Letter.svg": "/Learning-Quotes/static/media/Letter.79080e240c7a402589af6ce1bfa94a93.svg",
+    "static/media/Lock.svg": "/Learning-Quotes/static/media/Lock.1a91e1e6ee598c112e8dcf1febbba69d.svg",
+    "main.edc550ee.js.map": "/Learning-Quotes/static/js/main.edc550ee.js.map"
   },
   "entrypoints": [
-    "static/js/main.e2ce45d7.js"
+    "static/js/main.edc550ee.js"
   ]
 }
