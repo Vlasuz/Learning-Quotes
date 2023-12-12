@@ -1,5 +1,6 @@
 import React from 'react'
 import { BannerStyle } from './Banner.styled'
+import { NavLink } from 'react-router-dom'
 
 export const Banner = () => {
   return (
@@ -13,9 +14,9 @@ export const Banner = () => {
                     Lorem ipsum dolor sit amet consectetur. Sit risus dolor tellus tellus ipsum in.
                 </p>
                 <div className="banner__buttons">
-                    <a className='banner__buttons_log' href="foo">
+                    <NavLink to={'/login'} className='banner__buttons_log'>
                         Login
-                    </a>
+                    </NavLink>
                     <a className='banner__buttons_sig' href="foo">
                         Sign Up
                     </a>

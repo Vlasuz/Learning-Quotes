@@ -47,16 +47,15 @@ export const BannerStyle = styled.div`
                 background: #F2CCB3;
                 border: 1px solid #F2CCB3;
                 &:hover{
-                    background: transparent;
-                    border: 1px solid #EAEAEA;
+                    background: #FBAC79;
+                    border: 1px solid #FBAC79;
                 }
             }
             &_sig{
                 background: transparent;
                 border: 1px solid #EAEAEA;
                 &:hover{
-                    background: #F2CCB3;
-                    border: 1px solid #F2CCB3;
+                    border: 1px solid #FBAC79;
                 }
             }
         }

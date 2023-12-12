@@ -24,6 +24,18 @@ export const AppStyled = styled.div`
     scroll-behavior: smooth;
   }
   
+  .container-main {
+    max-width: calc(1150px + 60px);
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @media screen and (max-width: 768px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
   .container {
     max-width: calc(1280px + 60px);
     margin: 0 auto;
@@ -36,8 +48,20 @@ export const AppStyled = styled.div`
       padding-right: 15px;
     }
   }
-  .container-main {
-    max-width: calc(1150px + 60px);
+  .container-main-pages {
+    max-width: calc(1300px + 60px);
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @media screen and (max-width: 768px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .container-login {
+    max-width: calc(1390px + 60px);
     margin: 0 auto;
     width: 100%;
     padding-left: 30px;
