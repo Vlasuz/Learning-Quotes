@@ -142,6 +142,9 @@ export const LoginFormStyle = styled.form`
             }
         }
     }
+    .form__input__buttons_mar{
+        margin-top: 32px;
+    }
 
     .form__input__pay{
         text-align: center;
