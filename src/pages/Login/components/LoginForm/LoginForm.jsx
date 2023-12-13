@@ -11,6 +11,7 @@ import Discors from '../../../../assets/img/icons/discorc.svg'
 export const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [rememberMe, setRememberMe] = useState(false);
 
     const inputEmail = (evt) => {
         setEmail(evt.target.value);
@@ -20,8 +21,16 @@ export const LoginForm = () => {
         setPass(evt.target.value);
     }
 
+    const rememberMeChange = () => {
+        setRememberMe(!rememberMe);
+    }
+
+    const submitForm = (evt) => {
+        evt.preventDefault();
+    }
+
   return (
-    <LoginFormStyle>
+    <LoginFormStyle onSubmit={submitForm}>
         <div className="form__inner">
             <div className='form__input__con'>
                 <label htmlFor="email">Email Address</label>
@@ -54,13 +63,18 @@ export const LoginForm = () => {
         </div>
         <div className='form__input__check'>
             <div className="form__input__check_in">
-                <input
-                    type="checkbox"
-                    id="rememberMe"
-                    //   checked={rememberMe}
-                    //   onChange={handleRememberMeChange}
-                />
-                <label htmlFor="rememberMe">Remember me</label>
+                <label htmlFor="t-1">
+                    Remember me
+                    <input type="checkbox" id="t-1" 
+                        checked={rememberMe}
+                        onChange={rememberMeChange}
+                    />
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                            <path d="M8.75 2.75L3.59375 8L1.25 5.61364" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </span>
+                </label>
             </div>
             <button type='button'>
                 Forgot Password?

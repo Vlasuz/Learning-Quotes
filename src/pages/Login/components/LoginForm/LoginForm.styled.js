@@ -56,18 +56,39 @@ export const LoginFormStyle = styled.form`
         margin-top: 20px;
         display: flex;
         justify-content: space-between;
-        input{
-            outline: none;
-            height: 24px;
+
+        span svg {
+            display: none;
+        }
+        input {
+            display: none;
+
+        }
+        input:checked + span svg {
+            display: block;
+        }
+
+
+        span{
             width: 24px;
+            height: 24px;
             border-radius: 50%;
+            cursor: pointer;
+            background: #8DAAC7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 29px;
         }
+
         label{
             font-size: 14px;
             font-weight: 400;
             line-height: 24px;
             color: #172239;
+            display: flex;
+            flex-direction: row-reverse;
+            cursor: pointer;
         }
 
         button{
@@ -134,20 +155,43 @@ export const LoginFormStyle = styled.form`
             margin-bottom: 29px;
         }
 
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 16px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
         li{
-            /* width: 100%; */
-            /* max-width: 272px; */
+            width: 100%;
+            max-width: 272px;
+            /* display: block; */
         }
 
         a{
             width: 100%;
             max-width: 272px;
             display: flex;
+            padding: 16px 24px;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 150%; 
+            letter-spacing: 0.2px;
+            border-radius: 12px;
+            border: 1px solid #E9EAEC;
+            transition: all .3s ease;
+
+            &:hover{
+                border: 1px solid #FBAC79;
+            }
         }
 
         img{
             max-width: 24px;
-
+            margin-right: 12px;
         }
     }
 `
