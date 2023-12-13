@@ -5,9 +5,27 @@ export const LoginTitleStyle = styled.div`
     text-align: center;
     margin-bottom: 48px;
 
+    .title__inner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    img{
+        max-width: 24px;
+        margin-right: 20px;
+    }
+
+    .arrow{
+        display: block;
+    }
+    .no-arrow{
+        display: none;
+    }
+
     h2{
         color: #172239;
-        margin-bottom: 16px;
         font-size: 24px;
         font-weight: 700;
         line-height: 32px;

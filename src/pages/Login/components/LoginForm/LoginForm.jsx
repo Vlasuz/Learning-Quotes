@@ -70,8 +70,11 @@ export const LoginForm = () => {
             </NavLink>
         </div>
         <div className="form__input__buttons">
+
             <ButtonForm buttonTxt={'Log In'} isFill={true}/>
+            
             <ButtonForm buttonTxt={'Sign Up'} isFill={false}/>
+
         </div>
         <div className="form__input__pay">
             <h3>
