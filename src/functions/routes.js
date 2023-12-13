@@ -1,5 +1,6 @@
 import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
+import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
 
 export const routes = () => {
     return [
@@ -14,6 +15,10 @@ export const routes = () => {
         {
             path: '/login',
             element: <Login/>
+        },
+        {
+            path: '/restore-password',
+            element: <RestorePassword/>
         },
         {
             path: '*',
