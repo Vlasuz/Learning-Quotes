@@ -4,12 +4,12 @@ import { LoginBanner } from '../Login/components/LoginBanner/LoginBanner'
 import { LoginMain } from '../Login/components/LoginMain/LoginMain'
 import { LoginTitle } from '../../components/LoginTitle/LoginTitle'
 import { LoginFormStyle } from '../Login/components/LoginForm/LoginForm.styled'
+import { Input } from '../../components/Input/Input'
 import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
-import { InputVerification } from '../../components/InputVerification/InputVerification'
 import { useNavigate } from 'react-router-dom'
 
-export const RestoreCode = () => {
-    const [verification] = useState(['', '', '', '', '', '',])
+export const NewPassword = () => {
+    const [pass, setPass] = useState('');
     const [status] = useState('success');
     const navigate = useNavigate();
 
@@ -17,8 +17,9 @@ export const RestoreCode = () => {
         evt.preventDefault();
         setTimeout(() => {
             if (status === 'success') {
-                console.log('code for restore pass success', { verification });
-                navigate('/new-password')
+                // resetForm();
+                console.log('email for restore success', { pass });
+                navigate('/login')
             } else if (status === 'wrong_pass') {
                 console.log('your pass is wrong!');
                 // сюда функц с красніми полями
@@ -26,22 +27,22 @@ export const RestoreCode = () => {
         }, 1000); 
     }
 
-
   return (
     <div className="container-main-pages">
         <LoginContainer>
             <LoginBanner/>
             <LoginMain>
 
-                <LoginTitle arrow={true} title={'Enter Code'} desc={"We've sent an OTP verification code to your email. Kindly input it here."}/>
+                <LoginTitle arrow={true} title={'Restore password'} />
 
                 <LoginFormStyle onSubmit={submitForm}>
 
-                    <div className="form__input__buttons form__input__buttons_mar">
-                        
-                        <InputVerification />
+                    <Input type={'password'} label={'Enter Password'} inputValue={setPass} placeholder={'Enter your Password'}/>
+                    <Input type={'password'} label={'Repeat Password'} inputValue={setPass} placeholder={'Repeat Password'}/>
 
-                        <ButtonForm buttonTxt={'Verify'} isFill={true}/>
+                    <div className="form__input__buttons form__input__buttons_mar">
+
+                        <ButtonForm buttonTxt={'Send Code'} isFill={true}/>
 
                     </div>
 

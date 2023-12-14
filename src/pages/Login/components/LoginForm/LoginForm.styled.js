@@ -46,8 +46,9 @@ export const LoginFormStyle = styled.form`
 
         img{
             max-width: 24px;
+            height: 24px;
             position: absolute;
-            top: 0;
+            top: 50px;
             left: 24px;
         }
     }

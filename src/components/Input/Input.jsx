@@ -29,16 +29,17 @@ export const Input = ({type, label, placeholder, inputValue}) => {
 
   return (
     <div className='form__input__con'>
-        <label htmlFor={type}>{label}</label>
         <div className="input__img">
+        <label>{label}
             <input
                 placeholder={placeholder}
                 type={type}
-                id={type}
+                // id={type}
                 value={value}
                 onChange={handleValue}
                 required
             />
+        </label>
             <img src={types[type].icon} alt="mail or pass or user icons" />
         </div>
     </div>
