@@ -18,7 +18,7 @@ export const RestorePassword = () => {
         setTimeout(() => {
             if (status === 'success') {
                 // resetForm();
-                console.log('login success', { email });
+                console.log('email for restore success', { email });
                 navigate('/restore-password-code')
             } else if (status === 'wrong_pass') {
                 console.log('your pass is wrong!');

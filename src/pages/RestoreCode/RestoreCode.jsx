@@ -5,8 +5,10 @@ import { LoginMain } from '../Login/components/LoginMain/LoginMain'
 import { LoginTitle } from '../../components/LoginTitle/LoginTitle'
 import { LoginFormStyle } from '../Login/components/LoginForm/LoginForm.styled'
 import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
+import { InputVerification } from '../../components/InputVerification/InputVerification'
 
 export const RestoreCode = () => {
+
   return (
     <div className="container-main-pages">
         <LoginContainer>
@@ -18,6 +20,8 @@ export const RestoreCode = () => {
                 <LoginFormStyle >
 
                     <div className="form__input__buttons form__input__buttons_mar">
+                        
+                        <InputVerification />
 
                         <ButtonForm buttonTxt={'Verify'} isFill={true}/>
 

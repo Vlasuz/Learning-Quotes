@@ -141,7 +141,61 @@ export const LoginFormStyle = styled.form`
                 border: 1px solid #FBAC79;
             }
         }
+
     }
+    .verification__label{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 4px;
+    }
+    .verification__inner{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;   
+    }
+    .verification__again{
+        margin-bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+            color: #6D6D78;
+        }
+        button{
+            padding: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 26px;
+            color: #F2CCB3;
+        }
+    }
+    .verification__input{
+        border-radius: 8px;
+        border: 1px solid #EAEAEA;
+        max-width: 89px;
+        padding: 12px 16px;
+        transition: all .3s ease;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: -0.21px;
+        color: #6D6B6B;
+        margin-bottom: 8px;
+
+        &:hover{
+            border: 1px solid #FBAC79;
+        }
+        &:focus{
+            border: 1px solid #FBAC79;
+        }
+    }
+
     .form__input__buttons_mar{
         margin-top: 32px;
     }
