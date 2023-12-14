@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const LoginFormStyle = styled.form`
+    .navlink{
+        display: contents;
+    }
+
     .form__input__con{
         display: flex;
         flex-direction: column;

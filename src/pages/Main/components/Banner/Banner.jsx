@@ -17,9 +17,9 @@ export const Banner = () => {
                     <NavLink to={'/login'} className='banner__buttons_log'>
                         Login
                     </NavLink>
-                    <a className='banner__buttons_sig' href="foo">
+                    <NavLink to={'/sign-up'} className='banner__buttons_sig' href="foo">
                         Sign Up
-                    </a>
+                    </NavLink>
                 </div>
             </div>
         </div>

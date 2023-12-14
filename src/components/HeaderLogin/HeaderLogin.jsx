@@ -16,9 +16,9 @@ export const HeaderLogin = () => {
                 <NavLink to={'/login'} className='header__login_log'>
                     Login
                 </NavLink>
-                <a href="foo" className='header__login_sign'>
+                <NavLink to={'/sign-up'} href="foo" className='header__login_sign'>
                     Sign Up
-                </a>
+                </NavLink>
             </div>
             <img className='header__burger' src={headerMenu} alt="menu icon" />
         </HeaderLoginStyle>

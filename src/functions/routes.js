@@ -3,6 +3,7 @@ import { Main } from "../pages/Main/Main"
 import { NewPassword } from "../pages/NewPassword/NewPassword"
 import { RestoreCode } from "../pages/RestoreCode/RestoreCode"
 import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
+import { SignUp } from "../pages/SignUp/SignUp"
 
 export const routes = () => {
     return [
@@ -32,7 +33,7 @@ export const routes = () => {
         },
         {
             path: '/sign-up',
-            // element: 
+            element: <SignUp/>
         },
         {
             path: '*',

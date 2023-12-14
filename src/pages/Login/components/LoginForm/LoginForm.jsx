@@ -73,7 +73,9 @@ export const LoginForm = () => {
 
             <ButtonForm buttonTxt={'Log In'} isFill={true}/>
             
-            <ButtonForm buttonTxt={'Sign Up'} isFill={false}/>
+            <NavLink className='navlink' to={'/sign-up'}>
+                <ButtonForm buttonTxt={'Sign Up'} isFill={false}/>
+            </NavLink>
 
         </div>
         <div className="form__input__pay">

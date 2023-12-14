@@ -22,9 +22,9 @@ export const Header = () => {
                     </a>
                 </div>
                 <div className="header__login">
-                    <a href="foo">
+                    <NavLink to={'/sign-up'} href="foo">
                         Sign Up
-                    </a>
+                    </NavLink>
                     <NavLink to={'/login'} className='header__login_log'>
                         Login
                     </NavLink>
