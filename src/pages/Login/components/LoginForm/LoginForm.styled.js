@@ -55,6 +55,22 @@ export const LoginFormStyle = styled.form`
             top: 50px;
             left: 24px;
         }
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 15px;
+            input{
+                padding: 13px 13px 13px 55px;
+                &::placeholder{
+                    font-size: 16px;
+                }
+                font-size: 16px;
+            }
+            img{
+                top: 45px;
+                max-width: 18px;
+                height: 18px
+            }
+        }
     }
 
     .form__input__check{
@@ -147,57 +163,73 @@ export const LoginFormStyle = styled.form`
             }
         }
 
-    }
-    .verification__label{
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        margin-bottom: 4px;
-    }
-    .verification__inner{
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;   
-    }
-    .verification__again{
-        margin-bottom: 32px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
 
-        p{
+            button{
+                font-size: 16px;
+                padding: 10px 30px;
+            }
+        }
+    }
+
+    .verification{
+        &__label{
             font-size: 14px;
             font-weight: 400;
-            line-height: 26px;
-            color: #6D6D78;
+            line-height: 24px;
+            margin-bottom: 4px;
         }
-        button{
-            padding: 0;
+        &__inner{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;   
+        }
+        &__again{
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+    
+            p{
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 26px;
+                color: #6D6D78;
+            }
+            button{
+                padding: 0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 26px;
+                color: #F2CCB3;
+            }
+        }
+        &__input{
+            border-radius: 8px;
+            border: 1px solid #EAEAEA;
+            width: 100%;
+            max-width: 89px;
+            padding: 12px 16px;
+            transition: all .3s ease;
             font-size: 14px;
-            font-weight: 400;
-            line-height: 26px;
-            color: #F2CCB3;
-        }
-    }
-    .verification__input{
-        border-radius: 8px;
-        border: 1px solid #EAEAEA;
-        max-width: 89px;
-        padding: 12px 16px;
-        transition: all .3s ease;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 20px;
-        letter-spacing: -0.21px;
-        color: #6D6B6B;
-        margin-bottom: 8px;
-
-        &:hover{
-            border: 1px solid #FBAC79;
-        }
-        &:focus{
-            border: 1px solid #FBAC79;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: -0.21px;
+            color: #6D6B6B;
+            margin-bottom: 8px;
+    
+            &:hover{
+                border: 1px solid #FBAC79;
+            }
+            &:focus{
+                border: 1px solid #FBAC79;
+            }
+    
+            @media screen and (max-width: 620px) {
+                padding: 8px;
+            }
         }
     }
 
@@ -254,6 +286,10 @@ export const LoginFormStyle = styled.form`
         img{
             max-width: 24px;
             margin-right: 12px;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-top: 30px;
         }
     }
 `
