@@ -22,7 +22,7 @@ export const SignUp = () => {
             if (status === 'success') {
                 // resetForm();
                 console.log('email for restore success', { name, email, pass, repeatPass });
-                navigate('/restore-password-code')
+                navigate('/sign-up-verify')
             } else if (status === 'wrong_pass') {
                 console.log('your pass is wrong!');
                 // сюда функц с красніми полями

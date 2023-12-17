@@ -4,6 +4,7 @@ import { NewPassword } from "../pages/NewPassword/NewPassword"
 import { RestoreCode } from "../pages/RestoreCode/RestoreCode"
 import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
 import { SignUp } from "../pages/SignUp/SignUp"
+import { SignUpVerify } from "../pages/SignUpVerify/SignUpVerify"
 
 export const routes = () => {
     return [
@@ -34,6 +35,10 @@ export const routes = () => {
         {
             path: '/sign-up',
             element: <SignUp/>
+        },
+        {
+            path: '/sign-up-verify',
+            element: <SignUpVerify/>
         },
         {
             path: '*',

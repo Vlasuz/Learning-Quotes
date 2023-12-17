@@ -4,12 +4,12 @@ import { LoginBanner } from '../Login/components/LoginBanner/LoginBanner'
 import { LoginMain } from '../Login/components/LoginMain/LoginMain'
 import { LoginTitle } from '../../components/LoginTitle/LoginTitle'
 import { LoginFormStyle } from '../Login/components/LoginForm/LoginForm.styled'
-import { Input } from '../../components/Input/Input'
+import { InputVerification } from '../../components/InputVerification/InputVerification'
 import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
 import { useNavigate } from 'react-router-dom'
 
-export const NewPassword = () => {
-    const [pass, setPass] = useState('');
+export const SignUpVerify = () => {
+    const [verification] = useState(['', '', '', '', '', '',])
     const [status] = useState('success');
     const navigate = useNavigate();
 
@@ -17,9 +17,8 @@ export const NewPassword = () => {
         evt.preventDefault();
         setTimeout(() => {
             if (status === 'success') {
-                // resetForm();
-                console.log('email for restore success', { pass });
-                navigate('/login')
+                console.log('code for verify success', { verification });
+                navigate('/')
             } else if (status === 'wrong_pass') {
                 console.log('your pass is wrong!');
                 // сюда функц с красніми полями
@@ -33,16 +32,15 @@ export const NewPassword = () => {
             <LoginBanner/>
             <LoginMain>
 
-                <LoginTitle arrow={true} title={'New Password'} />
+                <LoginTitle arrow={true} title={'Enter Code'} desc={"We've sent an OTP verification code to your email. Kindly input it here."}/>
 
                 <LoginFormStyle onSubmit={submitForm}>
 
-                    <Input type={'password'} label={'Enter Password'} inputValue={setPass} placeholder={'Enter your Password'}/>
-                    <Input type={'password'} label={'Repeat Password'} inputValue={setPass} placeholder={'Repeat Password'}/>
-
                     <div className="form__input__buttons form__input__buttons_mar">
+                        
+                        <InputVerification />
 
-                        <ButtonForm buttonTxt={'Save Password'} isFill={true}/>
+                        <ButtonForm buttonTxt={'Verify'} isFill={true}/>
 
                     </div>
 
