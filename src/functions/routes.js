@@ -1,3 +1,4 @@
+import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
 import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
 import { NewPassword } from "../pages/NewPassword/NewPassword"
@@ -39,6 +40,10 @@ export const routes = () => {
         {
             path: '/sign-up-verify',
             element: <SignUpVerify/>
+        },
+        {
+            path: '/choose-lang',
+            element: <ChooseLang/>
         },
         {
             path: '*',

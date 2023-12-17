@@ -131,17 +131,14 @@ export const LoginFormStyle = styled.form`
         margin-top: 62px;
         display: flex;
         flex-direction: column;
+        gap: 24px;
 
         button{
             border-radius: 20px;
             padding: 16px 50px;
-            margin-bottom: 24px;
             font-size: 20px;
             font-weight: 700;
             line-height: 32px;
-            &:last-child{
-                margin-bottom: 0;
-            }
         }
 
         .log{

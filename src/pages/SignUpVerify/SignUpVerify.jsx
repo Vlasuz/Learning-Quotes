@@ -18,7 +18,7 @@ export const SignUpVerify = () => {
         setTimeout(() => {
             if (status === 'success') {
                 console.log('code for verify success', { verification });
-                navigate('/')
+                navigate('/choose-lang')
             } else if (status === 'wrong_pass') {
                 console.log('your pass is wrong!');
                 // сюда функц с красніми полями
