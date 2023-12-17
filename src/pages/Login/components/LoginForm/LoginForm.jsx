@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { LoginFormStyle } from './LoginForm.styled'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Apple from '../../../../assets/img/icons/apple.svg'
 import Facebook from '../../../../assets/img/icons/facebook.svg'
 import Google from '../../../../assets/img/icons/google.svg'
@@ -14,6 +14,7 @@ export const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
     const [status] = useState('success');
+    const navigate = useNavigate();
 
 
     const rememberMeChange = () => {
@@ -25,6 +26,7 @@ export const LoginForm = () => {
         setTimeout(() => {
             if (status === 'success') {
                 resetForm();
+                navigate('/choose-lang')
                 console.log('login success', {
                     pass, email, rememberMe
                 });
@@ -70,10 +72,7 @@ export const LoginForm = () => {
             </NavLink>
         </div>
         <div className="form__input__buttons">
-
-            <NavLink className='navlink' to={'/choose-lang'}>
                 <ButtonForm buttonTxt={'Log In'} isFill={true}/>
-            </NavLink>
             
             <NavLink className='navlink' to={'/sign-up'}>
                 <ButtonForm buttonTxt={'Sign Up'} isFill={false}/>
