@@ -5,6 +5,8 @@ import { SwiperContainerStyle } from './components/SwipeContainer.styled';
 import 'swiper/css';
 import { LangSlide } from './components/LangSlide/LangSlide';
 import { LangSlideStyle } from './components/LangSlide/LangSlide.styled';
+import ArrowNext from '../../../../assets/img/icons/arrow-next.svg'
+import ArrowPrev from '../../../../assets/img/icons/arrow-prev.svg'
 
 export const LangSwiper = () => {
   return (
@@ -24,24 +26,15 @@ export const LangSwiper = () => {
                     <LangSlide/>
                     <div>
                         <button className='arrow-prev'>
-                            prev
+                            <img src={ArrowPrev} alt="arrow ic" />
                         </button>
                         <button className='arrow-next'>
-                            next
+                            <img src={ArrowNext} alt="arrow ic" />                            
                         </button>
                     </div>
                 </LangSlideStyle>
             </SwiperSlide>
             <SwiperSlide>
-                <h1>slide 2</h1>
-                <div>
-                <button className='arrow-prev'>
-                    prev
-                </button>
-                <button className='arrow-next'>
-                    next
-                </button>
-            </div>
             </SwiperSlide>
             <SwiperSlide>
                 <h1>slide 3</h1>
