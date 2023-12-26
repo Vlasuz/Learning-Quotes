@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const ChooseBtnStyle = styled.div`
 
-    button{
+    a{
+        display: block;
         width: 100%;
         max-width: 619px;
         padding: 16px 30px;

@@ -46,6 +46,10 @@ export const routes = () => {
             element: <ChooseLang/>
         },
         {
+            path: '/map',
+            element: <ChooseLang/>
+        },
+        {
             path: '*',
             element: 'not found'
         },
