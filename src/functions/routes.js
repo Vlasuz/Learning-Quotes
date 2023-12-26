@@ -1,6 +1,7 @@
 import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
 import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
+import { Map } from "../pages/Map/Map"
 import { NewPassword } from "../pages/NewPassword/NewPassword"
 import { RestoreCode } from "../pages/RestoreCode/RestoreCode"
 import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
@@ -47,7 +48,7 @@ export const routes = () => {
         },
         {
             path: '/map',
-            element: <ChooseLang/>
+            element: <Map/>
         },
         {
             path: '*',
