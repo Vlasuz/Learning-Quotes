@@ -5,7 +5,7 @@ export const LangSlideStyle = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 189px 30px 220px;
+    padding: 189px 30px 32px;
     border-radius: 64px;
     border: 1px solid #EAEAEA;
 
@@ -34,6 +34,19 @@ export const LangSlideStyle = styled.div`
         font-weight: 700;
         line-height: 32px;
         margin-bottom: 16px;
+        position: relative;
+
+        &::after{
+            content: '';
+            display: block;
+            height: 2px;
+            width: 70px;
+            border-radius: 5px;
+            background: #E1A073;
+            position: absolute;
+            bottom: 0;
+            right: -15px;
+        }
     }
     p{
         color: #6D6D78;
