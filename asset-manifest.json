@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.5212441a.js",
+    "main.js": "/Learning-Quotes/static/js/main.fa071a16.js",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
     "static/media/Background-sw-3.svg": "/Learning-Quotes/static/media/Background-sw-3.daaa7e8e36ba6def51b21ae8296c7d97.svg",
@@ -9,7 +9,10 @@
     "static/media/Background-sw-2.svg": "/Learning-Quotes/static/media/Background-sw-2.7c05e8483d8b49f182df75afdc14ad9f.svg",
     "static/media/img-slide2.png": "/Learning-Quotes/static/media/img-slide2.73a102e594302c133efb.png",
     "static/media/img-slide.png": "/Learning-Quotes/static/media/img-slide.9c38c0b226b5152a76aa.png",
+    "static/media/LangList-ph-2.png": "/Learning-Quotes/static/media/LangList-ph-2.e9221c388586e972659f.png",
+    "static/media/LangList-ph-1.png": "/Learning-Quotes/static/media/LangList-ph-1.615c1dcf81e3cc394fb8.png",
     "static/media/img-slide3.png": "/Learning-Quotes/static/media/img-slide3.710d23a423743c229230.png",
+    "static/media/LangList-ph-3.png": "/Learning-Quotes/static/media/LangList-ph-3.ef2cbdfd096f3b3400c0.png",
     "static/media/discorc.svg": "/Learning-Quotes/static/media/discorc.364e8e4d8c5d3c61e4ade2b57f341719.svg",
     "static/media/Gamepad.svg": "/Learning-Quotes/static/media/Gamepad.cde3051a409fb9d5ed208f8e9b06f56b.svg",
     "static/media/Cup-First.svg": "/Learning-Quotes/static/media/Cup-First.3b8240421b25877c1d0bff93df805966.svg",
@@ -26,10 +29,10 @@
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.5212441a.js.map": "/Learning-Quotes/static/js/main.5212441a.js.map"
+    "main.fa071a16.js.map": "/Learning-Quotes/static/js/main.fa071a16.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.5212441a.js"
+    "static/js/main.fa071a16.js"
   ]
 }
