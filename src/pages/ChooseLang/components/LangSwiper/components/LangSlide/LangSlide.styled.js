@@ -56,4 +56,21 @@ export const LangSlideStyle = styled.div`
         width: 100%;
         max-width: 336px;
     }
+
+    @media screen and (max-width: 768px) {
+        padding: 30px;
+
+        .slide__photo{
+            margin-bottom: 22px;
+        }
+
+        h2{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .text__container{
+            margin-bottom: 20px;
+        }
+    }
 `

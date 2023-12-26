@@ -8,5 +8,6 @@ export const LoginContainer = styled.div`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         gap: 32px;
+        align-items: center;
     }
 `

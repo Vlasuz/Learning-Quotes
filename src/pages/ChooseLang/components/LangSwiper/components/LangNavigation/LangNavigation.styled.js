@@ -23,4 +23,8 @@ export const LangNavigationStyle = styled.div`
         max-width: 16px;
         height: 16px;
     }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 20px;
+    }
 `
