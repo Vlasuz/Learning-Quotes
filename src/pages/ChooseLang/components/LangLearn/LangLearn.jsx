@@ -1,17 +1,18 @@
 import React from 'react'
-import { LoginTitle } from '../../../../components/LoginTitle/LoginTitle'
 import { LangList } from '../LangList/LangList'
 import { LangLearnContainer } from './LangLearnContainer.styled'
+import { ChooseBtn } from '../ChooseBtn/ChooseBtn'
+import { ChooseTitle } from '../../../../components/ChooseTitle/ChooseTitle'
 
 export const LangLearn = () => {
   return (
     <LangLearnContainer>
 
-      <LoginTitle title={'Choose Language'} desc={'Which language do  you want to learn?'} />
+      <ChooseTitle title={'Choose Language'} desc={'Which language do  you want to learn?'} />
       
       <LangList/>
 
-      
+      <ChooseBtn choose={'Choose'}/>
 
     </LangLearnContainer>
   )
