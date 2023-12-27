@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-import BigMap from '../../assets/img/Map.jpg'
 import { MapStyle } from './Map.styled'
+
+import BigMap from '../../assets/img/Map.jpg'
+import ArrowDesc from '../../assets/img/icons/arrow-descrip.svg'
 
 export const Map = () => {
     const [popUpId, setPopUpId] = useState(0);
@@ -15,6 +17,10 @@ export const Map = () => {
                 bottom: '60px',
                 left: '50%',
                 transform: 'translate(-50%)'
+            },
+            arrowStyle:{
+                top: '60px',
+                right: '-55px'
             }
         },
         {
@@ -23,6 +29,10 @@ export const Map = () => {
             style:{
                 bottom: '84px',
                 left: '84px'
+            },
+            arrowStyle:{
+                top: '-10px',
+                right: '-55px'
             }
         },
         {
@@ -32,6 +42,10 @@ export const Map = () => {
                 top: 'calc(50% + 100px)',
                 left: 'calc(50% + 10px)',
                 transform: 'translate(-50%, -50%)'          
+            },
+            arrowStyle:{
+                top: '-35px',
+                right: '-45px'
             }
         },
         {
@@ -40,6 +54,11 @@ export const Map = () => {
             style:{
                 top: 'calc(50% + 20px)',
                 left: '84px',
+            },
+            arrowStyle:{
+                top: '-55px',
+                right: '0px',
+                transform: 'rotateZ(315deg)'
             }
         },
         {
@@ -48,6 +67,11 @@ export const Map = () => {
             style:{
                 top: '50%',
                 right: '300px',
+            },
+            arrowStyle:{
+                top: '-50px',
+                right: '-40px',
+                transform: 'rotateZ(325deg)'
             }
         },
         {
@@ -57,22 +81,51 @@ export const Map = () => {
                 top: 'calc(50% + 90px)',
                 left: 'calc(50% - 100px)',
                 transform: 'translate(-50%, -50%)'
+            },
+            arrowStyle:{
+                top: '-60px',
+                right: '20px',
+                transform: 'rotateZ(270deg)'
             }
         },
         {
             title: 'Training Swamp',
             desc: "Dive into extra practice sessions in the Training Swamp. Here you can focus on specific skills and vocabulary to strengthen your command of the language.",
             style:{
-                
+                bottom: '100px',
+                right: '320px'
+            },
+            arrowStyle:{
+                top: '-45px',
+                right: '-40px',
+                transform: 'rotateZ(-20deg)'
             }
         },
         {
             title: 'Castle (The Citadel of Mastery):',
             desc: "The Voyager's Skiff awaits the brave linguists seeking to navigate the vast seas of language. Future updates will unlock this journey, expanding horizons beyond the current shores of knowledge",
+            style:{
+                bottom: '150px',
+                left: '70px'
+            },
+            arrowStyle:{
+                top: '-50px',
+                right: '80px',
+                transform: 'rotateZ(220deg)'
+            }
         },
         {
             title: "Boat (The Voyager's Skiff):",
             desc: "The Citadel of Mastery stands tall for those who have conquered the linguistic landscape. It will be the future bastion for the most challenging tests and the crowning achievements of language mastery.",
+            style:{
+                bottom: '180px',
+                left: '70px'
+            },
+            arrowStyle:{
+                top: '-50px',
+                right: '80px',
+                transform: 'rotateZ(220deg)'
+            }
         },
     ]
 
@@ -108,6 +161,7 @@ export const Map = () => {
 
             {popUp && (
                 <div className="description" style={mapTxt[popUpId].style}>
+                    <img src={ArrowDesc} alt="arrow desc" style={mapTxt[popUpId].arrowStyle}/>
                     <h3>
                         {mapTxt[popUpId].title}
                     </h3>

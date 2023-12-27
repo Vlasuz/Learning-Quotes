@@ -55,6 +55,14 @@ export const MapStyle = styled.div`
             margin-bottom: 12px;
         }
 
+        img{
+            width: 60px;
+            height: 52px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
         button{
             display: block;
             color: #172239;
@@ -73,13 +81,37 @@ export const MapStyle = styled.div`
                 background: #FBAC79;
             }
         }
-
-        @media screen and (max-width: 575px) {
+        
+        @media screen and (max-width: 1024px) {
+            img{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 768px) {
             max-width: 280px;
 
             p{
                 font-size: 16px;
                 margin-bottom: 10px;
+                line-height: 22px;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            top: 50% !important; 
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            right: auto !important;
+            bottom: auto !important;
+
+            p{
+                font-size: 12px;
+                margin-bottom: 10px;
+                line-height: 16px;
+            }
+
+            h3{
+                font-size: 18px;
+                margin-bottom: 5px;
             }
         }
     }
