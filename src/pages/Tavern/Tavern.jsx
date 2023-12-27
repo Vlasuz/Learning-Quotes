@@ -12,6 +12,32 @@ export const Tavern = () => {
                 <img src={BackBtn} alt="arrow ic" />
                 To Map
             </NavLink>
+            <ul className="desk">
+                <li>
+                    <h2>
+                        Лучший процент правильных ответов
+                    </h2>
+                    
+                </li>
+                <li>
+                    <h2>
+                        Лучший <br />в уровне 1+
+                    </h2>
+
+                </li>
+                <li>
+                    <h2>
+                        Самый активный пользователь
+                    </h2>
+
+                </li>
+                <li>
+                    <h2>
+                        Лучшие результаты (общый рейтинг)
+                    </h2>
+
+                </li>
+            </ul>
         </TavernStyle>
     </div>
   )
