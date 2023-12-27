@@ -7,6 +7,7 @@ import { RestoreCode } from "../pages/RestoreCode/RestoreCode"
 import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
 import { SignUp } from "../pages/SignUp/SignUp"
 import { SignUpVerify } from "../pages/SignUpVerify/SignUpVerify"
+import { Tavern } from "../pages/Tavern/Tavern"
 
 export const routes = () => {
     return [
@@ -49,6 +50,10 @@ export const routes = () => {
         {
             path: '/map',
             element: <Map/>
+        },
+        {
+            path: '/taverna',
+            element: <Tavern/>
         },
         {
             path: '*',
