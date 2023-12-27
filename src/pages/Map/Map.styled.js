@@ -37,16 +37,7 @@ export const MapStyle = styled.div`
         background: #FDE7B6;
         box-shadow: 0px 8px 16px -2px rgba(27, 33, 44, 0.12);
         position: absolute;
-        bottom: 60px;
-        left: 50%;
-        transform: translate(-50%);
         transition: all .3s ease;
-
-        &_twice{
-            bottom: 80px;
-            left: 60px;
-            transform: none;
-        }
 
         h3{
             color: #000;

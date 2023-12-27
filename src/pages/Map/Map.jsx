@@ -10,39 +10,69 @@ export const Map = () => {
     const mapTxt = [
         {
             title: 'Meadow',
-            desc: "Begin your journey in the Meadow, where you'll tackle foundational language challenges suitable for beginners. Perfect for getting a taste of what's to come"
+            desc: "Begin your journey in the Meadow, where you'll tackle foundational language challenges suitable for beginners. Perfect for getting a taste of what's to come",
+            style:{
+                bottom: '60px',
+                left: '50%',
+                transform: 'translate(-50%)'
+            }
         },
         {
             title: 'Village',
-            desc: "Advance to the Village to enhance your language skills. Here, the tasks get tougher, testing your growing knowledge and preparing you for intermediate challenges."
+            desc: "Advance to the Village to enhance your language skills. Here, the tasks get tougher, testing your growing knowledge and preparing you for intermediate challenges.",
+            style:{
+                bottom: '84px',
+                left: '84px'
+            }
         },
         {
             title: 'Gilded Tower',
-            desc: "Ascend the Gilded Tower, where intricate language puzzles await. These tasks are designed for those who have mastered the basics and are ready to delve into more complex language constructs."
+            desc: "Ascend the Gilded Tower, where intricate language puzzles await. These tasks are designed for those who have mastered the basics and are ready to delve into more complex language constructs.",
+            style:{
+                top: 'calc(50% + 100px)',
+                left: 'calc(50% + 10px)',
+                transform: 'translate(-50%, -50%)'          
+            }
         },
         {
             title: 'Library',
-            desc: "Wander through the Library, the realm of expert linguists. Here, the language tasks are extremely challenging, requiring top-tier proficiency and sharp wits."
+            desc: "Wander through the Library, the realm of expert linguists. Here, the language tasks are extremely challenging, requiring top-tier proficiency and sharp wits.",
+            style:{
+                top: 'calc(50% + 20px)',
+                left: '84px',
+            }
         },
         {
             title: 'Tavern (Leaderboards)',
-            desc: "Visit the Tavern to see how you stack up against other adventurers. Check out the leaderboards to find your rank and compete with friends."
+            desc: "Visit the Tavern to see how you stack up against other adventurers. Check out the leaderboards to find your rank and compete with friends.",
+            style:{
+                top: '50%',
+                right: '300px',
+            }
         },
         {
             title: 'Castle (DLPT):',
-            desc: "Challenge yourself with a full DLPT simulation at the Castle. Take comprehensive tests to evaluate your readiness and see if you can achieve a knightly score"
+            desc: "Challenge yourself with a full DLPT simulation at the Castle. Take comprehensive tests to evaluate your readiness and see if you can achieve a knightly score",
+            style:{
+                top: 'calc(50% + 90px)',
+                left: 'calc(50% - 100px)',
+                transform: 'translate(-50%, -50%)'
+            }
         },
         {
             title: 'Training Swamp',
-            desc: "Dive into extra practice sessions in the Training Swamp. Here you can focus on specific skills and vocabulary to strengthen your command of the language."
+            desc: "Dive into extra practice sessions in the Training Swamp. Here you can focus on specific skills and vocabulary to strengthen your command of the language.",
+            style:{
+                
+            }
         },
         {
             title: 'Castle (The Citadel of Mastery):',
-            desc: "The Voyager's Skiff awaits the brave linguists seeking to navigate the vast seas of language. Future updates will unlock this journey, expanding horizons beyond the current shores of knowledge"
+            desc: "The Voyager's Skiff awaits the brave linguists seeking to navigate the vast seas of language. Future updates will unlock this journey, expanding horizons beyond the current shores of knowledge",
         },
         {
             title: "Boat (The Voyager's Skiff):",
-            desc: "The Citadel of Mastery stands tall for those who have conquered the linguistic landscape. It will be the future bastion for the most challenging tests and the crowning achievements of language mastery."
+            desc: "The Citadel of Mastery stands tall for those who have conquered the linguistic landscape. It will be the future bastion for the most challenging tests and the crowning achievements of language mastery.",
         },
     ]
 
@@ -77,7 +107,7 @@ export const Map = () => {
             </h2>
 
             {popUp && (
-                <div className="description">
+                <div className="description" style={mapTxt[popUpId].style}>
                     <h3>
                         {mapTxt[popUpId].title}
                     </h3>
