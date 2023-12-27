@@ -36,7 +36,7 @@ export const TavernStyle = styled.div`
     .desk{
         display: flex;
         gap: 30px;
-        li{
+        &__item{
             background: url(${BgdDesk1}) no-repeat;
             background-size: calc(100% + 70px);
             background-position: -35px -30px;
@@ -70,5 +70,67 @@ export const TavernStyle = styled.div`
             text-align: center;
         }
 
+    }
+
+    .users{
+        max-height: 310px;
+        overflow-y: scroll;
+        margin-top: 16px;
+
+        &__item{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 234px;
+            border-radius: 12px;
+            background: #783724;
+            box-shadow: 10px 10px 4px 0px #8C3716;
+            padding: 12px 10px 15px;
+            margin: 0 auto;
+            margin-bottom: 16px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        &__user{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            h3{
+                color: #FFF;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 150%;
+
+            }
+
+            &_ic{
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-color: #8DAAC7;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p{
+                    color: #ECF0FF;
+                    font-size: 13.5px;
+                    font-weight: 700;
+                    line-height: 130%;
+                }
+            }
+        }
+
+        &__percent{
+            margin-left: auto;
+            color: #FFF;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 150%;
+
+        }
     }
 `

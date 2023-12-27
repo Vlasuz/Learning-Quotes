@@ -13,29 +13,393 @@ export const Tavern = () => {
                 To Map
             </NavLink>
             <ul className="desk">
-                <li>
+                <li className='desk__item'>
                     <h2>
                         Лучший процент правильных ответов
                     </h2>
-                    
+                    <ul className='users'>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                    </ul>
                 </li>
-                <li>
+                <li className='desk__item'>
                     <h2>
                         Лучший <br />в уровне 1+
                     </h2>
-
+                    <ul className='users'>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                    </ul>
                 </li>
-                <li>
+                <li className='desk__item'>
                     <h2>
                         Самый активный пользователь
                     </h2>
-
+                    <ul className='users'>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                    </ul>
                 </li>
-                <li>
+                <li className='desk__item'>
                     <h2>
                         Лучшие результаты (общый рейтинг)
                     </h2>
-
+                    <ul className='users'>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                        <li className='users__item'>
+                            <div className="users__user">
+                                <div className="users__user_ic">
+                                    <p>
+                                        AS
+                                    </p>
+                                </div>
+                                <h3>
+                                    Anna S
+                                </h3>
+                            </div>
+                            <h3 className='users__percent'>
+                                99%
+                            </h3>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </TavernStyle>
