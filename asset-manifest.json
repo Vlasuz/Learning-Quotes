@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.297a3ecf.js",
+    "main.js": "/Learning-Quotes/static/js/main.1a6a0876.js",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
+    "static/media/taverna.jpg": "/Learning-Quotes/static/media/taverna.e3335b653bf42f9a7559.jpg",
     "static/media/Map.jpg": "/Learning-Quotes/static/media/Map.d0dca73d237e47ad0837.jpg",
     "static/media/Background-sw-3.svg": "/Learning-Quotes/static/media/Background-sw-3.daaa7e8e36ba6def51b21ae8296c7d97.svg",
     "static/media/img-slide.svg": "/Learning-Quotes/static/media/img-slide.93a65206b29873a3b38de36d953a8ce2.svg",
@@ -28,13 +29,14 @@
     "static/media/Letter.svg": "/Learning-Quotes/static/media/Letter.79080e240c7a402589af6ce1bfa94a93.svg",
     "static/media/Lock.svg": "/Learning-Quotes/static/media/Lock.1a91e1e6ee598c112e8dcf1febbba69d.svg",
     "static/media/User.svg": "/Learning-Quotes/static/media/User.435d733047743c0c371840b76fbcd7a7.svg",
+    "static/media/Go-back.svg": "/Learning-Quotes/static/media/Go-back.8f849b5bb97acadd2502b034b3b22ff9.svg",
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.297a3ecf.js.map": "/Learning-Quotes/static/js/main.297a3ecf.js.map"
+    "main.1a6a0876.js.map": "/Learning-Quotes/static/js/main.1a6a0876.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.297a3ecf.js"
+    "static/js/main.1a6a0876.js"
   ]
 }
