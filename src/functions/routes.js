@@ -1,3 +1,4 @@
+import { Area } from "../pages/Area/Area"
 import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
 import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
@@ -54,6 +55,10 @@ export const routes = () => {
         {
             path: '/taverna',
             element: <Tavern/>
+        },
+        {
+            path: '/area',
+            element: <Area/>
         },
         {
             path: '*',

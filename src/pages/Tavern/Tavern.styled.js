@@ -81,13 +81,13 @@ export const TavernStyle = styled.div`
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 234px;
+            max-width: 224px;
             border-radius: 12px;
             background: #783724;
             box-shadow: 10px 10px 4px 0px #8C3716;
             padding: 12px 10px 15px;
-            margin: 0 auto;
             margin-bottom: 16px;
+            margin-left: 10px;
 
             &:last-child{
                 margin-bottom: 0;
