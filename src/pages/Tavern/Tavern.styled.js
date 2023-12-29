@@ -80,6 +80,7 @@ export const TavernStyle = styled.div`
         &__item{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             width: 100%;
             max-width: 224px;
             border-radius: 12px;
