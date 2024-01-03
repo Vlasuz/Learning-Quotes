@@ -77,6 +77,19 @@ export const TavernStyle = styled.div`
         overflow-y: scroll;
         margin-top: 16px;
 
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: #783724;
+            border-radius: 12px;
+        }
+        &::-webkit-scrollbar-track{
+            background: #F2CCB3;
+            border-radius: 12px;
+
+        }
+
         &__item{
             display: flex;
             align-items: center;
