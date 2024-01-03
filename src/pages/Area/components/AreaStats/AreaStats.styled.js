@@ -5,7 +5,7 @@ import StatusBgd from '../../../../assets/img/statusList.png'
 export const AreaStatsStyle = styled.div`
     background: url(${StatusBgd}) no-repeat;
     background-size: cover;
-    padding: 50px 70px;
+    padding: 50px 60px;
     margin-top: 30px;
 
     h2{
