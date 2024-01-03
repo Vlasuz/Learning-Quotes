@@ -13,6 +13,6 @@ export const AreaStyle = styled.div`
         align-items: center;
         gap: 30px;
         justify-content: space-between;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 `

@@ -2,6 +2,7 @@ import React from 'react'
 import { AreaStyle } from './Area.styled'
 import { AreaPrize } from './components/AreaPrize/AreaPrize'
 import { AreaStats } from './components/AreaStats/AreaStats'
+import { AreaGraphic } from './components/AreaGraphic/AreaGraphic'
 
 export const Area = () => {
   return (
@@ -15,7 +16,7 @@ export const Area = () => {
                 <AreaStats/>
             </div>
 
-            
+            <AreaGraphic/>
         </AreaStyle>
     </div>
   )
