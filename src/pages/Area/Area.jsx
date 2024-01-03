@@ -3,6 +3,7 @@ import { AreaStyle } from './Area.styled'
 import { AreaPrize } from './components/AreaPrize/AreaPrize'
 import { AreaStats } from './components/AreaStats/AreaStats'
 import { AreaGraphic } from './components/AreaGraphic/AreaGraphic'
+import { AreaOwner } from './components/AreaOwner/AreaOwner'
 
 export const Area = () => {
   return (
@@ -11,7 +12,7 @@ export const Area = () => {
             <div className="area__top">
                 <AreaPrize/>
 
-                {/* component from person icon */}
+                <AreaOwner/>
                 
                 <AreaStats/>
             </div>
