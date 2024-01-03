@@ -14,6 +14,8 @@ export const Area = () => {
                 
                 <AreaStats/>
             </div>
+
+            
         </AreaStyle>
     </div>
   )
