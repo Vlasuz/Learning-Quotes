@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.45464605.js",
+    "main.js": "/Learning-Quotes/static/js/main.7896066c.js",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
     "static/media/area-bgd.jpg": "/Learning-Quotes/static/media/area-bgd.f400e86f3003751cc46e.jpg",
@@ -11,6 +11,12 @@
     "static/media/tavern-desc-3.png": "/Learning-Quotes/static/media/tavern-desc-3.8309c658939cc16e3b00.png",
     "static/media/tavern-desc-2.png": "/Learning-Quotes/static/media/tavern-desc-2.055513ff36ab7dac5bb9.png",
     "static/media/tavern-desc-1.png": "/Learning-Quotes/static/media/tavern-desc-1.045a4590f79b2c2331c8.png",
+    "static/media/graphic3.png": "/Learning-Quotes/static/media/graphic3.08d5fa1cf66bb6520015.png",
+    "static/media/graphic4.png": "/Learning-Quotes/static/media/graphic4.4d9a9d8cc8328a3276a0.png",
+    "static/media/graphic2.png": "/Learning-Quotes/static/media/graphic2.29d67141a1521590a5b4.png",
+    "static/media/graphic5.png": "/Learning-Quotes/static/media/graphic5.c6cdd642a0eedb100c47.png",
+    "static/media/graphic6.png": "/Learning-Quotes/static/media/graphic6.d3585ea6952930667104.png",
+    "static/media/graphic1.png": "/Learning-Quotes/static/media/graphic1.ef6fd67d865ac72dfdd4.png",
     "static/media/statusList.png": "/Learning-Quotes/static/media/statusList.1b34dbcc7699122de033.png",
     "static/media/Background-sw-3.svg": "/Learning-Quotes/static/media/Background-sw-3.daaa7e8e36ba6def51b21ae8296c7d97.svg",
     "static/media/img-slide.svg": "/Learning-Quotes/static/media/img-slide.93a65206b29873a3b38de36d953a8ce2.svg",
@@ -42,10 +48,10 @@
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.45464605.js.map": "/Learning-Quotes/static/js/main.45464605.js.map"
+    "main.7896066c.js.map": "/Learning-Quotes/static/js/main.7896066c.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.45464605.js"
+    "static/js/main.7896066c.js"
   ]
 }
