@@ -1,5 +1,6 @@
 import React from 'react'
 import { FooterStyle } from './Footer.styled'
+import { NavLink } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -19,9 +20,9 @@ export const Footer = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="foo">
+                        <NavLink to={'/faq'}>
                             F.A.Q.
-                        </a>
+                        </NavLink>
                     </li>
                     <li>
                         <a href="foo">
