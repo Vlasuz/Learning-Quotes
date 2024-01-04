@@ -7,4 +7,9 @@ export const QuizStartStyle = styled.div`
     background: url(${PageBgd}) no-repeat;
     background-size: cover;
     padding: 46px 45px 86px;
+
+    @media screen and (max-width: 768px) {
+        margin: 20px 0 30px;
+        padding: 25px 25px 43px;
+    }
 `
