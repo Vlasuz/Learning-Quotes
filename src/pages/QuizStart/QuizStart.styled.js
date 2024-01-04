@@ -44,12 +44,32 @@ export const QuizStartStyle = styled.div`
         transition: all .3s ease;
 
         &:hover{
-            background: #DC3055;
+            /* background: #DC3055; */
+            opacity: 0.5;
         }
     }
 
     @media screen and (max-width: 768px) {
         margin: 20px 0 30px;
         padding: 25px 25px 43px;
+
+        a{
+            font-size: 22px;
+        }
+
+        button{
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        
+        .select{
+            flex-direction: column;
+            img{
+                max-width: 100px;
+                margin: 0 auto;
+            }
+        }
     }
 `
