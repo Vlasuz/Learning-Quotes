@@ -26,6 +26,8 @@ export const QuizStart = () => {
                 </a>
             </div>
 
+            <button>Choose</button>
+
         </QuizStartStyle>
     </div>
   )
