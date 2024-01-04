@@ -1,5 +1,6 @@
 import { Area } from "../pages/Area/Area"
 import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
+import { Faq } from "../pages/Faq/Faq"
 import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
 import { Map } from "../pages/Map/Map"
@@ -59,6 +60,10 @@ export const routes = () => {
         {
             path: '/area',
             element: <Area/>
+        },
+        {
+            path: '/faq',
+            element: <Faq/>
         },
         {
             path: '*',
