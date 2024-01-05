@@ -5,6 +5,7 @@ import { Login } from "../pages/Login/Login"
 import { Main } from "../pages/Main/Main"
 import { Map } from "../pages/Map/Map"
 import { NewPassword } from "../pages/NewPassword/NewPassword"
+import { QuizPage } from "../pages/QuizPage/QuizPage"
 import { QuizStart } from "../pages/QuizStart/QuizStart"
 import { RestoreCode } from "../pages/RestoreCode/RestoreCode"
 import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
@@ -69,6 +70,10 @@ export const routes = () => {
         {
             path: '/quiz-start',
             element: <QuizStart/>
+        },
+        {
+            path: '/quiz-page',
+            element: <QuizPage/>
         },
         {
             path: '*',
