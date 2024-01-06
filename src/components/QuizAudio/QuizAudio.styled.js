@@ -16,6 +16,8 @@ export const QuizAudioStyle = styled.div`
 
     .audio__road{
         cursor: pointer;
+        width: 100%;
+        max-width: 500px;
     }
 
     p{
@@ -46,6 +48,23 @@ export const QuizAudioStyle = styled.div`
 
         &:hover{
             background: #437BAD;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .audio__btn{
+            width: 50px;
+            height: 50px;
+        }
+
+        p{
+            font-size: 16px;
+        }
+
+        .audio__next{
+            margin-top: 60px;
+            font-size: 18px;
+            padding: 10px;
         }
     }
 `

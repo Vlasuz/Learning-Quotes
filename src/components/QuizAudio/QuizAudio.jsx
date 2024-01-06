@@ -21,7 +21,6 @@ export const QuizAudio = () => {
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
     container: containerRef,
     height: 57,
-    width: 500,
     waveColor: '#8DAAC7',
     progressColor: '#5FA2E5',
     barWidth: 1.5,
@@ -39,7 +38,7 @@ export const QuizAudio = () => {
       <div className='audio'>
         <div style={{ display: 'flex', gap: '1em' }}>
 
-          <button onClick={onPlayPause} style={{ minWidth: '5em' }}>
+          <button onClick={onPlayPause}>
             {isPlaying ? 
               <img className='audio__btn' src={PauseBtn} alt="pause ph" />
             : 
