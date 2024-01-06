@@ -3,7 +3,7 @@ import { QuizPageStyle } from './QuizPage.styled'
 import { BackBtn } from '../../components/BackBtn/BackBtn'
 import { QuizTitle } from '../../components/QuizTitle/QuizTitle'
 import { QuizAudio } from '../../components/QuizAudio/QuizAudio'
-import { questData } from '../../assets/quiz/quiz'
+// import { questData } from '../../assets/quiz/quiz'
 
 import AudioImg from '../../assets/img/listening.png'
 
