@@ -1,70 +1,63 @@
-import React from 'react'
-import { QuizAudioStyle } from './QuizAudio.styled'
-import WaveSurfer from 'wavesurfer.js'
+import React, { useCallback, useRef } from 'react';
+import { useWavesurfer } from '@wavesurfer/react';
+import { QuizAudioStyle } from './QuizAudio.styled';
 
+import AudioFile from '../../assets/quiz/audio/file-lesson.mp3'
+import PlayBtn from '../../assets/img/icons/play.svg'
+import PauseBtn from '../../assets/img/icons/pause.svg'
+
+const audioUrls = [
+  AudioFile,
+];
+
+const formatTime = (seconds) =>
+  [seconds / 60, seconds % 60]
+    .map((v) => `0${Math.floor(v)}`.slice(-2))
+    .join(':');
 
 export const QuizAudio = () => {
+  const containerRef = useRef(null);
 
+  const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
+    container: containerRef,
+    height: 57,
+    width: 500,
+    waveColor: '#8DAAC7',
+    progressColor: '#5FA2E5',
+    barWidth: 1.5,
+    barGap: null,
+    url: audioUrls,
+  });
 
-    const wavesurfer = WaveSurfer.create({
-        container: document.body,
-        waveColor: 'rgb(200, 0, 200)',
-        progressColor: 'rgb(100, 0, 100)',
-        url: '/examples/audio/audio.wav',
-        minPxPerSec: 100,
-        dragToSeek: true,
-    })
-
-    wavesurfer.once('decode', () => {
-        const slider = document.querySelector('input[type="range"]')
-      
-        slider.addEventListener('input', (e) => {
-          const minPxPerSec = e.target.valueAsNumber
-          wavesurfer.zoom(minPxPerSec)
-        })
-      })
-
-      const playButton = document.querySelector('#play')
-const forwardButton = document.querySelector('#forward')
-const backButton = document.querySelector('#backward')
-
-wavesurfer.once('decode', () => {
-  document.querySelectorAll('input[type="checkbox"]').forEach((input) => {
-    input.onchange = (e) => {
-      wavesurfer.setOptions({
-        [input.value]: e.target.checked,
-      })
-    }
-  })
-
-  playButton.onclick = () => {
-    wavesurfer.playPause()
-  }
-
-  forwardButton.onclick = () => {
-    wavesurfer.skip(5)
-  }
-
-  backButton.onclick = () => {
-    wavesurfer.skip(-5)
-  }
-})
+  const onPlayPause = useCallback(() => {
+    wavesurfer && wavesurfer.playPause();
+  }, [wavesurfer]);
 
   return (
     <QuizAudioStyle>
-         <label>
-            Zoom: <input type="range" min="10" max="1000" value="100" />
-        </label>
 
-        <label><input type="checkbox" checked value="scrollbar" /> Scroll bar</label>
-        <label><input type="checkbox" checked value="fillParent" /> Fill parent</label>
-        <label><input type="checkbox" checked value="autoCenter" /> Auto center</label>
+      <div className='audio'>
+        <div style={{ display: 'flex', gap: '1em' }}>
 
-        <div>
-            <button id="play">Play/Pause</button>
-            <button id="backward">Backward 5s</button>
-            <button id="forward">Forward 5s</button>
+          <button onClick={onPlayPause} style={{ minWidth: '5em' }}>
+            {isPlaying ? 
+              <img className='audio__btn' src={PauseBtn} alt="pause ph" />
+            : 
+              <img className='audio__btn' src={PlayBtn} alt="play ph" />
+            }
+          </button>
         </div>
+
+        <div className='audio__road' ref={containerRef} />
+
+        <p>{formatTime(currentTime)}</p>
+      </div>
+
+
+      <a className='audio__next' href="some">
+        Next
+      </a>
+
     </QuizAudioStyle>
-  )
-}
+  );
+};

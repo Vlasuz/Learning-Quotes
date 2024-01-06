@@ -10,6 +10,7 @@ import AudioImg from '../../assets/img/listening.png'
 export const QuizPage = () => {
   return (
     <div className='container-login'>
+        
         <QuizPageStyle>
 
             <BackBtn link={'/some'}/>
