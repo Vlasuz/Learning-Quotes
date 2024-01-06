@@ -2,7 +2,7 @@ import React, { useCallback, useRef } from 'react';
 import { useWavesurfer } from '@wavesurfer/react';
 import { QuizAudioStyle } from './QuizAudio.styled';
 
-import AudioFile from '../../assets/quiz/audio/file-lesson.mp3'
+import AudioFile from '../../assets/quiz/audio/audio-1.mp3'
 import PlayBtn from '../../assets/img/icons/play.svg'
 import PauseBtn from '../../assets/img/icons/pause.svg'
 
@@ -46,7 +46,6 @@ export const QuizAudio = () => {
             }
           </button>
         </div>
-
         <div className='audio__road' ref={containerRef} />
 
         <p>{formatTime(currentTime)}</p>
