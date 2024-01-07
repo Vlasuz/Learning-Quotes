@@ -4,8 +4,8 @@ import optionBgd from '../../assets/img/optionBgd.png'
 
 export const QuestOptionsStyle = styled.ul`
     
-        margin-top: 60px !important;
-        padding: 0 50px !important;
+    margin-top: 60px !important;
+    padding: 0 50px !important;
     
 
     span svg {
@@ -42,6 +42,8 @@ export const QuestOptionsStyle = styled.ul`
         display: flex;
         align-items: center;
         cursor: pointer;
+        width: 100%;
+        max-width: 250px;
 
         color: #1C274C;
         font-size: 24px;
@@ -55,6 +57,10 @@ export const QuestOptionsStyle = styled.ul`
         &:last-child{
             margin-bottom: 0;
         }
+    }
+
+    .correct{
+        margin-left: auto;
     }
 
 `

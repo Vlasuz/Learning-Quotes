@@ -8,11 +8,13 @@ import { questData } from '../../assets/quiz/quiz'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
+  const [correctQuestion, setCorrectQuestion] = useState(false);
   const currentQuestion = questData[currentQuestionIn];
 
   const handleNextQuestion = () => {
     if (currentQuestionIn < questData.length -1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
+      setCorrectQuestion(false);  
     }
   };
 
@@ -21,6 +23,14 @@ export const BookQuest = () => {
       setCurrentQuestionIn((prevIndex) => prevIndex - 1);
     }
   };
+
+  const handleAnswer = (selected) => {
+    const isCorrect = selected === currentQuestion.correctAnswer;
+
+    setCorrectQuestion(isCorrect);
+  } 
+
+
 
   return (
     <BookQuestStyle>
@@ -42,8 +52,8 @@ export const BookQuest = () => {
                 questionTitle={currentQuestion.question}
               />
 
-              <QuestOptions currentQuestion={currentQuestion}/>
-              
+              <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer} correctQuestion={correctQuestion}/>
+
             </div>
         </div>
 

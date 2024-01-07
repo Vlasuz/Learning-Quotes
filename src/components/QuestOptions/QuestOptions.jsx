@@ -1,13 +1,28 @@
 import React, { useState } from 'react'
 import { QuestOptionsStyle } from './QuestOptions.styled'
 
-export const QuestOptions = ({ currentQuestion }) => {
+import CorrectIc from '../../assets/img/icons/correct.svg'
+import InCorrectIc from '../../assets/img/icons/incorrect.svg'
+
+export const QuestOptions = ({ currentQuestion, answerClick }) => {
     const [answered, setAnswered] = useState(false);
-    const [selectedAnswer, setSelectedAnswer] = useState(null)
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [answerStat, setAnswerStat] = useState({});
 
     const handleAnswerClick = (answer) => {
         setSelectedAnswer(answer);
         setAnswered(true);
+
+        answerClick(answer);
+
+        setAnswerStat((prevStat) => ({
+            ...prevStat,
+            [answer]: answer === currentQuestion.correctAnswer ? (
+                <img src={CorrectIc} alt="correct ph" />
+                ) : (
+                <img src={InCorrectIc} alt="incorrect ph" />
+            )
+        }))
     }
 
 
@@ -15,7 +30,7 @@ export const QuestOptions = ({ currentQuestion }) => {
   return (
     <QuestOptionsStyle>
         {currentQuestion.answers.map((answer) => (
-            <li key={answer}>
+            <li key={answer} onClick={() => answerClick(answer)}>
                 <label htmlFor={`t-${currentQuestion.id}-${answer}`}>                    
                     <input type="checkbox" id={`t-${currentQuestion.id}-${answer}`} 
                         checked={answered && selectedAnswer === answer}
@@ -26,7 +41,10 @@ export const QuestOptions = ({ currentQuestion }) => {
                             <path d="M8.75 2.75L3.59375 8L1.25 5.61364" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </span>
+
                     {answer}
+
+                    {answered && <div className='correct'>{answerStat[answer]}</div> }
                 </label>
             </li>
         ))}
