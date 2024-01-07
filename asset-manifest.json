@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.89844e02.js",
+    "main.js": "/Learning-Quotes/static/js/main.ef48ddfb.js",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/book.png": "/Learning-Quotes/static/media/book.dcee7394105afe9183d0.png",
@@ -35,6 +35,8 @@
     "static/media/LangList-ph-1.png": "/Learning-Quotes/static/media/LangList-ph-1.615c1dcf81e3cc394fb8.png",
     "static/media/img-slide3.png": "/Learning-Quotes/static/media/img-slide3.710d23a423743c229230.png",
     "static/media/LangList-ph-3.png": "/Learning-Quotes/static/media/LangList-ph-3.ef2cbdfd096f3b3400c0.png",
+    "static/media/incorrect.svg": "/Learning-Quotes/static/media/incorrect.a690b31f180bfc68df577d9c6ef284b2.svg",
+    "static/media/correct.svg": "/Learning-Quotes/static/media/correct.995ee6a224337289a17c35cf66da7104.svg",
     "static/media/vocabulary.png": "/Learning-Quotes/static/media/vocabulary.7fdd66ad225b5a00f0b6.png",
     "static/media/cup.svg": "/Learning-Quotes/static/media/cup.7949a55a42b6e3c4a9e61ae7934d2d16.svg",
     "static/media/discorc.svg": "/Learning-Quotes/static/media/discorc.364e8e4d8c5d3c61e4ade2b57f341719.svg",
@@ -56,10 +58,10 @@
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.89844e02.js.map": "/Learning-Quotes/static/js/main.89844e02.js.map"
+    "main.ef48ddfb.js.map": "/Learning-Quotes/static/js/main.ef48ddfb.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.89844e02.js"
+    "static/js/main.ef48ddfb.js"
   ]
 }
