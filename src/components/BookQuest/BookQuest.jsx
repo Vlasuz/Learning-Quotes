@@ -19,9 +19,12 @@ export const BookQuest = () => {
             <div className="book__rht">
 
                 <QuestionsQuest 
-                  questionNum={'Question 1/10'}
+                  questionTitle={'Question'}
+                  questionNum={'1/10'}
                   questionTxt={'Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.'}
                 />
+
+              
             </div>
         </div>
 

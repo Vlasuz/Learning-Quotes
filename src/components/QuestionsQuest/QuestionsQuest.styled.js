@@ -17,6 +17,12 @@ export const QuestionsQuestStyle = styled.div`
         font-weight: 700;
         line-height: normal;
         margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    span{
+        margin-left: 7px;
     }
     
     p{
