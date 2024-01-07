@@ -7,14 +7,14 @@ import { NavLink } from 'react-router-dom'
 export const NavigationQuest = ({nextPage, prevPage}) => {
   return (
     <NavigationQuestStyle>
-        <NavLink to={`${prevPage}`}>
+        <button onClick={prevPage}>
             <img src={ArrowIc} alt="arrow lft ic" />
             Back
-        </NavLink>
-        <NavLink to={nextPage}>
+        </button>
+        <button onClick={nextPage}>
             Next
             <img className='arrow__next' src={ArrowIc} alt="arrow rht ic" />
-        </NavLink>
+        </button>
     </NavigationQuestStyle>
   )
 }

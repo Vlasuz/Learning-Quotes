@@ -5,7 +5,8 @@ import RamkaBgd from '../../assets/img/questionRamka.png'
 export const QuestionsQuestStyle = styled.div`
     background: url(${RamkaBgd}) no-repeat;
     background-size: cover;
-    padding: 70px 70px 90px;
+    padding: 70px;
+    height: 310px;
     text-align: center;
     display: flex;
     flex-direction: column;

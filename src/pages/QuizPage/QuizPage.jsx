@@ -10,8 +10,6 @@ export const QuizPage = () => {
       {/* <ListeningQuest/> */}
 
       <BookQuest/>
-
-      
         
     </div>
   )

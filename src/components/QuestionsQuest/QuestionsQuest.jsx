@@ -5,10 +5,10 @@ export const QuestionsQuest = ({questionTitle, questionNum, questionTxt}) => {
   return (
     <QuestionsQuestStyle>
         <h2>
-            {questionTitle} <span>{questionNum}</span>
+            {questionTxt} <span>{questionNum}</span>
         </h2>
         <p>
-            {questionTxt}
+            {questionTitle}
         </p>
     </QuestionsQuestStyle>
   )

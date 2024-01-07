@@ -6,7 +6,7 @@ export const NavigationQuestStyle = styled.div`
     justify-content: space-between;
     margin-top: 100px;
 
-    a{
+    button{
         display: flex;
         align-items: center;
         gap: 6px;

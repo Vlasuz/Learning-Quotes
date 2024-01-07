@@ -25,7 +25,6 @@ export const QuestTxtStyle = styled.div`
 
     .vocabulary{
         margin-top: auto;
-        margin-top: 50px;
 
         p{
             color: #000;

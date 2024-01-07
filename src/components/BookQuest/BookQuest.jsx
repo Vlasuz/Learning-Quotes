@@ -1,34 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BookQuestStyle } from './BookQuest.styled'
 import { QuestTxt } from '../QuestTxt/QuestTxt'
 import { NavigationQuest } from '../NavigationQuest/NavigationQuest'
 import { QuestionsQuest } from '../QuestionsQuest/QuestionsQuest'
+import { QuestOptions } from '../QuestOptions/QuestOptions'
+import { questData } from '../../assets/quiz/quiz'
 
 export const BookQuest = () => {
+  const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
+  const currentQuestion = questData[currentQuestionIn];
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIn < questData.length -1) {
+      setCurrentQuestionIn((prevIndex) => prevIndex + 1);
+    }
+  };
+
+  const handlePrevQuestion = () => {
+    if (currentQuestionIn > 0 ) {
+      setCurrentQuestionIn((prevIndex) => prevIndex - 1);
+    }
+  };
+
   return (
     <BookQuestStyle>
         <div className="book">
             <div className="book__lft">
 
-                <QuestTxt 
-                  questTitle={'Sample Passage'} 
-                  questTask={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque consequat turpis et scelerisque. Ut non enim porta neque placerat laoreet. Duis molestie pharetra imperdiet. Sed ac dolor faucibus, volutpat est sit amet, euismod lacus. Nullam tempus pulvinar viverra. Aliquam consectetur justo id mauris accumsan, feugiat pretium nisi blandit. Nunc a porttitor lacus, ac fringilla velit. Nulla varius eleifend dignissim. Sed et mauris volutpat, finibus massa nec, eleifend augue. Phasellus a nibh nec quam aliquet volutpat nec sit amet orci.'} 
-                />
+              <QuestTxt 
+                questTitle={currentQuestion.titleDesc} 
+                questTask={currentQuestion.description} 
+              />
             </div>
 
             <div className="book__rht">
 
-                <QuestionsQuest 
-                  questionTitle={'Question'}
-                  questionNum={'1/10'}
-                  questionTxt={'Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.'}
-                />
+              <QuestionsQuest 
+                key={currentQuestion.id}
+                questionTxt={'Question'}
+                questionNum={currentQuestion.questionNum}
+                questionTitle={currentQuestion.question}
+              />
 
+              <QuestOptions currentQuestion={currentQuestion}/>
               
             </div>
         </div>
 
-        <NavigationQuest />
+        <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/>
 
     </BookQuestStyle>
   )

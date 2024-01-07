@@ -16,6 +16,9 @@ export const BookQuestStyle = styled.div`
         &__lft{
             width: 50%;
             padding-right: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         &__rht{
