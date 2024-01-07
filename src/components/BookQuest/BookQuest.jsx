@@ -1,6 +1,7 @@
 import React from 'react'
 import { BookQuestStyle } from './BookQuest.styled'
 import { QuestTxt } from '../QuestTxt/QuestTxt'
+import { NavigationQuest } from '../NavigationQuest/NavigationQuest'
 
 export const BookQuest = () => {
   return (
@@ -17,6 +18,9 @@ export const BookQuest = () => {
 
             </div>
         </div>
+
+        <NavigationQuest />
+
     </BookQuestStyle>
   )
 }

@@ -7,7 +7,7 @@ export const BookQuestStyle = styled.div`
     background: url(${BookBgd}) no-repeat;
     background-size: cover;
     background-position: 0px -40px;
-    padding: 80px 100px 90px;
+    padding: 80px 100px 50px;
 
     .book{
         display: flex;
