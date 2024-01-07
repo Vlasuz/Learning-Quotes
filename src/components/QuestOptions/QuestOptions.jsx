@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { QuestOptionsStyle } from './QuestOptions.styled'
 
 import CorrectIc from '../../assets/img/icons/correct.svg'
@@ -25,7 +25,10 @@ export const QuestOptions = ({ currentQuestion, answerClick }) => {
         }))
     }
 
-
+    useEffect(() => {
+        setAnswered(false);
+        setSelectedAnswer(null);
+    }, [currentQuestion])
 
   return (
     <QuestOptionsStyle>

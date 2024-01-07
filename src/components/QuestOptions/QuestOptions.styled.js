@@ -43,7 +43,7 @@ export const QuestOptionsStyle = styled.ul`
         align-items: center;
         cursor: pointer;
         width: 100%;
-        max-width: 250px;
+        max-width: 500px;
 
         color: #1C274C;
         font-size: 24px;

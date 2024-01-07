@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BookQuestStyle } from './BookQuest.styled'
 import { QuestTxt } from '../QuestTxt/QuestTxt'
 import { NavigationQuest } from '../NavigationQuest/NavigationQuest'
@@ -8,15 +8,18 @@ import { questData } from '../../assets/quiz/quiz'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
-  const [correctQuestion, setCorrectQuestion] = useState(false);
+  const [userAnswers, setUserAnswers] = useState({});
   const currentQuestion = questData[currentQuestionIn];
 
   const handleNextQuestion = () => {
     if (currentQuestionIn < questData.length -1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
-      setCorrectQuestion(false);  
     }
   };
+
+  useEffect(() => {
+    setUserAnswers(false);
+  }, [currentQuestionIn])
 
   const handlePrevQuestion = () => {
     if (currentQuestionIn > 0 ) {
@@ -27,7 +30,10 @@ export const BookQuest = () => {
   const handleAnswer = (selected) => {
     const isCorrect = selected === currentQuestion.correctAnswer;
 
-    setCorrectQuestion(isCorrect);
+    setUserAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [currentQuestionIn] : {answer: selected, isCorrect}
+    }))
   } 
 
 
@@ -52,7 +58,7 @@ export const BookQuest = () => {
                 questionTitle={currentQuestion.question}
               />
 
-              <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer} correctQuestion={correctQuestion}/>
+              <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
 
             </div>
         </div>
