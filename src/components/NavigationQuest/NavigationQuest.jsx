@@ -2,7 +2,6 @@ import React from 'react'
 import { NavigationQuestStyle } from './NavigationQuest.styled'
 
 import ArrowIc from '../../assets/img/icons/Go-back-black.svg'
-import { NavLink } from 'react-router-dom'
 
 export const NavigationQuest = ({nextPage, prevPage}) => {
   return (
