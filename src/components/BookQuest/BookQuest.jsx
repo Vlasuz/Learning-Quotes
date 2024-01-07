@@ -60,6 +60,7 @@ export const BookQuest = () => {
 
               <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
 
+
             </div>
         </div>
 
