@@ -51,11 +51,6 @@ export const QuizAudio = () => {
         <p>{formatTime(currentTime)}</p>
       </div>
 
-
-      <a className='audio__next' href="some">
-        Next
-      </a>
-
     </QuizAudioStyle>
   );
 };

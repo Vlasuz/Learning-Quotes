@@ -29,28 +29,6 @@ export const QuizAudioStyle = styled.div`
         max-width: 60px;
     }
 
-    .audio__next{
-        display: block;
-        text-align: center;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 620px;
-        padding: 16px;
-        border-radius: 20px;
-        background: #93AEC6;
-        margin-top: 100px;
-        transition: all .3s ease;
-
-        color: #FFF;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 32px;
-
-        &:hover{
-            background: #437BAD;
-        }
-    }
-
     @media screen and (max-width: 575px) {
         .audio__btn{
             width: 50px;
@@ -59,12 +37,6 @@ export const QuizAudioStyle = styled.div`
 
         p{
             font-size: 16px;
-        }
-
-        .audio__next{
-            margin-top: 60px;
-            font-size: 18px;
-            padding: 10px;
         }
     }
 `

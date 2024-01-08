@@ -18,6 +18,10 @@ export const ListeningQuest = () => {
 
         <QuizAudio />
 
+        <a className='audio__next' href="some">
+          Next
+        </a>
+
     </QuizPageStyle>
   )
 }

@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { BookQuestStyle } from './BookQuest.styled'
 import { QuestTxt } from '../QuestTxt/QuestTxt'
 import { NavigationQuest } from '../NavigationQuest/NavigationQuest'
 import { QuestionsQuest } from '../QuestionsQuest/QuestionsQuest'
 import { QuestOptions } from '../QuestOptions/QuestOptions'
 import { questData } from '../../assets/quiz/quiz'
+import { ListeningQuestion } from '../ListeningQuestion/ListeningQuestion'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
-  const [userAnswers, setUserAnswers] = useState({});
+  // const [userAnswers, setUserAnswers] = useState({});
   const currentQuestion = questData[currentQuestionIn];
 
   const handleNextQuestion = () => {
@@ -17,9 +18,9 @@ export const BookQuest = () => {
     }
   };
 
-  useEffect(() => {
-    setUserAnswers(false);
-  }, [currentQuestionIn])
+  // useEffect(() => {
+  //   setUserAnswers(false);
+  // }, [currentQuestionIn])
 
   const handlePrevQuestion = () => {
     if (currentQuestionIn > 0 ) {
@@ -28,12 +29,12 @@ export const BookQuest = () => {
   };
 
   const handleAnswer = (selected) => {
-    const isCorrect = selected === currentQuestion.correctAnswer;
+    // const isCorrect = selected === currentQuestion.correctAnswer;
 
-    setUserAnswers((prevAnswers) => ({
-      ...prevAnswers,
-      [currentQuestionIn] : {answer: selected, isCorrect}
-    }))
+    // setUserAnswers((prevAnswers) => ({
+    //   ...prevAnswers,
+    //   [currentQuestionIn] : {answer: selected, isCorrect}
+    // }))
   } 
 
 
@@ -43,10 +44,13 @@ export const BookQuest = () => {
         <div className="book">
             <div className="book__lft">
 
-              <QuestTxt 
+              {/* <QuestTxt 
                 questTitle={currentQuestion.titleDesc} 
                 questTask={currentQuestion.description} 
-              />
+              /> */}
+
+              <ListeningQuestion />
+
             </div>
 
             <div className="book__rht">
