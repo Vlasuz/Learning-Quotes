@@ -26,11 +26,7 @@ export const QuestTxt = ({questTitle, questTask}) => {
             </p>
         </button>
 
-        {isOpen ? (
-            <Vocabulary onClose={() => setIsOpen(false)}/>
-        ) : (
-            null
-        )}
+        {isOpen ? <Vocabulary onClose={() => setIsOpen(false)}/> : null }
     </QuestTxtStyle>
   )
 }

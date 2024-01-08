@@ -1,3 +1,6 @@
+import AudioFile from '../quiz/audio/file-lesson.mp3'
+// import AudioFile from '../quiz/audio/audio-1.mp3'
+
 export const questData = [
    {
       type: 'book',
@@ -28,5 +31,16 @@ export const questData = [
       question: 'Яка найвища гора в Україні?',
       answers: ['Ільмен', 'Говерла', 'Бребенескул', 'Шепітський Шпиц'],
       correctAnswer: 'Говерла',
+   },
+   {
+      type: 'book-listening',
+      id: '4',
+      titleDesc: 'Listening Comprehension qq',
+      description: 'You can listen only 2 times qq',
+      audioUrl: AudioFile,
+      questionNum: '4/10',
+      question: 'Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.',
+      answers: ['Question 1', 'Question 2', 'Question 3', 'Question 4'],
+      correctAnswer: 'Question 2',
    },
 ]

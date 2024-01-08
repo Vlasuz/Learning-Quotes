@@ -4,17 +4,17 @@ import { QuizAudio } from '../QuizAudio/QuizAudio'
 
 import AudioImg from '../../assets/img/listening.png'
 
-export const ListeningQuestion = () => {
+export const ListeningQuestion = ({ questTitle, questDesc, audioUrls }) => {
   return (
     <ListeningQuestionStyle>
         <h2>
-            Listening Comprehension
+          {questTitle}
         </h2>
         <p>
-            You can listen only 2 times
+          {questDesc}
         </p>
 
-        <QuizAudio />
+        <QuizAudio audioUrls={audioUrls}/>
 
         <img src={AudioImg} alt="listen ph" />
 
