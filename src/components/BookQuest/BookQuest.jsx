@@ -29,6 +29,37 @@ export const BookQuest = () => {
 
   }
 
+  const renderBookQuestTxt = () => {
+    return  <QuestTxt 
+        questTitle={currentQuestion.titleDesc} 
+        questTask={currentQuestion.description} 
+      />
+  }
+
+  const renderBookQuestionsQuest = () => {
+    return <QuestionsQuest 
+      key={currentQuestion.id}
+      questionTxt={'Question'}
+      questionNum={currentQuestion.questionNum}
+      questionTitle={currentQuestion.question}
+    />
+  }
+
+  const renderBookQuestOption = () => {
+    return <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
+  }
+
+  const renderListeningListeningQuestion = () => {
+    return <ListeningQuestion 
+      questTitle={currentQuestion.titleDesc} 
+      questDesc ={currentQuestion.description} 
+      audioUrls={currentQuestion.audioUrl}
+    />
+  }
+
+  const renderListeningQuestOptionsKey = () => {
+    return <QuestOptionsKey/>
+  }
 
 
   return (
@@ -36,31 +67,20 @@ export const BookQuest = () => {
         <div className="book">
             <div className="book__lft">
 
-              {/* <QuestTxt 
-                questTitle={currentQuestion.titleDesc} 
-                questTask={currentQuestion.description} 
-              /> */}
-
-              <ListeningQuestion 
-                questTitle={currentQuestion.titleDesc} 
-                questDesc ={currentQuestion.description} 
-                audioUrls={currentQuestion.audioUrl}
-              />
-
               {/* <KeywordsQuestion /> */}
+
+              {currentQuestion.type === 'book' && renderBookQuestTxt()}
+              {currentQuestion.type === 'book-listening' && renderListeningListeningQuestion()}
 
             </div>
 
             <div className="book__rht">
 
-              <QuestionsQuest 
-                key={currentQuestion.id}
-                questionTxt={'Question'}
-                questionNum={currentQuestion.questionNum}
-                questionTitle={currentQuestion.question}
-              />
+            {currentQuestion.type === 'book-listening' && renderBookQuestionsQuest()}
+            {currentQuestion.type === 'book' && renderBookQuestionsQuest()}
 
-              <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
+            {currentQuestion.type === 'book-listening' && renderBookQuestOption()}
+            {currentQuestion.type === 'book' && renderBookQuestOption()}
 
               {/* <QuestOptionsKey/> */}
 
