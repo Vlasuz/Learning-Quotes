@@ -7,6 +7,7 @@ import { QuestOptions } from '../QuestOptions/QuestOptions'
 import { questData } from '../../assets/quiz/quiz'
 import { ListeningQuestion } from '../ListeningQuestion/ListeningQuestion'
 import { KeywordsQuestion } from '../KeywordsQuestion/KeywordsQuestion'
+import { QuestOptionsKey } from '../QuestOptionsKey/QuestOptionsKey'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
@@ -58,15 +59,16 @@ export const BookQuest = () => {
 
             <div className="book__rht">
 
-              <QuestionsQuest 
+              {/* <QuestionsQuest 
                 key={currentQuestion.id}
                 questionTxt={'Question'}
                 questionNum={currentQuestion.questionNum}
                 questionTitle={currentQuestion.question}
-              />
+              /> */}
 
-              <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
+              {/* <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/> */}
 
+              <QuestOptionsKey/>
 
             </div>
         </div>

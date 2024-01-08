@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const KeywordsQuestionStyle = styled.div`
     width: 100%;
-    margin-top: 50px;
 
     h2{
         color: #000;
