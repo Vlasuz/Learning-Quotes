@@ -60,6 +60,26 @@ export const questData = [
       type: 'book-keywords',
       id: '6',
       titleDesc: 'Keywords',
-      words: ['Word 1', 'Word 2', 'Word 3', 'Word 4', 'Word 5', 'Word 6']
+      words: ['Word 1', 'Word 2', 'Word 3', 'Word 4', 'Word 5', 'Word 6'],
+      questions: [
+         {
+            questId: 'q-1',
+            questionTitle: 'Question: What is this?',
+            questionAnswers: ['check 1', 'check 2', 'check 3'],
+            correctAnswer: 'check 1'
+         },
+         {
+            questId: 'q-2',
+            questionTitle: 'Question: What is this? x2',
+            questionAnswers: ['check1', 'check2', 'check3'],
+            correctAnswer: 'check2'
+         },
+         {
+            questId: 'q-3',
+            questionTitle: 'Question: What is this? x3',
+            questionAnswers: ['check-1', 'check-2', 'check-3'],
+            correctAnswer: 'check-3'
+         },
+      ]
    },
 ]

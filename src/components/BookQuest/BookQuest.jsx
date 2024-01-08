@@ -58,7 +58,9 @@ export const BookQuest = () => {
   }
 
   const renderKeyQuestOptionsKey = () => {
-    return <QuestOptionsKey/>
+    return <QuestOptionsKey
+      questions={currentQuestion.questions}
+    />
   }
   
   const renderKeyKeywordsQuestion = () => {
