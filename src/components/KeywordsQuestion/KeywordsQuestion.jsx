@@ -1,50 +1,22 @@
 import React from 'react'
 import { KeywordsQuestionStyle } from './KeywordsQuestion.styled'
 
-export const KeywordsQuestion = () => {
+export const KeywordsQuestion = ({ questTitle, questWords }) => {
   return (
     <KeywordsQuestionStyle>
         <h2>
-            Keywords
+            {questTitle}
         </h2>
 
         <ul>
-            <li>
-                <p>
-                    Word
-                </p>
-                <input type="text" />
-            </li>
-            <li>
-                <p>
-                    Word
-                </p>
-                <input type="text" />
-            </li>
-            <li>
-                <p>
-                    Word
-                </p>
-                <input type="text" />
-            </li>
-            <li>
-                <p>
-                    Word
-                </p>
-                <input type="text" />
-            </li>
-            <li>
-                <p>
-                    Word
-                </p>
-                <input type="text" />
-            </li>
-            <li>
-                <p>
-                    Word
-                </p>
-                <input type="text" />
-            </li>
+            {questWords.map(word => (
+                <li key={word}>
+                    <p>
+                        {word}
+                    </p>
+                    <input type="text" />
+                </li>
+            ))}
         </ul>
 
     </KeywordsQuestionStyle>

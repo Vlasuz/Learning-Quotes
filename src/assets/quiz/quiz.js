@@ -60,10 +60,6 @@ export const questData = [
       type: 'book-keywords',
       id: '6',
       titleDesc: 'Keywords',
-      audioUrl: AudioFile,
-      questionNum: '6/10',
-      question: 'Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.',
-      answers: ['Question1', 'Question2', 'Question3'],
-      correctAnswer: 'Question3',
+      words: ['Word 1', 'Word 2', 'Word 3', 'Word 4', 'Word 5', 'Word 6']
    },
 ]

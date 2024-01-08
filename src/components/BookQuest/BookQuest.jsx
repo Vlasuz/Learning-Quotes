@@ -57,32 +57,37 @@ export const BookQuest = () => {
     />
   }
 
-  const renderListeningQuestOptionsKey = () => {
+  const renderKeyQuestOptionsKey = () => {
     return <QuestOptionsKey/>
   }
-
+  
+  const renderKeyKeywordsQuestion = () => {
+    return <KeywordsQuestion 
+      questTitle={currentQuestion.titleDesc}
+      questWords={currentQuestion.words}
+    />
+  }
 
   return (
     <BookQuestStyle>
         <div className="book">
             <div className="book__lft">
 
-              {/* <KeywordsQuestion /> */}
-
               {currentQuestion.type === 'book' && renderBookQuestTxt()}
               {currentQuestion.type === 'book-listening' && renderListeningListeningQuestion()}
+              {currentQuestion.type === 'book-keywords' && renderKeyKeywordsQuestion()}
 
             </div>
 
             <div className="book__rht">
 
-            {currentQuestion.type === 'book-listening' && renderBookQuestionsQuest()}
-            {currentQuestion.type === 'book' && renderBookQuestionsQuest()}
+              {currentQuestion.type === 'book-listening' && renderBookQuestionsQuest()}
+              {currentQuestion.type === 'book' && renderBookQuestionsQuest()}
 
-            {currentQuestion.type === 'book-listening' && renderBookQuestOption()}
-            {currentQuestion.type === 'book' && renderBookQuestOption()}
+              {currentQuestion.type === 'book-listening' && renderBookQuestOption()}
+              {currentQuestion.type === 'book' && renderBookQuestOption()}
 
-              {/* <QuestOptionsKey/> */}
+              {currentQuestion.type === 'book-keywords' && renderKeyQuestOptionsKey()}
 
             </div>
         </div>
