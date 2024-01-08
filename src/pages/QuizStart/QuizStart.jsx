@@ -5,6 +5,7 @@ import { QuizTitle } from '../../components/QuizTitle/QuizTitle'
 
 import Listening from '../../assets/img/listening.png'
 import Book from '../../assets/img/book.png'
+import { NavLink } from 'react-router-dom'
 
 export const QuizStart = () => {
   return (
@@ -16,14 +17,14 @@ export const QuizStart = () => {
             <QuizTitle quizName={'DLPT 2 +'} quizTxt={'Choose type of tasks'} />
 
             <div className="select">
-                <a href="some">
+                <NavLink to={'/listening-quest'}>
                     <img src={Listening} alt="Listening ph" />
                     Listening <br />Comprehension
-                </a>
-                <a href="some">
+                </NavLink>
+                <NavLink to={'/reading-quest'}>
                     <img src={Book} alt="Book ph" />
                     Reading <br />Comprehension
-                </a>
+                </NavLink>
             </div>
 
             <button>Choose</button>

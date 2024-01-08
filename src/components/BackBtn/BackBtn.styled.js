@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BackBtnStyle = styled.div`
-    a{
+    .back{
         display: flex;
         align-items: center;
         gap: 6px;

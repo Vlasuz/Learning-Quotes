@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 export const BackBtn = ({link}) => {
   return (
     <BackBtnStyle>
-        <NavLink to={`${link}`}>
+        <NavLink to={`${link}`} className='back'>
             <img src={GoBack} alt="arrow ic" />
             Back
         </NavLink>
