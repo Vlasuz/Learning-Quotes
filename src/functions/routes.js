@@ -1,3 +1,4 @@
+import { ReadingQuest } from "../components/ReadingQuest/ReadingQuest.styled"
 import { Area } from "../pages/Area/Area"
 import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
 import { Faq } from "../pages/Faq/Faq"
@@ -77,7 +78,7 @@ export const routes = () => {
         },
         {
             path: '/reading-quest',
-            element: <QuizPage/>
+            element: <ReadingQuest/>
         },
         {
             path: '*',
