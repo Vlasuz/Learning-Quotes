@@ -26,7 +26,7 @@ export const BookQuest = () => {
   };
 
   const handleAnswer = (select) => {
-    
+
   }
 
 
@@ -36,14 +36,14 @@ export const BookQuest = () => {
         <div className="book">
             <div className="book__lft">
 
-              {/* <QuestTxt 
+              <QuestTxt 
                 questTitle={currentQuestion.titleDesc} 
                 questTask={currentQuestion.description} 
-              /> */}
+              />
 
               {/* <ListeningQuestion /> */}
 
-              <KeywordsQuestion />
+              {/* <KeywordsQuestion /> */}
 
             </div>
 

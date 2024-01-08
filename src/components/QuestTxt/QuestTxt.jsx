@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { QuestTxtStyle } from './QuestTxt.styled'
 
 import VocabularyPh from '../../assets/img/vocabulary.png'
+import { Vocabulary } from '../Vocabulary/Vocabulary'
 
 export const QuestTxt = ({questTitle, questTask}) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpenVocabulary = () => {
+        setIsOpen(!isOpen);
+    }
+
   return (
     <QuestTxtStyle>
         <h2>
@@ -12,12 +19,18 @@ export const QuestTxt = ({questTitle, questTask}) => {
         <p>
             {questTask}
         </p>
-        <div className="vocabulary">
+        <button className="vocabulary" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
             <p>
                 Vocabulary
             </p>
-        </div>
+        </button>
+
+        {isOpen ? (
+            <Vocabulary onClose={() => setIsOpen(false)}/>
+        ) : (
+            null
+        )}
     </QuestTxtStyle>
   )
 }
