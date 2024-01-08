@@ -6,11 +6,11 @@ import { QuizAudio } from '../QuizAudio/QuizAudio'
 
 import AudioImg from '../../assets/img/listening.png'
 
-export const ListeningQuest = () => {
+export const ListeningQuest = ({ onClickNext }) => {
   return (
     <QuizPageStyle>
 
-        <BackBtn link={'/some'}/>
+        <BackBtn link={'/quiz-start'}/>
 
         <QuizTitle quizName={'DLPT 2 +.'} quizTxt={'Listen this audio'} />
 
@@ -18,9 +18,9 @@ export const ListeningQuest = () => {
 
         <QuizAudio />
 
-        <a className='audio__next' href="some">
+        <button className='audio__next' onClick={onClickNext}>
           Next
-        </a>
+        </button>
 
     </QuizPageStyle>
   )
