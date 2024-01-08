@@ -13,10 +13,6 @@ export const KeywordsQuestionStyle = styled.div`
         margin-bottom: 45px;
     }
 
-    ul{
-
-    }
-
     li{
         display: flex;
         align-items: center;
@@ -43,9 +39,9 @@ export const KeywordsQuestionStyle = styled.div`
         background: transparent;
 
         color: #000;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 400;
-        line-height: 28px;
+        line-height: normal;
     }
 
 `

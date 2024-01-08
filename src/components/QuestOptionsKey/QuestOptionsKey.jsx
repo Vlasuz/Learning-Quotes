@@ -52,12 +52,12 @@ export const QuestOptionsKey = () => {
         </div>
         <div className='quest'>
             <h2>
-                Question 1. Lorem Ipsum
+                Question 2. Lorem Ipsum
             </h2>
             <ul>
                 <li>
-                    <label htmlFor='k-1'>                    
-                        <input type="checkbox" id='k-1' 
+                    <label htmlFor='q-1'>                    
+                        <input type="checkbox" id='q-1' 
                         />
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
@@ -69,8 +69,8 @@ export const QuestOptionsKey = () => {
                     </label>
                 </li>
                 <li>
-                    <label htmlFor='k-2'>                    
-                        <input type="checkbox" id='k-2' 
+                    <label htmlFor='q-2'>                    
+                        <input type="checkbox" id='q-2' 
                         />
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
@@ -82,8 +82,8 @@ export const QuestOptionsKey = () => {
                     </label>
                 </li>
                 <li>
-                    <label htmlFor='k-3'>                    
-                        <input type="checkbox" id='k-3' 
+                    <label htmlFor='q-3'>                    
+                        <input type="checkbox" id='q-3' 
                         />
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
@@ -98,12 +98,12 @@ export const QuestOptionsKey = () => {
         </div>
         <div className='quest'>
             <h2>
-                Question 1. Lorem Ipsum
+                Question 3. Lorem Ipsum
             </h2>
             <ul>
                 <li>
-                    <label htmlFor='k-1'>                    
-                        <input type="checkbox" id='k-1' 
+                    <label htmlFor='w-1'>                    
+                        <input type="checkbox" id='w-1' 
                         />
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
@@ -115,8 +115,8 @@ export const QuestOptionsKey = () => {
                     </label>
                 </li>
                 <li>
-                    <label htmlFor='k-2'>                    
-                        <input type="checkbox" id='k-2' 
+                    <label htmlFor='w-2'>                    
+                        <input type="checkbox" id='w-2' 
                         />
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
@@ -128,8 +128,8 @@ export const QuestOptionsKey = () => {
                     </label>
                 </li>
                 <li>
-                    <label htmlFor='k-3'>                    
-                        <input type="checkbox" id='k-3' 
+                    <label htmlFor='w-3'>                    
+                        <input type="checkbox" id='w-3' 
                         />
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">

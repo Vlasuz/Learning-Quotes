@@ -11,7 +11,6 @@ import { QuestOptionsKey } from '../QuestOptionsKey/QuestOptionsKey'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
-  // const [userAnswers, setUserAnswers] = useState({});
   const currentQuestion = questData[currentQuestionIn];
 
   const handleNextQuestion = () => {
@@ -20,24 +19,11 @@ export const BookQuest = () => {
     }
   };
 
-  // useEffect(() => {
-  //   setUserAnswers(false);
-  // }, [currentQuestionIn])
-
   const handlePrevQuestion = () => {
     if (currentQuestionIn > 0 ) {
       setCurrentQuestionIn((prevIndex) => prevIndex - 1);
     }
   };
-
-  const handleAnswer = (selected) => {
-    // const isCorrect = selected === currentQuestion.correctAnswer;
-
-    // setUserAnswers((prevAnswers) => ({
-    //   ...prevAnswers,
-    //   [currentQuestionIn] : {answer: selected, isCorrect}
-    // }))
-  } 
 
 
 
