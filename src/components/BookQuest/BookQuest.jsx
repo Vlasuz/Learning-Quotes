@@ -6,6 +6,7 @@ import { QuestionsQuest } from '../QuestionsQuest/QuestionsQuest'
 import { QuestOptions } from '../QuestOptions/QuestOptions'
 import { questData } from '../../assets/quiz/quiz'
 import { ListeningQuestion } from '../ListeningQuestion/ListeningQuestion'
+import { KeywordsQuestion } from '../KeywordsQuestion/KeywordsQuestion'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
@@ -49,7 +50,9 @@ export const BookQuest = () => {
                 questTask={currentQuestion.description} 
               /> */}
 
-              <ListeningQuestion />
+              {/* <ListeningQuestion /> */}
+
+              <KeywordsQuestion />
 
             </div>
 
