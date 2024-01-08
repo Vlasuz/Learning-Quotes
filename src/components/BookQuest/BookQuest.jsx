@@ -12,22 +12,26 @@ import { QuestResult } from '../QuestResult/QuestResult'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
+  const [questResult, setQuestResult] = useState(false);
   const currentQuestion = questData[currentQuestionIn];
 
   const handleNextQuestion = () => {
     if (currentQuestionIn < questData.length -1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
+    } else {
+      setQuestResult(true);
     }
   };
 
   const handlePrevQuestion = () => {
     if (currentQuestionIn > 0 ) {
       setCurrentQuestionIn((prevIndex) => prevIndex - 1);
+      setQuestResult(false)
     }
   };
 
   const handleAnswer = (select) => {
-
+    // Обробка відповідей
   }
 
   const renderBookQuestTxt = () => {
@@ -95,7 +99,7 @@ export const BookQuest = () => {
             </div>
         </div>
 
-        <QuestResult/>
+        {questResult && <QuestResult onCloseOk={() => setQuestResult(false)}/>}
 
         <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/>
 

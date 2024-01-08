@@ -4,14 +4,15 @@ import { QuestResultStyle } from './QuestResult.styled'
 import CorrectIc from '../../assets/img/icons/correct.svg'
 import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
+import { Link } from 'react-router-dom'
 
-export const QuestResult = () => {
+export const QuestResult = ({ onCloseOk }) => {
   return (
     <QuestResultStyle>
         <div className="results">
-            <button className='close__btn'>
+            <Link to={'/map'} className='close__btn'>
                 <img src={CloseIc} alt='close ic' />
-            </button>
+            </Link>
             <h2>
                 Results
             </h2>
@@ -93,7 +94,7 @@ export const QuestResult = () => {
                 </li>
             </ul>
 
-            <button className='ok__btn'>OK</button>
+            <button className='ok__btn' onClick={onCloseOk}>OK</button>
         </div>
     </QuestResultStyle>
   )
