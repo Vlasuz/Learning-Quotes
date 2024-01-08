@@ -25,6 +25,10 @@ export const BookQuest = () => {
     }
   };
 
+  const handleAnswer = (select) => {
+    
+  }
+
 
 
   return (
@@ -45,16 +49,16 @@ export const BookQuest = () => {
 
             <div className="book__rht">
 
-              {/* <QuestionsQuest 
+              <QuestionsQuest 
                 key={currentQuestion.id}
                 questionTxt={'Question'}
                 questionNum={currentQuestion.questionNum}
                 questionTitle={currentQuestion.question}
-              /> */}
+              />
 
-              {/* <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/> */}
+              <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
 
-              <QuestOptionsKey/>
+              {/* <QuestOptionsKey/> */}
 
             </div>
         </div>
