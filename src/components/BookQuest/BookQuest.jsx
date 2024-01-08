@@ -8,6 +8,7 @@ import { questData } from '../../assets/quiz/quiz'
 import { ListeningQuestion } from '../ListeningQuestion/ListeningQuestion'
 import { KeywordsQuestion } from '../KeywordsQuestion/KeywordsQuestion'
 import { QuestOptionsKey } from '../QuestOptionsKey/QuestOptionsKey'
+import { QuestResult } from '../QuestResult/QuestResult'
 
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
@@ -93,6 +94,8 @@ export const BookQuest = () => {
 
             </div>
         </div>
+
+        <QuestResult/>
 
         <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/>
 
