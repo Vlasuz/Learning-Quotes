@@ -154,7 +154,7 @@ export const Map = () => {
   return (
     <div className='container-main-pages'>
         <MapStyle>
-            <img src={BigMap} alt="main big map" />
+            <img src={BigMap} alt="main big map"/>
             <h2>
                 Map
             </h2>

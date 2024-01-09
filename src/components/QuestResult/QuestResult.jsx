@@ -6,7 +6,7 @@ import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
 import { Link } from 'react-router-dom'
 
-export const QuestResult = ({ onClose,  }) => {
+export const QuestResult = ({ onClose }) => {
   return (
     <QuestResultStyle>
         <div className="results">

@@ -7,7 +7,8 @@ export const ReadingQuestQuestionStyle = styled.div`
     background-size: 100%;
     max-width: 780px;
     text-align: center;
-    padding: 90px 80px 140px;
+    height: 400px;
+    padding: 90px 80px;
     margin: 0 auto;
     margin-bottom: 40px;
 

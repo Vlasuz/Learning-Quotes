@@ -3,9 +3,9 @@ import { NavigationQuestStyle } from './NavigationQuest.styled'
 
 import ArrowIc from '../../assets/img/icons/Go-back-black.svg'
 
-export const NavigationQuest = ({nextPage, prevPage}) => {
+export const NavigationQuest = ({nextPage, prevPage, Styles}) => {
   return (
-    <NavigationQuestStyle>
+    <NavigationQuestStyle style={Styles}>
         <button onClick={prevPage}>
             <img src={ArrowIc} alt="arrow lft ic" />
             Back
