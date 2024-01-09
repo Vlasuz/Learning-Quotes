@@ -20,7 +20,8 @@ import SlideBgd_3 from '../../../../assets/img/icons/Background-sw-3.svg'
 export const LangSwiper = () => {
   return (
     <SwiperContainerStyle>
-        <Swiper
+        <Swiper 
+            style={{height: '100%'}}
             navigation={{
                 prevEl: '.arrow-prev',
                 nextEl: '.arrow-next',
@@ -39,15 +40,8 @@ export const LangSwiper = () => {
                         txt={'Some Text will be here'} 
                         description={'Arabic'} 
                     />
-                    <LangNavigationStyle>
-                        <button className='arrow-prev'>
-                            <img src={ArrowPrev} alt="arrow ic" />
-                        </button>
-                        <button className='arrow-next'>
-                            <img src={ArrowNext} alt="arrow ic" />                            
-                        </button>
-                    </LangNavigationStyle>
                 </LangSlideStyle>
+                    
             </SwiperSlide>
             <SwiperSlide>
                 <LangSlideStyle>
@@ -58,14 +52,6 @@ export const LangSwiper = () => {
                         txt={'Some Text will be here'} 
                         description={'Chinese'} 
                     />
-                    <LangNavigationStyle>
-                        <button className='arrow-prev'>
-                            <img src={ArrowPrev} alt="arrow ic" />
-                        </button>
-                        <button className='arrow-next'>
-                            <img src={ArrowNext} alt="arrow ic" />                            
-                        </button>
-                    </LangNavigationStyle>
                 </LangSlideStyle>
             </SwiperSlide>
             <SwiperSlide>
@@ -77,16 +63,16 @@ export const LangSwiper = () => {
                         txt={'Some Text will be here'} 
                         description={'Rusian'} 
                     />
-                    <LangNavigationStyle>
-                        <button className='arrow-prev'>
-                            <img src={ArrowPrev} alt="arrow ic" />
-                        </button>
-                        <button className='arrow-next'>
-                            <img src={ArrowNext} alt="arrow ic" />                            
-                        </button>
-                    </LangNavigationStyle>
                 </LangSlideStyle>
             </SwiperSlide>
+            <LangNavigationStyle>
+                <button className='arrow-prev'>
+                    <img src={ArrowPrev} alt="arrow ic" />
+                </button>
+                <button className='arrow-next'>
+                    <img src={ArrowNext} alt="arrow ic" />                            
+                </button>
+            </LangNavigationStyle>
         </Swiper>
     </SwiperContainerStyle>
   )

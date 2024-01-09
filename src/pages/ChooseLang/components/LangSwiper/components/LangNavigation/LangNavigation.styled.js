@@ -4,6 +4,12 @@ export const LangNavigationStyle = styled.div`
     margin-top: 96px;
     display: flex;
     gap: 16px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 8;
+    
 
     button{
         width: 48px;

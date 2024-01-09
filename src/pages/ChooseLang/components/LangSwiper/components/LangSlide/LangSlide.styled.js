@@ -8,6 +8,7 @@ export const LangSlideStyle = styled.div`
     padding: 189px 30px 32px;
     border-radius: 64px;
     border: 1px solid #EAEAEA;
+    height: 100%;
 
     img{
         max-width: 369px;

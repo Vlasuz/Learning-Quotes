@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { MapStyle } from './Map.styled'
 
-import BigMap from '../../assets/img/Map.jpg'
+import BigMap from '../../assets/img/Map.png'
 import ArrowDesc from '../../assets/img/icons/arrow-descrip.svg'
 
 export const Map = () => {
