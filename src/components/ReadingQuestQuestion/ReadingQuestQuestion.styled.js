@@ -9,6 +9,7 @@ export const ReadingQuestQuestionStyle = styled.div`
     text-align: center;
     padding: 90px 80px 140px;
     margin: 0 auto;
+    margin-bottom: 40px;
 
     h2{
         color: #000;

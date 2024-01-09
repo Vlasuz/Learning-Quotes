@@ -6,6 +6,6 @@ export const ReadingQuestStyle = styled.div`
   margin: 32px 0 55px;
   background: url(${PageBgd}) no-repeat;
   background-size: cover;
-  padding: 50px 80px 77px 45px;
+  padding: 50px 80px 30px 45px;
   
 `
