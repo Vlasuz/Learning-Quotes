@@ -1,4 +1,4 @@
-import { ReadingQuest } from "../components/ReadingQuest/ReadingQuest.styled"
+import { ReadingQuest } from "../components/ReadingQuest/ReadingQuest"
 import { Area } from "../pages/Area/Area"
 import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
 import { Faq } from "../pages/Faq/Faq"

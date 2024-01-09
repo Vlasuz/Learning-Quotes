@@ -6,11 +6,11 @@ import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
 import { Link } from 'react-router-dom'
 
-export const QuestResult = ({ onCloseOk }) => {
+export const QuestResult = ({ onClose,  }) => {
   return (
     <QuestResultStyle>
         <div className="results">
-            <Link to={'/map'} className='close__btn'>
+            <Link className='close__btn' onClick={onClose}>
                 <img src={CloseIc} alt='close ic' />
             </Link>
             <h2>
@@ -94,7 +94,7 @@ export const QuestResult = ({ onCloseOk }) => {
                 </li>
             </ul>
 
-            <button className='ok__btn' onClick={onCloseOk}>OK</button>
+            <Link to={'/quiz-start'} className='ok__btn'>OK</Link>
         </div>
     </QuestResultStyle>
   )

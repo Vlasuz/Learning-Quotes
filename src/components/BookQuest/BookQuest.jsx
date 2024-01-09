@@ -42,7 +42,7 @@ export const BookQuest = () => {
   }
 
   const renderBookQuestionsQuest = () => {
-    return <QuestionsQuest 
+    return <QuestionsQuest
       key={currentQuestion.id}
       questionTxt={'Question'}
       questionNum={currentQuestion.questionNum}
@@ -99,7 +99,7 @@ export const BookQuest = () => {
             </div>
         </div>
 
-        {questResult && <QuestResult onCloseOk={() => setQuestResult(false)}/>}
+        {questResult && <QuestResult onClose={() => setQuestResult(false)}/>}
 
         <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/>
 

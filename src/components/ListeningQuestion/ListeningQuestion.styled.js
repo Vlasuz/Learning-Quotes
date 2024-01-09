@@ -4,6 +4,9 @@ export const ListeningQuestionStyle = styled.div`
     margin-top: 40px;
     text-align: center;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     h2{
         color: #000;
@@ -24,5 +27,6 @@ export const ListeningQuestionStyle = styled.div`
     img{
         max-width: 250px;
         margin-top: auto;
+        height: auto;
     }
 `

@@ -1,10 +1,11 @@
-import React from 'react'
-import { ReadingQuestStyle } from './ReadingQuest'
+import styled from "styled-components";
 
-export const ReadingQuest = () => {
-  return (
-    <ReadingQuestStyle>
-        
-    </ReadingQuestStyle>
-  )
-}
+import PageBgd from '../../assets/img/pageBgd.jpg'
+
+export const ReadingQuestStyle = styled.div`
+  margin: 32px 0 55px;
+  background: url(${PageBgd}) no-repeat;
+  background-size: cover;
+  padding: 50px 80px 77px 45px;
+  
+`

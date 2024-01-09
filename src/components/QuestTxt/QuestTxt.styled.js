@@ -4,6 +4,7 @@ export const QuestTxtStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 
     h2{
         color: #000;
