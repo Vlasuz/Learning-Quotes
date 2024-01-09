@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.bed1d783.js",
+    "main.js": "/Learning-Quotes/static/js/main.b102faeb.js",
+    "static/media/Map.png": "/Learning-Quotes/static/media/Map.33f2d5b75caf2063cbf4.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/audio-1.mp3": "/Learning-Quotes/static/media/audio-1.693cd9e996292a0f9ad5.mp3",
@@ -11,7 +12,6 @@
     "static/media/owner1.jpg": "/Learning-Quotes/static/media/owner1.5054278cd485f96f046e.jpg",
     "static/media/area-bgd.jpg": "/Learning-Quotes/static/media/area-bgd.f400e86f3003751cc46e.jpg",
     "static/media/taverna.jpg": "/Learning-Quotes/static/media/taverna.e3335b653bf42f9a7559.jpg",
-    "static/media/Map.jpg": "/Learning-Quotes/static/media/Map.d0dca73d237e47ad0837.jpg",
     "static/media/bookBgd.JPG": "/Learning-Quotes/static/media/bookBgd.143dbb60220aac56fef8.JPG",
     "static/media/tavern-desc-4.png": "/Learning-Quotes/static/media/tavern-desc-4.b80239fdb83f48d6d234.png",
     "static/media/tavern-desc-3.png": "/Learning-Quotes/static/media/tavern-desc-3.8309c658939cc16e3b00.png",
@@ -65,10 +65,10 @@
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.bed1d783.js.map": "/Learning-Quotes/static/js/main.bed1d783.js.map"
+    "main.b102faeb.js.map": "/Learning-Quotes/static/js/main.b102faeb.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.bed1d783.js"
+    "static/js/main.b102faeb.js"
   ]
 }
