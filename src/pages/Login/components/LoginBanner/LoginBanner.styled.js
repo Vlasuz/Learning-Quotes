@@ -11,6 +11,7 @@ export const LoginBannerStyle = styled.div`
 
     img{
         max-width: 644px;
+        height: 644px;
         margin-left: -53px;
     }
 
@@ -24,5 +25,9 @@ export const LoginBannerStyle = styled.div`
         padding: 0;
         display: flex;
         justify-content: center;
+
+        img{
+            height: auto;
+        }
     }
 `
