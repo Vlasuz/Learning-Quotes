@@ -55,4 +55,62 @@ export const QuestTxtStyle = styled.div`
             margin-top: -4px;
         }
     }
+
+    .translation{
+        padding: 12px;
+        border-radius: 8px;
+        background: #FDE7B6;
+        position: absolute;
+        top: 40px;
+        right: -30px;
+        width: 100%;
+        max-width: 320px;
+        display: flex;
+        flex-direction: column;
+
+
+        &__container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        &__pos{
+            position: relative;
+        }
+
+        p,
+        h2{
+            color: #000;
+            text-align: center;
+            font-family: Urbanist;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            margin: 0;
+            margin-right: 5px;
+        }
+
+        button{
+            color: #172239;
+            text-align: center;
+            font-size: 12.5px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+
+            padding: 10px;
+            border-radius: 12.5px;
+            background: #F2CCB3;
+            margin: 0 auto;
+            margin-top: 15px;
+            transition: all .3s ease;
+
+            &:hover{
+                background: #E9AB83;
+            }
+        }
+    }
 `

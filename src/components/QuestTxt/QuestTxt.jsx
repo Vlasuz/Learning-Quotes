@@ -17,9 +17,22 @@ export const QuestTxt = ({questTitle, questTask}) => {
         <h2>
             {questTitle}
         </h2>
-        <p>
-            {HTMLReactParser(questTask)}
-        </p>
+        <div className='translation__pos'>
+            <p>
+                {HTMLReactParser(questTask)}
+            </p>
+            {/* <div className="translation">
+                <div className="translation__container">
+                    <h2>
+                        Translation: 
+                    </h2>
+                    <p>
+                        some word
+                    </p>
+                </div>
+                <button>Add to vocablyary</button>
+            </div> */}
+        </div>
         <button className="vocabulary" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
             <p>
