@@ -76,7 +76,7 @@ export const Vocabulary = ({onClose}) => {
                 </li>
             </ul>
 
-            <button className='vocabulary__ok'>OK</button>
+            <button className='vocabulary__ok' onClick={onClose}>OK</button>
         </div>
     </VocabularyStyle>
   )

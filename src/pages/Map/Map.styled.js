@@ -116,4 +116,19 @@ export const MapStyle = styled.div`
         }
     }
 
+    .buttonsLink{
+        display: block;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+    }
+
+    .leader__board{       
+        right: 127px;
+        top: 421px;
+    }
+    .training__swamp{
+        right: 92px;
+        bottom: 308px;
+    }
 `

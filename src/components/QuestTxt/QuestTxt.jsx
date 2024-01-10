@@ -5,7 +5,7 @@ import { Vocabulary } from '../Vocabulary/Vocabulary'
 
 import VocabularyPh from '../../assets/img/vocabulary.png'
 
-export const QuestTxt = ({questTitle, questTask}) => {
+export const QuestTxt = ({ questTitle, questTask }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpenVocabulary = () => {
@@ -17,12 +17,12 @@ export const QuestTxt = ({questTitle, questTask}) => {
         <h2>
             {questTitle}
         </h2>
-        <div className='translation__pos'>
+        <div className='translations__pos'>
             <p>
                 {HTMLReactParser(questTask)}
             </p>
-            {/* <div className="translation">
-                <div className="translation__container">
+            {/* <div className="translations">
+                <div className="translations__container">
                     <h2>
                         Translation: 
                     </h2>

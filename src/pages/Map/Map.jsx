@@ -4,6 +4,7 @@ import { MapStyle } from './Map.styled'
 
 import BigMap from '../../assets/img/Map.png'
 import ArrowDesc from '../../assets/img/icons/arrow-descrip.svg'
+import { NavLink } from 'react-router-dom'
 
 export const Map = () => {
     const [popUpId, setPopUpId] = useState(0);
@@ -158,6 +159,9 @@ export const Map = () => {
             <h2>
                 Map
             </h2>
+
+            <NavLink to={'/leader-board'} className='leader__board buttonsLink'></NavLink>
+            <NavLink to={'/quiz-start'} className='training__swamp buttonsLink'></NavLink>
 
             {popUp && (
                 <div className="description" style={mapTxt[popUpId].style}>

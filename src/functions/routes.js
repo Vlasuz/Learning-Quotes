@@ -58,7 +58,7 @@ export const routes = () => {
             element: <Map/>
         },
         {
-            path: '/taverna',
+            path: '/leader-board',
             element: <Tavern/>
         },
         {

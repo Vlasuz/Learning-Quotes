@@ -12,7 +12,7 @@ export const QuizStart = () => {
     <div className='container-login'>
         <QuizStartStyle>
 
-            <BackBtn link={'/some'}/>
+            <BackBtn link={'/map'}/>
 
             <QuizTitle quizName={'DLPT 2 +'} quizTxt={'Choose type of tasks'} />
 

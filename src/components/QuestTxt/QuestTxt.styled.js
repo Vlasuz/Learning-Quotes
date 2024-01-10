@@ -56,7 +56,7 @@ export const QuestTxtStyle = styled.div`
         }
     }
 
-    .translation{
+    .translations{
         padding: 12px;
         border-radius: 8px;
         background: #FDE7B6;
