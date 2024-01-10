@@ -46,12 +46,17 @@ export const VocabularyStyle = styled.div`
             transition: all .3s ease;
             margin: 0 auto;
             margin-top: auto;
+            transition: all .3s ease;
 
             color: #FFF;
             text-align: center;
             font-size: 20px;
             font-weight: 700;
             line-height: 32px;
+
+            &:hover{
+                background: #DD6D55;
+            }
         }
 
         &__list{

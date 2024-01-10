@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import HTMLReactParser from 'html-react-parser';
 import { QuestTxtStyle } from './QuestTxt.styled'
+import { Vocabulary } from '../Vocabulary/Vocabulary'
 
 import VocabularyPh from '../../assets/img/vocabulary.png'
-import { Vocabulary } from '../Vocabulary/Vocabulary'
 
 export const QuestTxt = ({questTitle, questTask}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export const QuestTxt = ({questTitle, questTask}) => {
             {questTitle}
         </h2>
         <p>
-            {questTask}
+            {HTMLReactParser(questTask)}
         </p>
         <button className="vocabulary" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
@@ -25,6 +26,8 @@ export const QuestTxt = ({questTitle, questTask}) => {
                 Vocabulary
             </p>
         </button>
+
+        
 
         {isOpen ? <Vocabulary onClose={() => setIsOpen(false)}/> : null }
     </QuestTxtStyle>

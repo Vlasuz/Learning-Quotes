@@ -85,10 +85,15 @@ export const QuestResultStyle = styled.div`
         background: #FCA08B;
         padding: 16px;
         margin-top: auto;
+        transition: all .3s ease;
 
         color: #FFF;
         font-size: 20px;
         font-weight: 700;
+
+        &:hover{
+            background: #DD6D55;
+        }
     }
 
     .close__btn{

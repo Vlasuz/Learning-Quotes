@@ -38,4 +38,21 @@ export const QuestTxtStyle = styled.div`
     img{
         max-width: 200px;
     }
+
+    span{
+        color: #FF5C00;
+        transition: all .3s ease;
+        display: inline-block;
+        width: fit-content;
+        cursor: pointer;
+
+        &:after{
+            display: block;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #FF5C00;
+            margin-top: -4px;
+        }
+    }
 `

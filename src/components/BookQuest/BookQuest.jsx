@@ -13,10 +13,11 @@ import { QuestResult } from '../QuestResult/QuestResult'
 export const BookQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
   const [questResult, setQuestResult] = useState(false);
-  const currentQuestion = questData[currentQuestionIn];
+  const filteredReadingQuestions = questData.filter(question => question.type !== 'book-reading');
+  const currentQuestion = filteredReadingQuestions[currentQuestionIn];
 
   const handleNextQuestion = () => {
-    if (currentQuestionIn < questData.length -1) {
+    if (currentQuestionIn < filteredReadingQuestions.length -1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
     } else {
       setQuestResult(true);
