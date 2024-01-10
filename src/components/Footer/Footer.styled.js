@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FooterStyle = styled.div`
     padding: 24px 0;
     background: #fff;
+    margin-top: auto;
 
     .footer{
         &__inner{

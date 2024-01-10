@@ -1,3 +1,4 @@
+import { NotFound } from "../components/NotFound/NotFound"
 import { ReadingQuest } from "../components/ReadingQuest/ReadingQuest"
 import { Area } from "../pages/Area/Area"
 import { ChooseLang } from "../pages/ChooseLang/ChooseLang"
@@ -82,7 +83,7 @@ export const routes = () => {
         },
         {
             path: '*',
-            element: 'not found'
+            element: <NotFound/>
         },
     ]
 }
