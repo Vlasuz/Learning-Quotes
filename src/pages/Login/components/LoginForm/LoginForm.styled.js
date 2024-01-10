@@ -149,6 +149,10 @@ export const LoginFormStyle = styled.form`
                 background: #FBAC79;
                 border: 1px solid #FBAC79;
             }
+            &:disabled:hover{
+                background: #F2CCB3;
+                border: 1px solid #F2CCB3;
+            }
         }
 
         .sign{
@@ -157,6 +161,9 @@ export const LoginFormStyle = styled.form`
 
             &:hover{
                 border: 1px solid #FBAC79;
+            }
+            &:disabled:hover{
+                border: 1px solid #EAEAEA;           
             }
         }
 

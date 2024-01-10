@@ -10,6 +10,7 @@ import { ButtonForm } from '../../../../components/ButtonForm/ButtonForm'
 
 
 export const LoginForm = () => {
+    const [disabled, setDisabled] = useState(false);
     const [pass, setPass] = useState('');
     const [email, setEmail] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -23,6 +24,7 @@ export const LoginForm = () => {
 
     const submitForm = (evt) => {
         evt.preventDefault();
+        setDisabled(true);
         setTimeout(() => {
             if (status === 'success') {
                 resetForm();
@@ -72,7 +74,7 @@ export const LoginForm = () => {
             </NavLink>
         </div>
         <div className="form__input__buttons">
-                <ButtonForm buttonTxt={'Log In'} isFill={true}/>
+            <ButtonForm buttonTxt={'Log In'} isFill={true} disabled={disabled}/>
             
             <NavLink className='navlink' to={'/sign-up'}>
                 <ButtonForm buttonTxt={'Sign Up'} isFill={false}/>

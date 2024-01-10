@@ -1,8 +1,9 @@
 import React from 'react'
 
-export const ButtonForm = ({buttonTxt, isFill}) => {
+export const ButtonForm = ({ buttonTxt, isFill, disabled }) => {
+
   return (
-    <button className={isFill ? 'log' : 'sign'} >
+    <button disabled={disabled} className={isFill ? 'log' : 'sign'} >
         {buttonTxt}
     </button>
   )
