@@ -21,7 +21,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
             <p>
                 {HTMLReactParser(questTask)}
             </p>
-            {/* <div className="translations">
+            <div className="translations">
                 <div className="translations__container">
                     <h2>
                         Translation: 
@@ -31,7 +31,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
                     </p>
                 </div>
                 <button>Add to vocablyary</button>
-            </div> */}
+            </div>
         </div>
         <button className="vocabulary" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
