@@ -30,7 +30,12 @@ export const Header = () => {
                         Login
                     </NavLink>
                 </div>
-                <img className='header__burger' src={headerMenu} alt="menu icon" />
+                <div className="header__mob">
+                    <img className='header__burger' src={headerMenu} alt="menu icon" />
+                    <div className="header__burger__body">
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </HeaderStyle>

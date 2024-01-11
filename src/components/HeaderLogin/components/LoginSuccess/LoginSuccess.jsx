@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import headerMenu from '../../../../assets/img/icons/header_menu.svg'
@@ -8,14 +8,26 @@ export const LoginSuccess = () => {
     const [profileOpen, setProfileOpen] = useState(false);
 
     const handleProfileOpen = () => {
-        setProfileOpen(!profileOpen)
+    setProfileOpen(!profileOpen);
+    };
 
-        if (!profileOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'visible';
-        }
-    }
+    useEffect(() => {
+        const handleBodyOverflow = () => {
+          document.body.style.overflow = profileOpen ? 'hidden' : 'visible';
+        };
+    
+        handleBodyOverflow(); // Встановлюємо початковий стан при рендері
+    
+        window.addEventListener('resize', handleBodyOverflow);
+    
+        // Функція для очищення
+        const cleanup = () => {
+          document.body.style.overflow = 'visible'; // Розблоковуємо прокрутку тіла при розмонтуванні компонента
+          window.removeEventListener('resize', handleBodyOverflow);
+        };
+    
+        return cleanup;
+    }, [profileOpen]);
 
   return (
     <>
