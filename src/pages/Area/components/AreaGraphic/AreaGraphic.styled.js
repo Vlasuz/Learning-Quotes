@@ -54,7 +54,7 @@ export const AreaGraphicStyle = styled.div`
             &:nth-child(6){
                 background: url(${BgdDesk6}) no-repeat;
                 background-size: calc(100% + 40px);
-                background-position: -20px -30px;
+                background-position: -20px -35px;
 
                 .column{
                     height: 110px;
@@ -73,6 +73,12 @@ export const AreaGraphicStyle = styled.div`
             margin-top: 15px;
             display: flex;
             gap: 10px;
+            
+            &_center{
+                overflow: hidden;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
         }
 
         &__num{
@@ -174,6 +180,65 @@ export const AreaGraphicStyle = styled.div`
                 height: 100%;
                 max-height: 0%;
             }
+        }
+
+        .widget{
+
+            span{
+                color: #FFF;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 16.721px;
+                margin-bottom: 13px;
+            }
+        }
+
+        #progress,
+        #progress::before,
+        #progress::after {
+        background-color: transparent;
+        box-sizing: border-box; 
+        width: 8em;
+        height: 4em;
+        }
+
+        #progress {
+        display: flex;
+        align-items: end;
+        justify-content: center;  
+        font-size: 1.5rem;
+        position: relative; 
+        
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        border: 1.25em solid #B49696;
+        border-bottom: 0;
+        }
+
+        #progress::before{
+        display: block;
+        content: '';
+        position:absolute;
+        top: -1.25em;
+        left: -1.25em;
+        }
+
+        #progress::before {  
+        height: 8em;
+        background-color: transparent;
+        border-radius: 100px; 
+        border: 1.25em solid #CEFFA7;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        
+        transform: rotate(-5deg);
+        }
+
+        #progress::after {
+        top: initial;
+        bottom: -4em;  
+        width: 8em;
+        z-index: 2;
         }
     }
 `

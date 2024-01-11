@@ -8,17 +8,18 @@ import { AreaOwner } from './components/AreaOwner/AreaOwner'
 export const Area = () => {
   return (
     <div className='container-login'>
-        <AreaStyle>
-            <div className="area__top">
-                <AreaPrize/>
+      <AreaStyle>
+        <div className="area__top">
+          <AreaPrize/>
 
-                <AreaOwner/>
-                
-                <AreaStats/>
-            </div>
+          <AreaOwner/>
+          
+          <AreaStats/>
+        </div>
 
-            <AreaGraphic/>
-        </AreaStyle>
+        <AreaGraphic/>
+
+      </AreaStyle>
     </div>
   )
 }

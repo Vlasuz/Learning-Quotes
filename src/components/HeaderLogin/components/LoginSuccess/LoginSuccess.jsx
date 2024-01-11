@@ -8,7 +8,7 @@ export const LoginSuccess = () => {
     const [profileOpen, setProfileOpen] = useState(false);
 
     const handleProfileOpen = () => {
-    setProfileOpen(!profileOpen);
+        setProfileOpen(!profileOpen);
     };
 
     useEffect(() => {

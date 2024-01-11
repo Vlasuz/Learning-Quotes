@@ -2,6 +2,7 @@ import React from 'react'
 import { AreaGraphicStyle } from './AreaGraphic.styled'
 
 export const AreaGraphic = () => {
+
   return (
     <AreaGraphicStyle>
         <ul className='graphic'>
@@ -414,12 +415,15 @@ export const AreaGraphic = () => {
                 <h2>
                     Chance Success
                 </h2>
-                <div className="graphic__con">
+                <div className="graphic__con graphic__con_center">
                     <ul className='graphic__stats'>
                         <li>
-                            <div className="column">
-                                <div className="column__green"></div>
-                                <div className="column__red"></div>
+                            <div className="widget">
+                                <div id="progress">
+                                    <span className='progress__span'>
+                                        85%
+                                    </span>
+                                </div>
                             </div>
                         </li>
                     </ul>
