@@ -1,7 +1,8 @@
 import React from 'react'
 import { HeaderStyle } from './Header.styled'
-import headerMenu from '../../assets/img/icons/header_menu.svg'
 import { NavLink } from 'react-router-dom'
+
+import headerMenu from '../../assets/img/icons/header_menu.svg'
 
 export const Header = () => {
   return (

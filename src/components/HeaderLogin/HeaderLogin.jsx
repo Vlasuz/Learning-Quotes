@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { HeaderLoginStyle } from './HeaderLogin.styled'
-import headerMenu from '../../assets/img/icons/header_menu.svg'
+import { LoginButtons } from './components/LoginButtons/LoginButtons'
+import { LoginSuccess } from './components/LoginSuccess/LoginSuccess'
 
 export const HeaderLogin = () => {
+
   return (
     <div className='container-login'>
         <HeaderLoginStyle>
@@ -12,15 +14,11 @@ export const HeaderLogin = () => {
                     Language Quests
                 </h2>
             </NavLink>
-            <div className="header__login">
-                <NavLink to={'/login'} className='header__login_log'>
-                    Login
-                </NavLink>
-                <NavLink to={'/sign-up'} href="foo" className='header__login_sign'>
-                    Sign Up
-                </NavLink>
-            </div>
-            <img className='header__burger' src={headerMenu} alt="menu icon" />
+
+            {
+                window.location.href.includes('quiz-start') ? <LoginSuccess/> : <LoginButtons/>
+            }
+
         </HeaderLoginStyle>
     </div>
   )

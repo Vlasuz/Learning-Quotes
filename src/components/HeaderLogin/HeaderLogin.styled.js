@@ -9,6 +9,7 @@ export const HeaderLoginStyle = styled.div`
     background: #FFF;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
+    position: relative;
 
     h2{
         font-size: 20px;
@@ -53,6 +54,101 @@ export const HeaderLoginStyle = styled.div`
         display: none;
         max-width: 24px;
         cursor: pointer;
+    }
+
+    .header__profile{
+        display: flex;
+        align-items: center;
+    
+        h3{
+            color: #ECF0FF;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+        }
+        h2{
+            color: #1F2937;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 150%;
+            margin-right: 12px;
+        }
+        &__img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #9e6b58;
+            margin-right: 12px;
+        }
+
+        &__list{
+
+        }
+    }
+    .profile__list__head{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .profile__list__body{
+        position: absolute;
+        top: 112px;
+        right: 10px;
+        z-index: 9;
+
+        border-radius: 8px;
+        border: 1px solid #FFF;
+        background: #FFF;
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 270px;
+        padding: 12px;
+
+        a{
+            display: block;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            padding: 12px;
+            border-radius: 10px;
+            background: transparent;
+            width: 100%;
+            transition: all .3s ease;
+            text-align: start;
+
+            &:hover{
+                background: #EFD2BF;
+            }
+        }
+
+        li{
+            margin-bottom: 8px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .profile__list__bgd{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        margin-top: 110px;
+
+        background: rgba(0, 0, 0, 0.50);
+        filter: blur(10px);
+        z-index: 8;
     }
 
     @media screen and (max-width: 768px) {
