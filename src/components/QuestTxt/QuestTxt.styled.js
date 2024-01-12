@@ -5,6 +5,7 @@ export const QuestTxtStyle = styled.div`
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%;
 
     h2{
         color: #000;
@@ -26,13 +27,12 @@ export const QuestTxtStyle = styled.div`
 
     .vocabulary{
         margin-top: auto;
+        display: block;
 
-        p{
-            color: #000;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: normal;
-        }
+        color: #000;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: normal;
     }
 
     img{
@@ -111,6 +111,12 @@ export const QuestTxtStyle = styled.div`
             &:hover{
                 background: #E9AB83;
             }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        img{
+            max-width: 150px;
         }
     }
 `

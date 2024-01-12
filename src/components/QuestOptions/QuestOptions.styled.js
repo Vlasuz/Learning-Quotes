@@ -42,8 +42,6 @@ export const QuestOptionsStyle = styled.ul`
         display: flex;
         align-items: center;
         cursor: pointer;
-        width: 100%;
-        max-width: 500px;
 
         color: #1C274C;
         font-size: 24px;
@@ -63,4 +61,33 @@ export const QuestOptionsStyle = styled.ul`
         margin-left: auto;
     }
 
+    @media screen and (max-width: 768px) {
+        margin-top: 20px !important;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    @media screen and (max-width: 575px) {
+        padding: 0 0px !important;
+
+        label{
+            text-align: center;
+            font-size: 20px;
+            flex-direction: column;
+        }
+
+        span{
+            width: 35px;
+            height: 35px;
+            margin-right: 0;
+        }
+
+        .correct{
+            img{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
 `

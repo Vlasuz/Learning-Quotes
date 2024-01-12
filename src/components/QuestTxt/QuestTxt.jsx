@@ -35,9 +35,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
         </div>
         <button className="vocabulary" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
-            <p>
                 Vocabulary
-            </p>
         </button>
 
         

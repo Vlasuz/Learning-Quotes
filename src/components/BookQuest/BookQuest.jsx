@@ -35,74 +35,64 @@ export const BookQuest = () => {
     // Обробка відповідей
   }
 
-  const renderBookQuestTxt = () => {
-    return  <QuestTxt 
-        questTitle={currentQuestion.titleDesc} 
-        questTask={currentQuestion.description} 
-      />
-  }
-
-  const renderBookQuestionsQuest = () => {
-    return <QuestionsQuest
-      key={currentQuestion.id}
-      questionTxt={'Question'}
-      questionNum={currentQuestion.questionNum}
-      questionTitle={currentQuestion.question}
-    />
-  }
-
-  const renderBookQuestOption = () => {
-    return <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>
-  }
-
-  const renderListeningListeningQuestion = () => {
-    return <ListeningQuestion 
-      questTitle={currentQuestion.titleDesc} 
-      questDesc ={currentQuestion.description} 
-      audioUrls={currentQuestion.audioUrl}
-    />
-  }
-
-  const renderKeyQuestOptionsKey = () => {
-    return <QuestOptionsKey
-      questions={currentQuestion.questions}
-    />
-  }
-  
-  const renderKeyKeywordsQuestion = () => {
-    return <KeywordsQuestion 
-      questTitle={currentQuestion.titleDesc}
-      questWords={currentQuestion.words}
-    />
-  }
-
   return (
     <BookQuestStyle>
-        <div className="book">
-            <div className="book__lft">
+      <div className="book">
+        <div className="book__lft">
 
-              {currentQuestion.type === 'book' && renderBookQuestTxt()}
-              {currentQuestion.type === 'book-listening' && renderListeningListeningQuestion()}
-              {currentQuestion.type === 'book-keywords' && renderKeyKeywordsQuestion()}
+          {currentQuestion.type === 'book' && <QuestTxt 
+              questTitle={currentQuestion.titleDesc} 
+              questTask={currentQuestion.description} 
+            />
+          }
 
-            </div>
+          {currentQuestion.type === 'book-listening' && <ListeningQuestion 
+              questTitle={currentQuestion.titleDesc} 
+              questDesc ={currentQuestion.description} 
+              audioUrls={currentQuestion.audioUrl}
+            />
+          }
 
-            <div className="book__rht">
+          {currentQuestion.type === 'book-keywords' && <KeywordsQuestion 
+              questTitle={currentQuestion.titleDesc}
+              questWords={currentQuestion.words}
+            />
+          }
 
-              {currentQuestion.type === 'book-listening' && renderBookQuestionsQuest()}
-              {currentQuestion.type === 'book' && renderBookQuestionsQuest()}
-
-              {currentQuestion.type === 'book-listening' && renderBookQuestOption()}
-              {currentQuestion.type === 'book' && renderBookQuestOption()}
-
-              {currentQuestion.type === 'book-keywords' && renderKeyQuestOptionsKey()}
-
-            </div>
         </div>
 
-        {questResult && <QuestResult onClose={() => setQuestResult(false)}/>}
+        <div className="book__rht">
 
-        <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/>
+          {currentQuestion.type === 'book-listening' && <QuestionsQuest
+              key={currentQuestion.id}
+              questionTxt={'Question'}
+              questionNum={currentQuestion.questionNum}
+              questionTitle={currentQuestion.question}
+            />
+          }
+
+          {currentQuestion.type === 'book' && <QuestionsQuest
+              key={currentQuestion.id}
+              questionTxt={'Question'}
+              questionNum={currentQuestion.questionNum}
+              questionTitle={currentQuestion.question}
+            />
+          }
+
+          {currentQuestion.type === 'book-listening' && <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>}
+          {currentQuestion.type === 'book' && <QuestOptions currentQuestion={currentQuestion} answerClick={handleAnswer}/>}
+
+          {currentQuestion.type === 'book-keywords' && <QuestOptionsKey
+              questions={currentQuestion.questions}
+            />
+          }
+
+        </div>
+      </div>
+
+      {questResult && <QuestResult onClose={() => setQuestResult(false)}/>}
+
+      <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/>
 
     </BookQuestStyle>
   )

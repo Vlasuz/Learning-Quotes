@@ -4,9 +4,8 @@ import RamkaBgd from '../../assets/img/questionRamka.png'
 
 export const QuestionsQuestStyle = styled.div`
     background: url(${RamkaBgd}) no-repeat;
-    background-size: cover;
-    padding: 70px;
-    height: 310px;
+    background-size: 100% 100%;
+    padding: 70px 80px 140px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -32,5 +31,9 @@ export const QuestionsQuestStyle = styled.div`
         font-weight: 400;
         line-height: 28px;
         max-width: 390px;
+    }
+
+    @media screen and (max-width: 575px){
+        padding: 55px 44px 65px;
     }
 `
