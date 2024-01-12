@@ -118,17 +118,35 @@ export const MapStyle = styled.div`
 
     .buttonsLink{
         display: block;
-        width: 200px;
-        height: 200px;
+        width: 13vw;
+        height: 13vw;
         position: absolute;
     }
 
     .leader__board{       
-        right: 127px;
-        top: 421px;
+        right: 8vw;
+        top: 28vw;
     }
     .training__swamp{
-        right: 92px;
-        bottom: 308px;
+        right: 6vw;
+        bottom: 20vw;
+    }
+
+    @media screen and (max-width: 1024px){
+        .leader__board{       
+            right: 10vw;
+            top: 32vw;
+        }
+        .training__swamp{
+            right: 8vw;
+            bottom: 25vw;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .leader__board{       
+            right: 10vw;
+            top: 34vw;
+        }
     }
 `
