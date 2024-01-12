@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import headerMenu from '../../../../assets/img/icons/header_menu.svg'
 import headerProfileArr from '../../../../assets/img/icons/arrow-down.svg'
 
 export const LoginSuccess = () => {
@@ -63,7 +62,6 @@ export const LoginSuccess = () => {
                 )}
             </div>
         </div>
-        <img className='header__burger' src={headerMenu} alt="menu icon" />
     </>
   )
 }

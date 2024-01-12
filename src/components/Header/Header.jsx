@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HeaderStyle } from './Header.styled'
 import { NavLink } from 'react-router-dom'
 
 import headerMenu from '../../assets/img/icons/header_menu.svg'
 
 export const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpenMenu = () => {
+        setIsOpen(!isOpen);
+    }
   return (
     <HeaderStyle>
         <div className='container-main'>
@@ -31,10 +36,21 @@ export const Header = () => {
                     </NavLink>
                 </div>
                 <div className="header__mob">
-                    <img className='header__burger' src={headerMenu} alt="menu icon" />
-                    <div className="header__burger__body">
-                        
-                    </div>
+                    <img onClick={handleOpenMenu} className='header__burger' src={headerMenu} alt="menu icon" />
+                    {isOpen ? (
+                        <ul className="header__burger__body">
+                            <li>
+                                <NavLink to={'/sign-up'} href="foo">
+                                    Sign Up
+                                </NavLink>                            
+                            </li>
+                            <li>
+                                <NavLink to={'/login'} className=''>
+                                    Login
+                                </NavLink>
+                            </li>
+                        </ul>
+                    ) : (null)}
                 </div>
             </div>
         </div>

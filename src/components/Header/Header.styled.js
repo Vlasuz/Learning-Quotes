@@ -50,6 +50,41 @@ export const HeaderStyle = styled.div`
             transform: rotateY(180deg);
         }
 
+        &__burger__body{
+            position: absolute;
+            transition: all .3s ease;
+            left: 0;
+            top: 70px;
+            background: #fff;
+            border-radius: 0 0 15px 15px;
+            padding: 12px;
+            width: 100%;
+
+            li{
+                margin-bottom: 15px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+
+            a{
+                display: block;
+                color: #333;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+                padding: 12px;
+                border-radius: 10px;
+                transition: all .3s ease;
+                text-align: center;
+
+                &:hover{
+                    background: #EFD2BF;
+                }
+            }
+
+        }
+
     }
 
     h2{
