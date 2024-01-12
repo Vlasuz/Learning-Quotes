@@ -1,10 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { QuestResultStyle } from './QuestResult.styled'
 
 import CorrectIc from '../../assets/img/icons/correct.svg'
 import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
-import { Link } from 'react-router-dom'
 
 export const QuestResult = ({ onClose }) => {
   return (

@@ -20,9 +20,9 @@ export const QuestResultStyle = styled.div`
         z-index: 11;
 
         background: url(${ResultsBgd}) no-repeat;
-        background-size: cover;
-        height: 690px;
-        width: 755px;
+        background-size: 100% 100%;
+        width: 100%;
+        max-width: 678px;
         padding: 60px 60px;
 
         display: flex;
@@ -101,5 +101,23 @@ export const QuestResultStyle = styled.div`
         position: absolute;
         top: 50px;
         right: 60px;
+    }
+
+    @media screen and (max-width: 768px){
+        .question{
+            p{
+                font-size: 28px;
+            }
+
+            li{
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .results {
+            h2{
+                font-size: 34px;
+            }
+        }
     }
 `
