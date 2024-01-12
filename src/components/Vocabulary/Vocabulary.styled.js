@@ -18,15 +18,15 @@ export const VocabularyStyle = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 11;
-        width: 755px;
-        height: 690px;
+        width: 100%;
+        max-width: 586px;
         padding: 70px 30px 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         background: url(${VocabularyBgd}) no-repeat;
-        background-size: cover;
+        background-size: 100% 100%;
 
         &__close{
             width: 40px;
@@ -100,5 +100,9 @@ export const VocabularyStyle = styled.div`
         font-size: 24px;
         font-weight: 700;
         line-height: normal;
+    }
+
+    @media screen and (max-width: 768px){
+        
     }
 `
