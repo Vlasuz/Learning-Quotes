@@ -8,7 +8,7 @@ import BgdDesk4 from '../../assets/img/tavern-desc-4.png'
 
 export const TavernStyle = styled.div`
     background: url(${BgdTaverna}) no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     padding: 57px 60px 200px;
     margin: 24px 0 52px;
 
@@ -34,8 +34,11 @@ export const TavernStyle = styled.div`
     }
 
     .desk{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Три стовпці в рядку */
+        grid-template-rows: repeat(1, 1fr); /* Два рядки */
         gap: 30px;
+        
         &__item{
             background: url(${BgdDesk1}) no-repeat;
             background-size: calc(100% + 70px);

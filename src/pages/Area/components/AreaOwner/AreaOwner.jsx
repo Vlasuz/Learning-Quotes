@@ -6,7 +6,7 @@ import Owner from '../../../../assets/img/owner1.png'
 export const AreaOwner = () => {
   return (
     <AreaOwnerStyle>
-        <img src={Owner} alt="owner ph" />
+      <img src={Owner} alt="owner ph" />
     </AreaOwnerStyle>
   )
 }

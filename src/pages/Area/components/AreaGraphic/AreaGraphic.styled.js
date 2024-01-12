@@ -13,7 +13,6 @@ export const AreaGraphicStyle = styled.div`
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* Три стовпці в рядку */
         grid-template-rows: repeat(2, 1fr); /* Два рядки */
-        padding: 0 60px;
         gap: 35px;
         justify-content: center;
         align-items: center;
@@ -23,6 +22,8 @@ export const AreaGraphicStyle = styled.div`
             background-size: calc(100% + 70px);
             background-position: -35px;
             padding: 30px 25px;
+            width: 340px;
+            margin: 0 auto;
 
             &:nth-child(2){
                 background: url(${BgdDesk2}) no-repeat;
@@ -157,52 +158,53 @@ export const AreaGraphicStyle = styled.div`
               }  
             }
         }
+    }
 
-        .column{
+    .column{
+        height: 100%;
+        width: 25px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        &__green{
+            border-radius: 4px;
+            background: #CEFFA7;
+            margin-bottom: 2px;
             height: 100%;
-            width: 25px;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-
-            &__green{
-                border-radius: 4px;
-                background: #CEFFA7;
-                margin-bottom: 2px;
-                height: 100%;
-                margin-top: auto;
-                max-height: 0%;
-            }
-
-            &__red{
-                border-radius: 4px;
-                background: #FCA08B;
-                height: 100%;
-                max-height: 0%;
-            }
+            margin-top: auto;
+            max-height: 0%;
         }
 
-        .widget{
-
-            span{
-                color: #FFF;
-                font-size: 30px;
-                font-weight: 700;
-                line-height: 16.721px;
-                margin-bottom: 13px;
-            }
+        &__red{
+            border-radius: 4px;
+            background: #FCA08B;
+            height: 100%;
+            max-height: 0%;
         }
+    }
 
-        #progress,
-        #progress::before,
-        #progress::after {
+    .widget{
+
+        span{
+            color: #FFF;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 16.721px;
+            margin-bottom: 13px;
+        }
+    }
+
+    #progress,
+    #progress::before,
+    #progress::after {
         background-color: transparent;
         box-sizing: border-box; 
         width: 8em;
         height: 4em;
-        }
+    }
 
-        #progress {
+    #progress {
         display: flex;
         align-items: end;
         justify-content: center;  
@@ -213,17 +215,17 @@ export const AreaGraphicStyle = styled.div`
         border-top-right-radius: 100px;
         border: 1.25em solid #B49696;
         border-bottom: 0;
-        }
+    }
 
-        #progress::before{
+    #progress::before{
         display: block;
         content: '';
         position:absolute;
         top: -1.25em;
         left: -1.25em;
-        }
+    }
 
-        #progress::before {  
+    #progress::before {  
         height: 8em;
         background-color: transparent;
         border-radius: 100px; 
@@ -232,13 +234,27 @@ export const AreaGraphicStyle = styled.div`
         border-right-color: transparent;
         
         transform: rotate(-5deg);
-        }
+    }
 
-        #progress::after {
+    #progress::after {
         top: initial;
         bottom: -4em;  
         width: 8em;
         z-index: 2;
+    }
+
+    @media screen and (max-width: 1200px) {        
+        .graphic{
+            gap: 20px 0;
+            grid-template-columns: repeat(2, 1fr); /* Три стовпці в рядку */
+            grid-template-rows: repeat(3, 1fr); /* Два рядки */
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .graphic{
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
     }
 `

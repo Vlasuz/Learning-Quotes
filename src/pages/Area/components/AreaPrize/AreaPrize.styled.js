@@ -33,6 +33,15 @@ export const AreaPrizeStyle = styled.div`
             position: relative;
             z-index: 2;
         }
+
+        @media screen and (max-width: 575px) {
+            li{
+                &:nth-child(2) {
+                    margin-left: 0;
+                    margin-top: 15px;
+                }
+            }
+        }
     }
 
 `

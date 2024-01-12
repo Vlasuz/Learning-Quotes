@@ -4,9 +4,11 @@ import StatusBgd from '../../../../assets/img/statusList.png'
 
 export const AreaStatsStyle = styled.div`
     background: url(${StatusBgd}) no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     padding: 50px 60px;
     margin-top: 30px;
+    width: 100%;
+    max-width: 350px;
 
     h2{
         color: #000;
@@ -54,5 +56,25 @@ export const AreaStatsStyle = styled.div`
         &:hover{
             background: #437BAD;
         }
+    }
+
+    @media screen and (max-width: 1024px) {
+        max-width: 300px;
+        padding: 20px 40px;
+    }
+
+    @media screen and (max-width: 992px) {
+        max-width: 270px;
+
+        h2{
+            font-size: 28px;
+        }
+        h3{
+            font-size: 20px;
+        }
+        a{
+            font-size: 20px;
+        }
+
     }
 `

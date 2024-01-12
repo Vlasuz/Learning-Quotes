@@ -15,4 +15,17 @@ export const AreaStyle = styled.div`
         justify-content: space-between;
         margin-bottom: 70px;
     }
+
+    @media screen and (max-width: 1200px) {
+        padding: 25px 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        
+        .area__top{
+            margin-bottom: 30px;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
 `
