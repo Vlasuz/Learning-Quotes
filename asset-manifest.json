@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.8872064e.js",
+    "main.js": "/Learning-Quotes/static/js/main.65d6e950.js",
     "static/media/Map.png": "/Learning-Quotes/static/media/Map.33f2d5b75caf2063cbf4.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
@@ -31,6 +31,7 @@
     "static/media/Background-sw-2.svg": "/Learning-Quotes/static/media/Background-sw-2.7c05e8483d8b49f182df75afdc14ad9f.svg",
     "static/media/shelf2.png": "/Learning-Quotes/static/media/shelf2.219567f626213d5cbf92.png",
     "static/media/shelf1.png": "/Learning-Quotes/static/media/shelf1.6c13197e32a56c7ab607.png",
+    "static/media/questionRamka2.png": "/Learning-Quotes/static/media/questionRamka2.0ab5f493008ad3608445.png",
     "static/media/questionRamka.png": "/Learning-Quotes/static/media/questionRamka.41c286505684b2496c80.png",
     "static/media/img-slide2.png": "/Learning-Quotes/static/media/img-slide2.73a102e594302c133efb.png",
     "static/media/img-slide.png": "/Learning-Quotes/static/media/img-slide.9c38c0b226b5152a76aa.png",
@@ -66,10 +67,10 @@
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.8872064e.js.map": "/Learning-Quotes/static/js/main.8872064e.js.map"
+    "main.65d6e950.js.map": "/Learning-Quotes/static/js/main.65d6e950.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.8872064e.js"
+    "static/js/main.65d6e950.js"
   ]
 }
