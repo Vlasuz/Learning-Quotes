@@ -61,8 +61,6 @@ export const QuestTxtStyle = styled.div`
         border-radius: 8px;
         background: #FDE7B6;
         position: absolute;
-        top: 40px;
-        right: -30px;
         width: 100%;
         max-width: 320px;
         display: flex;
@@ -76,9 +74,9 @@ export const QuestTxtStyle = styled.div`
             width: 100%;
         }
 
-        &__pos{
+        /* &__pos{
             position: relative;
-        }
+        } */
 
         p,
         h2{
