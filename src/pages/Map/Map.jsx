@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import { MapStyle } from './Map.styled'
 
 import BigMap from '../../assets/img/Map.png'
 import ArrowDesc from '../../assets/img/icons/arrow-descrip.svg'
-import { NavLink } from 'react-router-dom'
+import setCookie from '../../functions/setCookie'
+import getCookie from '../../functions/getCookie'
+
+const tutorialCookie = 'tutorialCompleted'
 
 export const Map = () => {
     const [popUpId, setPopUpId] = useState(0);
@@ -130,14 +134,6 @@ export const Map = () => {
         },
     ]
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setPopUp(true);
-        }, 1500)
-
-        return () => clearTimeout(timeout);
-    }, [])
-
     const nextDescription = () => {
         setPopUp(false);
 
@@ -150,7 +146,20 @@ export const Map = () => {
 
     const endDescription = (() => {
         setPopUp(false)
+        setCookie(tutorialCookie, 'true')
     })
+
+    useEffect(() => {
+        const completedTutorial = getCookie(tutorialCookie) === 'true';
+
+        const timeout = setTimeout(() => {
+            if (!completedTutorial) {
+                setPopUp(true);
+            }
+        }, 1500)
+
+        return () => clearTimeout(timeout);
+    }, [])
 
   return (
     <div className='container-main-pages'>
