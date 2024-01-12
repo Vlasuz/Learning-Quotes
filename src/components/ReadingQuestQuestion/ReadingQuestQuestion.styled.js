@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-import RamkaBgd from '../../assets/img/questionRamka.png' 
+import RamkaBgd from '../../assets/img/questionRamka2.png' 
 
 export const ReadingQuestQuestionStyle = styled.div`
     background: url(${RamkaBgd}) no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     max-width: 780px;
     text-align: center;
-    height: 400px;
-    padding: 90px 80px;
+    padding: 40px 70px 90px;
     margin: 0 auto;
     margin-bottom: 40px;
 
@@ -18,6 +17,7 @@ export const ReadingQuestQuestionStyle = styled.div`
         font-weight: 700;
         line-height: normal;
         margin-bottom: 18px;
+        position: relative;
     }
 
     p{
@@ -26,5 +26,15 @@ export const ReadingQuestQuestionStyle = styled.div`
         font-weight: 400;
         line-height: normal;
         
+    }
+
+    @media screen and (max-width: 768px) {
+        h2{
+            font-size: 28px;
+        }
+
+        p{
+            font-size: 28px;
+        }
     }
 `

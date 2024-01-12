@@ -35,6 +35,7 @@ export const ReadingQuest = () => {
   return (
     <div className='container-login'>
       <ReadingQuestStyle>
+
         <ReadingQuestQuestion
           testTitle={currentQuestion ? currentQuestion.titleDesc : ''}
           testNumber={currentQuestion ? currentQuestion.questionNum : ''}
@@ -44,12 +45,12 @@ export const ReadingQuest = () => {
         <ReadindQuestOption currentQuestion={currentQuestion} />
 
         <NavigationQuest
-          Styles={{ marginTop: '55px', paddingRight: '50px' }}
           nextPage={handleNextQuestion}
           prevPage={handlePrevQuestion}
         />
 
         {questResult && <QuestResult onClose={() => setQuestResult(false)} />}
+
       </ReadingQuestStyle>
     </div>
   );

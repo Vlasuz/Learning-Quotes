@@ -7,5 +7,8 @@ export const ReadingQuestStyle = styled.div`
   background: url(${PageBgd}) no-repeat;
   background-size: cover;
   padding: 50px 40px 25px;
-  
+
+  @media screen and (max-width: 768px) {
+    padding: 30px 10px;
+  }
 `

@@ -4,7 +4,8 @@ export const NavigationQuestStyle = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: auto;
+    margin-top: 55px;
+    padding-right: 50px;
 
     button{
         display: flex;
@@ -28,6 +29,6 @@ export const NavigationQuestStyle = styled.div`
     }
 
     @media screen and (max-width: 768px) {
-        margin-top: 50px;
+        padding-right: 0;
     }
 `
