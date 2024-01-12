@@ -5,10 +5,11 @@ export const LangSlideStyle = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 189px 30px 32px;
+    padding: 189px 30px 110px;
     border-radius: 64px;
     border: 1px solid #EAEAEA;
     height: 100%;
+    max-width: 624px;
 
     img{
         max-width: 369px;
@@ -58,9 +59,10 @@ export const LangSlideStyle = styled.div`
         max-width: 336px;
     }
 
-    @media screen and (max-width: 768px) {
-        padding: 30px;
 
+    @media screen and (max-width: 768px) {
+        max-width: none;
+        
         .slide__photo{
             margin-bottom: 22px;
         }

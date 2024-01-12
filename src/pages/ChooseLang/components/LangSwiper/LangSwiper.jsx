@@ -40,8 +40,7 @@ export const LangSwiper = () => {
                         txt={'Some Text will be here'} 
                         description={'Arabic'} 
                     />
-                </LangSlideStyle>
-                    
+                </LangSlideStyle>                 
             </SwiperSlide>
             <SwiperSlide>
                 <LangSlideStyle>

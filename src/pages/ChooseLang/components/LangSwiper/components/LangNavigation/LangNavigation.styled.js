@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const LangNavigationStyle = styled.div`
-    margin-top: 96px;
     display: flex;
     gap: 16px;
     position: absolute;
@@ -9,6 +8,7 @@ export const LangNavigationStyle = styled.div`
     left: 50%;
     transform: translate(-50%);
     z-index: 8;
+
     
 
     button{
@@ -28,9 +28,5 @@ export const LangNavigationStyle = styled.div`
     img{
         max-width: 16px;
         height: 16px;
-    }
-
-    @media screen and (max-width: 768px) {
-        margin-top: 20px;
     }
 `

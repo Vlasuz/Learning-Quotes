@@ -59,6 +59,7 @@ export const HeaderStyle = styled.div`
             border-radius: 0 0 15px 15px;
             padding: 12px;
             width: 100%;
+            z-index: 11;
 
             li{
                 margin-bottom: 15px;
