@@ -38,15 +38,15 @@ export const TavernStyle = styled.div`
         grid-template-columns: repeat(4, 1fr); /* Три стовпці в рядку */
         grid-template-rows: repeat(1, 1fr); /* Два рядки */
         gap: 30px;
-        
+
         &__item{
             background: url(${BgdDesk1}) no-repeat;
             background-size: calc(100% + 70px);
             background-position: -35px -30px;
-            width: 100%;
-            max-width: 300px;
+            width: 295px;
             height: 460px;
             padding: 20px 20px;
+            margin: 0 auto;
 
             &:nth-child(2){
                 background: url(${BgdDesk2});
@@ -148,6 +148,33 @@ export const TavernStyle = styled.div`
             font-weight: 700;
             line-height: 150%;
 
+        }
+    }
+
+    @media screen and (max-width: 1390px){
+        padding: 57px 20px 200px;
+
+        .desk{
+            gap: 10px;
+        }
+    }
+    @media screen and (max-width: 1300px){
+        padding: 57px 20px 50px;
+        .desk{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .back__btn{
+            margin-bottom: 30px;
+        }
+    }
+    @media screen and (max-width: 700px){
+        padding: 30px 20px;
+        
+        .desk{
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(4, 1fr);
         }
     }
 `
