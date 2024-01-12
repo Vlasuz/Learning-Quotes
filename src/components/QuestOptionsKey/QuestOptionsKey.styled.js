@@ -71,4 +71,14 @@ export const QuestOptionsKeyStyle = styled.div`
             margin-bottom: 0;
         }    
     }
+
+    @media screen and (max-width: 768px){
+        padding: 0;
+    }
+
+    @media screen and (max-width: 575px){
+        ul{
+            flex-direction: column;
+        }
+    }
 `

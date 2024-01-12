@@ -37,6 +37,8 @@ export const KeywordsQuestionStyle = styled.div`
         border-radius: 12px;
         border: 1px solid #000;
         background: transparent;
+        width: 100%;
+        max-width: 300px;
 
         color: #000;
         font-size: 24px;
@@ -44,4 +46,15 @@ export const KeywordsQuestionStyle = styled.div`
         line-height: normal;
     }
 
+    @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+
+        p{
+            font-size: 24px;
+        }
+
+        h2{
+            margin-bottom: 25px;
+        }
+    }
 `

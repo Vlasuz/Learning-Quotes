@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import BookBgd from '../../assets/img/bookBgd.JPG'
+import BookBgdMob from '../../assets/img/pageBgd.jpg'
 
 export const BookQuestStyle = styled.div`
     margin: 32px 0 56px;
@@ -34,7 +35,9 @@ export const BookQuestStyle = styled.div`
     }
 
     @media screen and (max-width: 768px) {
-        margin: 20px 0 0px;
+        background: url(${BookBgdMob}) no-repeat;
+        background-size: cover;
+        margin: 20px 0 30px;
         padding: 25px 25px 43px;
 
         .book{
