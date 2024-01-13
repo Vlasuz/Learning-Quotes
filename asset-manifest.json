@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.f4d61e31.js",
+    "main.js": "/Learning-Quotes/static/js/main.aa0aa97d.js",
     "static/media/Map.png": "/Learning-Quotes/static/media/Map.33f2d5b75caf2063cbf4.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
+    "static/media/leaderBoards.png": "/Learning-Quotes/static/media/leaderBoards.e2ec026d1c17194b2cfc.png",
     "static/media/audio-1.mp3": "/Learning-Quotes/static/media/audio-1.693cd9e996292a0f9ad5.mp3",
     "static/media/book.png": "/Learning-Quotes/static/media/book.dcee7394105afe9183d0.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
+    "static/media/trainingSwamp.png": "/Learning-Quotes/static/media/trainingSwamp.6d6130f3664313fc0536.png",
     "static/media/file-lesson.mp3": "/Learning-Quotes/static/media/file-lesson.6e66dd2f44af301c29a1.mp3",
     "static/media/owner1.png": "/Learning-Quotes/static/media/owner1.ded73c003ed97cbd2310.png",
     "static/media/area-bgd.jpg": "/Learning-Quotes/static/media/area-bgd.3830c336fd87f68a092c.jpg",
@@ -67,10 +69,10 @@
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.f4d61e31.js.map": "/Learning-Quotes/static/js/main.f4d61e31.js.map"
+    "main.aa0aa97d.js.map": "/Learning-Quotes/static/js/main.aa0aa97d.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.f4d61e31.js"
+    "static/js/main.aa0aa97d.js"
   ]
 }
