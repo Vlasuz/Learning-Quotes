@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { routes } from './functions/routes';
 import { Header } from './components/Header/Header';
 import { HeaderLogin } from './components/HeaderLogin/HeaderLogin';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export const App = () => {
 
@@ -15,13 +16,15 @@ export const App = () => {
   return (
     <AppStyled>
       {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />}
-
-        <Routes>
-          {routesList.map(route => 
-            <Route key={route.path} element={route.element} path={route.path} />
-          )}
-        </Routes>
-
+        <TransitionGroup component={null}>
+          <CSSTransition key={location.pathname} classNames='fade' timeout={300}>
+            <Routes location={location}>
+              {routesList.map(route => 
+                <Route key={route.path} element={route.element} path={route.path} />
+              )}
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
       <Footer/>
     </AppStyled>
   );

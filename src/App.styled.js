@@ -138,4 +138,24 @@ export const AppStyled = styled.div`
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
+
+  /* style from animation routes */
+
+  .fade-enter-active,
+  .fade-enter {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .fade-exit {
+    opacity: 0;
+    transition: all .3s ease;
+  }
+
+  .fade-enter-done {
+    opacity: 1;
+    transition: all .3s ease;
+  }
 `
