@@ -4,6 +4,7 @@ import { LangSwiper } from './components/LangSwiper/LangSwiper'
 import { LangLearn } from './components/LangLearn/LangLearn'
 
 export const ChooseLang = () => {
+
   return (
     <div className="container-main-pages">
       <LoginContainer>

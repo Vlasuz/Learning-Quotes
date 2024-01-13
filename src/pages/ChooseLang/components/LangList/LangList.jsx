@@ -6,10 +6,19 @@ import LangList_ph_2 from '../../../../assets/img/LangList-ph-2.png'
 import LangList_ph_3 from '../../../../assets/img/LangList-ph-3.png'
 
 export const LangList = () => {
+
+    const handleClickLang = () => {
+        console.log('hello');
+        document.querySelector('html').scrollTo({
+            top: 500,
+            behavior: 'smooth'
+        });
+    }
+
   return (
     <LangListStyle>
         <li>
-            <button className='arabic'>
+            <button onClick={handleClickLang} className='arabic'>
                 <img src={LangList_ph_1} alt="country ph" />
                 <h2>
                     Arabic  
@@ -17,7 +26,7 @@ export const LangList = () => {
             </button>
         </li>
         <li>
-            <button className='chinese'>
+            <button onClick={handleClickLang} className='chinese'>
                 <img src={LangList_ph_2} alt="country ph" />
                 <h2>
                     Chinese  
@@ -25,7 +34,7 @@ export const LangList = () => {
             </button>
         </li>
         <li>
-            <button className='russian'>
+            <button onClick={handleClickLang} className='russian'>
                 <img src={LangList_ph_3} alt="country ph" />
                 <h2>
                     Russian  

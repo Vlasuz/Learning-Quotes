@@ -141,7 +141,7 @@ export const AppStyled = styled.div`
 
   /* style from animation routes */
 
-  .fade-enter-active,
+  /* .fade-enter-active,
   .fade-enter {
     visibility: hidden;
     opacity: 0;
@@ -157,5 +157,5 @@ export const AppStyled = styled.div`
   .fade-enter-done {
     opacity: 1;
     transition: all .3s ease;
-  }
+  } */
 `

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MapStyle = styled.div`
     padding: 15px 0;
     position: relative;
+    overflow: hidden;
 
     h2{
         color: #1F2937;
@@ -26,6 +27,11 @@ export const MapStyle = styled.div`
             font-size: 12px;
             top: 15px;
         }
+    }
+
+    .big__map{
+        width: 1300px;
+        margin: 0 auto;
     }
 
     .description{
@@ -118,18 +124,43 @@ export const MapStyle = styled.div`
 
     .buttonsLink{
         display: block;
-        width: 13vw;
-        height: 13vw;
         position: absolute;
     }
 
-    .leader__board{       
-        right: 8vw;
-        top: 28vw;
+    .leader__board{
+        right: 7.7vw;
+        top: 27vw;
+        transition: all .3s ease;
+        img{
+            transition: all .3s ease;
+            max-width: 240px;
+        }
+        &:hover{
+            top: 26.5vw;
+            right: 7vw;
+            img{
+                max-width: 260px;
+            }
+        }
     }
+
     .training__swamp{
-        right: 6vw;
-        bottom: 20vw;
+        right: 4.9vw;
+        bottom: 21vw;
+        transition: all .3s ease;
+
+        img{
+            max-width: 260px;
+            transition: all .3s ease;
+        }
+
+        &:hover{
+            right: 3.5vw;
+            bottom: 21vw;
+            img{
+                max-width: 270px;
+            }
+        }
     }
 
     @media screen and (max-width: 1024px){
