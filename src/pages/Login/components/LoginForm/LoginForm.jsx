@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { LoginFormStyle } from './LoginForm.styled'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { Input } from '../../../../components/Input/Input'
+import { ButtonForm } from '../../../../components/ButtonForm/ButtonForm'
+
 import Apple from '../../../../assets/img/icons/apple.svg'
 import Facebook from '../../../../assets/img/icons/facebook.svg'
 import Google from '../../../../assets/img/icons/google.svg'
-import Discors from '../../../../assets/img/icons/discorc.svg'
-import { Input } from '../../../../components/Input/Input'
-import { ButtonForm } from '../../../../components/ButtonForm/ButtonForm'
+import Discord from '../../../../assets/img/icons/discord.svg'
 
 
 export const LoginForm = () => {
@@ -88,26 +89,26 @@ export const LoginForm = () => {
             <ul>
                 <li>
                     <a href="foo">
-                        <img src={Google} alt="google" />
+                        <img src={Google} alt="google ic" />
                         Google
                     </a>
                 </li>
                 <li>
                     <a href="foo">
-                        <img src={Apple} alt="apple" />
+                        <img src={Apple} alt="apple ic" />
                         Apple
                     </a>
                 </li>
                 <li>
                     <a href="foo">
-                        <img src={Facebook} alt="faceboock" />
+                        <img src={Facebook} alt="faceboock ic" />
                         Facebook
                     </a>
                 </li>
                 <li>
                     <a href="foo">
-                        <img src={Discors} alt="discors" />
-                        Discors
+                        <img src={Discord} alt="discord ic" />
+                        Discord
                     </a>
                 </li>
             </ul>
