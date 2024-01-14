@@ -1,15 +1,14 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.4876b004.js",
-    "static/media/Map.png": "/Learning-Quotes/static/media/Map.33f2d5b75caf2063cbf4.png",
+    "main.js": "/Learning-Quotes/static/js/main.ebd4c4b2.js",
+    "static/media/Map.png": "/Learning-Quotes/static/media/Map.f92a09be84d49a15a7ea.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
     "static/media/leaderBoards.png": "/Learning-Quotes/static/media/leaderBoards.e2ec026d1c17194b2cfc.png",
     "static/media/audio-1.mp3": "/Learning-Quotes/static/media/audio-1.693cd9e996292a0f9ad5.mp3",
     "static/media/book.png": "/Learning-Quotes/static/media/book.dcee7394105afe9183d0.png",
     "static/media/map-main.jpg": "/Learning-Quotes/static/media/map-main.d17b1fb25ac7303b1e67.jpg",
-    "static/media/trainingSwamp.png": "/Learning-Quotes/static/media/trainingSwamp.6d6130f3664313fc0536.png",
     "static/media/file-lesson.mp3": "/Learning-Quotes/static/media/file-lesson.6e66dd2f44af301c29a1.mp3",
     "static/media/owner1.png": "/Learning-Quotes/static/media/owner1.ded73c003ed97cbd2310.png",
     "static/media/area-bgd.jpg": "/Learning-Quotes/static/media/area-bgd.3830c336fd87f68a092c.jpg",
@@ -48,9 +47,9 @@
     "static/media/vocabulary.png": "/Learning-Quotes/static/media/vocabulary.7fdd66ad225b5a00f0b6.png",
     "static/media/play.svg": "/Learning-Quotes/static/media/play.9f343d6d81ead592db95212e895df290.svg",
     "static/media/cup.svg": "/Learning-Quotes/static/media/cup.7949a55a42b6e3c4a9e61ae7934d2d16.svg",
-    "static/media/discorc.svg": "/Learning-Quotes/static/media/discorc.364e8e4d8c5d3c61e4ade2b57f341719.svg",
     "static/media/Gamepad.svg": "/Learning-Quotes/static/media/Gamepad.cde3051a409fb9d5ed208f8e9b06f56b.svg",
     "static/media/Cup-First.svg": "/Learning-Quotes/static/media/Cup-First.3b8240421b25877c1d0bff93df805966.svg",
+    "static/media/discord.svg": "/Learning-Quotes/static/media/discord.d1d464bd6481a21fcde599e0d8699273.svg",
     "static/media/Folder.svg": "/Learning-Quotes/static/media/Folder.1d2def5b027f02fdab418dc4e04f667e.svg",
     "static/media/header_menu.svg": "/Learning-Quotes/static/media/header_menu.7deea540b602600dee78ca9653dcb5a0.svg",
     "static/media/arrow-descrip.svg": "/Learning-Quotes/static/media/arrow-descrip.9973f0260a1ac9ddd4f1b66d1c7b895b.svg",
@@ -68,11 +67,12 @@
     "static/media/arrow-down.svg": "/Learning-Quotes/static/media/arrow-down.152a4ec1c60032eb9dc9975dbbd27246.svg",
     "static/media/arrow-prev.svg": "/Learning-Quotes/static/media/arrow-prev.9f0c9b4ef42e300d4cc0611553be53c9.svg",
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
+    "static/media/Arrow-top-desk.svg": "/Learning-Quotes/static/media/Arrow-top-desk.d72086d0713d7527a411ec73f2d75d99.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.4876b004.js.map": "/Learning-Quotes/static/js/main.4876b004.js.map"
+    "main.ebd4c4b2.js.map": "/Learning-Quotes/static/js/main.ebd4c4b2.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.4876b004.js"
+    "static/js/main.ebd4c4b2.js"
   ]
 }
