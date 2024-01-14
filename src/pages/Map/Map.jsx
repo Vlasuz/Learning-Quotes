@@ -8,7 +8,7 @@ import getCookie from '../../functions/getCookie'
 import BigMap from '../../assets/img/Map.png'
 import ArrowDesc from '../../assets/img/icons/arrow-descrip.svg'
 import LeaderBoards from '../../assets/img/leaderBoards.png'
-import TrainingSwamp from '../../assets/img/trainingSwamp.png'
+// import TrainingSwamp from '../../assets/img/trainingSwamp.png'
 
 const tutorialCookie = 'tutorialCompleted'
 
@@ -166,17 +166,19 @@ export const Map = () => {
   return (
     <div className='container-main-pages'>
         <MapStyle>
-            <img className='big__map' src={BigMap} alt="main big map"/>
-            <h2>
-                Map
-            </h2>
+            <div className="map__container">
+                <img className='big__map' src={BigMap} alt="main big map"/>
+                <h2>
+                    Map
+                </h2>
 
-            <NavLink to={'/leader-board'} className='leader__board buttonsLink'>
-                <img src={LeaderBoards} alt="LeaderBoards ph" />
-            </NavLink>
-            <NavLink to={'/quiz-start'} className='training__swamp buttonsLink'>
-                <img src={TrainingSwamp} alt="trainingSwamp ph" />
-            </NavLink>
+                <NavLink to={'/leader-board'} className='leader__board buttonsLink'>
+                    <img src={LeaderBoards} alt="LeaderBoards ph" />
+                </NavLink>
+                {/* <NavLink to={'/quiz-start'} className='training__swamp buttonsLink'>
+                    <img src={TrainingSwamp} alt="trainingSwamp ph" />
+                </NavLink> */}
+            </div>
 
             {popUp && (
                 <div className="description" style={mapTxt[popUpId].style}>

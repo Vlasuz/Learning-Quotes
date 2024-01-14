@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const MapStyle = styled.div`
     padding: 15px 0;
-    position: relative;
-    overflow: hidden;
 
     h2{
         color: #1F2937;
@@ -27,11 +25,6 @@ export const MapStyle = styled.div`
             font-size: 12px;
             top: 15px;
         }
-    }
-
-    .big__map{
-        width: 1300px;
-        margin: 0 auto;
     }
 
     .description{
@@ -122,26 +115,86 @@ export const MapStyle = styled.div`
         }
     }
 
-    .buttonsLink{
-        display: block;
-        position: absolute;
+    .map__container{
+        position: relative;
+        overflow-x: hidden;
+
+        
+        @media screen and (max-width: 768px){
+            overflow-x: auto;
+        }
+
+        img{
+            width: 1200px;
+            margin: 0 auto;
+
+            @media screen and (max-width: 1240px){
+                width: 1000px;
+            }
+            @media screen and (max-width: 1024px){
+                width: 800px;
+            }
+            @media screen and (max-width: 840px){
+                width: 700px;
+            }
+        }
     }
 
+    /* .buttonsLink{
+        display: block;
+        position: absolute;
+    } */
+
     .leader__board{
-        right: 7.7vw;
-        top: 27vw;
+        position: absolute;
+        right: 8.7vw;
+        top: 20vw;
         transition: all .3s ease;
         img{
             transition: all .3s ease;
             max-width: 240px;
-        }
-        &:hover{
-            top: 26.5vw;
-            right: 7vw;
-            img{
-                max-width: 260px;
+            &:hover{
+                transform: scale(1.1);
             }
         }
+
+        @media screen and (max-width: 1550px){
+            right: 12vw;
+            top: 22vw;
+        }
+        @media screen and (max-width: 1360px){
+            right: 12vw;
+            top: 26vw;
+        }
+        @media screen and (max-width: 1240px){
+            right: 9vw;
+            top: 22vw;
+        }
+        @media screen and (max-width: 1024px){
+            right: 14vw;
+            top: 24vw;
+            img{
+                max-width: 140px;
+            }
+        }
+        @media screen and (max-width: 900px){
+            right: 10vw;
+            top: 27vw;
+        }
+        @media screen and (max-width: 840px){
+            right: 14vw;
+            top: 27vw;
+            img{
+                max-width: 100px;
+            }
+        }
+
+        /* @media screen and (max-width: 768px){
+            .leader__board{       
+                right: 10vw;
+                top: 34vw;
+            }
+        } */
     }
 
     .training__swamp{
@@ -161,23 +214,12 @@ export const MapStyle = styled.div`
                 max-width: 270px;
             }
         }
-    }
 
-    @media screen and (max-width: 1024px){
-        .leader__board{       
-            right: 10vw;
-            top: 32vw;
-        }
-        .training__swamp{
-            right: 8vw;
-            bottom: 25vw;
-        }
-    }
-
-    @media screen and (max-width: 768px){
-        .leader__board{       
-            right: 10vw;
-            top: 34vw;
+        @media screen and (max-width: 1024px){
+            .training__swamp{
+                right: 8vw;
+                bottom: 25vw;
+            }
         }
     }
 `
