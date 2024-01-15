@@ -22,6 +22,7 @@ export const AreaOwnerStyle = styled.div`
         bottom: -33px;
         right: -56px;
         z-index: 8;
+        cursor: pointer;
 
         h2{
             color: #000;
