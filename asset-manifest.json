@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.392b071d.css",
-    "main.js": "/Learning-Quotes/static/js/main.e157be5f.js",
+    "main.js": "/Learning-Quotes/static/js/main.95431274.js",
     "static/media/Map.png": "/Learning-Quotes/static/media/Map.f92a09be84d49a15a7ea.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
@@ -69,10 +69,10 @@
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "static/media/Arrow-top-desk.svg": "/Learning-Quotes/static/media/Arrow-top-desk.d72086d0713d7527a411ec73f2d75d99.svg",
     "main.392b071d.css.map": "/Learning-Quotes/static/css/main.392b071d.css.map",
-    "main.e157be5f.js.map": "/Learning-Quotes/static/js/main.e157be5f.js.map"
+    "main.95431274.js.map": "/Learning-Quotes/static/js/main.95431274.js.map"
   },
   "entrypoints": [
     "static/css/main.392b071d.css",
-    "static/js/main.e157be5f.js"
+    "static/js/main.95431274.js"
   ]
 }
