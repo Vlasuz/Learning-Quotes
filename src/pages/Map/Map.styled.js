@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const MapStyle = styled.div`
     padding: 15px 0;
+    display: flex;
+    justify-content: center;
 
     h2{
         color: #1F2937;
@@ -115,111 +117,212 @@ export const MapStyle = styled.div`
         }
     }
 
+    .map__main{
+        overflow: auto;
+    }
     .map__container{
         position: relative;
-        overflow-x: hidden;
-
-        
-        @media screen and (max-width: 768px){
-            overflow-x: auto;
-        }
+        width: 1200px;
 
         img{
-            width: 1200px;
+            width: 100%;
             margin: 0 auto;
+        }
 
-            @media screen and (max-width: 1240px){
-                width: 1000px;
-            }
-            @media screen and (max-width: 1024px){
-                width: 800px;
-            }
-            @media screen and (max-width: 840px){
-                width: 700px;
-            }
+        @media screen and (max-width: 1240px){
+            width: 1000px;
+        }
+        @media screen and (max-width: 1024px){
+            width: 700px;
         }
     }
 
-    /* .buttonsLink{
-        display: block;
-        position: absolute;
-    } */
-
     .leader__board{
         position: absolute;
-        right: 8.7vw;
-        top: 20vw;
+        right: 130px;
+        top: 390px;
         transition: all .3s ease;
         img{
             transition: all .3s ease;
-            max-width: 240px;
+            max-width: 160px;
             &:hover{
                 transform: scale(1.1);
             }
         }
 
-        @media screen and (max-width: 1550px){
-            right: 12vw;
-            top: 22vw;
-        }
-        @media screen and (max-width: 1360px){
-            right: 12vw;
-            top: 26vw;
-        }
         @media screen and (max-width: 1240px){
-            right: 9vw;
-            top: 22vw;
+            right: 84px;
+            top: 308px;
         }
         @media screen and (max-width: 1024px){
-            right: 14vw;
-            top: 24vw;
-            img{
-                max-width: 140px;
-            }
-        }
-        @media screen and (max-width: 900px){
-            right: 10vw;
-            top: 27vw;
-        }
-        @media screen and (max-width: 840px){
-            right: 14vw;
-            top: 27vw;
             img{
                 max-width: 100px;
             }
+            right: 69px;
+            top: 224px;
         }
-
-        /* @media screen and (max-width: 768px){
-            .leader__board{       
-                right: 10vw;
-                top: 34vw;
-            }
-        } */
     }
 
     .training__swamp{
-        right: 4.9vw;
-        bottom: 21vw;
+        position: absolute;
+        right: 88px;
+        bottom: 300px;
         transition: all .3s ease;
 
         img{
-            max-width: 260px;
             transition: all .3s ease;
-        }
-
-        &:hover{
-            right: 3.5vw;
-            bottom: 21vw;
-            img{
-                max-width: 270px;
+            max-width: 180px;
+            &:hover{
+                transform: scale(1.1);
             }
         }
 
+
+        @media screen and (max-width: 1240px){
+            right: 53px;
+            bottom: 229px;
+        }
         @media screen and (max-width: 1024px){
-            .training__swamp{
-                right: 8vw;
-                bottom: 25vw;
+            img{
+                max-width: 110px;
             }
+            right: 49px;
+            bottom: 169px;
+        }
+    }
+
+    .first__lvl{
+        position: absolute;
+        right: 295px;
+        bottom: 155px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 160px;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            right: 233px;
+            bottom: 110px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 100px;
+            }
+            right: 166px;
+            bottom: 86px;
+        }
+    }
+
+    .second__lvl{
+        position: absolute;
+        left: 350px;
+        bottom: 161px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 170px;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            left: 273px;
+            bottom: 122px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 110px;
+            }
+            left: 197px;
+            bottom: 90px;
+        }
+    }
+
+    .second__lvl__plus{
+        position: absolute;
+        top: 426px;
+        right: 324px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 150px;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            top: 340px;
+            right: 257px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 90px;
+            }
+            top: 251px;
+            right: 184px;
+        }
+    }
+
+    .ship__lvl{
+        position: absolute;
+        top: 444px;
+        left: 94px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 160px;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            top: 351px;
+            left: 70px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 100px;
+            }
+            top: 255px;
+            left: 51px;
+        }
+    }
+
+    .dlpt__lvl{
+        position: absolute;
+        top: 220px;
+        left: 540px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 180px;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            top: 173px;
+            left: 437px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 120px;
+            }
+            top: 125px;
+            left: 314px;
         }
     }
 `
