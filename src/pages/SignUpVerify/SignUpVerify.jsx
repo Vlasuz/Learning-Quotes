@@ -17,7 +17,7 @@ export const SignUpVerify = () => {
         evt.preventDefault();
         setTimeout(() => {
             if (status === 'success') {
-                console.log('code for verify success', { verification });
+                console.log('code for verify success', verification);
                 navigate('/choose-lang')
             } else if (status === 'wrong_pass') {
                 console.log('your pass is wrong!');
