@@ -7,6 +7,7 @@ import { routes } from './functions/routes';
 import { Header } from './components/Header/Header';
 import { HeaderLogin } from './components/HeaderLogin/HeaderLogin';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { ScrollBarStyle } from './ScrollBarStyle.styled';
 
 export const App = () => {
 
@@ -14,18 +15,22 @@ export const App = () => {
   const location = useLocation();
 
   return (
-    <AppStyled>
-      {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />}
-        <TransitionGroup component={null}>
-          <CSSTransition key={location.pathname} classNames='fade' timeout={300}>
-            <Routes location={location}>
-              {routesList.map(route => 
-                <Route key={route.path} element={route.element} path={route.path} />
-              )}
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
-      <Footer/>
-    </AppStyled>
+    <>
+      <ScrollBarStyle/>
+
+      <AppStyled>
+        {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />}
+          <TransitionGroup component={null}>
+            <CSSTransition key={location.pathname} classNames='fade' timeout={300}>
+              <Routes location={location}>
+                {routesList.map(route => 
+                  <Route key={route.path} element={route.element} path={route.path} />
+                )}
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
+        <Footer/>
+      </AppStyled>
+    </>
   );
 }
