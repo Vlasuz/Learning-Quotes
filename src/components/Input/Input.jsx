@@ -5,15 +5,26 @@ import Lock from '../../assets/img/icons/Lock.svg'
 import User from '../../assets/img/icons/User.svg'
 
 export const Input = ({type, label, placeholder, inputValue}) => {
-
-    const [value, setValue] = useState('')
+    const [error, setError] = useState('');
+    const [value, setValue] = useState('');
 
     const handleValue = (evt) => {
-        setValue(evt.target.value);
-        inputValue(evt.target.value);
+        const inputTargetValue = evt.target.value;
+        
+        setValue(inputTargetValue);
+        inputValue(inputTargetValue);
+
+        if (type === 'email') {
+            const emailRegex = /^[^\s@]+@[a-zA-Z0-9\-_.]+\.[a-z]{2,6}$/;
+            const isValidEmail = emailRegex.test(value);
+        
+            if (!isValidEmail) {
+                setError('Please enter a valid email address');
+            } else {
+                setError('');
+            }
+        }
     }
-
-
 
     const types = {
         email: {
@@ -34,7 +45,7 @@ export const Input = ({type, label, placeholder, inputValue}) => {
             <input
                 placeholder={placeholder}
                 type={type}
-                // id={type}
+                id={type}
                 value={value}
                 onChange={handleValue}
                 required
@@ -42,6 +53,8 @@ export const Input = ({type, label, placeholder, inputValue}) => {
         </label>
             <img src={types[type].icon} alt="mail or pass or user icons" />
         </div>
+
+        {error && <span>{error}</span>}
     </div>
   )
 }
