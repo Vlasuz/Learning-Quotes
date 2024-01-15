@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const ScrollBarStyle = createGlobalStyle`
     body::-webkit-scrollbar {
-        width: 12px;
+        width: 10px;
     }
 
     body::-webkit-scrollbar-track {
