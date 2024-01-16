@@ -6,7 +6,7 @@ import AudioImg from '../../assets/img/listening.png'
 
 export const ListeningQuestion = ({ questTitle, questDesc, audioUrls }) => {
   return (
-    <ListeningQuestionStyle>
+    <ListeningQuestionStyle className='animate__animated animate__fadeInLeft'>
         <h2>
           {questTitle}
         </h2>

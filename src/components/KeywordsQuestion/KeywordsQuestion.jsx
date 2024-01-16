@@ -3,7 +3,7 @@ import { KeywordsQuestionStyle } from './KeywordsQuestion.styled'
 
 export const KeywordsQuestion = ({ questTitle, questWords }) => {
   return (
-    <KeywordsQuestionStyle>
+    <KeywordsQuestionStyle className='animate__animated animate__fadeInLeft'>
         <h2>
             {questTitle}
         </h2>

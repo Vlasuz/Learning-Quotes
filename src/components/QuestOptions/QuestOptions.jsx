@@ -31,7 +31,7 @@ export const QuestOptions = ({ currentQuestion, answerClick }) => {
     }, [currentQuestion])
 
   return (
-    <QuestOptionsStyle>
+    <QuestOptionsStyle className='animate__animated animate__fadeInRight'>
         {currentQuestion.answers.map((answer) => (
             <li key={answer} onClick={() => answerClick(answer)}>
                 <label htmlFor={`t-${currentQuestion.id}-${answer}`}>                    

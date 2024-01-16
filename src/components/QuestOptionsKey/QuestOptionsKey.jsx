@@ -3,7 +3,7 @@ import { QuestOptionsKeyStyle } from './QuestOptionsKey.styled'
 
 export const QuestOptionsKey = ({ questions }) => {
   return (
-    <QuestOptionsKeyStyle>
+    <QuestOptionsKeyStyle className='animate__animated animate__fadeInRight'>
         {questions.map(question => (
             <div className='quest' key={question.questId}>
                 <h2>

@@ -50,7 +50,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
                 {HTMLReactParser(questTask)}
             </p>
             {isOpenTranslate ? (
-                <div className="translations" style={{top: blockY + 40, left: blockX}}>
+                <div className="translations" style={{top: blockY + 40, left: blockX - 100}}>
                     <div className="translations__container">
                         <h2>
                             Translation: 
