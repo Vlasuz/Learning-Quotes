@@ -8,20 +8,28 @@ import { Header } from './components/Header/Header';
 import { HeaderLogin } from './components/HeaderLogin/HeaderLogin';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ScrollBarStyle } from './ScrollBarStyle.styled';
+import { Loader } from './components/Loader/Loader';
 
 export const App = () => {
 
   const [routesList] = useState(routes());
   const location = useLocation();
+  const [loading, setLoading] = useState(false)
+
+  const toggleLoader = (value) => {
+    setLoading(value);
+  }
 
   return (
     <>
       <ScrollBarStyle/>
 
+      <Loader loading={loading}/>
+
       <AppStyled>
         {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />}
           <TransitionGroup component={null}>
-            <CSSTransition key={location.pathname} classNames='fade' timeout={300}>
+            <CSSTransition key={location.pathname} classNames='fade' timeout={300} onEnter={() => toggleLoader(true)} onExited={() => toggleLoader(false)}>
               <Routes location={location}>
                 {routesList.map(route => 
                   <Route key={route.path} element={route.element} path={route.path} />
