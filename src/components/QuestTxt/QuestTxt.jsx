@@ -42,10 +42,10 @@ export const QuestTxt = ({ questTitle, questTask }) => {
 
   return (
     <QuestTxtStyle>
-        <h2>
+        <h2 className='animate__animated animate__fadeIn'>
             {questTitle}
         </h2>
-        <div className='translations__pos'>
+        <div className='translations__pos animate__animated animate__fadeIn'>
             <p onClick={handleOpenTranslate}>
                 {HTMLReactParser(questTask)}
             </p>
@@ -63,7 +63,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
                 </div>
             ) : (null)}
         </div>
-        <button className="vocabulary" onClick={handleOpenVocabulary}>
+        <button className="vocabulary animate__animated animate__fadeIn" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
                 Vocabulary
         </button>

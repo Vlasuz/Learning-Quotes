@@ -17,6 +17,11 @@ export const HeaderStyle = styled.div`
                 font-size: 14px;
                 line-height: 18px;
                 color: #000;
+                transition: all .3s ease;
+
+                &:hover{
+                    color: #FBAC79;
+                }
             }
         }
 

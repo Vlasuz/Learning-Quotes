@@ -70,7 +70,7 @@ export const LoginForm = () => {
                     </span>
                 </label>
             </div>
-            <NavLink to={'/restore-password'} type='button'>
+            <NavLink to={'/restore-password'} type='button' className='forgot'>
                 Forgot Password?
             </NavLink>
         </div>

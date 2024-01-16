@@ -17,7 +17,7 @@ export const BookQuest = () => {
   const currentQuestion = filteredReadingQuestions[currentQuestionIn];
 
   const handleNextQuestion = () => {
-    if (currentQuestionIn < filteredReadingQuestions.length -1) {
+    if (currentQuestionIn < filteredReadingQuestions.length - 1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
     } else {
       setQuestResult(true);

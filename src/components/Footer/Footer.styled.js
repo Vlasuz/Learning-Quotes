@@ -35,6 +35,11 @@ export const FooterStyle = styled.div`
                 font-size: 12px;
                 line-height: 140%;
                 color: #111827;
+                transition: all .3s ease;
+
+                &:hover{
+                    color: #FBAC79;
+                }
             }
         }
     }

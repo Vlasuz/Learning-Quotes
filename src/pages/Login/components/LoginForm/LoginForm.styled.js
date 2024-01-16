@@ -110,6 +110,11 @@ export const LoginFormStyle = styled.form`
             display: flex;
             flex-direction: row-reverse;
             cursor: pointer;
+            transition: all .3s ease;
+
+            &:hover{
+                color: #FBAC79;
+            }
         }
 
         button{
@@ -118,12 +123,24 @@ export const LoginFormStyle = styled.form`
             line-height: 24px;
             color: #172239;
             cursor: pointer;
-            
         }
 
         &_in{
             display: flex;
             align-items: center;
+        }
+
+        .forgot{
+            color: #172239;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+            transition: all .3s ease;
+
+            &:hover{
+                color: #FBAC79;
+            }
         }
     }
 

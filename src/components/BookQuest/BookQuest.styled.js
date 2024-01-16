@@ -11,6 +11,7 @@ export const BookQuestStyle = styled.div`
     padding: 80px 100px 100px;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     overflow: hidden;
 
     .book{
