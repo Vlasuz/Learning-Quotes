@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LangListStyle } from './LangListStyle.styled'
 
 import LangList_ph_1 from '../../../../assets/img/LangList-ph-1.png'
@@ -6,9 +6,11 @@ import LangList_ph_2 from '../../../../assets/img/LangList-ph-2.png'
 import LangList_ph_3 from '../../../../assets/img/LangList-ph-3.png'
 
 export const LangList = () => {
+    const [isChoose, setIsChoose] = useState(null);
 
-    const handleClickLang = () => {
-        console.log('hello');
+    const handleClickLang = (lang) => {
+        console.log(`Selected language: ${lang}`);
+        setIsChoose(lang)
         document.querySelector('html').scrollTo({
             top: 500,
             behavior: 'smooth'
@@ -18,7 +20,7 @@ export const LangList = () => {
   return (
     <LangListStyle>
         <li>
-            <button onClick={handleClickLang} className='arabic'>
+            <button onClick={() => handleClickLang('arabic')} className={`arabic ${isChoose === 'arabic' ? 'selected' : ''}`}>
                 <img src={LangList_ph_1} alt="country ph" />
                 <h2>
                     Arabic  
@@ -26,7 +28,7 @@ export const LangList = () => {
             </button>
         </li>
         <li>
-            <button onClick={handleClickLang} className='chinese'>
+            <button onClick={() => handleClickLang('chinese')} className={`chinese ${isChoose === 'chinese' ? 'selected' : ''}`}>
                 <img src={LangList_ph_2} alt="country ph" />
                 <h2>
                     Chinese  
@@ -34,7 +36,7 @@ export const LangList = () => {
             </button>
         </li>
         <li>
-            <button onClick={handleClickLang} className='russian'>
+            <button onClick={() => handleClickLang('russian')} className={`russian ${isChoose === 'russian' ? 'selected' : ''}`}>
                 <img src={LangList_ph_3} alt="country ph" />
                 <h2>
                     Russian  

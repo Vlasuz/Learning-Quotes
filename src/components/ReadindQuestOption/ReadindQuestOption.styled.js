@@ -47,13 +47,17 @@ export const ReadindQuestOptionStyle = styled.div`
         max-width: 370px;
         height: 170px;
         padding: 20px 30px;
-        transition: all 0.3 ease;
-
+        
         color: #FFF;
         text-align: center;
         font-size: 32px;
         font-weight: 700;
         line-height: normal;
+        transition: all .3s ease;
+
+        &:hover{
+            transform: scale(1.05);
+        }
     }
 
     p{

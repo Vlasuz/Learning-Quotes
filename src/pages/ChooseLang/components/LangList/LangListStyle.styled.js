@@ -34,26 +34,23 @@ export const LangListStyle = styled.ul`
         background: #FFF;
         transition: all .3s ease;
     }
-
     .arabic{
-        &:active,
-        &:focus,
+        &.selected,
         &:hover{
             border: 2px solid #E1A073;
             background: #F5CFB6;
         }
     }
+
     .chinese{
-        &:active,
-        &:focus,
+        &.selected,
         &:hover{
             border: 2px solid #E39E9A;
             background: #E39E9A;
         }
     }
     .russian{
-        &:active,
-        &:focus,
+        &.selected,
         &:hover{
             border: 2px solid #8DAAC7;
             background: #8DAAC7;

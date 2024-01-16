@@ -11,7 +11,6 @@ export const TavernStyle = styled.div`
     background-size: 100% 100%;
     padding: 57px 60px 200px;
     margin: 24px 0 52px;
-    overflow: hidden;
 
     .back__btn{
         display: flex;

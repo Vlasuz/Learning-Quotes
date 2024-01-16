@@ -5,10 +5,10 @@ import { Featers } from './components/Featers/Featers'
 
 export const Main = () => {
   return (
-    <>
+    <div>
       <Banner />
       <Hero />
       <Featers />
-    </>
+    </div>
   )
 }

@@ -34,13 +34,24 @@ export const HeaderStyle = styled.div`
                 font-weight: 700;
                 line-height: 18px;
                 white-space: nowrap;
+                transition: all .3s ease;
+
+                &:hover{
+                    color: #FBAC79;
+                }
             }
 
             &_log{
                 padding: 11px 35px;
                 color: #fff;
                 background-color: #23232D;
+                border: 1px solid #23232D;
                 border-radius: 12px;
+                transition: all .3s ease;
+
+                &:hover{
+                    background-color: #fff;
+                }
             }
 
         }

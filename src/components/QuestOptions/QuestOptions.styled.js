@@ -47,6 +47,11 @@ export const QuestOptionsStyle = styled.ul`
         font-size: 24px;
         font-weight: 700;
         line-height: normal;
+        transition: all .3s ease;
+
+        &:hover{
+            transform: scale(1.05);
+        }
     }
 
     li{

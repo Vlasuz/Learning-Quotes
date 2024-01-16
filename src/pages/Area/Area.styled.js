@@ -7,7 +7,6 @@ export const AreaStyle = styled.div`
     background-size: cover;
     margin: 24px 0 52px;
     padding: 25px 90px 35px;
-    overflow: hidden;
 
     .area__top{
         display: flex;
