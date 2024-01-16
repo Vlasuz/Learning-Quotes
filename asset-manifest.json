@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.d3483ec6.css",
-    "main.js": "/Learning-Quotes/static/js/main.975b60ba.js",
+    "main.js": "/Learning-Quotes/static/js/main.a1fe1a3b.js",
     "static/media/Map.png": "/Learning-Quotes/static/media/Map.f92a09be84d49a15a7ea.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
@@ -63,8 +63,8 @@
     "static/media/google.svg": "/Learning-Quotes/static/media/google.a18df9f1a58430f4ee0ea37ecfc43077.svg",
     "static/media/Arrow-left.svg": "/Learning-Quotes/static/media/Arrow-left.e65f70c5655f00c3c9ea0b880c429455.svg",
     "static/media/facebook.svg": "/Learning-Quotes/static/media/facebook.98a0a34e07ccaf4d6aaf2955dc40f6a6.svg",
-    "static/media/close.svg": "/Learning-Quotes/static/media/close.ea0767bebf8b40b96d731ef385e25ad9.svg",
     "index.html": "/Learning-Quotes/index.html",
+    "static/media/close.svg": "/Learning-Quotes/static/media/close.ea0767bebf8b40b96d731ef385e25ad9.svg",
     "static/media/Letter.svg": "/Learning-Quotes/static/media/Letter.79080e240c7a402589af6ce1bfa94a93.svg",
     "static/media/Lock.svg": "/Learning-Quotes/static/media/Lock.1a91e1e6ee598c112e8dcf1febbba69d.svg",
     "static/media/User.svg": "/Learning-Quotes/static/media/User.435d733047743c0c371840b76fbcd7a7.svg",
@@ -75,10 +75,10 @@
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "static/media/Arrow-top-desk.svg": "/Learning-Quotes/static/media/Arrow-top-desk.d72086d0713d7527a411ec73f2d75d99.svg",
     "main.d3483ec6.css.map": "/Learning-Quotes/static/css/main.d3483ec6.css.map",
-    "main.975b60ba.js.map": "/Learning-Quotes/static/js/main.975b60ba.js.map"
+    "main.a1fe1a3b.js.map": "/Learning-Quotes/static/js/main.a1fe1a3b.js.map"
   },
   "entrypoints": [
     "static/css/main.d3483ec6.css",
-    "static/js/main.975b60ba.js"
+    "static/js/main.a1fe1a3b.js"
   ]
 }
