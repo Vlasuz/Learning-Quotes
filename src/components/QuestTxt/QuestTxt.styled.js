@@ -25,7 +25,7 @@ export const QuestTxtStyle = styled.div`
         max-width: 400px;
     }
 
-    .vocabulary{
+    .vocabulary__ph{
         margin-top: auto;
         display: block;
 
@@ -33,6 +33,14 @@ export const QuestTxtStyle = styled.div`
         font-size: 20px;
         font-weight: 700;
         line-height: normal;
+        transition: all .3s ease;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:focus{
+            transform: scale(0.95);
+        }
     }
 
     img{

@@ -17,12 +17,20 @@ export const QuizStartStyle = styled.div`
 
     a{
         text-align: center;
-
         color: #000;
         font-size: 32px;
         font-weight: 700;
         line-height: normal;
+        transition: all .3s ease;
+        animation-name: none;
+        &:hover{
+            transform: scale(1.1) !important;
+        }
+        &:focus{
+            transform: scale(0.95) !important;
+        }
     }
+
 
     img{
         max-width: 327px;
@@ -44,8 +52,7 @@ export const QuizStartStyle = styled.div`
         transition: all .3s ease;
 
         &:hover{
-            /* background: #DC3055; */
-            opacity: 0.5;
+            background: #b94231;
         }
     }
 

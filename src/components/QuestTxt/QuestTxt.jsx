@@ -63,7 +63,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
                 </div>
             ) : (null)}
         </div>
-        <button className="vocabulary animate__animated animate__fadeIn" onClick={handleOpenVocabulary}>
+        <button className="vocabulary__ph animate__animated animate__fadeIn" onClick={handleOpenVocabulary}>
             <img src={VocabularyPh} alt="book ph" />
                 Vocabulary
         </button>

@@ -140,7 +140,7 @@ export const HeaderLoginStyle = styled.div`
         position: absolute;
         top: 112px;
         right: 10px;
-        z-index: 9;
+        z-index: 12;
 
         border-radius: 8px;
         border: 1px solid #FFF;
@@ -189,7 +189,7 @@ export const HeaderLoginStyle = styled.div`
 
         background: rgba(0, 0, 0, 0.50);
         filter: blur(10px);
-        z-index: 8;
+        z-index:11;
     }
 
     @media screen and (max-width: 768px) {

@@ -19,7 +19,7 @@ export const Input = ({type, label, placeholder, inputValue}) => {
             const isValidEmail = emailRegex.test(value);
         
             if (!isValidEmail) {
-                setError('Please enter a valid email address');
+                setError(<span className='error__massage'>Please enter a valid email address</span>);
             } else {
                 setError('');
             }

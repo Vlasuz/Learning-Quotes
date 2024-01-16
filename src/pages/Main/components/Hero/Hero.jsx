@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeroStyle } from './Hero.styled'
-import mainMap from '../../../../assets/img/map-main.jpg'
+import mainMap from '../../../../assets/img/map-main.webp'
 
 export const Hero = () => {
   return (

@@ -16,7 +16,14 @@ export const NavigationQuestStyle = styled.div`
         font-size: 14px;
         font-weight: 700;
         line-height: 150%;
+        transition: all .3s ease;
 
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
     }
 
     img{

@@ -73,6 +73,11 @@ export const LoginFormStyle = styled.form`
         }
     }
 
+    .error__massage{
+        font-size: 14px;
+        color: red;
+    }
+
     .form__input__check{
         margin-top: 20px;
         display: flex;

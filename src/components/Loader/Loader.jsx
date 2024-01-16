@@ -8,7 +8,7 @@ export const Loader = ({ loading }) => {
         <Discuss
           height='100'
           width='100'
-          colors={['#000', '#000']}
+          colors={['#F2CCB3', '#F2CCB3']}
         />
     </LoaderStyle>
   )

@@ -7,8 +7,8 @@ import { LoginSuccess } from './components/LoginSuccess/LoginSuccess'
 export const HeaderLogin = () => {
 
   return (
-    <div className='container-login animate__animated animate__fadeInDown'>
-        <HeaderLoginStyle>
+    <div className='container-login' style={{position: 'relative', zIndex: '10'}}>
+        <HeaderLoginStyle className='animate__animated animate__fadeInDown'>
             <NavLink to={'/'}>
                 <h2>
                     Language Quests
@@ -16,7 +16,7 @@ export const HeaderLogin = () => {
             </NavLink>
 
             {
-                window.location.href.includes('quiz-start') ? <LoginSuccess/> : <LoginButtons/>
+                window.location.href.includes('map') ? <LoginSuccess/> : <LoginButtons/>
             }
         </HeaderLoginStyle>
     </div>

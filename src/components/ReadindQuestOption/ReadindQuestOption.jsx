@@ -32,7 +32,7 @@ export const ReadindQuestOption = ({ currentQuestion }) => {
                 <li key={answer}>
                     <label 
                         htmlFor={`q-${currentQuestion.id}-${answer}`}
-                        style={{opacity: selectedOptions.length > 0 && !selectedOptions.includes(answer) ? 0.5 : 1}}
+                        className={selectedOptions.length > 0 && !selectedOptions.includes(answer) ? 'disabled' : ''}
                     >
                         <p>{optionNum[currentQuestion.answers.indexOf(answer)]}</p>
 

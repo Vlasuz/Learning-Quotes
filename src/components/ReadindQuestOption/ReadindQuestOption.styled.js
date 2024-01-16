@@ -58,6 +58,18 @@ export const ReadindQuestOptionStyle = styled.div`
         &:hover{
             transform: scale(1.05);
         }
+        &:active{
+            transform: scale(0.95);
+        }
+
+        &.disabled:active,
+        &.disabled:hover{
+            transform: scale(1);
+        }
+        &.disabled{
+            opacity: 0.5;
+            cursor: default;
+        }
     }
 
     p{
