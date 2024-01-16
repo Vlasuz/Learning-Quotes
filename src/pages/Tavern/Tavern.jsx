@@ -13,7 +13,7 @@ export const Tavern = () => {
                 To Map
             </NavLink>
             <ul className="desk">
-                <li className='desk__item'>
+                <li className='desk__item animate__animated animate__fadeInLeft'>
                     <h2>
                         Лучший процент правильных ответов
                     </h2>
@@ -110,7 +110,7 @@ export const Tavern = () => {
                         </li>
                     </ul>
                 </li>
-                <li className='desk__item'>
+                <li className='desk__item animate__animated animate__fadeInLeft'>
                     <h2>
                         Лучший <br />в уровне 1+
                     </h2>
@@ -207,7 +207,7 @@ export const Tavern = () => {
                         </li>
                     </ul>
                 </li>
-                <li className='desk__item'>
+                <li className='desk__item animate__animated animate__fadeInRight'>
                     <h2>
                         Самый активный пользователь
                     </h2>
@@ -304,7 +304,7 @@ export const Tavern = () => {
                         </li>
                     </ul>
                 </li>
-                <li className='desk__item'>
+                <li className='desk__item animate__animated animate__fadeInRight'>
                     <h2>
                         Лучшие результаты (общый рейтинг)
                     </h2>

@@ -19,7 +19,7 @@ import SlideBgd_3 from '../../../../assets/img/icons/Background-sw-3.svg'
 
 export const LangSwiper = () => {
   return (
-    <SwiperContainerStyle>
+    <SwiperContainerStyle className='animate__animated animate__fadeInLeft'>
         <Swiper 
             style={{height: '100%'}}
             navigation={{

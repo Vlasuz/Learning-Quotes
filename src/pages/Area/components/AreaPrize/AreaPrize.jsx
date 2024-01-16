@@ -7,7 +7,7 @@ import Shelf2 from '../../../../assets/img/shelf2.png'
 
 export const AreaPrize = () => {
   return (
-    <AreaPrizeStyle>
+    <AreaPrizeStyle className='animate__animated animate__fadeInLeft'>
         <ul className='shelf__list'>
             <li>
                 <img className='shelf__list__cup' src={Cup} alt="cup ph" />

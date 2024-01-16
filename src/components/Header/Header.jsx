@@ -12,7 +12,7 @@ export const Header = () => {
     }
   return (
     <HeaderStyle>
-        <div className='container-main'>
+        <div className='container-main animate__animated animate__fadeInDown'>
             <div className="header">
                 <NavLink to={'/'}>
                     <h2>

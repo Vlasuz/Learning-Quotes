@@ -6,7 +6,7 @@ export const Banner = () => {
   return (
     <BannerStyle>
         <div className="container-main">
-            <div className="banner__inner">
+            <div className="banner__inner animate__animated animate__fadeIn">
                 <h1>
                     Some CTA Text Will <br />Be Here
                 </h1>

@@ -17,17 +17,17 @@ export const QuizStart = () => {
             <QuizTitle quizName={'DLPT 2 +'} quizTxt={'Choose type of tasks'} />
 
             <div className="select">
-                <NavLink to={'/listening-quest'}>
+                <NavLink to={'/listening-quest'} className='animate__animated animate__fadeInLeft'>
                     <img src={Listening} alt="Listening ph" />
                     Listening <br />Comprehension
                 </NavLink>
-                <NavLink to={'/reading-quest'}>
+                <NavLink to={'/reading-quest'} className='animate__animated animate__fadeInRight'>
                     <img src={Book} alt="Book ph" />
                     Reading <br />Comprehension
                 </NavLink>
             </div>
 
-            <button>Choose</button>
+            <button className='animate__animated animate__fadeInUp'>Choose</button>
 
         </QuizStartStyle>
     </div>

@@ -18,9 +18,9 @@ export const QuestOptions = ({ currentQuestion, answerClick }) => {
         setAnswerStat((prevStat) => ({
             ...prevStat,
             [answer]: answer === currentQuestion.correctAnswer ? (
-                <img src={CorrectIc} alt="correct ph" />
+                <img src={CorrectIc} alt="correct ph" className='animate__animated animate__fadeIn'/>
                 ) : (
-                <img src={InCorrectIc} alt="incorrect ph" />
+                <img src={InCorrectIc} alt="incorrect ph" className='animate__animated animate__fadeIn'/>
             )
         }))
     }

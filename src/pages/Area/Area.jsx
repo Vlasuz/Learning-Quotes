@@ -9,6 +9,7 @@ export const Area = () => {
   return (
     <div className='container-login'>
       <AreaStyle>
+      
         <div className="area__top">
           <AreaPrize/>
 

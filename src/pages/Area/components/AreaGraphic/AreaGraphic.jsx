@@ -4,7 +4,7 @@ import { AreaGraphicStyle } from './AreaGraphic.styled'
 export const AreaGraphic = () => {
 
   return (
-    <AreaGraphicStyle>
+    <AreaGraphicStyle className='animate__animated animate__fadeInUp'>
         <ul className='graphic'>
             <li className='graphic__item'>
                 <h2>

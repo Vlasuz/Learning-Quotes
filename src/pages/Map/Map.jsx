@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import 'animate.css';
 
 import { MapStyle } from './Map.styled'
 import setCookie from '../../functions/setCookie'
@@ -179,25 +180,25 @@ export const Map = () => {
                         Map
                     </h2>
 
-                    <NavLink to={'/leader-board'} className='leader__board'>
+                    <NavLink to={'/leader-board'} className='leader__board animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={LeaderBoards} alt="LeaderBoards ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='training__swamp'>
+                    <NavLink to={'/quiz-start'} className='training__swamp animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={TrainingSwamp} alt="trainingSwamp ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='first__lvl'>
+                    <NavLink to={'/quiz-start'} className='first__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={FirstLvl} alt="firstLvl ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='second__lvl'>
+                    <NavLink to={'/quiz-start'} className='second__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={SecondLvl} alt="secondLvl ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='second__lvl__plus'>
+                    <NavLink to={'/quiz-start'} className='second__lvl__plus animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={SecondLvlPlus} alt="secondLvlPlus ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='ship__lvl'>
+                    <NavLink to={'/quiz-start'} className='ship__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={ShipLvl} alt="shipLvl ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='dlpt__lvl'>
+                    <NavLink to={'/quiz-start'} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={DlptLvl} alt="dlpt ph" />
                     </NavLink>
 

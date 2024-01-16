@@ -3,7 +3,7 @@ import { AreaStatsStyle } from './AreaStats.styled'
 
 export const AreaStats = () => {
   return (
-    <AreaStatsStyle>
+    <AreaStatsStyle className='animate__animated animate__fadeInRight'>
         <h2>
             Anna
         </h2>

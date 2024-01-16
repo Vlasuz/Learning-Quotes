@@ -33,7 +33,7 @@ export const QuizAudio = () => {
   }, [wavesurfer]);
 
   return (
-    <QuizAudioStyle>
+    <QuizAudioStyle className='animate__animated animate__fadeIn'>
 
       <div className='audio'>
         <div style={{ display: 'flex', gap: '1em' }}>

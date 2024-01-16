@@ -7,7 +7,7 @@ import { LoginSuccess } from './components/LoginSuccess/LoginSuccess'
 export const HeaderLogin = () => {
 
   return (
-    <div className='container-login'>
+    <div className='container-login animate__animated animate__fadeInDown'>
         <HeaderLoginStyle>
             <NavLink to={'/'}>
                 <h2>
@@ -18,7 +18,6 @@ export const HeaderLogin = () => {
             {
                 window.location.href.includes('quiz-start') ? <LoginSuccess/> : <LoginButtons/>
             }
-
         </HeaderLoginStyle>
     </div>
   )

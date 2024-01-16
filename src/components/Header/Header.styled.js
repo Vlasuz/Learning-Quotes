@@ -40,9 +40,11 @@ export const HeaderStyle = styled.div`
 
         }
 
+        &__mob{
+            display: none;
+        }
         &__burger{
             max-width: 24px;
-            display: none;
             cursor: pointer;
             transition: all .3s ease;
         }
@@ -99,7 +101,7 @@ export const HeaderStyle = styled.div`
         padding: 20px 0;
 
         .header{
-            &__burger{
+            &__mob{
                 display: block;
             }
             &__review{

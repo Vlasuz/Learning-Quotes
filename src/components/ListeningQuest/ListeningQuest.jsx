@@ -14,11 +14,11 @@ export const ListeningQuest = ({ onClickNext }) => {
 
         <QuizTitle quizName={'DLPT 2 +.'} quizTxt={'Listen this audio'} />
 
-        <img className='audio__img' src={AudioImg} alt="audio ph" />
+        <img className='audio__img animate__animated animate__fadeIn' src={AudioImg} alt="audio ph" />
 
         <QuizAudio />
 
-        <button className='audio__next' onClick={onClickNext}>
+        <button className='audio__next animate__animated animate__fadeInUp' onClick={onClickNext}>
           Next
         </button>
 

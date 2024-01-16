@@ -6,7 +6,7 @@ import { ChooseTitle } from '../../../../components/ChooseTitle/ChooseTitle'
 
 export const LangLearn = () => {
   return (
-    <LangLearnContainer>
+    <LangLearnContainer className='animate__animated animate__fadeInRight'>
 
       <ChooseTitle title={'Choose Language'} desc={'Which language do  you want to learn?'} />
       

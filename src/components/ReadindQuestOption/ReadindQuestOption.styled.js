@@ -8,10 +8,12 @@ export const ReadindQuestOptionStyle = styled.div`
     }
     input {
         display: none;
+        transition: all 0.3 ease;
 
     }
     input:checked + span svg {
         display: block;
+        transition: all 0.3 ease;
     }
 
     span{
@@ -25,6 +27,7 @@ export const ReadindQuestOptionStyle = styled.div`
         position: absolute;
         bottom: 5px;
         right: 15px;
+        transition: all 0.3 ease;
 
         svg{
             width: 50px;
@@ -44,6 +47,7 @@ export const ReadindQuestOptionStyle = styled.div`
         max-width: 370px;
         height: 170px;
         padding: 20px 30px;
+        transition: all 0.3 ease;
 
         color: #FFF;
         text-align: center;

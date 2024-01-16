@@ -28,7 +28,7 @@ export const AreaOwner = () => {
   }, []);
 
   return (
-    <AreaOwnerStyle>
+    <AreaOwnerStyle className='animate__animated animate__fadeIn'>
       <img src={Owner} alt="owner ph" />
 
       {tutorPopUp && (

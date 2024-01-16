@@ -38,7 +38,7 @@ export const BookQuest = () => {
   return (
     <BookQuestStyle>
       <div className="book">
-        <div className="book__lft">
+        <div className="book__lft animate__animated animate__fadeInLeft">
 
           {currentQuestion.type === 'book' && <QuestTxt 
               questTitle={currentQuestion.titleDesc} 
@@ -61,7 +61,7 @@ export const BookQuest = () => {
 
         </div>
 
-        <div className="book__rht">
+        <div className="book__rht animate__animated animate__fadeInRight">
 
           {currentQuestion.type === 'book-listening' && <QuestionsQuest
               key={currentQuestion.id}

@@ -11,14 +11,14 @@ export const Featers = () => {
     <FeatersStyle>
         <div className="container-main">
 
-            <p className='featers__sub_title'>
+            <p className='featers__sub_title animate__animated animate__fadeInDown'>
                 Features
             </p>
-            <h2>
+            <h2 className='animate__animated animate__fadeInDown'>
                 We have incredible <br />features.
             </h2>
             <div className="featers">
-                <ul className="featers__list">
+                <ul className="featers__list animate__animated animate__fadeInLeft">
                     <li>
                         <div className="featers__icons featers__icons_first">
                             <img src={Cup} alt="Cup-First" />
@@ -59,7 +59,7 @@ export const Featers = () => {
                         </div>
                     </li>
                 </ul>
-                <img src={featersMap} alt="feathers map" />
+                <img src={featersMap} alt="feathers map" className='animate__animated animate__fadeInRight'/>
             </div>
         </div>
     </FeatersStyle>

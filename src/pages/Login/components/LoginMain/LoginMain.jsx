@@ -3,8 +3,8 @@ import { LoginMainStyle } from './LoginMain.styled'
 
 export const LoginMain = ({children}) => {
   return (
-    <LoginMainStyle>
-        {children}
+    <LoginMainStyle className='animate__animated animate__fadeInRight'>
+      {children}
     </LoginMainStyle>
   )
 }
