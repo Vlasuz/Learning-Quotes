@@ -57,7 +57,7 @@ export const MapStyle = styled.div`
         }
 
         img{
-            width: 60px;
+            max-width: 60px;
             height: 52px;
             position: absolute;
             top: 0;
@@ -148,6 +148,9 @@ export const MapStyle = styled.div`
             &:hover{
                 transform: scale(1.1);
             }
+            &:active{
+                transform: scale(0.95);
+            }
         }
 
         @media screen and (max-width: 1240px){
@@ -174,6 +177,9 @@ export const MapStyle = styled.div`
             max-width: 180px;
             &:hover{
                 transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.95);
             }
         }
 
@@ -203,6 +209,9 @@ export const MapStyle = styled.div`
             &:hover{
                 transform: scale(1.1);
             }
+            &:active{
+                transform: scale(0.95);
+            }
         }
 
         @media screen and (max-width: 1240px){
@@ -229,6 +238,9 @@ export const MapStyle = styled.div`
             max-width: 170px;
             &:hover{
                 transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.95);
             }
         }
 
@@ -257,6 +269,9 @@ export const MapStyle = styled.div`
             &:hover{
                 transform: scale(1.1);
             }
+            &:active{
+                transform: scale(0.95);
+            }
         }
 
         @media screen and (max-width: 1240px){
@@ -284,6 +299,9 @@ export const MapStyle = styled.div`
             &:hover{
                 transform: scale(1.1);
             }
+            &:active{
+                transform: scale(0.95);
+            }
         }
 
         @media screen and (max-width: 1240px){
@@ -310,6 +328,9 @@ export const MapStyle = styled.div`
             max-width: 180px;
             &:hover{
                 transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.95);
             }
         }
 

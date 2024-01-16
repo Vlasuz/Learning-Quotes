@@ -26,7 +26,7 @@ export const Map = () => {
             title: 'Meadow',
             desc: "Begin your journey in the Meadow, where you'll tackle foundational language challenges suitable for beginners. Perfect for getting a taste of what's to come",
             style:{
-                bottom: '-307px',
+                bottom: '40px',
                 left: '50%',
                 transform: 'translate(-50%)'
             },
@@ -39,8 +39,8 @@ export const Map = () => {
             title: 'Village',
             desc: "Advance to the Village to enhance your language skills. Here, the tasks get tougher, testing your growing knowledge and preparing you for intermediate challenges.",
             style:{
-                bottom: '-300px',
-                left: '226px'
+                bottom: '50px',
+                left: '76px'
             },
             arrowStyle:{
                 top: '-10px',
@@ -51,7 +51,7 @@ export const Map = () => {
             title: 'Gilded Tower',
             desc: "Ascend the Gilded Tower, where intricate language puzzles await. These tasks are designed for those who have mastered the basics and are ready to delve into more complex language constructs.",
             style:{
-                top: 'calc(50% + 335px)',
+                top: 'calc(50% + 100px)',
                 left: '50%',
                 transform: 'translate(-50%, -50%)'          
             },
@@ -64,8 +64,9 @@ export const Map = () => {
             title: 'Library',
             desc: "Wander through the Library, the realm of expert linguists. Here, the language tasks are extremely challenging, requiring top-tier proficiency and sharp wits.",
             style:{
-                bottom: '-70px',
-                left: '193px',
+                top: '50%',
+                left: '227px',
+                transform: 'translate(-50%)'
             },
             arrowStyle:{
                 top: '-55px',
@@ -77,8 +78,8 @@ export const Map = () => {
             title: 'Tavern (Leaderboards)',
             desc: "Visit the Tavern to see how you stack up against other adventurers. Check out the leaderboards to find your rank and compete with friends.",
             style:{
-                top: '607px',
-                right: '433px',
+                top: '510px',
+                right: '300px',
             },
             arrowStyle:{
                 top: '-50px',
@@ -90,7 +91,7 @@ export const Map = () => {
             title: 'Castle (DLPT):',
             desc: "Challenge yourself with a full DLPT simulation at the Castle. Take comprehensive tests to evaluate your readiness and see if you can achieve a knightly score",
             style:{
-                top: 'calc(50% + 304px)',
+                top: 'calc(50% + 73px)',
                 left: 'calc(50% - 100px)',
                 transform: 'translate(-50%, -50%)'
             },
@@ -104,8 +105,8 @@ export const Map = () => {
             title: 'Training Swamp',
             desc: "Dive into extra practice sessions in the Training Swamp. Here you can focus on specific skills and vocabulary to strengthen your command of the language.",
             style:{
-                bottom: '-251px',
-                right: '418px'
+                bottom: '72px',
+                right: '285px'
             },
             arrowStyle:{
                 top: '-45px',
@@ -117,8 +118,8 @@ export const Map = () => {
             title: 'Castle (The Citadel of Mastery):',
             desc: "The Voyager's Skiff awaits the brave linguists seeking to navigate the vast seas of language. Future updates will unlock this journey, expanding horizons beyond the current shores of knowledge",
             style:{
-                bottom: '-225px',
-                left: '218px'
+                bottom: '111px',
+                left: '73px'
             },
             arrowStyle:{
                 top: '-50px',
@@ -130,8 +131,8 @@ export const Map = () => {
             title: "Boat (The Voyager's Skiff):",
             desc: "The Citadel of Mastery stands tall for those who have conquered the linguistic landscape. It will be the future bastion for the most challenging tests and the crowning achievements of language mastery.",
             style:{
-                bottom: '-200px',
-                left: '218px'
+                bottom: '141px',
+                left: '73px'
             },
             arrowStyle:{
                 top: '-50px',
@@ -199,26 +200,26 @@ export const Map = () => {
                     <NavLink to={'/quiz-start'} className='dlpt__lvl'>
                         <img src={DlptLvl} alt="dlpt ph" />
                     </NavLink>
-                </div>
-            </div>
 
-            {popUp && (
-                <div className="description" style={mapTxt[popUpId].style}>
-                    <img src={ArrowDesc} alt="arrow desc" style={mapTxt[popUpId].arrowStyle}/>
-                    <h3>
-                        {mapTxt[popUpId].title}
-                    </h3>
-                    <p>
-                        {mapTxt[popUpId].desc}
-                    </p>
+                    {popUp && (
+                        <div className="description" style={mapTxt[popUpId].style}>
+                            <img src={ArrowDesc} alt="arrow desc" style={mapTxt[popUpId].arrowStyle}/>
+                            <h3>
+                                {mapTxt[popUpId].title}
+                            </h3>
+                            <p>
+                                {mapTxt[popUpId].desc}
+                            </p>
 
-                    {popUpId < mapTxt.length - 1 ? (
-                        <button onClick={nextDescription}>Next</button>
-                    ) : (
-                        <button onClick={endDescription}>Lets Start</button>
+                            {popUpId < mapTxt.length - 1 ? (
+                                <button onClick={nextDescription}>Next</button>
+                            ) : (
+                                <button onClick={endDescription}>Lets Start</button>
+                            )}
+                        </div>
                     )}
                 </div>
-            )}
+            </div>
         </MapStyle>
     </div>
   )
