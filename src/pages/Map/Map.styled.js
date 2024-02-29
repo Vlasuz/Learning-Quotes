@@ -287,6 +287,96 @@ export const MapStyle = styled.div`
         }
     }
 
+    .third__lvl{
+        position: absolute;
+        top: 470px;
+        left: 361px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 150px;
+            &:hover{
+                transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            top: 381px;
+            left: 275px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 90px;
+            }
+            top: 275px;
+            left: 205px;
+        }
+    }
+
+    .second__lvl__plus{
+        position: absolute;
+        top: 426px;
+        right: 324px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 150px;
+            &:hover{
+                transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            top: 340px;
+            right: 257px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 90px;
+            }
+            top: 251px;
+            right: 184px;
+        }
+    }
+
+    .cast__lvl{
+        position: absolute;
+        bottom: 270px;
+        left: 126px;
+        transition: all .3s ease;
+
+        img{
+            transition: all .3s ease;
+            max-width: 150px;
+            &:hover{
+                transform: scale(1.1);
+            }
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+
+        @media screen and (max-width: 1240px){
+            bottom: 204px;
+            left: 80px;
+        }
+        @media screen and (max-width: 1024px){
+            img{
+                max-width: 90px;
+            }
+            bottom: 150px;
+            left: 65px;
+        }
+    }
+
     .ship__lvl{
         position: absolute;
         top: 444px;

@@ -15,6 +15,8 @@ import SecondLvl from '../../assets/img/secondLvl.png'
 import SecondLvlPlus from '../../assets/img/secondLvlPlus.png'
 import ShipLvl from '../../assets/img/shipLvl.png'
 import DlptLvl from '../../assets/img/dlptLvl.png'
+import ThirdLvl from '../../assets/img/third-lvl.png'
+import Cast from '../../assets/img/csastle.png'
 
 const tutorialCookie = 'tutorialCompleted'
 
@@ -200,6 +202,12 @@ export const Map = () => {
                     </NavLink>
                     <NavLink to={'/quiz-start'} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={DlptLvl} alt="dlpt ph" />
+                    </NavLink>
+                    <NavLink to={'/quiz-start'} className='third__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                        <img src={ThirdLvl} alt="dlpt ph" />
+                    </NavLink>
+                    <NavLink to={'/quiz-start'} className='cast__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                        <img src={Cast} alt="dlpt ph" />
                     </NavLink>
 
                     {popUp && (
