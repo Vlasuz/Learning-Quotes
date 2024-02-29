@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Learning-Quotes/static/css/main.d3483ec6.css",
-    "main.js": "/Learning-Quotes/static/js/main.8778cb60.js",
+    "main.js": "/Learning-Quotes/static/js/main.c46b7351.js",
     "static/media/Map.png": "/Learning-Quotes/static/media/Map.f92a09be84d49a15a7ea.png",
     "static/media/listening.png": "/Learning-Quotes/static/media/listening.060ab3650ea9704bb8e2.png",
     "static/media/fet-map.png": "/Learning-Quotes/static/media/fet-map.323f564358a53e109d09.png",
@@ -26,6 +26,7 @@
     "static/media/statusList.png": "/Learning-Quotes/static/media/statusList.1b34dbcc7699122de033.png",
     "static/media/pageBgd.jpg": "/Learning-Quotes/static/media/pageBgd.59050a9f0f3c4385caeb.jpg",
     "static/media/vocabulary_bgd.png": "/Learning-Quotes/static/media/vocabulary_bgd.f802c07b8955ea0cdc96.png",
+    "static/media/third-lvl.png": "/Learning-Quotes/static/media/third-lvl.a971d922cf0ddf4d196e.png",
     "static/media/firstLvl.png": "/Learning-Quotes/static/media/firstLvl.a32f08e78194ef0a3a13.png",
     "static/media/secondLvl.png": "/Learning-Quotes/static/media/secondLvl.05711924600f612fbf17.png",
     "static/media/secondLvlPlus.png": "/Learning-Quotes/static/media/secondLvlPlus.556b5a26933636b0968e.png",
@@ -36,6 +37,7 @@
     "static/media/shelf2.png": "/Learning-Quotes/static/media/shelf2.219567f626213d5cbf92.png",
     "static/media/dlptLvl.png": "/Learning-Quotes/static/media/dlptLvl.c3586e7f9ee5fcde23ef.png",
     "static/media/shelf1.png": "/Learning-Quotes/static/media/shelf1.6c13197e32a56c7ab607.png",
+    "static/media/csastle.png": "/Learning-Quotes/static/media/csastle.bf8d5d0ba7af56cb653e.png",
     "static/media/questionRamka2.png": "/Learning-Quotes/static/media/questionRamka2.0ab5f493008ad3608445.png",
     "static/media/trainingSwamp.png": "/Learning-Quotes/static/media/trainingSwamp.3c7929319928fcc5c0a4.png",
     "static/media/questionRamka.png": "/Learning-Quotes/static/media/questionRamka.41c286505684b2496c80.png",
@@ -75,10 +77,10 @@
     "static/media/arrow-next.svg": "/Learning-Quotes/static/media/arrow-next.65c13e5af587c0816f35e3aaea523461.svg",
     "static/media/Arrow-top-desk.svg": "/Learning-Quotes/static/media/Arrow-top-desk.d72086d0713d7527a411ec73f2d75d99.svg",
     "main.d3483ec6.css.map": "/Learning-Quotes/static/css/main.d3483ec6.css.map",
-    "main.8778cb60.js.map": "/Learning-Quotes/static/js/main.8778cb60.js.map"
+    "main.c46b7351.js.map": "/Learning-Quotes/static/js/main.c46b7351.js.map"
   },
   "entrypoints": [
     "static/css/main.d3483ec6.css",
-    "static/js/main.8778cb60.js"
+    "static/js/main.c46b7351.js"
   ]
 }
