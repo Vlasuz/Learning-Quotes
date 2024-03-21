@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LoginFormStyle } from './LoginForm.styled'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Input } from '../../../../components/Input/Input'
 import { ButtonForm } from '../../../../components/ButtonForm/ButtonForm'
+import axios from 'axios'
+import { getApiLink } from '../../../../api/getApiLink'
 
 import Apple from '../../../../assets/img/icons/apple.svg'
 import Facebook from '../../../../assets/img/icons/facebook.svg'
@@ -15,9 +17,8 @@ export const LoginForm = () => {
     const [pass, setPass] = useState('');
     const [email, setEmail] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    const [status] = useState('success');
     const navigate = useNavigate();
-
+    const [error, setError] = useState('');
 
     const rememberMeChange = () => {
         setRememberMe(!rememberMe);
@@ -26,19 +27,31 @@ export const LoginForm = () => {
     const submitForm = (evt) => {
         evt.preventDefault();
         setDisabled(true);
-        setTimeout(() => {
-            if (status === 'success') {
-                resetForm();
-                navigate('/choose-lang')
-                console.log('login success', {
-                    pass, email, rememberMe
-                });
-            } else if (status === 'wrong_pass') {
-                console.log('your pass is wrong!');
-                // сюда функц с красніми полями
-            }
-        }, 1000); 
+        setError('');
+
+        axios.post(getApiLink(`/api/auth/login?email=${email}&password=${pass}`))
+        .then(({data}) => {
+            console.log(data, data.access_token);
+            resetForm();            
+            
+            axios.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;
+            axios.get(getApiLink('/api/user/me'))
+                .then(({data}) => {
+                    console.log('user-data', data);
+                    navigate('/map');
+                })
+                .catch((error) => {
+                    console.error("Failed to fetch user data:", error);
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
+
+    useEffect(() => {
+        
+    }, [])
 
     const resetForm = () => {
         setEmail('');
@@ -48,6 +61,7 @@ export const LoginForm = () => {
 
   return (
     <LoginFormStyle onSubmit={submitForm}>
+        <p>{error}</p>
         <div className="form__inner">
 
             <Input type={'email'} label={'Email Address'} inputValue={setEmail} placeholder={'Enter your Email'}/>
