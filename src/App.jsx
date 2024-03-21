@@ -2,13 +2,14 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.styled';
 import { AppStyled } from './App.styled';
 import { Footer } from './components/Footer/Footer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { routes } from './functions/routes';
 import { Header } from './components/Header/Header';
 import { HeaderLogin } from './components/HeaderLogin/HeaderLogin';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ScrollBarStyle } from './ScrollBarStyle.styled';
 import { Loader } from './components/Loader/Loader';
+import { login } from './api/login';
 
 export const App = () => {
 
@@ -20,8 +21,12 @@ export const App = () => {
     setLoading(value);
   }
 
+  useEffect(() => {
+    login();
+  }, [])
+
   return (
-    <>
+    <>    
       <ScrollBarStyle/>
 
       <Loader loading={loading}/>
