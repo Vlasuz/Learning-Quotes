@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { LoginFormStyle } from './LoginForm.styled'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Input } from '../../../../components/Input/Input'
@@ -10,6 +10,9 @@ import Apple from '../../../../assets/img/icons/apple.svg'
 import Facebook from '../../../../assets/img/icons/facebook.svg'
 import Google from '../../../../assets/img/icons/google.svg'
 import Discord from '../../../../assets/img/icons/discord.svg'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../../../redux/toolkitSlice'
+import setCookie from '../../../../functions/setCookie'
 
 
 export const LoginForm = () => {
@@ -19,6 +22,7 @@ export const LoginForm = () => {
     const [rememberMe, setRememberMe] = useState(false);
     const navigate = useNavigate();
     const [error, setError] = useState('');
+    const dispatch = useDispatch();
 
     const rememberMeChange = () => {
         setRememberMe(!rememberMe);
@@ -31,13 +35,15 @@ export const LoginForm = () => {
 
         axios.post(getApiLink(`/api/auth/login?email=${email}&password=${pass}`))
         .then(({data}) => {
-            console.log(data, data.access_token);
-            resetForm();            
+            console.log(data);
+            resetForm();
+            setCookie('token', data.access_token);
             
-            axios.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;
+            axios.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;            
             axios.get(getApiLink('/api/user/me'))
                 .then(({data}) => {
                     console.log('user-data', data);
+                    dispatch(setUser(data));
                     navigate('/map');
                 })
                 .catch((error) => {
@@ -47,11 +53,8 @@ export const LoginForm = () => {
             .catch((error) => {
                 console.log(error);
             })
-    }
 
-    useEffect(() => {
-        
-    }, [])
+    }
 
     const resetForm = () => {
         setEmail('');

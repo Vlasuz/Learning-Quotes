@@ -2,15 +2,34 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import headerProfileArr from '../../../../assets/img/icons/arrow-down.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { getApiLink } from '../../../../api/getApiLink';
+import getCookie from '../../../../functions/getCookie';
+import { setUser } from '../../../../redux/toolkitSlice';
 
 export const LoginSuccess = () => {
     const [profileOpen, setProfileOpen] = useState(false);
+    const dispatch = useDispatch();
+
+    const user = useSelector(state => state.toolkit.user)
 
     const handleProfileOpen = () => {
         setProfileOpen(!profileOpen);
     };
 
+
+
     useEffect(() => {
+        axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;            
+        axios.get(getApiLink('/api/user/me'))
+            .then(({data}) => {
+                dispatch(setUser(data));
+            })
+            .catch((error) => {
+                console.error("Failed to fetch user data:", error);
+            })
+
         const handleBodyOverflow = () => {
             const body = document.body;
             const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -49,7 +68,7 @@ export const LoginSuccess = () => {
         <div className="header__profile__list">
             <div className="profile__list__head" onClick={handleProfileOpen}>
                 <h2>
-                    Your Profile
+                    {user.name}
                 </h2>
                 <img src={headerProfileArr} alt="arrow ic" />
             </div>

@@ -9,6 +9,7 @@ const toolkitSlice = createSlice({
     reducers: {
         setUser(state, action) {
             state.user = action.payload
+            console.log(action.payload);
         },
 
     }
@@ -18,6 +19,5 @@ export default toolkitSlice.reducer;
 export const {
 
     setUser,
-
 
 } = toolkitSlice.actions;
