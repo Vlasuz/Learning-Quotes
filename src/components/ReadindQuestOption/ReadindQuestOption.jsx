@@ -28,19 +28,19 @@ export const ReadindQuestOption = ({ currentQuestion }) => {
   return (
     <ReadindQuestOptionStyle>
         <ul>
-            {currentQuestion.answers.map((answer) => (
+            {currentQuestion?.map((answer, index) => (
                 <li key={answer}>
                     <label 
-                        htmlFor={`q-${currentQuestion.id}-${answer}`}
+                        htmlFor={answer.id}
                         className={selectedOptions.length > 0 && !selectedOptions.includes(answer) ? 'disabled' : ''}
                     >
-                        <p>{optionNum[currentQuestion.answers.indexOf(answer)]}</p>
+                        <p>{optionNum[index]}</p>
 
-                        {answer}
+                        {answer.value}
 
                         <input 
-                            type="checkbox" 
-                            id={`q-${currentQuestion.id}-${answer}`} 
+                            type="checkbox"
+                            id={answer.id} 
                             onChange={() => handleChackBoxChange(answer)}
                             disabled={selectedOptions.length > 0 && !selectedOptions.includes(answer)}
                         />
