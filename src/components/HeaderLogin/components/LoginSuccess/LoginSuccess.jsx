@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import headerProfileArr from '../../../../assets/img/icons/arrow-down.svg'
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,10 +7,12 @@ import axios from 'axios';
 import { getApiLink } from '../../../../api/getApiLink';
 import getCookie from '../../../../functions/getCookie';
 import { setUser } from '../../../../redux/toolkitSlice';
+import setCookie from '../../../../functions/setCookie';
 
 export const LoginSuccess = () => {
     const [profileOpen, setProfileOpen] = useState(false);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const user = useSelector(state => state.toolkit.user)
 
@@ -18,6 +20,11 @@ export const LoginSuccess = () => {
         setProfileOpen(!profileOpen);
     };
 
+    const handleExit = () => {
+        navigate('/');
+        setCookie('token', '');
+        dispatch(setUser({}));
+    }
 
 
     useEffect(() => {
@@ -81,9 +88,9 @@ export const LoginSuccess = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={'/login'}>
+                            <button onClick={handleExit}>
                                 Log Out
-                            </NavLink>
+                            </button>
                         </li>
                     </ul>
                     <div className="profile__list__bgd" onClick={handleProfileOpen}></div>

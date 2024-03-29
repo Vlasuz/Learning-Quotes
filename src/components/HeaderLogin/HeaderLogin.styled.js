@@ -150,6 +150,7 @@ export const HeaderLoginStyle = styled.div`
         max-width: 270px;
         padding: 12px;
 
+        button,
         a{
             display: block;
             color: #333;
