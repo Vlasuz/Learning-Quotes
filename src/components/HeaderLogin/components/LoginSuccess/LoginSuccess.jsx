@@ -63,7 +63,7 @@ export const LoginSuccess = () => {
         };
     
         return cleanup;
-    }, [profileOpen]);
+    }, [profileOpen, dispatch]);
 
   return (
     <div className="header__profile">
