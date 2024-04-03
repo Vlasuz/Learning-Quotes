@@ -19,7 +19,9 @@ export const QuizStart = () => {
     const dispatch = useDispatch();
 
     const handleGetQuiz = () => {
-        axios.get(getApiLink('/api/quest/get?pk=be8bc086-dfa4-494e-a5ed-a5963f7c4700'))
+        axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
+
+        axios.get(getApiLink('/api/quest/active_quest'))
             .then(({data}) => {
                 console.log(data);
                 dispatch(setQuest(data))
