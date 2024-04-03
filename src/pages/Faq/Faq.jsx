@@ -1,37 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaqStyle } from './Faq.styled'
+import axios from 'axios'
+import { getApiLink } from '../../api/getApiLink'
 
 export const Faq = () => {
+    const [faqData, setFaqData] = useState([]);
+    
+    useEffect(() => {
+        axios.get(getApiLink('/api/info/faq'))
+            .then(({data}) => {
+                console.log(data);
+                setFaqData(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [])
+
   return (
     <div className='container-login'>
         <FaqStyle>
             <h2>
                 F.A.Q
             </h2>
-            <div className="question">
-                <h3>
-                    Question 1. Some Text will be here
-                </h3>
-                <p>
-                    Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.
-                </p>
-            </div>
-            <div className="question">
-                <h3>
-                    Question 2. Some Text will be here
-                </h3>
-                <p>
-                    Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.
-                </p>
-            </div>
-            <div className="question">
-                <h3>
-                    Question 3. Some Text will be here
-                </h3>
-                <p>
-                    Question Text will be here.  Question Text will be here. Question Text will be here. Question Text will be here.
-                </p>
-            </div>
+            {faqData.map(item => (
+                <div className="question">
+                    <h3>
+                        {item.question}
+                    </h3>
+                    <p>
+                        {item.answer}
+                    </p>
+                </div>
+            ))}
         </FaqStyle>
     </div>
   )
