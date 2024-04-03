@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { LangListStyle } from './LangListStyle.styled'
+import { useDispatch } from 'react-redux'
+import { setLanguage } from '../../../../redux/toolkitSlice'
+import setCookie from '../../../../functions/setCookie'
 
 import LangList_ph_1 from '../../../../assets/img/LangList-ph-1.png'
 import LangList_ph_2 from '../../../../assets/img/LangList-ph-2.png'
 import LangList_ph_3 from '../../../../assets/img/LangList-ph-3.png'
 
 export const LangList = () => {
-    const [isChoose, setIsChoose] = useState(null);
+    const [isChoose, setIsChoose] = useState('');
+    const dispatch = useDispatch();
 
     const handleClickLang = (lang) => {
         console.log(`Selected language: ${lang}`);
@@ -15,6 +19,9 @@ export const LangList = () => {
             top: 500,
             behavior: 'smooth'
         });
+
+        dispatch(setLanguage(lang));
+        setCookie('LangCookie', lang);
     }
 
   return (
@@ -43,6 +50,7 @@ export const LangList = () => {
                 </h2>
             </button>
         </li>
+
     </LangListStyle>
   )
 }
