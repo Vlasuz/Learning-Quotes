@@ -62,7 +62,7 @@ export const QuizStart = () => {
                 </NavLink>
             </div>
 
-            <button className='animate__animated animate__fadeInUp'>Choose</button>
+            {/* <button className='animate__animated animate__fadeInUp'>Choose</button> */}
 
         </QuizStartStyle>
     </div>

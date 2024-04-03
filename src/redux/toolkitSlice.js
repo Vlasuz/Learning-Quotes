@@ -7,6 +7,7 @@ const toolkitSlice = createSlice({
         user: {},
         quest: {},
         language: {},
+        answerQuest: [],
     },
     reducers: {
         setUser(state, action) {
@@ -18,6 +19,9 @@ const toolkitSlice = createSlice({
         },
         setLanguage(state, action) {
             state.language = action.payload
+        },
+        addAnswer(state, action) {
+            state.answerQuest = [...state.answerQuest, action.payload]
         }
     }
 })
@@ -28,5 +32,6 @@ export const {
     setUser,
     setQuest,
     setLanguage,
+    addAnswer,
 
 } = toolkitSlice.actions;

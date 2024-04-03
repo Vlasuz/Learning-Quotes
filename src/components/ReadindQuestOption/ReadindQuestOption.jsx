@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { ReadindQuestOptionStyle } from './ReadindQuestOption.styled'
+import { useDispatch } from 'react-redux';
+import { addAnswer } from '../../redux/toolkitSlice';
 
 export const ReadindQuestOption = ({ currentQuestion }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
-    const optionNum = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.']
+    const optionNum = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.'];
+    const dispatch = useDispatch();
 
     const handleChackBoxChange = (answer) => {
         const isSelected = selectedOptions.includes(answer)
+
+        dispatch(addAnswer(answer.id));
 
         setSelectedOptions((prevSelected) => {
             if (isSelected) {

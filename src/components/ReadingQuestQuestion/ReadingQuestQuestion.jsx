@@ -7,9 +7,9 @@ export const ReadingQuestQuestion = ({ testTitle, testQuestion }) => {
         <h2>
             {testTitle} <span>1</span>
         </h2>
-        <p>
-            {testQuestion}
-        </p>
+              <p>
+                {testQuestion}
+              </p>
     </ReadingQuestQuestionStyle>
   )
 }

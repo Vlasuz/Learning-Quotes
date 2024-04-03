@@ -5,29 +5,25 @@ import { ReadingQuestStyle } from './ReadingQuest.styled.js';
 import { ReadingQuestQuestion } from '../ReadingQuestQuestion/ReadingQuestQuestion.jsx';
 import { NavigationQuest } from '../NavigationQuest/NavigationQuest.jsx';
 import { ReadindQuestOption } from '../ReadindQuestOption/ReadindQuestOption.jsx';
-import { questData } from '../../assets/quiz/quiz.js';
 import { QuestResult } from '../QuestResult/QuestResult.jsx';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { getApiLink } from '../../api/getApiLink.js';
-import { setQuest } from '../../redux/toolkitSlice.js';
+import { addAnswer, setQuest } from '../../redux/toolkitSlice.js';
+import getCookie from '../../functions/getCookie.js';
 
 export const ReadingQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
   const [questResult, setQuestResult] = useState(false);
+  const [quizData, setQuizData] = useState([]);
+  // const [selectedAnswerId, setSelectedAnswerId] = useState(null);
   const navigate = useNavigate();
-  const readingQuestions = questData.filter(question => question.type === 'book-reading');
-  const currentQuestion = readingQuestions[currentQuestionIn];
-
-  const quizData = useSelector(state => state.toolkit.quest);
   const dispatch = useDispatch();
 
-  console.log(quizData);
-
   const handleNextQuestion = () => {
-    if (currentQuestionIn < readingQuestions.length - 1) {
+    if (currentQuestionIn < quizData.questions.length - 1) {
       setCurrentQuestionIn(prevIndex => prevIndex + 1);
-    } else if (currentQuestionIn === readingQuestions.length - 1) {
+    } else if (currentQuestionIn === quizData.questions.length - 1) {
       setQuestResult(true);
     }
   };
@@ -41,25 +37,47 @@ export const ReadingQuest = () => {
     }
   };
 
+  // const handleAnswerSelect = (answerId) => {
+  //   setSelectedAnswerId(answerId);
+  //   dispatch(addAnswer(quizData.questions[currentQuestionIn].options.id))
+  // }
+
   useEffect(() => {
-    axios.get(getApiLink('/api/quest/get?pk=be8bc086-dfa4-494e-a5ed-a5963f7c4700'))
+    axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
+  
+    axios.get(getApiLink('/api/quest/active_quest'))
       .then(({data}) => {
-          console.log(data);
-          dispatch(setQuest(data))
+        console.log(data);
+        setQuizData(data)
+        dispatch(setQuest(data))
       })
   }, [])
+
+  // pk=be8bc086-dfa4-494e-a5ed-a5963f7c4700
+
+  // useEffect(() => {
+  //   axios.get(getApiLink('/api/quest/get?pk=be8bc086-dfa4-494e-a5ed-a5963f7c4700'))
+  //     .then(({data}) => {
+  //         setQuestDataPk(data.questions);
+  //         dispatch(setQuest(data));
+  //     })
+  // }, [])
+
+  // console.log(questDataPk);
+
 
   return (
     <div className='container-login'>
       <ReadingQuestStyle>
 
+        
         <ReadingQuestQuestion
-          testTitle={quizData?.quest_text ?? ''}
-          // testNumber={quizData ? quizData.length : ''}
-          testQuestion={quizData?.questions?.length && quizData?.questions[0].question}
+          testTitle={quizData?.name ?? ''}
+          testQuestion={quizData?.questions?.length && quizData?.questions[currentQuestionIn].question}
         />
 
-        <ReadindQuestOption currentQuestion={quizData?.questions?.length && quizData?.questions[0].options} />
+        <ReadindQuestOption currentQuestion={quizData?.questions?.length && quizData.questions[currentQuestionIn].options}/>
+
 
         <NavigationQuest
           nextPage={handleNextQuestion}
