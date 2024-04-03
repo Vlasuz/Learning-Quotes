@@ -24,7 +24,7 @@ export const Faq = () => {
                 F.A.Q
             </h2>
             {faqData.map(item => (
-                <div className="question">
+                <div className="question" key={item.question}>
                     <h3>
                         {item.question}
                     </h3>
