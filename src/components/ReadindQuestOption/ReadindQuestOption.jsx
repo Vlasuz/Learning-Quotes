@@ -8,7 +8,7 @@ export const ReadindQuestOption = ({ currentQuestion }) => {
     const optionNum = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.'];
     const dispatch = useDispatch();
 
-    const handleChackBoxChange = (answer) => {
+    const handleCheckBoxChange = (answer) => {
         const isSelected = selectedOptions.includes(answer)
 
         dispatch(addAnswer(answer.id));
@@ -46,7 +46,7 @@ export const ReadindQuestOption = ({ currentQuestion }) => {
                         <input 
                             type="checkbox"
                             id={answer.id} 
-                            onChange={() => handleChackBoxChange(answer)}
+                            onChange={() => handleCheckBoxChange(answer)}
                             disabled={selectedOptions.length > 0 && !selectedOptions.includes(answer)}
                         />
                         <span>

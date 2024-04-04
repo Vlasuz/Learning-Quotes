@@ -9,14 +9,13 @@ import { QuestResult } from '../QuestResult/QuestResult.jsx';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { getApiLink } from '../../api/getApiLink.js';
-import { addAnswer, setQuest } from '../../redux/toolkitSlice.js';
+import { setQuest } from '../../redux/toolkitSlice.js';
 import getCookie from '../../functions/getCookie.js';
 
 export const ReadingQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
   const [questResult, setQuestResult] = useState(false);
   const [quizData, setQuizData] = useState([]);
-  // const [selectedAnswerId, setSelectedAnswerId] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -36,11 +35,6 @@ export const ReadingQuest = () => {
       navigate('/quiz-start');
     }
   };
-
-  // const handleAnswerSelect = (answerId) => {
-  //   setSelectedAnswerId(answerId);
-  //   dispatch(addAnswer(quizData.questions[currentQuestionIn].options.id))
-  // }
 
   useEffect(() => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
