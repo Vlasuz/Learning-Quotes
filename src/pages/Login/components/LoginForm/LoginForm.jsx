@@ -16,7 +16,7 @@ import setCookie from '../../../../functions/setCookie'
 
 
 export const LoginForm = () => {
-    const [disabled, setDisabled] = useState(false);
+    // const [disabled, setDisabled] = useState(false);
     const [pass, setPass] = useState('');
     const [email, setEmail] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -30,8 +30,12 @@ export const LoginForm = () => {
 
     const submitForm = (evt) => {
         evt.preventDefault();
-        setDisabled(true);
+        // setDisabled(true);
         setError('');
+
+        if (!validateForm()) {
+            return;
+        }
 
         axios.post(getApiLink(`/api/auth/login?email=${email}&password=${pass}`))
         .then(({data}) => {
@@ -56,6 +60,17 @@ export const LoginForm = () => {
 
     }
 
+    const validateForm = () => {
+        const emailRegex = /^[^\s@]+@[a-zA-Z0-9\-_.]+\.[a-z]{2,6}$/;
+        const isValidEmail = emailRegex.test(email);
+
+        if (!isValidEmail) {
+            setError(<span className='error__massage'>Please enter a valid email address</span>);
+            return false;
+        }
+        return true;
+    }
+
     const resetForm = () => {
         setEmail('');
         setPass('');
@@ -63,11 +78,10 @@ export const LoginForm = () => {
     }
 
   return (
-    <LoginFormStyle onSubmit={submitForm}>
-        <p>{error}</p>
+    <LoginFormStyle onSubmit={submitForm}>        
         <div className="form__inner">
 
-            <Input type={'email'} label={'Email Address'} inputValue={setEmail} placeholder={'Enter your Email'}/>
+            <Input type={'email'} label={'Email Address'} inputValue={setEmail} placeholder={'Enter your Email'} validate={true} error={error}/>
 
             <Input type={'password'} label={'Password'} inputValue={setPass} placeholder={'Enter your Password'}/>
             
@@ -92,7 +106,8 @@ export const LoginForm = () => {
             </NavLink>
         </div>
         <div className="form__input__buttons">
-            <ButtonForm buttonTxt={'Log In'} isFill={true} disabled={disabled}/>
+        {/* disabled={disabled} */}
+            <ButtonForm buttonTxt={'Log In'} isFill={true} />
             
             <NavLink className='navlink' to={'/sign-up'}>
                 <ButtonForm buttonTxt={'Sign Up'} isFill={false}/>

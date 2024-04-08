@@ -4,8 +4,7 @@ import Letter from '../../assets/img/icons/Letter.svg'
 import Lock from '../../assets/img/icons/Lock.svg'
 import User from '../../assets/img/icons/User.svg'
 
-export const Input = ({type, label, placeholder, inputValue}) => {
-    const [error, setError] = useState('');
+export const Input = ({type, label, placeholder, inputValue, error}) => {
     const [value, setValue] = useState('');
 
     const handleValue = (evt) => {
@@ -13,17 +12,6 @@ export const Input = ({type, label, placeholder, inputValue}) => {
         
         setValue(inputTargetValue);
         inputValue(inputTargetValue);
-
-        if (type === 'email') {
-            const emailRegex = /^[^\s@]+@[a-zA-Z0-9\-_.]+\.[a-z]{2,6}$/;
-            const isValidEmail = emailRegex.test(inputTargetValue);
-        
-            if (!isValidEmail) {
-                setError(<span className='error__massage'>Please enter a valid email address</span>);
-            } else {
-                setError('');
-            }
-        }
     }
 
     const types = {
