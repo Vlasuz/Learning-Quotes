@@ -16,7 +16,7 @@ export const Input = ({type, label, placeholder, inputValue}) => {
 
         if (type === 'email') {
             const emailRegex = /^[^\s@]+@[a-zA-Z0-9\-_.]+\.[a-z]{2,6}$/;
-            const isValidEmail = emailRegex.test(value);
+            const isValidEmail = emailRegex.test(inputTargetValue);
         
             if (!isValidEmail) {
                 setError(<span className='error__massage'>Please enter a valid email address</span>);

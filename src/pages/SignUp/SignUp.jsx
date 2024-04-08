@@ -9,6 +9,9 @@ import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
 import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { getApiLink } from '../../api/getApiLink'
+import { setUser } from '../../redux/toolkitSlice'
+import {useDispatch} from 'react-redux';
+import setCookie from '../../functions/setCookie'
 
 export const SignUp = () => {
     const [pass, setPass] = useState('');
@@ -17,6 +20,7 @@ export const SignUp = () => {
     const [name, setName] = useState('');
     // const [status] = useState('success');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     
     const resetForm = () => {
         setEmail('');
@@ -29,6 +33,8 @@ export const SignUp = () => {
         axios.post(getApiLink(`/api/auth/sign_up?name=${name}&email=${email}&password=${pass}`))
             .then(({data}) => {
                 console.log(data);
+                dispatch(setUser(data))
+                setCookie('token', data.access_token );
                 resetForm();
                 navigate('/choose-lang')
             })
