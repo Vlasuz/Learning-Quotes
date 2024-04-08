@@ -15,17 +15,19 @@ export const App = () => {
 
   const [routesList] = useState(routes());
   const location = useLocation();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleLoader = (value) => {
     setLoading(value);
   }
 
   useEffect(() => {
-    getCookie('token');
+    const token = getCookie('token');
+    setIsLoggedIn(!!token)
 
-    console.log(getCookie('token'));
-  }, [])
+    console.log('token', token);
+  }, [location])
 
   return (
     <>    
@@ -34,7 +36,8 @@ export const App = () => {
       <Loader loading={loading}/>
 
       <AppStyled>
-        {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />}
+        {/* {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />} */}
+        {isLoggedIn ? <HeaderLogin /> : <Header />}
           <TransitionGroup component={null}>
             <CSSTransition key={location.pathname} classNames='fade' timeout={300} onEnter={() => toggleLoader(true)} onExited={() => toggleLoader(false)}>
               <Routes location={location}>
