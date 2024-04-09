@@ -30,11 +30,6 @@ export const QuestTxt = ({ questTitle, questTask }) => {
 
                 setBlockY(rect.top);
                 setBlockX(rect.left);
-
-                // console.log('Top:', rect.top);
-                // console.log('Left:', rect.left);
-                // console.log('Width:', rect.width);
-                // console.log('Height:', rect.height);
             })
         })
 
@@ -56,7 +51,7 @@ export const QuestTxt = ({ questTitle, questTask }) => {
                             Translation: 
                         </h2>
                         <p>
-                            some word
+                            
                         </p>
                     </div>
                     <button onClose={() => setIsOpenTranslate(false)}>Add to vocablyary</button>

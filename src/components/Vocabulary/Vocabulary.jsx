@@ -74,6 +74,54 @@ export const Vocabulary = ({onClose}) => {
                         </p>
                     </div>
                 </li>
+                <li>
+                    <div className="word">
+                        <h3>
+                            Word 5
+                        </h3>
+                    </div>
+                    <div className="translation">
+                        <p>
+                            Translation
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div className="word">
+                        <h3>
+                            Word 5
+                        </h3>
+                    </div>
+                    <div className="translation">
+                        <p>
+                            Translation
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div className="word">
+                        <h3>
+                            Word 5
+                        </h3>
+                    </div>
+                    <div className="translation">
+                        <p>
+                            Translation
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div className="word">
+                        <h3>
+                            Word 5
+                        </h3>
+                    </div>
+                    <div className="translation">
+                        <p>
+                            Translation
+                        </p>
+                    </div>
+                </li>
             </ul>
 
             <button className='vocabulary__ok' onClick={onClose}>OK</button>

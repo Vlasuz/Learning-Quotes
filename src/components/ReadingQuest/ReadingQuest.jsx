@@ -19,6 +19,8 @@ export const ReadingQuest = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const isLastQuestion = quizData?.questions && currentQuestionIn === quizData.questions.length - 1;
+
   const handleNextQuestion = () => {
     if (currentQuestionIn < quizData.questions.length - 1) {
       setCurrentQuestionIn(prevIndex => prevIndex + 1);
@@ -76,6 +78,7 @@ export const ReadingQuest = () => {
         <NavigationQuest
           nextPage={handleNextQuestion}
           prevPage={handlePrevQuestion}
+          isLastQuestion={isLastQuestion}
         />
 
         {questResult && <QuestResult onClose={() => setQuestResult(false)} />}

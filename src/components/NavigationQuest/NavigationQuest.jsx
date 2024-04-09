@@ -3,7 +3,7 @@ import { NavigationQuestStyle } from './NavigationQuest.styled'
 
 import ArrowIc from '../../assets/img/icons/Go-back-black.svg'
 
-export const NavigationQuest = ({nextPage, prevPage, Styles}) => {
+export const NavigationQuest = ({nextPage, prevPage, Styles, isLastQuestion}) => {
   return (
     <NavigationQuestStyle style={Styles}>
         <button onClick={prevPage}>
@@ -11,8 +11,8 @@ export const NavigationQuest = ({nextPage, prevPage, Styles}) => {
             Back
         </button>
         <button onClick={nextPage}>
-            Next
-            <img className='arrow__next' src={ArrowIc} alt="arrow rht ic" />
+          {isLastQuestion ? 'Finish' : 'Next'}
+          <img className='arrow__next' src={ArrowIc} alt="arrow rht ic" />
         </button>
     </NavigationQuestStyle>
   )

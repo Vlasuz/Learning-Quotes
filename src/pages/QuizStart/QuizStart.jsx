@@ -38,7 +38,7 @@ export const QuizStart = () => {
             .catch((error) => {
                 console.log(error);
                 if (error?.response?.data?.detail === "You already have active quest") {          
-                    handleGetQuiz();          
+                    handleGetQuiz();
                 }
             })
     }
