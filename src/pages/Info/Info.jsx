@@ -14,7 +14,7 @@ export const Info = () => {
                 console.log(data);
                 setInfoData(data);
             })
-    }, [])
+    }, [slug])
 
     return (
         <div className='container-login'>

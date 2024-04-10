@@ -22,6 +22,9 @@ const toolkitSlice = createSlice({
         },
         addAnswer(state, action) {
             state.answerQuest = [...state.answerQuest, action.payload]
+            // state.answerQuest = {
+            //     'id': quest.id
+            // }
         }
     }
 })
