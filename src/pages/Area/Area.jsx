@@ -6,11 +6,14 @@ import { AreaGraphic } from './components/AreaGraphic/AreaGraphic'
 import { AreaOwner } from './components/AreaOwner/AreaOwner'
 import axios from 'axios'
 import { getApiLink } from '../../api/getApiLink'
+import getCookie from '../../functions/getCookie'
 
 export const Area = () => {
   const [statisticData, setStatisticData] = useState([]);
 
   useEffect(() => {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
+
     axios.get(getApiLink('/api/user/statistics'))
       .then(({data}) => {
         console.log(data);

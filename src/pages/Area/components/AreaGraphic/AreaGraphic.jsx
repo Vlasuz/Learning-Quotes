@@ -4,12 +4,16 @@ import { AreaGraphicStyle } from './AreaGraphic.styled'
 export const AreaGraphic = ({statisticData}) => {
     const GraphicDataDlpt1 = statisticData.one_plus?.columns
 
+    const AnswerSum = GraphicDataDlpt1[0].correct + GraphicDataDlpt1[0].incorrect
+    // const 
+
+    console.log(AnswerSum);
+
     return (
         <AreaGraphicStyle className='animate__animated animate__fadeInUp'>
             <ul className='graphic'>
 
-                {GraphicDataDlpt1?.map(item => (
-                    <li className='graphic__item' key={item.date}>
+                    <li className='graphic__item'>
                         <h2>
                             Stats DLPT 1
                         </h2>
@@ -42,55 +46,21 @@ export const AreaGraphic = ({statisticData}) => {
                                 </li>
                             </ul>
                             <ul className='graphic__stats'>
-                                <li>
-                                    <div className="column">
-                                        <div className="column__green" style={{maxHeight: '25%'}}></div>
-                                        <div className="column__red" style={{maxHeight: '75%'}}></div>
-                                    </div>
-                                    <p>
-                                        {item.date}
-                                    </p>
-                                </li>
-                                <li>
-                                    <div className="column">
-                                        <div className="column__green"></div>
-                                        <div className="column__red"></div>
-                                    </div>
-                                    <p>
-                                        May 2023
-                                    </p>
-                                </li>
-                                <li>
-                                    <div className="column">
-                                        <div className="column__green"></div>
-                                        <div className="column__red"></div>
-                                    </div>
-                                    <p>
-                                        Jun 2023
-                                    </p>
-                                </li>
-                                <li>
-                                    <div className="column">
-                                        <div className="column__green"></div>
-                                        <div className="column__red"></div>
-                                    </div>
-                                    <p>
-                                        Jul 2023
-                                    </p>
-                                </li>
-                                <li>
-                                    <div className="column">
-                                        <div className="column__green"></div>
-                                        <div className="column__red"></div>
-                                    </div>
-                                    <p>
-                                        Aug 2023
-                                    </p>
-                                </li>
+                                {GraphicDataDlpt1.map(item => (
+                                    <li key={item.date}>
+                                        <div className="column">
+                                            <div className="column__green" style={{maxHeight: '25%'}}></div>
+                                            <div className="column__red" style={{maxHeight: '75%'}}></div>
+                                        </div>
+                                        <p>
+                                            {item.date}
+                                        </p>
+                                    </li>
+                                ))}
+                                
                             </ul>
                         </div>
                     </li>
-                ))}
 
 
 

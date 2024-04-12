@@ -46,13 +46,7 @@ export const ReadingQuest = () => {
   };
 
   const handleEndQuest = () => {
-    // const formEndQuest = {
-    //   'id': QuestId,
-    //   'answers_id': QuestAnswers,
-    // }
     const formEndQuest = QuestionId?.map((questionId, index) => ({
-      // 'id': questionId,
-      // 'answer_id': [QuestAnswers[index] || []],
       "id": questionId,
       "answers_id": [
         QuestAnswers[index]

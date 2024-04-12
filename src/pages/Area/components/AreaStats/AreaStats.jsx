@@ -15,12 +15,12 @@ export const AreaStats = () => {
         <a href={`mailto:${userData.email}`}>
             {userData.email}
         </a>
-        <h3>
+        {/* <h3>
             Status: <span>{userData.status}</span>
         </h3>
         <h3>
             Study Time: <span>Avg 2 h/day Avd 10h/week</span>
-        </h3>
+        </h3> */}
         <button>
             Buy Premium
         </button>
