@@ -39,18 +39,17 @@ export const AreaGraphicStyle = styled.div`
                 background: url(${BgdDesk4}) no-repeat;
                 background-size: calc(100% + 45px);
                 background-position: -30px;
-
-                .column__red{
-                    display: none;
-                }
-                .column__green{
-                    background: #FFDFD6;
-                }
             }
             &:nth-child(5){
                 background: url(${BgdDesk5}) no-repeat;
                 background-size: calc(100% + 35px);
                 background-position: -20px;
+                /* .column__red{
+                    display: none;
+                }
+                .column__green{
+                    background: #FFDFD6;
+                } */
             }
             &:nth-child(6){
                 background: url(${BgdDesk6}) no-repeat;
@@ -229,9 +228,10 @@ export const AreaGraphicStyle = styled.div`
         height: 8em;
         background-color: transparent;
         border-radius: 100px; 
-        border: 1.25em solid #CEFFA7;
-        border-bottom-color: transparent;
+        /* border: 1.25em solid #CEFFA7; */
+        /* border-bottom-color: transparent; */
         border-right-color: transparent;
+        /* width: 145%; */
         
         transform: rotate(-5deg);
     }

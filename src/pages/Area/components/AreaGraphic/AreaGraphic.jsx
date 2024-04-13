@@ -1,66 +1,25 @@
 import React from 'react'
 import { AreaGraphicStyle } from './AreaGraphic.styled'
+import { AreaDraphicItem } from '../AreaDraphicItem/AreaDraphicItem'
 
 export const AreaGraphic = ({statisticData}) => {
-    const GraphicDataDlpt1 = statisticData.one_plus?.columns
 
-    const AnswerSum = GraphicDataDlpt1[0].correct + GraphicDataDlpt1[0].incorrect
-    // const 
-
-    console.log(AnswerSum);
+    console.log(statisticData);
+    
 
     return (
         <AreaGraphicStyle className='animate__animated animate__fadeInUp'>
             <ul className='graphic'>
 
-                    <li className='graphic__item'>
-                        <h2>
-                            Stats DLPT 1
-                        </h2>
-                        <div className="graphic__con">
-                            <ul className="graphic__num">
-                                <li>
-                                    <p>
-                                        32
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        24
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        16
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        8
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        0
-                                    </p>
-                                </li>
-                            </ul>
-                            <ul className='graphic__stats'>
-                                {GraphicDataDlpt1.map(item => (
-                                    <li key={item.date}>
-                                        <div className="column">
-                                            <div className="column__green" style={{maxHeight: '25%'}}></div>
-                                            <div className="column__red" style={{maxHeight: '75%'}}></div>
-                                        </div>
-                                        <p>
-                                            {item.date}
-                                        </p>
-                                    </li>
-                                ))}
-                                
-                            </ul>
-                        </div>
-                    </li>
+                <AreaDraphicItem statisticData={statisticData?.all} title={'All Stats'}/>
+
+                <AreaDraphicItem statisticData={statisticData?.one_plus} title={'Stats DLPT 1+'}/>
+                
+                <AreaDraphicItem statisticData={statisticData?.two_plus} title={'Stats DLPT 2+'}/>
+
+                <AreaDraphicItem statisticData={statisticData.three} title={'Stats DLPT 3'}/>
+
+                <AreaDraphicItem statisticData={statisticData.words} title={'New Words'}/>
 
 
 
@@ -68,7 +27,9 @@ export const AreaGraphic = ({statisticData}) => {
 
 
 
-                <li className='graphic__item'>
+
+
+                {/* <li className='graphic__item'>
                     <h2>
                         Stats DLPT 2+
                     </h2>
@@ -391,7 +352,9 @@ export const AreaGraphic = ({statisticData}) => {
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> */}
+
+
                 <li className='graphic__item'>
                     <h2>
                         Chance Success
@@ -400,10 +363,13 @@ export const AreaGraphic = ({statisticData}) => {
                         <ul className='graphic__stats'>
                             <li>
                                 <div className="widget">
-                                    <div id="progress">
+                                    <div id="progress" >
                                         <span className='progress__span'>
-                                            85%
+                                            {statisticData.chance_success}%
                                         </span>
+                                        <style>{` #progress::before {
+                                            border: 1.25em solid #CEFFA7;
+                                        }`}</style>
                                     </div>
                                 </div>
                             </li>
