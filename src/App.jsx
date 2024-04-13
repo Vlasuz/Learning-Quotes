@@ -10,6 +10,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ScrollBarStyle } from './ScrollBarStyle.styled';
 import { Loader } from './components/Loader/Loader';
 import getCookie from './functions/getCookie';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
 
@@ -31,6 +33,8 @@ export const App = () => {
 
   return (
     <>    
+      <ToastContainer/>
+
       <ScrollBarStyle/>
 
       <Loader loading={loading}/>

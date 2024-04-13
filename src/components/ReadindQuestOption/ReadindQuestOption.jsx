@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { ReadindQuestOptionStyle } from './ReadindQuestOption.styled'
-import { useDispatch } from 'react-redux';
-import { addAnswer } from '../../redux/toolkitSlice';
 
-export const ReadindQuestOption = ({ currentQuestion }) => {
+export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const optionNum = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.'];
-    const dispatch = useDispatch();
 
     const handleCheckBoxChange = (answer) => {
-        const isSelected = selectedOptions.includes(answer)
-
-        dispatch(addAnswer(answer.id));
+        const isSelected = selectedOptions.includes(answer)    
 
         setSelectedOptions((prevSelected) => {
             if (isSelected) {
                 return prevSelected.filter((selected) => selected !== answer);
             } else {
-                return [...prevSelected, answer];
+                return [...prevSelected, answer.id];
             };
         });
     };
@@ -26,6 +21,10 @@ export const ReadindQuestOption = ({ currentQuestion }) => {
        setSelectedOptions([]);
     };
       
+    useEffect(() => {
+        setAnsQuestion(selectedOptions);
+    }, [selectedOptions]);
+
     useEffect(() => {
         clearSelectedOptions();
     }, [currentQuestion]);

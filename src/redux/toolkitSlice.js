@@ -22,7 +22,10 @@ const toolkitSlice = createSlice({
         },
         addAnswer(state, action) {
             state.answerQuest = [...state.answerQuest, action.payload]
-        }
+        },
+        setAnswer(state, action) {
+            state.answerQuest = action.payload
+        },
     }
 })
 
@@ -33,5 +36,6 @@ export const {
     setQuest,
     setLanguage,
     addAnswer,
+    setAnswer,
 
 } = toolkitSlice.actions;
