@@ -33,7 +33,7 @@ export const ReadingQuest = () => {
   const handleNextQuestion = () => {
     const currentAnswers = {
       id: quizData.questions[currentQuestionIn].id,
-      answers_id: ansQuestin, // Assuming selectedOptions contains the answers for the current question
+      answers_id: ansQuestin,
     };
     setAnswerQuestion((prevAnswers) => [...prevAnswers, currentAnswers]);
 

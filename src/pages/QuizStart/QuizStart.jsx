@@ -2,7 +2,7 @@ import React from 'react'
 import { QuizStartStyle } from './QuizStart.styled'
 import { BackBtn } from '../../components/BackBtn/BackBtn'
 import { QuizTitle } from '../../components/QuizTitle/QuizTitle'
-import { NavLink, Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { getApiLink } from '../../api/getApiLink'
 import getCookie from '../../functions/getCookie'
@@ -13,22 +13,9 @@ import { useDispatch } from 'react-redux'
 import { setQuest } from '../../redux/toolkitSlice'
 import { toast } from 'react-toastify'
 
-
-//  be8bc086-dfa4-494e-a5ed-a5963f7c4700 token as@gmail
-
 export const QuizStart = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    // const handleGetQuiz = () => {
-    //     axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
-
-    //     axios.get(getApiLink('/api/quest/active_quest'))
-    //         .then(({data}) => {
-    //             console.log(data);
-    //             dispatch(setQuest(data))
-    //         })
-    // }
 
     const handleStartQuiz = (type) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;

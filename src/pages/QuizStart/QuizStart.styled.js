@@ -15,7 +15,7 @@ export const QuizStartStyle = styled.div`
         justify-content: center;
     }
 
-    a{
+    button{
         text-align: center;
         color: #000;
         font-size: 32px;
@@ -36,7 +36,7 @@ export const QuizStartStyle = styled.div`
         max-width: 327px;
     }
 
-    button{
+     /* button{
         display: block;
         width: 100%;
         max-width: 620px;
@@ -54,7 +54,7 @@ export const QuizStartStyle = styled.div`
         &:hover{
             background: #b94231;
         }
-    }
+    }  */
 
     @media screen and (max-width: 768px) {
         margin: 20px 0 30px;
