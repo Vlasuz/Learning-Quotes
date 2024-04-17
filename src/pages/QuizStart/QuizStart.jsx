@@ -9,7 +9,7 @@ import getCookie from '../../functions/getCookie'
 
 import Listening from '../../assets/img/listening.png'
 import Book from '../../assets/img/book.png'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setQuest } from '../../redux/toolkitSlice'
 import { toast } from 'react-toastify'
 

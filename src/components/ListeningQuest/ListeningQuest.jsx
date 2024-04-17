@@ -6,7 +6,7 @@ import { QuizAudio } from '../QuizAudio/QuizAudio'
 
 import AudioImg from '../../assets/img/listening.png'
 
-export const ListeningQuest = ({ onClickNext }) => {
+export const ListeningQuest = ({ onClickNext, QuestData }) => {
   return (
     <QuizPageStyle>
 
@@ -16,7 +16,7 @@ export const ListeningQuest = ({ onClickNext }) => {
 
         <img className='audio__img animate__animated animate__fadeIn' src={AudioImg} alt="audio ph" />
 
-        <QuizAudio />
+        <QuizAudio QuestData={QuestData}/>
 
         <button className='audio__next animate__animated animate__fadeInUp' onClick={onClickNext}>
           Next

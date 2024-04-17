@@ -5,17 +5,19 @@ import { QuizAudioStyle } from './QuizAudio.styled';
 import AudioFile from '../../assets/quiz/audio/audio-1.mp3'
 import PlayBtn from '../../assets/img/icons/play.svg'
 import PauseBtn from '../../assets/img/icons/pause.svg'
+import { getApiLink } from '../../api/getApiLink';
 
 const audioUrls = [
   AudioFile,
 ];
 
-const formatTime = (seconds) =>
-  [seconds / 60, seconds % 60]
-    .map((v) => `0${Math.floor(v)}`.slice(-2))
-    .join(':');
 
-export const QuizAudio = () => {
+const formatTime = (seconds) =>
+[seconds / 60, seconds % 60]
+.map((v) => `0${Math.floor(v)}`.slice(-2))
+.join(':');
+
+export const QuizAudio = ({QuestData}) => {
   const containerRef = useRef(null);
 
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
@@ -25,7 +27,7 @@ export const QuizAudio = () => {
     progressColor: '#5FA2E5',
     barWidth: 1.5,
     barGap: null,
-    url: audioUrls,
+    url: getApiLink(`/${QuestData.audio_file}`),
   });
 
   const onPlayPause = useCallback(() => {

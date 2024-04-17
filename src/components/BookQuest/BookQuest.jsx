@@ -10,7 +10,7 @@ import { KeywordsQuestion } from '../KeywordsQuestion/KeywordsQuestion'
 import { QuestOptionsKey } from '../QuestOptionsKey/QuestOptionsKey'
 import { QuestResult } from '../QuestResult/QuestResult'
 
-export const BookQuest = () => {
+export const BookQuest = ({QuestData}) => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
   const [questResult, setQuestResult] = useState(false);
   const filteredReadingQuestions = questData.filter(question => question.type !== 'book-reading');
