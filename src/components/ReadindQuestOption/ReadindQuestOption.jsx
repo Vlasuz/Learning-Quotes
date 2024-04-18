@@ -5,21 +5,25 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const optionNum = ['A.', 'B.', 'C.', 'D.', 'E.', 'F.'];
 
-    const handleCheckBoxChange = (answer) => {
-        const isSelected = selectedOptions.includes(answer)    
-
-        setSelectedOptions((prevSelected) => {
-            if (isSelected) {
-                return prevSelected.filter((selected) => selected !== answer);
-            } else {
-                return [...prevSelected, answer.id];
-            };
-        });
+    const multiplyChoiceSelect = (answer) => {
+        
+        setSelectedOptions(prev => {
+            if (prev.some(item => item === answer.id) ) {
+                return prev.filter(item => item !== answer.id)
+            }
+            return [...prev, answer.id];
+            
+        })
     };
 
-    const clearSelectedOptions = () => {
-       setSelectedOptions([]);
+    const oneChoiceSelect = (answer) => {
+        setSelectedOptions([answer.id])
     };
+
+    const typeQuestion = {
+        'one_choice': oneChoiceSelect,
+        'multiple_choice': multiplyChoiceSelect,
+    }
       
     useEffect(() => {
         setAnsQuestion(selectedOptions);
@@ -32,11 +36,11 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
     return (
         <ReadindQuestOptionStyle>
             <ul>
-                {currentQuestion?.map((answer, index) => (
-                    <li key={answer}>
+                {currentQuestion?.options?.map((answer, index) => (
+                    <li key={answer.id}>
                         <label 
                             htmlFor={answer.id}
-                            className={selectedOptions.length > 0 && !selectedOptions.includes(answer) ? 'disabled' : ''}
+                            // className={selectedOptions.length > 0 && !selectedOptions.includes(answer) ? 'disabled' : ''}
                         >
                             <p>{optionNum[index]}</p>
 
@@ -45,8 +49,7 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
                             <input 
                                 type="checkbox"
                                 id={answer.id} 
-                                onChange={() => handleCheckBoxChange(answer)}
-                                disabled={selectedOptions.length > 0 && !selectedOptions.includes(answer)}
+                                onChange={() => typeQuestion[currentQuestion.choice_type](answer)}
                                 checked={selectedOptions.includes(answer.id)}
                             />
                             <span>

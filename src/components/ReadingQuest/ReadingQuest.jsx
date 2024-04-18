@@ -106,7 +106,7 @@ export const ReadingQuest = () => {
         <ReadindQuestOption
           currentQuestion={
             quizData?.questions?.length &&
-            quizData.questions[currentQuestionIn].options
+            quizData.questions[currentQuestionIn]
           }
           setAnsQuestion={setAnsQuestion}
         />
