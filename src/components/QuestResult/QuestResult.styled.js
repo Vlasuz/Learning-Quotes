@@ -22,7 +22,7 @@ export const QuestResultStyle = styled.div`
         background: url(${ResultsBgd}) no-repeat;
         background-size: 100% 100%;
         width: 100%;
-        max-width: 678px;
+        max-width: 830px;
         padding: 60px 60px;
 
         display: flex;
@@ -50,14 +50,25 @@ export const QuestResultStyle = styled.div`
         }
 
         li{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr; */
+            display: flex;
+            flex-direction: column;
             gap: 20px;
             text-align: center;
             margin-bottom: 40px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 10px;
             &:last-child{
                 margin-bottom: 0;
+                /* border-bottom: none; */
             }
+        }
+
+        &__inner {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
         }
 
         &__answer{

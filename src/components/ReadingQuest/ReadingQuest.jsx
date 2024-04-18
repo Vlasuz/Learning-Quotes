@@ -18,6 +18,7 @@ export const ReadingQuest = () => {
   const [answerQuestion, setAnswerQuestion] = useState([]);
   const [ansQuestin, setAnsQuestion] = useState([]);
   const [quizData, setQuizData] = useState([]);
+  const [endedQuest, setEndedQuest] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -30,7 +31,7 @@ export const ReadingQuest = () => {
   const isLastQuestion = quizData?.questions && currentQuestionIn === quizData.questions.length - 1;
 
   console.log(quizData?.questions?.length);
-  
+
   const handleNextQuestion = () => {
     const currentAnswers = {
       id: quizData.questions[currentQuestionIn].id,
@@ -71,6 +72,7 @@ export const ReadingQuest = () => {
       axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
         .then(({ data }) => {
           console.log("endQuest", data);
+          setEndedQuest(data)
         });
     } else return;
 
@@ -117,7 +119,7 @@ export const ReadingQuest = () => {
         />
 
         {questResult && (
-          <QuestResult onClose={() => setQuestResult(false)} />
+          <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)} />
         )}
       </ReadingQuestStyle>
     </div>

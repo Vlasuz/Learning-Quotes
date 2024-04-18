@@ -21,7 +21,8 @@ export const BookQuest = ({QuestData}) => {
   const [questResult, setQuestResult] = useState(false);
   const [quizData, setQuizData] = useState([]);
   const [ansQuestin, setAnsQuestion] = useState([]);
-  const [answerQuestion, setAnswerQuestion] = useState([]);
+  // const [answerQuestion, setAnswerQuestion] = useState([]);
+  const [endedQuest, setEndedQuest] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const filteredReadingQuestions = questData.filter(question => question.type !== 'book-reading');
@@ -37,7 +38,7 @@ export const BookQuest = ({QuestData}) => {
       id: quizData.questions[currentQuestionIn].id,
       answers_id: ansQuestin,
     };
-    setAnswerQuestion((prevAnswers) => [...prevAnswers, currentAnswers]);
+    // setAnswerQuestion((prevAnswers) => [...prevAnswers, currentAnswers]);
 
     if (currentQuestionIn < quizData.questions.length - 1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
@@ -69,6 +70,7 @@ export const BookQuest = ({QuestData}) => {
       axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
         .then(({ data }) => {
           console.log("endQuest", data);
+          setEndedQuest(data);
         });
     } else return;
 
@@ -152,7 +154,7 @@ export const BookQuest = ({QuestData}) => {
         </div>
       </div>
 
-      {questResult && <QuestResult onClose={() => setQuestResult(false)}/>}
+      {questResult && <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)}/>}
 
       {/* <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/> */}
       <NavigationQuest

@@ -26,7 +26,7 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
     }, [selectedOptions]);
 
     useEffect(() => {
-        clearSelectedOptions();
+        setSelectedOptions([]);
     }, [currentQuestion]);
 
     return (
@@ -47,6 +47,7 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
                                 id={answer.id} 
                                 onChange={() => handleCheckBoxChange(answer)}
                                 disabled={selectedOptions.length > 0 && !selectedOptions.includes(answer)}
+                                checked={selectedOptions.includes(answer.id)}
                             />
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">
