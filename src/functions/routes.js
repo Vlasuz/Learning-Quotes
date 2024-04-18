@@ -15,6 +15,7 @@ import { RestorePassword } from "../pages/RestorePassword/RestorePassword"
 import { SignUp } from "../pages/SignUp/SignUp"
 import { SignUpVerify } from "../pages/SignUpVerify/SignUpVerify"
 import { Tavern } from "../pages/Tavern/Tavern"
+import { TrainingSwamp } from "../pages/TrainingSwamp/TrainingSwamp"
 
 export const routes = () => {
     return [
@@ -82,13 +83,13 @@ export const routes = () => {
             path: '/listening-quest',
             element: <QuizPage/>
         },
-        // {
-        //     path: '/listening-quest/:levelId',
-        //     element: <QuizPage/>
-        // },
         {
             path: '/reading-quest',
             element: <ReadingQuest/>
+        },
+        {
+            path: '/training-swamp',
+            element: <TrainingSwamp/>
         },
         {
             path: '/info/:slug',
