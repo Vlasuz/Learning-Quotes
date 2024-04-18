@@ -17,7 +17,10 @@ export const Tavern = () => {
                     <h2>
                         Лучший процент правильных ответов
                     </h2>
-                    <ul className='users'>
+
+                    <h2 className='noData'>No data yet</h2>
+                    
+                    {/* <ul className='users'>
                         <li className='users__item'>
                             <div className="users__user">
                                 <div className="users__user_ic">
@@ -108,13 +111,16 @@ export const Tavern = () => {
                                 99%
                             </h3>
                         </li>
-                    </ul>
+                    </ul> */}
                 </li>
                 <li className='desk__item animate__animated animate__fadeInLeft'>
                     <h2>
                         Лучший <br />в уровне 1+
                     </h2>
-                    <ul className='users'>
+
+                    <h2 className='noData'>No data yet</h2>
+
+                    {/* <ul className='users'>
                         <li className='users__item'>
                             <div className="users__user">
                                 <div className="users__user_ic">
@@ -205,13 +211,16 @@ export const Tavern = () => {
                                 99%
                             </h3>
                         </li>
-                    </ul>
+                    </ul> */}
                 </li>
                 <li className='desk__item animate__animated animate__fadeInRight'>
                     <h2>
                         Самый активный пользователь
                     </h2>
-                    <ul className='users'>
+
+                    <h2 className='noData'>No data yet</h2>
+
+                    {/* <ul className='users'>
                         <li className='users__item'>
                             <div className="users__user">
                                 <div className="users__user_ic">
@@ -302,13 +311,16 @@ export const Tavern = () => {
                                 99%
                             </h3>
                         </li>
-                    </ul>
+                    </ul> */}
                 </li>
                 <li className='desk__item animate__animated animate__fadeInRight'>
                     <h2>
                         Лучшие результаты (общый рейтинг)
                     </h2>
-                    <ul className='users'>
+
+                    <h2 className='noData'>No data yet</h2>
+
+                    {/* <ul className='users'>
                         <li className='users__item'>
                             <div className="users__user">
                                 <div className="users__user_ic">
@@ -399,7 +411,7 @@ export const Tavern = () => {
                                 99%
                             </h3>
                         </li>
-                    </ul>
+                    </ul> */}
                 </li>
             </ul>
         </TavernStyle>

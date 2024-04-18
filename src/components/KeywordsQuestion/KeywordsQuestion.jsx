@@ -1,7 +1,7 @@
 import React from 'react'
 import { KeywordsQuestionStyle } from './KeywordsQuestion.styled'
 
-export const KeywordsQuestion = ({ questTitle, questWords }) => {
+export const KeywordsQuestion = ({ questTitle }) => {
   return (
     <KeywordsQuestionStyle className='animate__animated animate__fadeInLeft'>
         <h2>
@@ -9,14 +9,42 @@ export const KeywordsQuestion = ({ questTitle, questWords }) => {
         </h2>
 
         <ul>
-            {questWords.map(word => (
-                <li key={word}>
-                    <p>
-                        {word}
-                    </p>
-                    <input type="text" />
-                </li>
-            ))}
+            <li>
+                <p>
+                    Word
+                </p>
+                <input type="text" />
+            </li>
+            <li>
+                <p>
+                    Word
+                </p>
+                <input type="text" />
+            </li>
+            <li>
+                <p>
+                    Word
+                </p>
+                <input type="text" />
+            </li>
+            <li>
+                <p>
+                    Word
+                </p>
+                <input type="text" />
+            </li>
+            <li>
+                <p>
+                    Word
+                </p>
+                <input type="text" />
+            </li>
+            <li>
+                <p>
+                    Word
+                </p>
+                <input type="text" />
+            </li>
         </ul>
 
     </KeywordsQuestionStyle>

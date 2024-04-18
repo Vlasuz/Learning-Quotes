@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { QuestResultStyle } from './QuestResult.styled'
 
 import CorrectIc from '../../assets/img/icons/correct.svg'
@@ -15,9 +15,9 @@ export const QuestResult = ({ onClose, endedQuest }) => {
   return (
     <QuestResultStyle>
         <div className="results">
-            <Link className='close__btn' onClick={onClose}>
+            <NavLink to={'/map'} className='close__btn'>
                 <img src={CloseIc} alt='close ic' />
-            </Link>
+            </NavLink>
             <h2>
                 Results
             </h2>

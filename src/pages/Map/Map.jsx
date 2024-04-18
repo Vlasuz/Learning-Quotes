@@ -17,6 +17,7 @@ import ShipLvl from '../../assets/img/shipLvl.png'
 import DlptLvl from '../../assets/img/dlptLvl.png'
 import ThirdLvl from '../../assets/img/third-lvl.png'
 import Cast from '../../assets/img/csastle.png'
+import { toast } from 'react-toastify';
 
 const tutorialCookie = 'tutorialCompleted'
 
@@ -160,6 +161,10 @@ export const Map = () => {
         setCookie(tutorialCookie, 'true')
     })
 
+    const questInDevelopment = () => {
+        toast.error('This level is still under development');
+    }
+
     useEffect(() => {
         const completedTutorial = getCookie(tutorialCookie) === 'true';
 
@@ -185,7 +190,7 @@ export const Map = () => {
                     <NavLink to={'/leader-board'} className='leader__board animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={LeaderBoards} alt="LeaderBoards ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='training__swamp animate__animated animate__fadeIn animate__delay-1s'>
+                    <NavLink to={'/training-swamp'} className='training__swamp animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={TrainingSwamp} alt="trainingSwamp ph" />
                     </NavLink>
                     <NavLink to={'/quiz-start/1%2B'} className='first__lvl animate__animated animate__fadeIn animate__delay-1s'>
@@ -197,16 +202,16 @@ export const Map = () => {
                     <NavLink to={'/quiz-start/2%2B'} className='second__lvl__plus animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={SecondLvlPlus} alt="secondLvlPlus ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='ship__lvl animate__animated animate__fadeIn animate__delay-1s'>
-                        <img src={ShipLvl} alt="shipLvl ph" />
+                    <NavLink to={''} onClick={questInDevelopment} className='ship__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                        <img src={ShipLvl} alt="shipLvl ph" />                        
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                    <NavLink to={''} onClick={questInDevelopment} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={DlptLvl} alt="dlpt ph" />
                     </NavLink>
                     <NavLink to={'/quiz-start/3'} className='third__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={ThirdLvl} alt="dlpt ph" />
                     </NavLink>
-                    <NavLink to={'/quiz-start'} className='cast__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                    <NavLink to={''} onClick={questInDevelopment} className='cast__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={Cast} alt="dlpt ph" />
                     </NavLink>
 

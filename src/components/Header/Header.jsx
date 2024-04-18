@@ -19,14 +19,14 @@ export const Header = () => {
                         Learning Quotes
                     </h2>
                 </NavLink>
-                <div className="header__review">
+                {/* <div className="header__review">
                     <a href="foo">
                         Features
                     </a>
                     <a href="foo">
                         Reviews
                     </a>
-                </div>
+                </div> */}
                 <div className="header__login">
                     <NavLink to={'/sign-up'} href="foo">
                         Sign Up

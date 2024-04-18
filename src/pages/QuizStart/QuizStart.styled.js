@@ -26,7 +26,7 @@ export const QuizStartStyle = styled.div`
         &:hover{
             transform: scale(1.1) !important;
         }
-        &:focus{
+        &:active{
             transform: scale(0.95) !important;
         }
     }

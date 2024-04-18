@@ -151,6 +151,10 @@ export const TavernStyle = styled.div`
         }
     }
 
+    .noData {
+        margin-top: 30px;
+    }
+
     @media screen and (max-width: 1390px){
         padding: 57px 20px 200px;
 

@@ -35,6 +35,10 @@ export const NavigationQuestStyle = styled.div`
         transform: rotateY(180deg);
     }
 
+    .arrows{
+        margin-left: auto;
+    }
+
     @media screen and (max-width: 768px) {
         padding-right: 0;
     }
