@@ -1,42 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { QuestOptionsStyle } from './QuestOptions.styled'
 
-import CorrectIc from '../../assets/img/icons/correct.svg'
-import InCorrectIc from '../../assets/img/icons/incorrect.svg'
-
-export const QuestOptions = ({ currentQuestion, answerClick }) => {
-    const [answered, setAnswered] = useState(false);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
-    const [answerStat, setAnswerStat] = useState({});
+export const QuestOptions = ({ answerClick, dataItem, setAnsQuestion}) => {
+    const [selectedAnswer, setSelectedAnswer] = useState([]);
 
     const handleAnswerClick = (answer) => {
-        setSelectedAnswer(answer);
-        setAnswered(true);
+        const isSelected = selectedAnswer.includes(answer)    
 
-        answerClick(answer);
-
-        setAnswerStat((prevStat) => ({
-            ...prevStat,
-            [answer]: answer === currentQuestion.correctAnswer ? (
-                <img src={CorrectIc} alt="correct ph" className='animate__animated animate__fadeIn'/>
-                ) : (
-                <img src={InCorrectIc} alt="incorrect ph" className='animate__animated animate__fadeIn'/>
-            )
-        }))
+        setSelectedAnswer((prevSelected) => {
+            if (isSelected) {
+                return prevSelected.filter((selected) => selected !== answer);
+            } else {
+                return [...prevSelected, answer.id];
+            };
+        });
     }
 
+    console.log(selectedAnswer);
+
     useEffect(() => {
-        setAnswered(false);
-        setSelectedAnswer(null);
-    }, [currentQuestion])
+        setAnsQuestion(selectedAnswer)
+    }, [selectedAnswer])
 
   return (
     <QuestOptionsStyle className='animate__animated animate__fadeInRight'>
-        {currentQuestion.answers.map((answer) => (
-            <li key={answer} onClick={() => answerClick(answer)}>
-                <label htmlFor={`t-${currentQuestion.id}-${answer}`}>                    
-                    <input type="checkbox" id={`t-${currentQuestion.id}-${answer}`} 
-                        checked={answered && selectedAnswer === answer}
+        {dataItem?.options?.map((answer) => (
+            <li key={answer.id} onClick={() => answerClick(answer)}>
+                <label htmlFor={answer.id}>                    
+                    <input type="checkbox" id={answer.id} 
                         onChange={() => handleAnswerClick(answer)}
                     />
                     <span>
@@ -45,9 +36,9 @@ export const QuestOptions = ({ currentQuestion, answerClick }) => {
                         </svg>
                     </span>
 
-                    {answer}
+                    {answer.value}
 
-                    {answered && <div className='correct'>{answerStat[answer]}</div> }
+                    {/* {answered && <div className='correct'>{answerStat[answer]}</div> } */}
                 </label>
             </li>
         ))}

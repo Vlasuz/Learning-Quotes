@@ -30,6 +30,7 @@ export const ReadingQuest = () => {
   const isLastQuestion = quizData?.questions && currentQuestionIn === quizData.questions.length - 1;
 
   console.log(quizData?.questions?.length);
+  
   const handleNextQuestion = () => {
     const currentAnswers = {
       id: quizData.questions[currentQuestionIn].id,
