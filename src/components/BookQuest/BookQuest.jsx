@@ -30,15 +30,13 @@ export const BookQuest = ({QuestData}) => {
   const isLastQuestion = quizData?.questions && currentQuestionIn === quizData.questions.length - 1;
   const AnswerQuestStore = useSelector((state) => state.toolkit.answerQuest);
   const QuestStore = useSelector((state) => state.toolkit.quest);
-
-
+  const numQuest = currentQuestionIn + 1
 
   const handleNextQuestion = () => {
     const currentAnswers = {
       id: quizData.questions[currentQuestionIn].id,
       answers_id: ansQuestin,
     };
-    // setAnswerQuestion((prevAnswers) => [...prevAnswers, currentAnswers]);
 
     if (currentQuestionIn < quizData.questions.length - 1) {
       setCurrentQuestionIn((prevIndex) => prevIndex + 1);
@@ -94,8 +92,6 @@ export const BookQuest = ({QuestData}) => {
     // Обробка відповідей
   }
 
-  console.log(QuestData);
-
   return (
     <BookQuestStyle>
       <div className="book">
@@ -137,7 +133,7 @@ export const BookQuest = ({QuestData}) => {
 
           <QuestionsQuest
             dataItem={QuestData?.questions[currentQuestionIn]}
-            questionTxt={'Question'}
+            questionTxt={`Question №${numQuest}`}
             
           />
           <QuestOptions currentQuestion={currentQuestion} dataItem={QuestData.questions[currentQuestionIn]} answerClick={handleAnswer} setAnsQuestion={setAnsQuestion}/>
@@ -157,11 +153,11 @@ export const BookQuest = ({QuestData}) => {
       {questResult && <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)}/>}
 
       <NavigationQuest
-          nextPage={handleNextQuestion}
-          prevPage={handlePrevQuestion}
-          isLastQuestion={isLastQuestion}
-          handleEndQuest={handleEndQuest}
-        />
+        nextPage={handleNextQuestion}
+        prevPage={handlePrevQuestion}
+        isLastQuestion={isLastQuestion}
+        handleEndQuest={handleEndQuest}
+      />
 
     </BookQuestStyle>
   )

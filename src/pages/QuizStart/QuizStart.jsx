@@ -44,7 +44,7 @@ export const QuizStart = () => {
 
             <BackBtn link={'/map'}/>
 
-            <QuizTitle quizName={'DLPT 2 +'} quizTxt={'Choose type of tasks'} />
+            <QuizTitle quizName={`Quest ${levelId}`} quizTxt={'Choose type of tasks'} />
 
             <div className="select">
                 {/* to={'/listening-quest'} */}

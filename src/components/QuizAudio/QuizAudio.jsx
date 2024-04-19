@@ -1,15 +1,11 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useWavesurfer } from '@wavesurfer/react';
 import { QuizAudioStyle } from './QuizAudio.styled';
-
-import AudioFile from '../../assets/quiz/audio/audio-1.mp3'
-import PlayBtn from '../../assets/img/icons/play.svg'
-import PauseBtn from '../../assets/img/icons/pause.svg'
 import { getApiLink } from '../../api/getApiLink';
 
-const audioUrls = [
-  AudioFile,
-];
+import PlayBtn from '../../assets/img/icons/play.svg'
+import PauseBtn from '../../assets/img/icons/pause.svg'
+
 
 
 const formatTime = (seconds) =>
@@ -17,7 +13,7 @@ const formatTime = (seconds) =>
 .map((v) => `0${Math.floor(v)}`.slice(-2))
 .join(':');
 
-export const QuizAudio = ({QuestData}) => {
+export const QuizAudio = ({ QuestData, handleAudioEnd }) => {
   const containerRef = useRef(null);
 
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
@@ -29,6 +25,15 @@ export const QuizAudio = ({QuestData}) => {
     barGap: null,
     url: getApiLink(`/${QuestData.audio_file}`),
   });
+
+  useEffect(() => {
+    if (wavesurfer) {
+      wavesurfer.on('finish', handleAudioEnd);
+      return () => {
+        wavesurfer.unAll();
+      };
+    }
+  }, [handleAudioEnd, wavesurfer]);
 
   const onPlayPause = useCallback(() => {
     wavesurfer && wavesurfer.playPause();

@@ -25,12 +25,8 @@ export const ReadingQuest = () => {
   const QuestStore = useSelector((state) => state.toolkit.quest);
   const AnswerQuestStore = useSelector((state) => state.toolkit.answerQuest);
 
-  console.log(answerQuestion);
-  console.log(AnswerQuestStore);
-
   const isLastQuestion = quizData?.questions && currentQuestionIn === quizData.questions.length - 1;
-
-  console.log(quizData?.questions?.length);
+  const numQuest = currentQuestionIn + 1
 
   const handleNextQuestion = () => {
     const currentAnswers = {
@@ -101,13 +97,11 @@ export const ReadingQuest = () => {
             quizData?.questions?.length &&
             quizData?.questions[currentQuestionIn].question
           }
+          numQuest={numQuest}
         />
 
         <ReadindQuestOption
-          currentQuestion={
-            quizData?.questions?.length &&
-            quizData.questions[currentQuestionIn]
-          }
+          currentQuestion={quizData?.questions?.length && quizData.questions[currentQuestionIn]}
           setAnsQuestion={setAnsQuestion}
         />
 

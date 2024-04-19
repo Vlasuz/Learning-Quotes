@@ -1,420 +1,52 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { TavernStyle } from './Tavern.styled'
-
-import BackBtn from '../../assets/img/icons/Go-back.svg'
 import { NavLink } from 'react-router-dom'
 
+import BackBtn from '../../assets/img/icons/Go-back.svg'
+import axios from 'axios'
+import { getApiLink } from '../../api/getApiLink'
+import { TavernItem } from './TavernItem/TavernItem'
+import getCookie from '../../functions/getCookie'
+
 export const Tavern = () => {
-  return (
-    <div className='container-login'>
-        <TavernStyle>
-            <NavLink to={'/map'} className="back__btn">
-                <img src={BackBtn} alt="arrow ic" />
-                To Map
-            </NavLink>
-            <ul className="desk">
-                <li className='desk__item animate__animated animate__fadeInLeft'>
-                    <h2>
-                        Лучший процент правильных ответов
-                    </h2>
+    const [dataScoreboard, setDataScoreboard] = useState([]);
 
-                    <h2 className='noData'>No data yet</h2>
-                    
-                    {/* <ul className='users'>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                    </ul> */}
-                </li>
-                <li className='desk__item animate__animated animate__fadeInLeft'>
-                    <h2>
-                        Лучший <br />в уровне 1+
-                    </h2>
+    console.log(dataScoreboard);
 
-                    <h2 className='noData'>No data yet</h2>
+    useEffect(() => {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
 
-                    {/* <ul className='users'>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                    </ul> */}
-                </li>
-                <li className='desk__item animate__animated animate__fadeInRight'>
-                    <h2>
-                        Самый активный пользователь
-                    </h2>
+        axios.get(getApiLink('/api/quest/scoreboard'))
+            .then(({data}) => {
+                console.log(data);
+                setDataScoreboard(data)
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+    }, [])
 
-                    <h2 className='noData'>No data yet</h2>
 
-                    {/* <ul className='users'>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                    </ul> */}
-                </li>
-                <li className='desk__item animate__animated animate__fadeInRight'>
-                    <h2>
-                        Лучшие результаты (общый рейтинг)
-                    </h2>
 
-                    <h2 className='noData'>No data yet</h2>
+    return (
+        <div className='container-login'>
+            <TavernStyle>
+                <NavLink to={'/map'} className="back__btn">
+                    <img src={BackBtn} alt="arrow ic" />
+                    To Map
+                </NavLink>
+                <ul className="desk">
 
-                    {/* <ul className='users'>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                        <li className='users__item'>
-                            <div className="users__user">
-                                <div className="users__user_ic">
-                                    <p>
-                                        AS
-                                    </p>
-                                </div>
-                                <h3>
-                                    Anna S
-                                </h3>
-                            </div>
-                            <h3 className='users__percent'>
-                                99%
-                            </h3>
-                        </li>
-                    </ul> */}
-                </li>
-            </ul>
-        </TavernStyle>
-    </div>
-  )
+                    <TavernItem title={'Лучший процент правильных ответов'} dataScoreboard={dataScoreboard.correct_answers_percent}/>
+
+                    <TavernItem title={'Лучший'} subTitle={'в уровне 1+'} dataScoreboard={dataScoreboard.one_plus}/>
+
+                    <TavernItem title={'Лучший'} subTitle={'в уровне 2+'} dataScoreboard={dataScoreboard.two_plus}/>
+
+                    <TavernItem title={'Лучший'} subTitle={'в уровне 3'} dataScoreboard={dataScoreboard.three}/>
+
+                </ul>
+            </TavernStyle>
+        </div>
+    )
 }

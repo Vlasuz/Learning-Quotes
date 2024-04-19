@@ -7,7 +7,7 @@ export const QuestionsQuest = ({ questionTxt, dataItem}) => {
   return (
     <QuestionsQuestStyle className='animate__animated animate__fadeIn'>
         <h2>
-            {questionTxt} <span>!</span>
+            {questionTxt}
         </h2>
         <p>
             {dataItem?.question}

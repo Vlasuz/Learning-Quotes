@@ -22,7 +22,7 @@ export const QuizPageStyle = styled.div`
         max-width: 620px;
         padding: 16px;
         border-radius: 20px;
-        background: #93AEC6;
+        background: #648aac;
         margin-top: 100px;
         transition: all .3s ease;
 
@@ -30,9 +30,15 @@ export const QuizPageStyle = styled.div`
         font-size: 20px;
         font-weight: 700;
         line-height: 32px;
+        cursor: pointer;
 
         &:hover{
             background: #437BAD;
+        }
+
+        &:disabled {
+            background: #93AEC6;
+            cursor: unset;
         }
     }
 
