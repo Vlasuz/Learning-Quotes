@@ -21,9 +21,9 @@ export const AreaStats = () => {
         <h3>
             Study Time: <span>Avg 2 h/day Avd 10h/week</span>
         </h3> */}
-        <button>
+        {/* <button>
             Buy Premium
-        </button>
+        </button> */}
     </AreaStatsStyle>
   )
 }

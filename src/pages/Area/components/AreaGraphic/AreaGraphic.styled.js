@@ -257,4 +257,62 @@ export const AreaGraphicStyle = styled.div`
             gap: 40px;
         }
     }
+
+
+
+    .semicircle {
+        position: relative;
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 230px;
+        height: 115px;
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        border-bottom: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .semicircle .graph{
+        /* content: ""; */
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        border-radius: 50%;
+        background-image: conic-gradient(#9c27b0, #3f51b5 calc(50% / 2), #ddd 0);
+        transition: transform .5s ease-in-out;
+        z-index: 1;
+        transform: rotate(270deg);
+    }
+
+    .semicircle:after {
+        content: "";
+        position: absolute;
+        display: block;
+        /* background: #fff; */
+        background: url(${BgdDesk6}) no-repeat;
+        background-size: 208% 185%;
+        background-position: -97px -166px;
+        z-index: 2;
+        width: calc(100% - 50px);
+        height: calc(200% - 50px);
+        border-radius: 50%;
+        top: 23px;
+        left: 25px;
+    }
+
+    .semicircle  span{
+        color: #FFF;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 16.721px;
+        margin-top: 50px;
+        z-index: 3;
+    }
 `

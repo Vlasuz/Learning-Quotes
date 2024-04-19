@@ -10,6 +10,17 @@ export const AreaDraphicItem = ({statisticData, title}) => {
 
     console.log(statisticData);
 
+    if (!statisticData?.columns?.length) {
+        return <li className='graphic__item' style={{height: '100%'}}>
+                <h2>
+                    {title}
+                </h2>
+                <div className="graphic__con">
+                    <h2 style={{margin: '0 auto', marginTop: '20px'}}>No data yet</h2>
+                </div>
+            </li>   
+    }
+
     return (
         <li className='graphic__item'>
             <h2>
@@ -48,8 +59,12 @@ export const AreaDraphicItem = ({statisticData, title}) => {
                     {GraphicDataDlpt1?.map(item => (
                         <li key={item.date}>
                             <div className="column">
-                                <div className="column__green" style={{maxHeight: `${AnswerCorrectPercent}%`}}></div>
-                                <div className="column__red" style={{maxHeight: `${AnswerIncorrectPercent}%`}}></div>
+                                {item.correct === 0 ? null : 
+                                    <div className="column__green" style={{maxHeight: `${AnswerCorrectPercent}%`}}></div>
+                                }
+                                {item.incorrect === 0 ? null : 
+                                    <div className="column__red" style={{maxHeight: `${AnswerIncorrectPercent}%`}}></div>
+                                }
                             </div>
                             <p>
                                 {item.date}

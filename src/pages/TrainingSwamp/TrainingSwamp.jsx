@@ -8,33 +8,35 @@ import { KeywordsQuestion } from '../../components/KeywordsQuestion/KeywordsQues
 export const TrainingSwamp = () => {
    
   return (
-    <BookQuestStyle>
-      <div className="book">
-        <div className="book__lft">
+    <div className='container-login'>
+      <BookQuestStyle>
+        <div className="book">
+          <div className="book__lft">
 
-            <KeywordsQuestion
-              questTitle={'Keywords'}
-            />
+              <KeywordsQuestion
+                questTitle={'Keywords'}
+              />
 
+          </div>
+
+          <div className="book__rht">
+
+              <QuestOptionsKey/>
+
+          </div>
         </div>
 
-        <div className="book__rht">
+        {/* {questResult && <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)}/>} */}
 
-            <QuestOptionsKey/>
+        {/* <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/> */}
+        {/* <NavigationQuest
+            nextPage={handleNextQuestion}
+            prevPage={handlePrevQuestion}
+            isLastQuestion={isLastQuestion}
+            handleEndQuest={handleEndQuest}
+          /> */}
 
-        </div>
-      </div>
-
-      {/* {questResult && <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)}/>} */}
-
-      {/* <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/> */}
-      {/* <NavigationQuest
-          nextPage={handleNextQuestion}
-          prevPage={handlePrevQuestion}
-          isLastQuestion={isLastQuestion}
-          handleEndQuest={handleEndQuest}
-        /> */}
-
-    </BookQuestStyle>
+      </BookQuestStyle>
+    </div>
   )
 }

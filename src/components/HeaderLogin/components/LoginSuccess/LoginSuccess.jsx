@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 import headerProfileArr from '../../../../assets/img/icons/arrow-down.svg'
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,6 +13,7 @@ export const LoginSuccess = () => {
     const [profileOpen, setProfileOpen] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const user = useSelector(state => state.toolkit.user)
 
@@ -24,8 +25,12 @@ export const LoginSuccess = () => {
         navigate('/');
         setCookie('token', '');
         dispatch(setUser({}));
+        setProfileOpen(false);
     }
 
+    useEffect(() => {
+        setProfileOpen(false);
+    }, [location])
 
     useEffect(() => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;            
@@ -50,8 +55,7 @@ export const LoginSuccess = () => {
             }
         };
     
-        handleBodyOverflow(); // Встановлюємо початковий стан при рендері
-    
+        // handleBodyOverflow(); // Встановлюємо початковий стан при рендері        
         window.addEventListener('resize', handleBodyOverflow);
     
         // Функція для очищення
@@ -59,7 +63,7 @@ export const LoginSuccess = () => {
             const body = document.body;
             body.style.overflow = 'visible';
             body.style.marginRight = '0';
-          window.removeEventListener('resize', handleBodyOverflow);
+            window.removeEventListener('resize', handleBodyOverflow);
         };
     
         return cleanup;
@@ -67,13 +71,14 @@ export const LoginSuccess = () => {
 
   return (
     <div className="header__profile">
-        <div className="header__profile__img">
-            <h3>
-                AS
-            </h3>
-        </div>
+        
         <div className="header__profile__list">
             <div className="profile__list__head" onClick={handleProfileOpen}>
+                <div className="header__profile__img">
+                    <h3>
+                        {user.name && user.name.substring(0, 2).toUpperCase()}
+                    </h3>
+                </div>
                 <h2>
                     {user.name}
                 </h2>
