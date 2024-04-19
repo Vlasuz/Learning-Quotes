@@ -156,7 +156,6 @@ export const BookQuest = ({QuestData}) => {
 
       {questResult && <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)}/>}
 
-      {/* <NavigationQuest nextPage={handleNextQuestion} prevPage={handlePrevQuestion}/> */}
       <NavigationQuest
           nextPage={handleNextQuestion}
           prevPage={handlePrevQuestion}

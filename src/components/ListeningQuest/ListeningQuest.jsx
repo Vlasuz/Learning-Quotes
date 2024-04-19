@@ -7,12 +7,17 @@ import { QuizAudio } from '../QuizAudio/QuizAudio'
 import AudioImg from '../../assets/img/listening.png'
 
 export const ListeningQuest = ({ onClickNext, QuestData }) => {
+
+  const questLvl = QuestData.quest_level
+
+  console.log(QuestData.quest_level);
+
   return (
     <QuizPageStyle>
 
         <BackBtn link={'/quiz-start'}/>
 
-        <QuizTitle quizName={'DLPT 2 +.'} quizTxt={'Listen this audio'} />
+        <QuizTitle quizName={questLvl} quizTxt={'Listen this audio'} />
 
         <img className='audio__img animate__animated animate__fadeIn' src={AudioImg} alt="audio ph" />
 

@@ -61,11 +61,24 @@ export const VocabularyStyle = styled.div`
 
         &__list{
             width: 100%;
-            height: 100%;
+            max-height: 300px;
             overflow-y: auto;
             max-width: 400px;
             margin: 0 auto;
             margin-bottom: 30px;
+
+            &::-webkit-scrollbar{
+            width: 5px;
+            }
+            &::-webkit-scrollbar-thumb{
+                background: #783724;
+                border-radius: 12px;
+            }
+            &::-webkit-scrollbar-track{
+                background: #F2CCB3;
+                border-radius: 12px;
+
+            }
 
             li{
                 display: grid;

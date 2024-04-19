@@ -8,7 +8,7 @@ import VocabularyPh from '../../assets/img/vocabulary.png'
 
 export const QuestTxt = ({ dataItem }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isOpenTranslate, setIsOpenTranslate] = useState(false);
+    // const [isOpenTranslate, setIsOpenTranslate] = useState(false);
     // const [blockX, setBlockX] = useState(0);
     // const [blockY, setBlockY] = useState(0);
 
@@ -65,7 +65,7 @@ export const QuestTxt = ({ dataItem }) => {
 
         
 
-        {isOpen ? <Vocabulary onClose={() => setIsOpen(false)}/> : null }
+        {isOpen ? <Vocabulary dataItem={dataItem} onClose={() => setIsOpen(false)}/> : null }
     </QuestTxtStyle>
   )
 }

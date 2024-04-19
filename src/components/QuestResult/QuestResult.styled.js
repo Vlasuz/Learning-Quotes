@@ -45,6 +45,18 @@ export const QuestResultStyle = styled.div`
         overflow-y: auto;
         margin-bottom: 10px;
 
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: #783724;
+            border-radius: 12px;
+        }
+        &::-webkit-scrollbar-track{
+            background: #F2CCB3;
+            border-radius: 12px;
+        }
+
         img{
             max-width: 30px;
         }
