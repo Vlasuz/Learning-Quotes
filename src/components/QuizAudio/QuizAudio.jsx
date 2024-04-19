@@ -23,7 +23,7 @@ export const QuizAudio = ({ QuestData, handleAudioEnd }) => {
     progressColor: '#5FA2E5',
     barWidth: 1.5,
     barGap: null,
-    url: getApiLink(`/${QuestData.audio_file}`),
+    url: getApiLink(`/${QuestData?.audio_file}`),
   });
 
   useEffect(() => {
