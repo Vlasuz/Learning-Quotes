@@ -7,23 +7,39 @@ import { LoginFormStyle } from '../Login/components/LoginForm/LoginForm.styled'
 import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
 import { InputVerification } from '../../components/InputVerification/InputVerification'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { getApiLink } from '../../api/getApiLink'
+import getCookie from '../../functions/getCookie'
+import { toast } from 'react-toastify'
+import { VerifiAgain } from './VerifiAgain/VerifiAgain'
+import setCookie from '../../functions/setCookie'
 
 export const RestoreCode = () => {
-    const [verification] = useState(['', '', '', '', '', '',])
-    const [status] = useState('success');
+    const [verification, setVerification] = useState(['', '', '', '', '', '']);
     const navigate = useNavigate();
-
+    const userEmail = getCookie('email');
+    
     const submitForm = (evt) => {
         evt.preventDefault();
-        setTimeout(() => {
-            if (status === 'success') {
-                console.log('code for restore pass success', { verification });
-                navigate('/new-password')
-            } else if (status === 'wrong_pass') {
-                console.log('your pass is wrong!');
-                // сюда функц с красніми полями
-            }
-        }, 1000); 
+
+        const code = verification.join('');
+        console.log(code);
+
+
+        axios.post(getApiLink(`/api/user/check_reset_code?email=${userEmail}&code=886958`))
+            .then(({data}) => {
+                console.log(data);
+                if (data === false) {
+                    toast.error("what's happened. please try again")
+                } else { 
+                    setCookie('restoreCode', '886958' )
+                    navigate('/new-password')
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                toast.error(err?.response?.data?.detail)        
+            })
     }
 
 
@@ -33,19 +49,22 @@ export const RestoreCode = () => {
             <LoginBanner/>
             <LoginMain>
 
-                <LoginTitle arrow={true} title={'Enter Code'} desc={"We've sent an OTP verification code to your email. Kindly input it here."}/>
+                <LoginTitle link={'/restore-password'} arrow={true} title={'Enter Code'} desc={"We've sent an OTP verification code to your email. Kindly input it here."}/>
 
-                <LoginFormStyle onSubmit={submitForm}>
+                    <LoginFormStyle>
 
-                    <div className="form__input__buttons form__input__buttons_mar">
-                        
-                        <InputVerification />
+                        <div className="form__input__buttons form__input__buttons_mar">
+                            
+                            <InputVerification verification={verification} setVerification={setVerification}/>
 
-                        <ButtonForm buttonTxt={'Verify'} isFill={true}/>
+                            <VerifiAgain/>
 
-                    </div>
+                            <ButtonForm submitForm={submitForm} buttonTxt={'Verify'} isFill={true}/>
 
-                </LoginFormStyle>
+                        </div>
+
+                    </LoginFormStyle>
+                    
             </LoginMain>
         </LoginContainer>
     </div>

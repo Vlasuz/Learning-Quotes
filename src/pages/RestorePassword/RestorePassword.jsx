@@ -7,24 +7,28 @@ import { Input } from '../../components/Input/Input'
 import { LoginFormStyle } from '../../pages/Login/components/LoginForm/LoginForm.styled.js'
 import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { getApiLink } from '../../api/getApiLink.js'
+import { toast } from 'react-toastify'
+import setCookie from '../../functions/setCookie.js'
 
 export const RestorePassword = () => {
     const [email, setEmail] = useState('');
-    const [status] = useState('success');
     const navigate = useNavigate();
 
     const submitForm = (evt) => {
         evt.preventDefault();
-        setTimeout(() => {
-            if (status === 'success') {
-                // resetForm();
-                console.log('email for restore success', { email });
+
+        axios.post(getApiLink(`/api/user/reset_password_request?email=${email}`))
+            .then(({data}) => {
+                console.log(data);
                 navigate('/restore-password-code')
-            } else if (status === 'wrong_pass') {
-                console.log('your pass is wrong!');
-                // сюда функц с красніми полями
-            }
-        }, 1000); 
+                setCookie('email', email);
+            })
+            .catch((err) => {
+                console.error(err);
+                toast.error(err?.response?.data?.detail)
+            }) 
     }
 
   return (
@@ -33,7 +37,7 @@ export const RestorePassword = () => {
             <LoginBanner/>
             <LoginMain>
 
-                <LoginTitle arrow={true} title={'Restore password'} desc={'Enter your email for restore'}/>
+                <LoginTitle link={'/login'} arrow={true} title={'Restore password'} desc={'Enter your email for restore'}/>
 
                 <LoginFormStyle onSubmit={submitForm}>
 

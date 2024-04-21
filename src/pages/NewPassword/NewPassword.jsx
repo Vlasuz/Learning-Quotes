@@ -7,24 +7,35 @@ import { LoginFormStyle } from '../Login/components/LoginForm/LoginForm.styled'
 import { Input } from '../../components/Input/Input'
 import { ButtonForm } from '../../components/ButtonForm/ButtonForm'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import axios from 'axios'
+import { getApiLink } from '../../api/getApiLink'
+import getCookie from '../../functions/getCookie'
 
 export const NewPassword = () => {
     const [pass, setPass] = useState('');
-    const [status] = useState('success');
+    const [repeatPass, setRepeatPass] = useState('');
     const navigate = useNavigate();
+    const useEmail = getCookie('email');
+    const restoreCode = getCookie('restoreCode');
 
     const submitForm = (evt) => {
         evt.preventDefault();
-        setTimeout(() => {
-            if (status === 'success') {
-                // resetForm();
-                console.log('email for restore success', { pass });
-                navigate('/login')
-            } else if (status === 'wrong_pass') {
-                console.log('your pass is wrong!');
-                // сюда функц с красніми полями
-            }
-        }, 1000); 
+        
+        if (pass !== repeatPass) {
+            toast.warning("Passwords do not match");
+            return;
+        }
+
+        axios.put(getApiLink(`/api/user/update_password?email=${useEmail}&code=${restoreCode}&password=${pass}&password_conf=${repeatPass}`))
+            .then(({data}) => {
+                console.log(data);
+                navigate('/login');
+            })
+            .catch((err) => {
+                console.error(err);
+                toast.error(err?.response?.data?.detail)        
+            })
     }
 
   return (
@@ -33,12 +44,12 @@ export const NewPassword = () => {
             <LoginBanner/>
             <LoginMain>
 
-                <LoginTitle arrow={true} title={'New Password'} />
+                <LoginTitle link={'/restore-password-code'} arrow={true} title={'New Password'} />
 
                 <LoginFormStyle onSubmit={submitForm}>
 
                     <Input type={'password'} label={'Enter Password'} inputValue={setPass} placeholder={'Enter your Password'}/>
-                    <Input type={'password'} label={'Repeat Password'} inputValue={setPass} placeholder={'Repeat Password'}/>
+                    <Input type={'password'} label={'Repeat Password'} inputValue={setRepeatPass} placeholder={'Repeat Password'}/>
 
                     <div className="form__input__buttons form__input__buttons_mar">
 
