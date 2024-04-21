@@ -26,13 +26,13 @@ export const RestoreCode = () => {
         console.log(code);
 
 
-        axios.post(getApiLink(`/api/user/check_reset_code?email=${userEmail}&code=886958`))
+        axios.post(getApiLink(`/api/user/check_reset_code?email=${userEmail}&code=${code}`))
             .then(({data}) => {
                 console.log(data);
                 if (data === false) {
                     toast.error("what's happened. please try again")
                 } else { 
-                    setCookie('restoreCode', '886958' )
+                    setCookie('restoreCode', code )
                     navigate('/new-password')
                 }
             })

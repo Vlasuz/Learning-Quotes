@@ -72,14 +72,12 @@ export const ReadingQuest = () => {
         });
     } else return;
 
-    dispatch(setAnswer([]))
+    // dispatch(setAnswer([]))
 
   }, [AnswerQuestStore])
 
   useEffect(() => {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie(
-      "token"
-    )}`;
+    axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
 
     axios.get(getApiLink("/api/quest/active_quest")).then(({ data }) => {
       console.log(data);

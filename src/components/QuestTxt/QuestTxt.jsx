@@ -44,18 +44,19 @@ export const QuestTxt = ({ dataItem }) => {
         })
     }, [])
 
+
   return (
     <QuestTxtStyle>
         <h2 className='animate__animated animate__fadeIn'>
             {dataItem.name}
         </h2>
         <div className='translations__pos animate__animated animate__fadeIn'>
-            {/* <p onClick={handleOpenTranslate}>
-                {HTMLReactParser(dataItem?.quest_text ?? '')}
-            </p> */}
             <p onClick={handleOpenTranslate}>
-                {HTMLReactParser(newTxt ?? '')}
+                {HTMLReactParser(dataItem?.quest_text ?? '')}
             </p>
+            {/* <p onClick={handleOpenTranslate}>
+                {HTMLReactParser(newTxt ?? '')}
+            </p> */}
             {isOpenTranslate ? (
                 <div className="translations" style={{top: blockY + 40, left: blockX - 100}}>
                     <div className="translations__container">
