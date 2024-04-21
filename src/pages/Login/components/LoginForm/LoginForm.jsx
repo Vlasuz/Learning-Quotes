@@ -37,22 +37,24 @@ export const LoginForm = () => {
     }
 
     axios.post(getApiLink(`/api/auth/login?email=${email}&password=${pass}`))
-      .then(({ data }) => {
-        console.log(data);
-        resetForm();
-        setCookie("token", data.access_token);
-
-        axios.defaults.headers.common["Authorization"] = `Bearer ${data.access_token}`;
+      .then(({ data }) => {        
+        const token = data.access_token;
+        const expires = rememberMe ? null : {expires: 1};
+        
+        setCookie("token", token, expires);
+        
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         axios.get(getApiLink("/api/user/me"))
-          .then(({ data }) => {
-            console.log("user-data", data);
-            dispatch(setUser(data));
-            navigate("/map");
-          })
-          .catch((error) => {
-            console.error("Failed to fetch user data:", error);
-          });
+        .then(({ data }) => {
+          console.log("user-data", data);
+          dispatch(setUser(data));
+          navigate("/map");
         })
+        .catch((error) => {
+          console.error("Failed to fetch user data:", error);
+        });
+        resetForm();
+      })
       .catch((error) => {
         toast.error(error?.response?.data?.detail);
         console.log(error);
