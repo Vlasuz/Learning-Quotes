@@ -202,11 +202,11 @@ export const Map = () => {
                     <NavLink to={'/quiz-start/2%2B'} className='second__lvl__plus animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={SecondLvlPlus} alt="secondLvlPlus ph" />
                     </NavLink>
+                    <NavLink to={'/quiz-start/dlpt'} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                        <img src={DlptLvl} alt="dlpt ph" />
+                    </NavLink>
                     <NavLink to={''} onClick={questInDevelopment} className='ship__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={ShipLvl} alt="shipLvl ph" />                        
-                    </NavLink>
-                    <NavLink to={''} onClick={questInDevelopment} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
-                        <img src={DlptLvl} alt="dlpt ph" />
                     </NavLink>
                     <NavLink to={'/quiz-start/3'} className='third__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={ThirdLvl} alt="dlpt ph" />

@@ -19,9 +19,9 @@ export const Footer = () => {
     <FooterStyle>
         <div className='container'>
             <div className="footer__inner">
-                <a className='footer__logo' href="foo">
+                <NavLink to={'/'} className='footer__logo' href="foo">
                     Language Quests
-                </a>
+                </NavLink>
                 <p>
                     © 2023  Company Name. All rights reserved.
                 </p>

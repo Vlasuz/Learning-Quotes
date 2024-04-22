@@ -24,7 +24,8 @@ export const QuizStart = () => {
 
     const handleStartQuiz = (type, test) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
-        axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
+        if (levelId === 'dlpt') {
+            axios.post(getApiLink(`/api/quest/dlpt_start?type=${type}&language=${QuestLanguage}`))
             .then(({data}) => {
                 console.log(data);
                 dispatch(setQuest(data));
@@ -34,8 +35,21 @@ export const QuizStart = () => {
                 console.log(error);
                 if (error?.response?.data?.detail === 'You already have active quest') return navigate('/reading-quest')
                 error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
-
-            })            
+            })
+        } else {
+            axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
+                .then(({data}) => {
+                    console.log(data);
+                    dispatch(setQuest(data));
+                    navigate(`/${test}`);
+                })
+                .catch((error) => {
+                    console.log(error);
+                    if (error?.response?.data?.detail === 'You already have active quest') return navigate('/reading-quest')
+                    error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
+    
+                })
+        }
     }
 
   return (

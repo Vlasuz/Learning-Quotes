@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.styled';
 import { AppStyled } from './App.styled';
 import { Footer } from './components/Footer/Footer';
@@ -20,6 +20,7 @@ export const App = () => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const toggleLoader = (value) => {
     setLoading(value);
@@ -28,7 +29,10 @@ export const App = () => {
   useEffect(() => {
     const token = getCookie('token');
     setIsLoggedIn(!!token)
-
+    
+    if (token === 'undefined') {
+      navigate('/login')
+    }
     console.log('token', token);
   }, [location])
 
