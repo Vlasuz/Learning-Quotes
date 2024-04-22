@@ -12,6 +12,7 @@ import { Loader } from './components/Loader/Loader';
 import getCookie from './functions/getCookie';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 export const App = () => {
 
@@ -40,17 +41,18 @@ export const App = () => {
       <Loader loading={loading}/>
 
       <AppStyled>
-        {/* {location.pathname === '/' || location.pathname === '/Learning-Quotes' ? <Header /> : <HeaderLogin />} */}
-        {isLoggedIn ? <HeaderLogin /> : <Header />}
-          <TransitionGroup component={null}>
-            <CSSTransition key={location.pathname} classNames='fade' timeout={300} onEnter={() => toggleLoader(true)} onExited={() => toggleLoader(false)}>
-              <Routes location={location}>
-                {routesList.map(route => 
-                  <Route key={route.path} element={route.element} path={route.path} />
-                )}
-              </Routes>
-            </CSSTransition>
-          </TransitionGroup>
+        <GoogleOAuthProvider clientId="1071605377094-5663q4ujiakepp8ri3mis7buhclag70l.apps.googleusercontent.com">
+          {isLoggedIn ? <HeaderLogin /> : <Header />}
+            <TransitionGroup component={null}>
+              <CSSTransition key={location.pathname} classNames='fade' timeout={300} onEnter={() => toggleLoader(true)} onExited={() => toggleLoader(false)}>
+                <Routes location={location}>
+                  {routesList.map(route => 
+                    <Route key={route.path} element={route.element} path={route.path} />
+                  )}
+                </Routes>
+              </CSSTransition>
+            </TransitionGroup>
+        </GoogleOAuthProvider>;
         <Footer/>
       </AppStyled>
     </>

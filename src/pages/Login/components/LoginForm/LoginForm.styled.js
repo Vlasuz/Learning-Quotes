@@ -290,6 +290,7 @@ export const LoginFormStyle = styled.form`
             /* display: block; */
         }
 
+        button,
         a{
             width: 100%;
             max-width: 272px;

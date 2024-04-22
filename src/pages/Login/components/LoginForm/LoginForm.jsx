@@ -5,15 +5,11 @@ import { Input } from "../../../../components/Input/Input";
 import { ButtonForm } from "../../../../components/ButtonForm/ButtonForm";
 import axios from "axios";
 import { getApiLink } from "../../../../api/getApiLink";
-
-import Apple from "../../../../assets/img/icons/apple.svg";
-import Facebook from "../../../../assets/img/icons/facebook.svg";
-import Google from "../../../../assets/img/icons/google.svg";
-import Discord from "../../../../assets/img/icons/discord.svg";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../../../redux/toolkitSlice";
 import setCookie from "../../../../functions/setCookie";
 import { toast } from "react-toastify";
+import { LoginFormSoc } from "./LoginFormSoc/LoginFormSoc";
 
 export const LoginForm = () => {
   // const [disabled, setDisabled] = useState(false);
@@ -143,35 +139,9 @@ export const LoginForm = () => {
           <ButtonForm buttonTxt={"Sign Up"} isFill={false} />
         </NavLink>
       </div>
-      <div className="form__input__pay">
-        <h3>Continue with social network</h3>
-        <ul>
-          <li>
-            <a href="foo">
-              <img src={Google} alt="google ic" />
-              Google
-            </a>
-          </li>
-          <li>
-            <a href="foo">
-              <img src={Apple} alt="apple ic" />
-              Apple
-            </a>
-          </li>
-          <li>
-            <a href="foo">
-              <img src={Facebook} alt="faceboock ic" />
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a href="foo">
-              <img src={Discord} alt="discord ic" />
-              Discord
-            </a>
-          </li>
-        </ul>
-      </div>
+      
+      <LoginFormSoc/>
+
     </LoginFormStyle>
   );
 };

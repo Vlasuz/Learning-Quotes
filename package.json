@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://VolodymyrBilichenko.github.io/Learning-Quotes",
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +13,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.6.8",
     "html-react-parser": "^5.0.11",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^6.1.6",
