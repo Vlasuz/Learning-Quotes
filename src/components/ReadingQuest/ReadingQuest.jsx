@@ -8,9 +8,10 @@ import { QuestResult } from "../QuestResult/QuestResult.jsx";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { getApiLink } from "../../api/getApiLink.js";
-import { addAnswer, setQuest, setAnswer } from "../../redux/toolkitSlice.js";
+import { addAnswer, setQuest } from "../../redux/toolkitSlice.js";
 import getCookie from "../../functions/getCookie.js";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 export const ReadingQuest = () => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
@@ -59,9 +60,6 @@ export const ReadingQuest = () => {
 
   useEffect(() => {
 
-    console.log(AnswerQuestStore?.length);
-    console.log(quizData?.questions?.length);
-
     if (AnswerQuestStore?.length === quizData?.questions?.length) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
   
@@ -69,7 +67,12 @@ export const ReadingQuest = () => {
         .then(({ data }) => {
           console.log("endQuest", data);
           setEndedQuest(data)
-        });
+        })
+        .catch((err) => {
+          console.error(err);
+          toast.error(err?.response?.data?.detail)
+          navigate('/map');
+        }) 
     } else return;
 
     // dispatch(setAnswer([]))
@@ -79,11 +82,16 @@ export const ReadingQuest = () => {
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
 
-    axios.get(getApiLink("/api/quest/active_quest")).then(({ data }) => {
-      console.log(data);
-      setQuizData(data);
-      dispatch(setQuest(data));
-    });
+    axios.get(getApiLink("/api/quest/active_quest"))
+      .then(({ data }) => {
+        setQuizData(data);
+        dispatch(setQuest(data));
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(err?.response?.data?.detail)
+        navigate('/map');
+    }) 
   }, []);
 
   return (

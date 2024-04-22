@@ -15,6 +15,7 @@ import getCookie from '../../functions/getCookie'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addAnswer, setAnswer, setQuest } from '../../redux/toolkitSlice'
+import { toast } from 'react-toastify'
 
 export const BookQuest = ({QuestData}) => {
   const [currentQuestionIn, setCurrentQuestionIn] = useState(0);
@@ -47,14 +48,14 @@ export const BookQuest = ({QuestData}) => {
     dispatch(addAnswer(currentAnswers));
   };
 
-  const handlePrevQuestion = () => {
-    if (currentQuestionIn > 0) {
-      setCurrentQuestionIn((prevIndex) => prevIndex - 1);
-      setQuestResult(false);
-    } else if (currentQuestionIn === 0) {
-      navigate("/listening-quest");
-    }
-  };
+  // const handlePrevQuestion = () => {
+  //   if (currentQuestionIn > 0) {
+  //     setCurrentQuestionIn((prevIndex) => prevIndex - 1);
+  //     setQuestResult(false);
+  //   } else if (currentQuestionIn === 0) {
+  //     navigate("/listening-quest");
+  //   }
+  // };
 
   const handleEndQuest = () => {
     handleNextQuestion();
@@ -67,12 +68,16 @@ export const BookQuest = ({QuestData}) => {
   
       axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
         .then(({ data }) => {
-          console.log("endQuest", data);
           setEndedQuest(data);
-        });
+        })
+        .catch((err) => {
+          console.error(err);
+          toast.error(err?.response?.data?.detail)
+          navigate('/map');
+        }) 
     } else return;
 
-    dispatch(setAnswer([]))
+    // dispatch(setAnswer([]))
 
   }, [AnswerQuestStore])
 
@@ -81,16 +86,17 @@ export const BookQuest = ({QuestData}) => {
       "token"
     )}`;
 
-    axios.get(getApiLink("/api/quest/active_quest")).then(({ data }) => {
-      console.log(data);
-      setQuizData(data);
-      dispatch(setQuest(data));
-    });
+    axios.get(getApiLink("/api/quest/active_quest"))
+      .then(({ data }) => {
+        setQuizData(data);
+        dispatch(setQuest(data));
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(err?.response?.data?.detail)
+        navigate('/map');
+      });
   }, []);
-
-  const handleAnswer = (select) => {
-    // Обробка відповідей
-  }
 
   return (
     <BookQuestStyle>
@@ -136,7 +142,7 @@ export const BookQuest = ({QuestData}) => {
             questionTxt={`Question №${numQuest}`}
             
           />
-          <QuestOptions currentQuestion={currentQuestion} dataItem={QuestData.questions[currentQuestionIn]} answerClick={handleAnswer} setAnsQuestion={setAnsQuestion}/>
+          <QuestOptions currentQuestion={currentQuestion} dataItem={QuestData.questions[currentQuestionIn]} setAnsQuestion={setAnsQuestion}/>
 
 
 
@@ -154,7 +160,7 @@ export const BookQuest = ({QuestData}) => {
 
       <NavigationQuest
         nextPage={handleNextQuestion}
-        prevPage={handlePrevQuestion}
+        // prevPage={handlePrevQuestion}
         isLastQuestion={isLastQuestion}
         handleEndQuest={handleEndQuest}
       />

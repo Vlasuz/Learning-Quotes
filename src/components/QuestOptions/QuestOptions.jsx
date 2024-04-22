@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { QuestOptionsStyle } from './QuestOptions.styled'
 
-export const QuestOptions = ({ answerClick, dataItem, setAnsQuestion}) => {
+export const QuestOptions = ({ dataItem, setAnsQuestion}) => {
     const [selectedAnswer, setSelectedAnswer] = useState([]);
 
-    const handleAnswerClick = (answer) => {
-        const isSelected = selectedAnswer.includes(answer)    
+    const multiplyChoiceSelect = (answer) => {
+        
+        setSelectedAnswer(prev => {
+            if (prev.some(item => item === answer.id) ) {
+                return prev.filter(item => item !== answer.id)
+            }
+            return [...prev, answer.id];
+            
+        })
+    };
 
-        setSelectedAnswer((prevSelected) => {
-            if (isSelected) {
-                return prevSelected.filter((selected) => selected !== answer);
-            } else {
-                return [...prevSelected, answer.id];
-            };
-        });
+    const oneChoiceSelect = (answer) => {
+        setSelectedAnswer([answer.id])
+    };
+
+    const typeQuestion = {
+        'one_choice': oneChoiceSelect,
+        'multiple_choice': multiplyChoiceSelect,
     }
-
-    console.log(selectedAnswer);
 
     useEffect(() => {
         setAnsQuestion(selectedAnswer)
@@ -25,10 +31,12 @@ export const QuestOptions = ({ answerClick, dataItem, setAnsQuestion}) => {
   return (
     <QuestOptionsStyle className='animate__animated animate__fadeInRight'>
         {dataItem?.options?.map((answer) => (
-            <li key={answer.id} onClick={() => answerClick(answer)}>
+            <li key={answer.id} >
                 <label htmlFor={answer.id}>                    
                     <input type="checkbox" id={answer.id} 
-                        onChange={() => handleAnswerClick(answer)}
+                        onChange={() => typeQuestion[dataItem.choice_type](answer)}
+                        checked={selectedAnswer.includes(answer.id)}
+
                     />
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" fill="none">

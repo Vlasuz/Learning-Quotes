@@ -16,6 +16,8 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
         })
     };
 
+    console.log(selectedOptions);
+
     const oneChoiceSelect = (answer) => {
         setSelectedOptions([answer.id])
     };
@@ -40,7 +42,6 @@ export const ReadindQuestOption = ({ currentQuestion, setAnsQuestion }) => {
                     <li key={answer.id}>
                         <label 
                             htmlFor={answer.id}
-                            // className={selectedOptions.length > 0 && !selectedOptions.includes(answer) ? 'disabled' : ''}
                         >
                             <p>{optionNum[index]}</p>
 

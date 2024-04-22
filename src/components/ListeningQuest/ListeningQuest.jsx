@@ -10,17 +10,16 @@ import getCookie from '../../functions/getCookie'
 import { getApiLink } from '../../api/getApiLink'
 import { setQuest } from '../../redux/toolkitSlice'
 import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 export const ListeningQuest = ({ onClickNext, QuestData }) => {
   const [isAudioPlayed, setIsAudioPlayed] = useState(false);
-  // const [quizData, setQuizData] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const questLvl = QuestData.quest_level;
+  const QuestAudioFile = QuestData?.audio_file;
 
-  const QuestAudioFile = QuestData?.audio_file 
-  console.log(QuestData?.audio_file);
-
-  // console.log(quizData);
 
   const handleAudioEnd = () => {
     setIsAudioPlayed(true);
@@ -29,10 +28,15 @@ export const ListeningQuest = ({ onClickNext, QuestData }) => {
   useEffect(() => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
 
-    axios.get(getApiLink("/api/quest/active_quest")).then(({ data }) => {
-      dispatch(setQuest(data));
-      // setQuizData()
-    });
+    axios.get(getApiLink("/api/quest/active_quest"))
+      .then(({ data }) => {
+        dispatch(setQuest(data));
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(err?.response?.data?.detail);
+        navigate('/map');
+      }) 
   }, []);
 
   return (

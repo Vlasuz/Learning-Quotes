@@ -7,13 +7,11 @@ import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
 import { useSelector } from 'react-redux'
 
-export const QuestResult = ({ onClose, endedQuest }) => {
+export const QuestResult = ({ endedQuest }) => {
 
-    const dataEndQuest = endedQuest.questions
-    const dataQuest = useSelector(state => state.toolkit.answerQuest)
+    const dataEndQuest = endedQuest.questions;
+    const dataQuest = useSelector(state => state.toolkit.answerQuest);
 
-    console.log(dataQuest);
-    console.log(dataEndQuest);
   return (
     <QuestResultStyle>
         <div className="results">
@@ -31,8 +29,8 @@ export const QuestResult = ({ onClose, endedQuest }) => {
 
                                 {item?.options
                                     ?.filter(answerOption => {
-                                        const currQuestion = dataQuest.filter(ansOptionStore => ansOptionStore.id === item.id)[0];
-                                        return currQuestion.answers_id.some(selectedOption => selectedOption === answerOption.id);                           
+                                        const currQuestion = dataQuest?.filter(ansOptionStore => ansOptionStore?.id === item?.id)[0];
+                                        return currQuestion?.answers_id?.some(selectedOption => selectedOption === answerOption?.id);                           
                                     })
                                     ?.map(question => (
                                         <div className="question__answer">
