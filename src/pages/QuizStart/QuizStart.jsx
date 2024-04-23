@@ -20,6 +20,18 @@ export const QuizStart = () => {
     const encodedLevelId = encodeURIComponent(levelId);
 
     const QuestLanguage = getCookie('LangCookie')
+
+    const handleActiveQuest = () => {
+        axios.get(getApiLink("/api/quest/active_quest"))
+            .then(({ data }) => {
+                dispatch(setQuest(data));
+            })
+            .catch((err) => {
+                console.error(err);
+                toast.error(err?.response?.data?.detail)
+                navigate('/map');
+            }) 
+    }
     console.log(QuestLanguage);
 
     const handleStartQuiz = (type, test) => {
@@ -29,12 +41,16 @@ export const QuizStart = () => {
             .then(({data}) => {
                 console.log(data);
                 dispatch(setQuest(data));
-                navigate(`/${test}`);
+                navigate(`/${test}/dlpt`);
             })
             .catch((error) => {
                 console.log(error);
-                if (error?.response?.data?.detail === 'You already have active quest') return navigate('/reading-quest')
+                if (error?.response?.data?.detail === 'You already have active quest') {
+                    handleActiveQuest();
+                    return navigate(`/${test}`)
+                }
                 error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
+
             })
         } else {
             axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
@@ -45,9 +61,13 @@ export const QuizStart = () => {
                 })
                 .catch((error) => {
                     console.log(error);
-                    if (error?.response?.data?.detail === 'You already have active quest') return navigate('/reading-quest')
+                    if (error?.response?.data?.detail === 'You already have active quest') {
+                        handleActiveQuest();
+                        return navigate(`/${test}`)
+                    }
                     error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
     
+                    
                 })
         }
     }

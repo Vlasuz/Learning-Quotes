@@ -88,6 +88,10 @@ export const routes = () => {
             element: <ReadingQuest/>
         },
         {
+            path: '/reading-quest/:levelId',
+            element: <ReadingQuest/>
+        },
+        {
             path: '/training-swamp',
             element: <TrainingSwamp/>
         },

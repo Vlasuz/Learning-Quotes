@@ -1,16 +1,25 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { QuestResultStyle } from './QuestResult.styled'
 
 import CorrectIc from '../../assets/img/icons/correct.svg'
 import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAnswer } from '../../redux/toolkitSlice'
 
 export const QuestResult = ({ endedQuest }) => {
 
     const dataEndQuest = endedQuest.questions;
     const dataQuest = useSelector(state => state.toolkit.answerQuest);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const closeResult = () => {
+        navigate('/map')
+        dispatch(setAnswer([]))
+    }
 
   return (
     <QuestResultStyle>
@@ -47,7 +56,7 @@ export const QuestResult = ({ endedQuest }) => {
                     ))}
             </ul>
 
-            <Link to={'/map'} className='ok__btn'>OK</Link>
+            <button onClick={() => closeResult()} className='ok__btn'>OK</button>
         </div>
     </QuestResultStyle>
   )

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ReadingQuestStyle } from "./ReadingQuest.styled.js";
 import { ReadingQuestQuestion } from "../ReadingQuestQuestion/ReadingQuestQuestion.jsx";
 import { NavigationQuest } from "../NavigationQuest/NavigationQuest.jsx";
@@ -18,12 +18,13 @@ export const ReadingQuest = () => {
   const [questResult, setQuestResult] = useState(false);
   const [answerQuestion, setAnswerQuestion] = useState([]);
   const [ansQuestin, setAnsQuestion] = useState([]);
-  const [quizData, setQuizData] = useState([]);
+  const QuestStore = useSelector((state) => state.toolkit.quest);
+  const [quizData, setQuizData] = useState(QuestStore);
   const [endedQuest, setEndedQuest] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { levelId } = useParams();
 
-  const QuestStore = useSelector((state) => state.toolkit.quest);
   const AnswerQuestStore = useSelector((state) => state.toolkit.answerQuest);
 
   const isLastQuestion = quizData?.questions && currentQuestionIn === quizData.questions.length - 1;
@@ -58,30 +59,49 @@ export const ReadingQuest = () => {
     handleNextQuestion();
   };
 
+
   useEffect(() => {
+    console.log(QuestStore);
+    console.log(AnswerQuestStore);
 
-    if (AnswerQuestStore?.length === quizData?.questions?.length) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-  
-      axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
-        .then(({ data }) => {
-          console.log("endQuest", data);
-          setEndedQuest(data)
-        })
-        .catch((err) => {
-          console.error(err);
-          toast.error(err?.response?.data?.detail)
-          navigate('/map');
-        }) 
+    if ( QuestStore?.id && AnswerQuestStore?.length === QuestStore?.questions?.length) {
+
+      if (levelId === 'dlpt') {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+        axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
+          .then(({ data }) => {
+            console.log("endQuest", data);
+            setEndedQuest(data)
+          })
+          .catch((err) => {
+            console.error(err);
+            toast.error(err?.response?.data?.detail)
+            navigate('/map');
+          }) 
+      } else {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+        axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
+          .then(({ data }) => {
+            console.log("endQuest", data);
+            setEndedQuest(data)
+          })
+          .catch((err) => {
+            console.error(err);
+            toast.error(err?.response?.data?.detail)
+            navigate('/map');
+          }) 
+      }
     } else return;
-
-    // dispatch(setAnswer([]))
 
   }, [AnswerQuestStore])
 
-  useEffect(() => {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+  console.log(QuestStore?.id);
 
+  useEffect(() => {
+    
+    if (QuestStore?.id) return;
+    
+    axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
     axios.get(getApiLink("/api/quest/active_quest"))
       .then(({ data }) => {
         setQuizData(data);
