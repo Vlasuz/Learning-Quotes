@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import 'animate.css';
 
 import { MapStyle } from './Map.styled'
@@ -18,12 +18,18 @@ import DlptLvl from '../../assets/img/dlptLvl.png'
 import ThirdLvl from '../../assets/img/third-lvl.png'
 import Cast from '../../assets/img/csastle.png'
 import { toast } from 'react-toastify';
+import axios from 'axios';
+import { getApiLink } from '../../api/getApiLink';
+import { useDispatch } from 'react-redux';
+import { setUserWords } from '../../redux/toolkitSlice';
 
 const tutorialCookie = 'tutorialCompleted'
 
 export const Map = () => {
     const [popUpId, setPopUpId] = useState(0);
     const [popUp, setPopUp] = useState(false);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const mapTxt = [
         {
@@ -165,6 +171,23 @@ export const Map = () => {
         toast.error('This level is still under development');
     }
 
+    const handleTrainingSwamp = () => {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+        axios.post(getApiLink('/api/vocabulary/training_word'))
+          .then(({ data }) => {
+            console.log(data);
+            dispatch(setUserWords(data))
+            navigate('/training-swamp')
+            // Оновлюємо дані для наступної картки
+            // setCardTitle(data.title);
+            // setCardWords(data.words);
+          })
+          .catch(err => {
+            console.error(err);
+            toast.warning(err?.response?.data?.detail)
+          });
+      };
+
     useEffect(() => {
         const completedTutorial = getCookie(tutorialCookie) === 'true';
 
@@ -190,7 +213,7 @@ export const Map = () => {
                     <NavLink to={'/leader-board'} className='leader__board animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={LeaderBoards} alt="LeaderBoards ph" />
                     </NavLink>
-                    <NavLink to={'/training-swamp'} className='training__swamp animate__animated animate__fadeIn animate__delay-1s'>
+                    <NavLink to={''} onClick={handleTrainingSwamp} className='training__swamp animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={TrainingSwamp} alt="trainingSwamp ph" />
                     </NavLink>
                     <NavLink to={'/quiz-start/1%2B'} className='first__lvl animate__animated animate__fadeIn animate__delay-1s'>

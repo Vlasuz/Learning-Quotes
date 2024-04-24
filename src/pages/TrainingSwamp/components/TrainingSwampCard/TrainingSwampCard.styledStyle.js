@@ -47,6 +47,7 @@ export const TrainingSwampCardStyle = styled.div`
         cursor: pointer;
         transform-style: preserve-3d;
         position: relative;
+        box-shadow: 0px 8px 16px -2px #1B212C1F;
 
         span {
             font-weight: 700;
