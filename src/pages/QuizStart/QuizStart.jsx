@@ -9,7 +9,7 @@ import getCookie from '../../functions/getCookie'
 
 import Listening from '../../assets/img/listening.png'
 import Book from '../../assets/img/book.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setQuest } from '../../redux/toolkitSlice'
 import { toast } from 'react-toastify'
 
@@ -18,25 +18,46 @@ export const QuizStart = () => {
     const navigate = useNavigate();
     const { levelId } = useParams();
     const encodedLevelId = encodeURIComponent(levelId);
+    const QuestStore = useSelector(state => state.toolkit.quest);
+
+    console.log(levelId);
 
     const QuestLanguage = getCookie('LangCookie')
 
     const handleActiveQuest = () => {
-        axios.get(getApiLink("/api/quest/active_quest"))
-            .then(({ data }) => {
-                dispatch(setQuest(data));
-            })
-            .catch((err) => {
-                console.error(err);
-                toast.error(err?.response?.data?.detail)
-                navigate('/map');
-            }) 
+        if (QuestStore?.id) return;
+
+        if (levelId === 'dlpt') {
+            axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+            axios.get(getApiLink("/api/quest/active_dlpt"))
+                .then(({ data }) => {
+                    dispatch(setQuest(data));
+                    navigate(`/${test}/dlpt`)
+                })
+                .catch((err) => {
+                    console.error(err);
+                    toast.error(err?.response?.data?.detail)
+                    navigate('/map');
+                }) 
+        } else {
+            axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+            axios.get(getApiLink("/api/quest/active_quest"))
+                .then(({ data }) => {
+                    dispatch(setQuest(data));
+                    return navigate(`/${test}`)
+                })
+                .catch((err) => {
+                    console.error(err);
+                    toast.error(err?.response?.data?.detail)
+                    navigate('/map');
+                })
+        }
     }
     console.log(QuestLanguage);
 
     const handleStartQuiz = (type, test) => {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
         if (levelId === 'dlpt') {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
             axios.post(getApiLink(`/api/quest/dlpt_start?type=${type}&language=${QuestLanguage}`))
             .then(({data}) => {
                 console.log(data);
@@ -46,13 +67,13 @@ export const QuizStart = () => {
             .catch((error) => {
                 console.log(error);
                 if (error?.response?.data?.detail === 'You already have active quest') {
-                    handleActiveQuest();
-                    return navigate(`/${test}`)
+                   return handleActiveQuest();                    
                 }
                 error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
 
             })
         } else {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
             axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
                 .then(({data}) => {
                     console.log(data);
@@ -62,8 +83,7 @@ export const QuizStart = () => {
                 .catch((error) => {
                     console.log(error);
                     if (error?.response?.data?.detail === 'You already have active quest') {
-                        handleActiveQuest();
-                        return navigate(`/${test}`)
+                        return handleActiveQuest();
                     }
                     error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
     

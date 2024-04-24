@@ -101,17 +101,32 @@ export const ReadingQuest = () => {
     
     if (QuestStore?.id) return;
     
-    axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-    axios.get(getApiLink("/api/quest/active_quest"))
-      .then(({ data }) => {
-        setQuizData(data);
-        dispatch(setQuest(data));
+    if (levelId === 'dlpt') {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+      axios.get(getApiLink("/api/quest/active_dlpt"))
+        .then(({ data }) => {
+          setQuizData(data);
+          dispatch(setQuest(data));
+        })
+        .catch((err) => {
+          console.error(err);
+          toast.error(err?.response?.data?.detail)
+          navigate('/map');
       })
-      .catch((err) => {
-        console.error(err);
-        toast.error(err?.response?.data?.detail)
-        navigate('/map');
-    }) 
+    } else {
+
+      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+      axios.get(getApiLink("/api/quest/active_quest"))
+        .then(({ data }) => {
+          setQuizData(data);
+          dispatch(setQuest(data));
+        })
+        .catch((err) => {
+          console.error(err);
+          toast.error(err?.response?.data?.detail)
+          navigate('/map');
+      }) 
+    }
   }, []);
 
   return (

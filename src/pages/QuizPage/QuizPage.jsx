@@ -18,7 +18,7 @@ export const QuizPage = () => {
   return (
     <div className='container-login'>
 
-      {showComponent ? <ListeningQuest onClickNext={handleNextQuest} QuestData={QuestData}/> : <BookQuest QuestData={QuestData}/>}
+      {QuestData?.audio_file && showComponent ? <ListeningQuest onClickNext={handleNextQuest} QuestData={QuestData}/> : <BookQuest QuestData={QuestData}/>}
         
     </div>
   )

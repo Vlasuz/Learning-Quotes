@@ -13,7 +13,7 @@ const formatTime = (seconds) =>
 .map((v) => `0${Math.floor(v)}`.slice(-2))
 .join(':');
 
-export const QuizAudio = ({ QuestData, handleAudioEnd }) => {
+export const QuizAudio = ({ QuestData, handleAudioEnd, audioUrls }) => {
   const containerRef = useRef(null);
 
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
@@ -23,7 +23,7 @@ export const QuizAudio = ({ QuestData, handleAudioEnd }) => {
     progressColor: '#5FA2E5',
     barWidth: 1.5,
     barGap: null,
-    url: getApiLink(`/${QuestData?.audio_file}`),
+    url: getApiLink(`/${QuestData?.audio_file}` || `/${audioUrls}`),
   });
 
   useEffect(() => {

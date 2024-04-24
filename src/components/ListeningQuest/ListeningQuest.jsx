@@ -9,16 +9,18 @@ import axios from 'axios'
 import getCookie from '../../functions/getCookie'
 import { getApiLink } from '../../api/getApiLink'
 import { setQuest } from '../../redux/toolkitSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export const ListeningQuest = ({ onClickNext, QuestData }) => {
   const [isAudioPlayed, setIsAudioPlayed] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { levelId } = useParams();
   const questLvl = QuestData.quest_level;
   const QuestAudioFile = QuestData?.audio_file;
+  const QuestStore = useSelector(state => state.toolkit.quest)
 
 
   const handleAudioEnd = () => {
@@ -26,17 +28,33 @@ export const ListeningQuest = ({ onClickNext, QuestData }) => {
   };
 
   useEffect(() => {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+    console.log(QuestStore?.id);
+    if (QuestStore?.id) return;
 
-    axios.get(getApiLink("/api/quest/active_quest"))
-      .then(({ data }) => {
-        dispatch(setQuest(data));
-      })
-      .catch((err) => {
-        console.error(err);
-        toast.error(err?.response?.data?.detail);
-        navigate('/map');
-      }) 
+    if (levelId === 'dlpt') {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+      axios.get(getApiLink("/api/quest/active_dlpt"))
+        .then(({ data }) => {
+          dispatch(setQuest(data));
+        })
+        .catch((err) => {
+          console.error(err);
+          toast.error(err?.response?.data?.detail);
+          navigate('/map');
+        })
+    } else {
+
+      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+      axios.get(getApiLink("/api/quest/active_quest"))
+        .then(({ data }) => {
+          dispatch(setQuest(data));
+        })
+        .catch((err) => {
+          console.error(err);
+          toast.error(err?.response?.data?.detail);
+          navigate('/map');
+        }) 
+    }
   }, []);
 
   return (
