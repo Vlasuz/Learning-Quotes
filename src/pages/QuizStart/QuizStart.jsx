@@ -6,7 +6,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { getApiLink } from '../../api/getApiLink'
 import getCookie from '../../functions/getCookie'
-
 import Listening from '../../assets/img/listening.png'
 import Book from '../../assets/img/book.png'
 import { useDispatch, useSelector } from 'react-redux'
@@ -20,11 +19,9 @@ export const QuizStart = () => {
     const encodedLevelId = encodeURIComponent(levelId);
     const QuestStore = useSelector(state => state.toolkit.quest);
 
-    console.log(levelId);
-
     const QuestLanguage = getCookie('LangCookie')
 
-    const handleActiveQuest = () => {
+    const handleActiveQuest = (test) => {
         if (QuestStore?.id) return;
 
         if (levelId === 'dlpt') {
@@ -53,7 +50,6 @@ export const QuizStart = () => {
                 })
         }
     }
-    console.log(QuestLanguage);
 
     const handleStartQuiz = (type, test) => {
         if (levelId === 'dlpt') {
@@ -67,7 +63,7 @@ export const QuizStart = () => {
             .catch((error) => {
                 console.log(error);
                 if (error?.response?.data?.detail === 'You already have active quest') {
-                   return handleActiveQuest();                    
+                   return handleActiveQuest(test);                   
                 }
                 error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
 
@@ -83,7 +79,7 @@ export const QuizStart = () => {
                 .catch((error) => {
                     console.log(error);
                     if (error?.response?.data?.detail === 'You already have active quest') {
-                        return handleActiveQuest();
+                        return handleActiveQuest(test);
                     }
                     error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
     
@@ -101,7 +97,6 @@ export const QuizStart = () => {
             <QuizTitle quizName={`Quest ${levelId}`} quizTxt={'Choose type of tasks'} />
 
             <div className="select">
-                {/* to={'/listening-quest'} */}
                 <button onClick={e => handleStartQuiz('listening', 'listening-quest')} className='animate__animated animate__fadeInLeft'>
                     <img src={Listening} alt="Listening ph" />
                     Listening <br />Comprehension
@@ -111,8 +106,6 @@ export const QuizStart = () => {
                     Reading <br />Comprehension
                 </button>
             </div>
-
-            {/* <button className='animate__animated animate__fadeInUp'>Choose</button> */}
 
         </QuizStartStyle>
     </div>

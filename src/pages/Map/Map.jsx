@@ -178,9 +178,6 @@ export const Map = () => {
             console.log(data);
             dispatch(setUserWords(data))
             navigate('/training-swamp')
-            // Оновлюємо дані для наступної картки
-            // setCardTitle(data.title);
-            // setCardWords(data.words);
           })
           .catch(err => {
             console.error(err);

@@ -4,14 +4,14 @@ import { QuizAudio } from '../QuizAudio/QuizAudio'
 
 import AudioImg from '../../assets/img/listening.png'
 
-export const ListeningQuestion = ({ questTitle, questDesc, audioUrls, questStoreItem }) => {
+export const ListeningQuestion = ({ questTitle, questStoreItem }) => {
   return (
     <ListeningQuestionStyle className='animate__animated animate__fadeInLeft'>
         <h2>
           {questTitle}
         </h2>
         <p>
-          {questDesc}
+          {questStoreItem?.text}
         </p>
 
         <QuizAudio audioUrls={questStoreItem.audio_file}/>

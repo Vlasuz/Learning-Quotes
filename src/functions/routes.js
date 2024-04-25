@@ -75,10 +75,6 @@ export const routes = () => {
             path: '/quiz-start',
             element: <QuizStart/>
         },
-        // {
-        //     path: '/quiz-start/:levelId',
-        //     element: <QuizStart/>
-        // },
         {
             path: '/quiz-start/:levelId',
             element: <QuizStart/>

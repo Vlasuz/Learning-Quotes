@@ -11,8 +11,4 @@ export const ReadingQuestStyle = styled.div`
   @media screen and (max-width: 768px) {
     padding: 30px 10px;
   }
-
-  .card_page {
-    padding: 50px 0;
-  }
 `
