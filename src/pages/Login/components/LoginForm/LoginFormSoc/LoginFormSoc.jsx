@@ -1,5 +1,4 @@
 import React from 'react'
-import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,43 +7,32 @@ import Facebook from "../../../../../assets/img/icons/facebook.svg";
 import Google from "../../../../../assets/img/icons/google.svg";
 import Discord from "../../../../../assets/img/icons/discord.svg";
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../../../../redux/toolkitSlice';
 import { getApiLink } from '../../../../../api/getApiLink';
 import { GoogleLogin } from '@react-oauth/google';
+import setCookie from '../../../../../functions/setCookie';
+import { setUser } from '../../../../../redux/toolkitSlice';
 
 export const LoginFormSoc = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    // const login = useGoogleLogin({
-    //     onSuccess: async (response) => {
-    //         try {
-    //             const res = await axios.get(
-    //                 'https://www.googleapis.com/oauth2/v3/userinfo',
-    //                 {
-    //                     headers: {
-    //                         Authorization: `Bearer ${response.access_token}`
-    //                     }
-    //                 }
-    //             );
-    //             console.log('res', res);
-
-    //             // axios.post(getApiLink(`/api/auth/soc_login?soc_auth=google&token=${response.access_token}`))
-    //             //     .then(({data}) => {
-    //             //         console.log(data);
-    //             //     })
-
-    //         } catch (err) {
-    //             console.error(err);
-    //             navigate('/login');
-    //         }
-    //     }
-    // });
-
     const SubmitAuthGoogle = (token) => {
         axios.post(getApiLink(`/api/auth/soc_login?soc_auth=google&token=${token}`))
             .then(({data}) => {
-                console.log(data);
+                console.log(data.access_token);
+                setCookie('token', data);
+
+                axios.defaults.headers.common["Authorization"] = `Bearer ${data.access_token}`;
+                axios.get(getApiLink("/api/user/me"))
+                .then(({ data }) => {
+                  console.log("user-data", data);
+                  dispatch(setUser(data));
+                  navigate("/map");
+                })
+                .catch((error) => {
+                  console.error("Failed to fetch user data:", error);
+                  navigate('/login');
+                });
             })
             .catch(err => {
                 console.error(err);
@@ -58,16 +46,7 @@ export const LoginFormSoc = () => {
         <div className="form__input__pay">
 
             <h3>Continue with social network</h3>            
-
-            <GoogleLogin
-                onSuccess={credentialResponse => {
-                    console.log(credentialResponse);
-                    SubmitAuthGoogle(credentialResponse.credential)
-                }}
-                onError={() => {
-                    console.log('Login Failed');
-                }}
-            />;
+            
 
             <ul>
                 <li>
@@ -76,6 +55,18 @@ export const LoginFormSoc = () => {
                         <img src={Google} alt="google ic" />
                         Google
                     </button>
+                    <div className="loginGoogle">
+                        <GoogleLogin
+                            onSuccess={credentialResponse => {
+                                console.log(credentialResponse);
+                                SubmitAuthGoogle(credentialResponse.credential)
+                            }}
+                            onError={() => {
+                                console.log('Login Failed');
+                            }}
+                        />;
+
+                    </div>
                 </li>
                 <li>
                     <a href="foo">

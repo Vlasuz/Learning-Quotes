@@ -288,6 +288,18 @@ export const LoginFormStyle = styled.form`
             width: 100%;
             max-width: 272px;
             /* display: block; */
+            position: relative;
+        }
+
+        .loginGoogle{
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            /* margin-top: 10px; */
+
+            /* &:hover{
+                border: 1px solid #FBAC79;
+            } */
         }
 
         button,
@@ -315,8 +327,11 @@ export const LoginFormStyle = styled.form`
             margin-right: 12px;
         }
 
+        
+
         @media screen and (max-width: 768px) {
             margin-top: 30px;
         }
     }
+
 `

@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 import { LoginFormSoc } from "./LoginFormSoc/LoginFormSoc";
 
 export const LoginForm = () => {
-  // const [disabled, setDisabled] = useState(false);
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
