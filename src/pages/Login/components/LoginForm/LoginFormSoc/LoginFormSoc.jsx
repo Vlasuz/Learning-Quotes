@@ -20,13 +20,14 @@ export const LoginFormSoc = () => {
         axios.post(getApiLink(`/api/auth/soc_login?soc_auth=google&token=${token}`))
             .then(({data}) => {
                 console.log(data.access_token);
-                setCookie('token', data);
+                setCookie('token', data.access_token);
 
                 axios.defaults.headers.common["Authorization"] = `Bearer ${data.access_token}`;
                 axios.get(getApiLink("/api/user/me"))
                 .then(({ data }) => {
                   console.log("user-data", data);
-                  dispatch(setUser(data));
+                //   dispatch(setUser(data.access_token));
+                //   setCookie('token', data.access_token);
                   navigate("/map");
                 })
                 .catch((error) => {
@@ -68,24 +69,24 @@ export const LoginFormSoc = () => {
 
                     </div>
                 </li>
-                <li>
+                {/* <li>
                     <a href="foo">
                         <img src={Apple} alt="apple ic" />
                         Apple
                     </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <a href="foo">
                         <img src={Facebook} alt="faceboock ic" />
                         Facebook
                     </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                     <a href="foo">
                         <img src={Discord} alt="discord ic" />
                         Discord
                     </a>
-                </li>
+                </li> */}
             </ul>
         </div>  
     )

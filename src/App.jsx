@@ -13,6 +13,8 @@ import getCookie from './functions/getCookie';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { useSelector } from 'react-redux';
+import setCookie from './functions/setCookie';
 
 export const App = () => {
 
@@ -21,19 +23,24 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
+  const token = getCookie('token');
+  const langCook = getCookie('LangCookie')
+  const landuageStorage = useSelector(state => state.toolkit.language)
+  console.log(landuageStorage);
+
+  if (langCook === undefined) {
+    setCookie('LangCookie', 'russian')
+  }
 
   const toggleLoader = (value) => {
     setLoading(value);
   }
 
   useEffect(() => {
-    const token = getCookie('token');
     setIsLoggedIn(!!token)
     
-    if (token === 'undefined') {
-      navigate('/login')
-    }
-  }, [location])
+    token === undefined || token === '' ? navigate('/') : navigate('/map');
+  }, [token])
 
   return (
     <>    

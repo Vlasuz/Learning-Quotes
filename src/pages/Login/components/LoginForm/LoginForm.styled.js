@@ -295,6 +295,10 @@ export const LoginFormStyle = styled.form`
             opacity: 0;
             position: absolute;
             top: 0;
+            overflow: hidden;
+            div{
+                transform: scale(1.6);
+            }
             /* margin-top: 10px; */
 
             /* &:hover{

@@ -15,14 +15,13 @@ export const AreaGraphic = ({statisticData}) => {
 
                 <AreaDraphicItem statisticData={statisticData?.all} title={'All Stats'}/>
 
-                <AreaDraphicItem statisticData={statisticData?.one_plus} title={'Stats DLPT 1+'}/>
+                <AreaDraphicItem statisticData={statisticData?.one_plus} title={'Stats 1+'}/>
                 
-                <AreaDraphicItem statisticData={statisticData?.two_plus} title={'Stats DLPT 2+'}/>
+                <AreaDraphicItem statisticData={statisticData?.two_plus} title={'Stats 2'}/>
 
-                <AreaDraphicItem statisticData={statisticData.three} title={'Stats DLPT 3'}/>
+                <AreaDraphicItem statisticData={statisticData.three} title={'Stats 3'}/>
 
                 <AreaDraphicItem statisticData={statisticData.words} title={'New Words'}/>
-
 
                 <li className='graphic__item'>
                     <h2>

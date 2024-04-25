@@ -1,14 +1,16 @@
 import React from 'react'
 
 export const AreaDraphicItem = ({statisticData, title}) => {
-    const GraphicDataDlpt1 = statisticData?.columns || []
+    const GraphicDataDlpt1 = statisticData?.columns || [];
 
-    const AnswerSum = GraphicDataDlpt1[0]?.correct + GraphicDataDlpt1[0]?.incorrect
-    const AnswerCorrect = GraphicDataDlpt1[0]?.correct
-    const AnswerCorrectPercent = (AnswerCorrect * 100) / AnswerSum
-    const AnswerIncorrectPercent = 100 - AnswerCorrectPercent
+    const Words = GraphicDataDlpt1[0]?.value;
+    const WordsSum = (GraphicDataDlpt1[0]?.value * 100) / Words;
 
-    console.log(statisticData);
+
+    const AnswerSum = Words ?? GraphicDataDlpt1[0]?.correct + GraphicDataDlpt1[0]?.incorrect;
+    const AnswerCorrect = GraphicDataDlpt1[0]?.correct;
+    const AnswerCorrectPercent = (AnswerCorrect * 100) / AnswerSum;
+    const AnswerIncorrectPercent = 100 - AnswerCorrectPercent;
 
     if (!statisticData?.columns?.length) {
         return <li className='graphic__item' style={{height: '100%'}}>
@@ -58,14 +60,23 @@ export const AreaDraphicItem = ({statisticData, title}) => {
                 <ul className='graphic__stats'>
                     {GraphicDataDlpt1?.map(item => (
                         <li key={item.date}>
-                            <div className="column">
-                                {item.correct === 0 ? null : 
-                                    <div className="column__green" style={{maxHeight: `${AnswerCorrectPercent}%`}}></div>
-                                }
-                                {item.incorrect === 0 ? null : 
-                                    <div className="column__red" style={{maxHeight: `${AnswerIncorrectPercent}%`}}></div>
-                                }
-                            </div>
+                            {!item.value ? (
+                                <div className="column">
+                                    {item.correct === 0 ? null : 
+                                        <div className="column__green" style={{maxHeight: `${AnswerCorrectPercent}%`}}></div>
+                                    }
+                                    {item.incorrect === 0 ? null : 
+                                        <div className="column__red" style={{maxHeight: `${AnswerIncorrectPercent}%`}}></div>
+                                    }
+                                </div>
+                                ) : (
+                                    <div className="column">
+                                        {/* {  */}
+                                            <div className="column__green" style={{background: '#FFDFD6', maxHeight: `${WordsSum}%`}}></div>
+                                        {/* } */}
+                                    </div>
+                                )
+                            }
                             <p>
                                 {item.date}
                             </p>
