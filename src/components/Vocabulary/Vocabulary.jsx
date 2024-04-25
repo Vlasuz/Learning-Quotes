@@ -4,10 +4,11 @@ import { VocabularyStyle } from './Vocabulary.styled'
 import CloseIc from '../../assets/img/icons/close.svg'
 
 export const Vocabulary = ({ onClose, dataItem}) => {
-    const dataWords = dataItem.words
+    const dataWords = dataItem?.words
 
     return (
         <VocabularyStyle>
+            <div className='vocabluary_bgd' onClick={onClose}></div>
             <div className="vocabulary">
                 <button className='vocabulary__close' onClick={onClose}>
                     <img src={CloseIc} alt="close ic" />

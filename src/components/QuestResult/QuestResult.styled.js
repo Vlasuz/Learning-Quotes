@@ -9,8 +9,16 @@ export const QuestResultStyle = styled.div`
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.50);
     z-index: 10;
+    
+    .results_bgd{
+        background: rgba(0, 0, 0, 0.50);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
     .results{
         position: fixed;

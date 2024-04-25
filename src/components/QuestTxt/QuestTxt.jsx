@@ -15,13 +15,7 @@ export const QuestTxt = ({ dataItem }) => {
     const [newTxt, setNewTxt] = useState('');
     const [blockX, setBlockX] = useState(0);
     const [blockY, setBlockY] = useState(0);
-    const [addedWords, setAddedWords] = useState([]);
     const [selectedWordTranslation, setSelectedWordTranslation] = useState('');
-
-
-    console.log(dataItem.words);
-    console.log(dataItem.quest_text);
-    console.log(addedWords);
 
     const handleOpenVocabulary = () => {
         setIsOpen(!isOpen);
@@ -58,18 +52,6 @@ export const QuestTxt = ({ dataItem }) => {
                         word,
                         wordId,
                     });
-                    setAddedWords((prev) => {
-                        if(!prev.some((item) => item === word)) {
-                            return [...prev, word]
-                        } else {
-                            return prev
-                        }
-    
-                    })
-                    // const wordId = item.getAttribute("data-id");
-                    // const wordTranslate = item.getAttribute("data-translate");
-                    // setSelectedWordTranslation(wordTranslate);
-                    // handleAddToVocabulary(wordId);
                 }
             })
         }, 500)
@@ -81,15 +63,15 @@ export const QuestTxt = ({ dataItem }) => {
 
         axios.post(getApiLink(`/api/vocabulary/add?pk=${wordId}`))
             .then(({data}) => {
-                console.log(data);
+                toast.success('word added to dictionary', data);
+                setIsOpenTranslate(false);
             })
             .catch(err => {
                 console.error(err);
-                toast.warning(err.response.data.detail)
+                toast.warning(err.response.data.detail);
+                setIsOpenTranslate(false);
             })
     };
-
-    console.log(newTxt);
 
 
   return (

@@ -23,6 +23,7 @@ export const QuestResult = ({ endedQuest }) => {
 
   return (
     <QuestResultStyle>
+        <div className='results_bgd' onClick={() => navigate('/map')}></div>
         <div className="results">
             <NavLink to={'/map'} className='close__btn'>
                 <img src={CloseIc} alt='close ic' />

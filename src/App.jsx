@@ -33,7 +33,6 @@ export const App = () => {
     if (token === 'undefined') {
       navigate('/login')
     }
-    console.log('token', token);
   }, [location])
 
   return (

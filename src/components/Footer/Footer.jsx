@@ -10,7 +10,6 @@ export const Footer = () => {
     useEffect(() => {
         axios.get(getApiLink('/api/info/pages/'))
             .then(({data}) => {
-                console.log(data);
                 setInfoData(data);
             })
     }, [])

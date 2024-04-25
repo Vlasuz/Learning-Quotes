@@ -9,8 +9,17 @@ export const VocabularyStyle = styled.div`
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.50);
+    /* background: rgba(0, 0, 0, 0.50); */
     z-index: 10;
+
+    .vocabluary_bgd{
+        background: rgba(0, 0, 0, 0.50);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     
     .vocabulary{
         position: absolute;
