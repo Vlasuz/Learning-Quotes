@@ -1,29 +1,15 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const fadeOut = keyframes`
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-`;
-
-const fadeIn = keyframes`
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`;
 
 export const TrainingSwampCardStyle = styled.div`
+    padding: 120px 0 50px;
 
     .card_con{
         position: relative;
-        max-width: 850px;
+        max-width: 750px;
+        display: flex;
         margin: 0 auto;
+        justify-content: center;
 
         h2 {
             position: absolute;
@@ -35,65 +21,73 @@ export const TrainingSwampCardStyle = styled.div`
         }
     }
 
-    .card{
-        background: #FDE7B6;
-        padding: 50px;
-        height: 540px;
+    .scene {
+        display: inline-block;
+        width: 100%;
+        max-width: 750px;
+        height: 460px;
+        perspective: 900px;
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transform-origin: center right;
+        transition: transform 1s;
+        box-shadow: 0px 8px 16px -2px #1B212C1F;
+    }
+
+    .card.is-flipped {
+        transform: translateX(-100%) rotateY(-180deg);
+    }
+
+    .card__face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: all 1.1s ease;
-        cursor: pointer;
-        transform-style: preserve-3d;
-        position: relative;
-        box-shadow: 0px 8px 16px -2px #1B212C1F;
+        padding: 35px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 36px;
+        color: #000;
+        backface-visibility: hidden;
 
-        span {
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 36px;
-            color: #000;
-            max-width: 700px;
-            text-align: center;
-            margin-bottom: 15px;
-            animation: ${fadeIn} 1s ease;
-        }
-
-        p{
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 36px;
-            color: #000;
-            max-width: 700px;
-            text-align: center;
-            animation: ${fadeIn} 1s ease;
-        }
-
-        &.active {
-            transform: rotateY(180deg);
-
-            span{
-                transform: rotateY(-180deg);
-                animation: ${fadeIn} 2s ease;
-            }
-            p{
-                transform: rotateY(-180deg);
-                animation: ${fadeIn} 2s ease;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            height: 380px;
-        }
     }
+    
+    .card_image{
+        padding: 5px;
+        background: #fff;
+        transform: rotate(5deg);
+        margin-bottom: 30px;
+
+        img {
+            max-width: 350px;
+        }
+
+    }
+
+    .card__face--front {
+        background: #FDE7B6;
+    }
+
+    .card__face--back {
+        background: #e1cda0;
+        transform: rotateY(180deg);
+    }
+
 
     .card__answ{
         margin-top: 50px;
         display: flex;        
         gap: 50px;
         justify-content: center;
-        animation: ${fadeOut} 2s ease;
 
         img {
             max-width: 50px;
@@ -120,4 +114,5 @@ export const TrainingSwampCardStyle = styled.div`
             gap: 30px;
         }
     }
+
 `

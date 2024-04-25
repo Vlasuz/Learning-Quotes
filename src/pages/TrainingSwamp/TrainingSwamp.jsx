@@ -7,10 +7,8 @@ export const TrainingSwamp = () => {
   return (
     <div className='container-login'>
       <ReadingQuestStyle>
-        <div className="card_page">
 
-        <TrainingSwampCard/>
-        </div>
+          <TrainingSwampCard/>
 
 
       </ReadingQuestStyle>
