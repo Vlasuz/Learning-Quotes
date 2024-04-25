@@ -61,8 +61,6 @@ export const ReadingQuest = () => {
 
 
   useEffect(() => {
-    console.log(QuestStore);
-    console.log(AnswerQuestStore);
 
     if ( QuestStore?.id && AnswerQuestStore?.length === QuestStore?.questions?.length) {
 
@@ -70,7 +68,6 @@ export const ReadingQuest = () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
           .then(({ data }) => {
-            console.log("endQuest", data);
             setEndedQuest(data)
           })
           .catch((err) => {
@@ -82,7 +79,6 @@ export const ReadingQuest = () => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
           .then(({ data }) => {
-            console.log("endQuest", data);
             setEndedQuest(data)
           })
           .catch((err) => {
@@ -94,8 +90,6 @@ export const ReadingQuest = () => {
     } else return;
 
   }, [AnswerQuestStore])
-
-  console.log(QuestStore?.id);
 
   useEffect(() => {
     

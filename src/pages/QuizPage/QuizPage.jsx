@@ -9,8 +9,6 @@ export const QuizPage = () => {
 
   const QuestData = useSelector((state) => state.toolkit.quest);
 
-  console.log(QuestData);
-
   const handleNextQuest = () => {
     setShowComponent(!showComponent)
   }

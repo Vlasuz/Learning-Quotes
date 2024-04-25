@@ -56,7 +56,6 @@ export const QuizStart = () => {
             axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
             axios.post(getApiLink(`/api/quest/dlpt_start?type=${type}&language=${QuestLanguage}`))
             .then(({data}) => {
-                console.log(data);
                 dispatch(setQuest(data));
                 navigate(`/${test}/dlpt`);
             })
@@ -72,7 +71,6 @@ export const QuizStart = () => {
             axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
             axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
                 .then(({data}) => {
-                    console.log(data);
                     dispatch(setQuest(data));
                     navigate(`/${test}`);
                 })

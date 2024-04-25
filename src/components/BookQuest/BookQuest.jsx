@@ -33,6 +33,9 @@ export const BookQuest = ({QuestData}) => {
   const isLastQuestion = QuestStore?.questions && currentQuestionIn === QuestStore?.questions?.length - 1;
   const numQuest = currentQuestionIn + 1
 
+  const questStoreAudio = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]?.audio_file
+  const questStoreItem = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]
+
   const handleNextQuestion = () => {
     const currentAnswers = {
       id: QuestStore?.questions[currentQuestionIn]?.id,
@@ -61,7 +64,6 @@ export const BookQuest = ({QuestData}) => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
           .then(({ data }) => {
-            console.log("endQuest", data);
             setEndedQuest(data)
           })
           .catch((err) => {
@@ -73,7 +75,6 @@ export const BookQuest = ({QuestData}) => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
           .then(({ data }) => {
-            console.log("endQuest", data);
             setEndedQuest(data)
           })
           .catch((err) => {
@@ -115,12 +116,6 @@ export const BookQuest = ({QuestData}) => {
             })
     }
   }, []);
-
-  const questStoreAudio = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]?.audio_file
-  const questStoreItem = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]
-
-  console.log(questStoreItem);
-  
 
   return (
     <BookQuestStyle>

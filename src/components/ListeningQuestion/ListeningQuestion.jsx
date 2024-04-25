@@ -14,7 +14,7 @@ export const ListeningQuestion = ({ questTitle, questStoreItem }) => {
           {questStoreItem?.text}
         </p>
 
-        <QuizAudio audioUrls={questStoreItem.audio_file}/>
+        <QuizAudio audioUrls={questStoreItem?.audio_file}/>
 
         <img src={AudioImg} alt="listen ph" />
 

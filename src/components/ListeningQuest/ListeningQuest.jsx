@@ -28,7 +28,6 @@ export const ListeningQuest = ({ onClickNext, QuestData }) => {
   };
 
   useEffect(() => {
-    console.log(QuestStore?.id);
     if (QuestStore?.id) return;
 
     if (levelId === 'dlpt') {

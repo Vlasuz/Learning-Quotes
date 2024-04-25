@@ -13,7 +13,6 @@ const toolkitSlice = createSlice({
     reducers: {
         setUser(state, action) {
             state.user = action.payload
-            console.log(action.payload);
         },
         setQuest(state, action) {
             state.quest = action.payload
