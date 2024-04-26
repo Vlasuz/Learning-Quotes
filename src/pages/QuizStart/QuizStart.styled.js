@@ -74,7 +74,7 @@ export const QuizStartStyle = styled.div`
         .select{
             flex-direction: column;
             img{
-                max-width: 100px;
+                max-width: 250px;
                 margin: 0 auto;
             }
         }

@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const HeaderStyle = styled.div`
     padding: 28px 0 19px;
     border-bottom: 1px solid #D8D8D8;
+    position: relative;
+    z-index: 10;
 
     .header{
         display: flex;
@@ -62,22 +64,24 @@ export const HeaderStyle = styled.div`
         &__burger{
             max-width: 24px;
             cursor: pointer;
-            transition: all .3s ease;
+            transition: all .3s ease;                        
         }
-        &__burger_active{
+        /* &__burger_active{
             transform: rotateY(180deg);
-        }
+        } */
 
         &__burger__body{
             position: absolute;
             transition: all .3s ease;
             left: 0;
-            top: 70px;
+            top: 49px;
             background: #fff;
             border-radius: 0 0 15px 15px;
             padding: 12px;
             width: 100%;
-            z-index: 11;
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
 
             li{
                 margin-bottom: 15px;
@@ -104,6 +108,18 @@ export const HeaderStyle = styled.div`
 
         }
 
+    }
+
+    .active{
+        .header__burger{
+            transform: rotateY(180deg);
+        }
+
+        .header__burger__body{
+            max-height: 1000px;
+            opacity: 1;
+            visibility: visible;
+        }
     }
 
     h2{

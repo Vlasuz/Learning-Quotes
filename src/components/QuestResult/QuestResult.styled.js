@@ -146,6 +146,7 @@ export const QuestResultStyle = styled.div`
         }
 
         .results {
+            padding: 50px 30px;
             h2{
                 font-size: 34px;
             }

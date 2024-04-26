@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { HeaderStyle } from './Header.styled'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import headerMenu from '../../assets/img/icons/header_menu.svg'
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleOpenMenu = () => {
         setIsOpen(!isOpen);
     }
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [navigate])
   return (
     <HeaderStyle>
         <div className='container-main animate__animated animate__fadeInDown'>
@@ -35,9 +40,8 @@ export const Header = () => {
                         Login
                     </NavLink>
                 </div>
-                <div className="header__mob">
-                    <img onClick={handleOpenMenu} className='header__burger' src={headerMenu} alt="menu icon" />
-                    {isOpen ? (
+                    <div className={`header__mob ${isOpen ? 'active' : ''}`}>
+                        <img onClick={handleOpenMenu} className='header__burger' src={headerMenu} alt="menu icon" />
                         <ul className="header__burger__body">
                             <li>
                                 <NavLink to={'/sign-up'} href="foo">
@@ -45,13 +49,12 @@ export const Header = () => {
                                 </NavLink>                            
                             </li>
                             <li>
-                                <NavLink to={'/login'} className=''>
+                                <NavLink to={'/login'} >
                                     Login
                                 </NavLink>
                             </li>
                         </ul>
-                    ) : (null)}
-                </div>
+                    </div>
             </div>
         </div>
     </HeaderStyle>
