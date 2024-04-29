@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ReadingQuestStyle } from "./ReadingQuest.styled.js";
 import { ReadingQuestQuestion } from "../ReadingQuestQuestion/ReadingQuestQuestion.jsx";
 import { NavigationQuest } from "../NavigationQuest/NavigationQuest.jsx";
@@ -23,7 +23,6 @@ export const ReadingQuest = () => {
   const [endedQuest, setEndedQuest] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { levelId } = useParams();
 
   const AnswerQuestStore = useSelector((state) => state.toolkit.answerQuest);
 
@@ -64,18 +63,18 @@ export const ReadingQuest = () => {
 
     if ( QuestStore?.id && AnswerQuestStore?.length === QuestStore?.questions?.length) {
 
-      if (levelId === 'dlpt') {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-        axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
-          .then(({ data }) => {
-            setEndedQuest(data)
-          })
-          .catch((err) => {
-            console.error(err);
-            toast.error(err?.response?.data?.detail)
-            navigate('/map');
-          }) 
-      } else {
+      // if (levelId === 'dlpt') {
+      //   axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+      //   axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
+      //     .then(({ data }) => {
+      //       setEndedQuest(data)
+      //     })
+      //     .catch((err) => {
+      //       console.error(err);
+      //       toast.error(err?.response?.data?.detail)
+      //       navigate('/map');
+      //     }) 
+      // } else {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
           .then(({ data }) => {
@@ -86,7 +85,7 @@ export const ReadingQuest = () => {
             toast.error(err?.response?.data?.detail)
             navigate('/map');
           }) 
-      }
+      // }
     } else return;
 
   }, [AnswerQuestStore])
@@ -95,19 +94,19 @@ export const ReadingQuest = () => {
     
     if (QuestStore?.id) return;
     
-    if (levelId === 'dlpt') {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-      axios.get(getApiLink("/api/quest/active_dlpt"))
-        .then(({ data }) => {
-          setQuizData(data);
-          dispatch(setQuest(data));
-        })
-        .catch((err) => {
-          console.error(err);
-          toast.error(err?.response?.data?.detail)
-          navigate('/map');
-      })
-    } else {
+    // if (levelId === 'dlpt') {
+    //   axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+    //   axios.get(getApiLink("/api/quest/active_dlpt"))
+    //     .then(({ data }) => {
+    //       setQuizData(data);
+    //       dispatch(setQuest(data));
+    //     })
+    //     .catch((err) => {
+    //       console.error(err);
+    //       toast.error(err?.response?.data?.detail)
+    //       navigate('/map');
+    //   })
+    // } else {
 
       axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
       axios.get(getApiLink("/api/quest/active_quest"))
@@ -120,7 +119,7 @@ export const ReadingQuest = () => {
           toast.error(err?.response?.data?.detail)
           navigate('/map');
       }) 
-    }
+    // }
   }, []);
 
   return (

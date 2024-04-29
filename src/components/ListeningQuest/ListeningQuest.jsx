@@ -11,13 +11,12 @@ import { getApiLink } from '../../api/getApiLink'
 import { setQuest } from '../../redux/toolkitSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const ListeningQuest = ({ onClickNext, QuestData }) => {
   const [isAudioPlayed, setIsAudioPlayed] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { levelId } = useParams();
   const questLvl = QuestData.quest_level;
   const QuestAudioFile = QuestData?.audio_file;
   const QuestStore = useSelector(state => state.toolkit.quest)
@@ -30,18 +29,18 @@ export const ListeningQuest = ({ onClickNext, QuestData }) => {
   useEffect(() => {
     if (QuestStore?.id) return;
 
-    if (levelId === 'dlpt') {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-      axios.get(getApiLink("/api/quest/active_dlpt"))
-        .then(({ data }) => {
-          dispatch(setQuest(data));
-        })
-        .catch((err) => {
-          console.error(err);
-          toast.error(err?.response?.data?.detail);
-          navigate('/map');
-        })
-    } else {
+    // if (levelId === 'dlpt') {
+    //   axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+    //   axios.get(getApiLink("/api/quest/active_dlpt"))
+    //     .then(({ data }) => {
+    //       dispatch(setQuest(data));
+    //     })
+    //     .catch((err) => {
+    //       console.error(err);
+    //       toast.error(err?.response?.data?.detail);
+    //       navigate('/map');
+    //     })
+    // } else {
 
       axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
       axios.get(getApiLink("/api/quest/active_quest"))
@@ -53,7 +52,7 @@ export const ListeningQuest = ({ onClickNext, QuestData }) => {
           toast.error(err?.response?.data?.detail);
           navigate('/map');
         }) 
-    }
+    // }
   }, []);
 
   return (

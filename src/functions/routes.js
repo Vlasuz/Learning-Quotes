@@ -89,12 +89,20 @@ export const routes = () => {
         },
         {
             path: '/reading-quest',
-            element: <ReadingQuest/>
+            element: <QuizPage/>
         },
         {
             path: '/reading-quest/:levelId',
-            element: <ReadingQuest/>
+            element: <QuizPage/>
         },
+        // {
+        //     path: '/reading-quest',
+        //     element: <ReadingQuest/>
+        // },
+        // {
+        //     path: '/reading-quest/:levelId',
+        //     element: <ReadingQuest/>
+        // },
         {
             path: '/training-swamp',
             element: <TrainingSwamp/>

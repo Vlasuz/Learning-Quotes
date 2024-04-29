@@ -117,6 +117,34 @@ export const MapStyle = styled.div`
         }
     }
 
+    .total{
+        background: #9e6b58;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 5;
+
+        span{
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 150%;
+            color: #fff;
+        }
+
+        &__listening{
+            top: 0;
+            left: 0;
+        }
+        &__reading{
+            top: 0;
+            right: 0;
+        }
+    }
+
     .map__main{
         overflow: auto;
     }
@@ -142,16 +170,17 @@ export const MapStyle = styled.div`
         right: 130px;
         top: 390px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
         img{
             transition: all .3s ease;
             max-width: 160px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
+
 
         @media screen and (max-width: 1240px){
             right: 84px;
@@ -171,16 +200,16 @@ export const MapStyle = styled.div`
         right: 88px;
         bottom: 300px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 180px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
 
@@ -202,16 +231,16 @@ export const MapStyle = styled.div`
         right: 295px;
         bottom: 155px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 160px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -233,15 +262,16 @@ export const MapStyle = styled.div`
         bottom: 161px;
         transition: all .3s ease;
 
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
+
         img{
             transition: all .3s ease;
             max-width: 170px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -262,16 +292,16 @@ export const MapStyle = styled.div`
         top: 426px;
         right: 324px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 150px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -292,16 +322,16 @@ export const MapStyle = styled.div`
         top: 470px;
         left: 361px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 150px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -322,16 +352,16 @@ export const MapStyle = styled.div`
         top: 426px;
         right: 324px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 150px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -352,16 +382,16 @@ export const MapStyle = styled.div`
         bottom: 270px;
         left: 126px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 150px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -382,16 +412,16 @@ export const MapStyle = styled.div`
         top: 444px;
         left: 94px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 160px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){
@@ -412,16 +442,16 @@ export const MapStyle = styled.div`
         top: 220px;
         left: 540px;
         transition: all .3s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+        &:active{
+            transform: scale(0.95);
+        }
 
         img{
             transition: all .3s ease;
             max-width: 180px;
-            &:hover{
-                transform: scale(1.1);
-            }
-            &:active{
-                transform: scale(0.95);
-            }
         }
 
         @media screen and (max-width: 1240px){

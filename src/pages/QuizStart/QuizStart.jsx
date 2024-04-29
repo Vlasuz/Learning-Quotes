@@ -24,19 +24,19 @@ export const QuizStart = () => {
     const handleActiveQuest = (test) => {
         if (QuestStore?.id) return;
 
-        if (levelId === 'dlpt') {
-            axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-            axios.get(getApiLink("/api/quest/active_dlpt"))
-                .then(({ data }) => {
-                    dispatch(setQuest(data));
-                    navigate(`/${test}/dlpt`)
-                })
-                .catch((err) => {
-                    console.error(err);
-                    toast.error(err?.response?.data?.detail)
-                    navigate('/map');
-                }) 
-        } else {
+        // if (levelId === 'dlpt') {
+        //     axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+        //     axios.get(getApiLink("/api/quest/active_dlpt"))
+        //         .then(({ data }) => {
+        //             dispatch(setQuest(data));
+        //             navigate(`/${test}/dlpt`)
+        //         })
+        //         .catch((err) => {
+        //             console.error(err);
+        //             toast.error(err?.response?.data?.detail)
+        //             navigate('/map');
+        //         }) 
+        // } else {
             axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
             axios.get(getApiLink("/api/quest/active_quest"))
                 .then(({ data }) => {
@@ -48,26 +48,26 @@ export const QuizStart = () => {
                     toast.error(err?.response?.data?.detail)
                     navigate('/map');
                 })
-        }
+        // }
     }
 
     const handleStartQuiz = (type, test) => {
-        if (levelId === 'dlpt') {
-            axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
-            axios.post(getApiLink(`/api/quest/dlpt_start?type=${type}&language=${QuestLanguage}`))
-            .then(({data}) => {
-                dispatch(setQuest(data));
-                navigate(`/${test}/dlpt`);
-            })
-            .catch((error) => {
-                console.log(error);
-                if (error?.response?.data?.detail === 'You already have active quest') {
-                   return handleActiveQuest(test);                   
-                }
-                error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
+        // if (levelId === 'dlpt') {
+        //     axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
+        //     axios.post(getApiLink(`/api/quest/dlpt_start?type=${type}&language=${QuestLanguage}`))
+        //     .then(({data}) => {
+        //         dispatch(setQuest(data));
+        //         navigate(`/${test}/dlpt`);
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //         if (error?.response?.data?.detail === 'You already have active quest') {
+        //            return handleActiveQuest(test);                   
+        //         }
+        //         error?.response?.data?.detail && toast.error(error?.response?.data?.detail) 
 
-            })
-        } else {
+        //     })
+        // } else {
             axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
             axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
                 .then(({data}) => {
@@ -83,7 +83,7 @@ export const QuizStart = () => {
     
                     
                 })
-        }
+        // }
     }
 
   return (

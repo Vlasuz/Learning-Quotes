@@ -28,6 +28,7 @@ const tutorialCookie = 'tutorialCompleted'
 export const Map = () => {
     const [popUpId, setPopUpId] = useState(0);
     const [popUp, setPopUp] = useState(false);
+    const [questsState, setQuestsState] = useState({});
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -164,7 +165,7 @@ export const Map = () => {
 
     const endDescription = (() => {
         setPopUp(false)
-        // setCookie(tutorialCookie, 'true')
+        setCookie(tutorialCookie, 'true')
     })
 
     const questInDevelopment = () => {
@@ -182,8 +183,23 @@ export const Map = () => {
           .catch(err => {
             console.error(err);
             toast.warning(err?.response?.data?.detail)
-          });
-      };
+        });
+    };
+
+    
+    useEffect(() => {
+        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+        axios.get(getApiLink('/api/quest/quests_state'))
+        .then(({ data }) => {
+            setQuestsState(data);
+            // console.log('quests_state', data);
+        })
+        .catch(err => {
+            console.error(err);
+            toast.warning(err?.response?.data?.detail)
+        });
+    }, [])
+    console.log(questsState);
 
     useEffect(() => {
         const completedTutorial = getCookie(tutorialCookie) === 'true';
@@ -208,28 +224,52 @@ export const Map = () => {
                     </h2>
 
                     <NavLink to={'/leader-board'} className='leader__board animate__animated animate__fadeIn animate__delay-1s'>
-                        <img src={LeaderBoards} alt="LeaderBoards ph" />
+                        <img src={LeaderBoards} alt="LeaderBoards ph" />                        
                     </NavLink>
                     <NavLink to={''} onClick={handleTrainingSwamp} className='training__swamp animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={TrainingSwamp} alt="trainingSwamp ph" />
                     </NavLink>
                     <NavLink to={'/quiz-start/1%2B'} className='first__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={FirstLvl} alt="firstLvl ph" />
+                        <div className="total total__listening">
+                            <span>L: {questsState?.listening_1_plus}</span>
+                        </div>
+                        <div className="total total__reading">
+                            <span>R: {questsState?.reading_1_plus}</span>
+                        </div>
                     </NavLink>
                     <NavLink to={'/quiz-start/2'} className='second__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={SecondLvl} alt="secondLvl ph" />
+                        <div className="total total__listening">
+                            <span>L: {questsState?.listening_2}</span>
+                        </div>
+                        <div className="total total__reading">
+                            <span>R: {questsState?.reading_2}</span>
+                        </div>
                     </NavLink>
                     <NavLink to={'/quiz-start/2%2B'} className='second__lvl__plus animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={SecondLvlPlus} alt="secondLvlPlus ph" />
+                        <div className="total total__listening">
+                            <span>L: {questsState?.listening_2_plus}</span>
+                        </div>
+                        <div className="total total__reading">
+                            <span>R: {questsState?.reading_2_plus}</span>
+                        </div>
+                    </NavLink>
+                    <NavLink to={'/quiz-start/3'} className='third__lvl animate__animated animate__fadeIn animate__delay-1s'>
+                        <img src={ThirdLvl} alt="dlpt ph" />
+                        <div className="total total__reading">
+                            <span>R: {questsState?.reading_3}</span>
+                        </div>
+                        <div className="total total__listening">
+                            <span>L: {questsState?.listening_3}</span>
+                        </div>
                     </NavLink>
                     <NavLink to={'/quiz-start/dlpt'} className='dlpt__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={DlptLvl} alt="dlpt ph" />
                     </NavLink>
                     <NavLink to={''} onClick={questInDevelopment} className='ship__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={ShipLvl} alt="shipLvl ph" />                        
-                    </NavLink>
-                    <NavLink to={'/quiz-start/3'} className='third__lvl animate__animated animate__fadeIn animate__delay-1s'>
-                        <img src={ThirdLvl} alt="dlpt ph" />
                     </NavLink>
                     <NavLink to={''} onClick={questInDevelopment} className='cast__lvl animate__animated animate__fadeIn animate__delay-1s'>
                         <img src={Cast} alt="dlpt ph" />
