@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { QuestResultStyle } from './QuestResult.styled'
+import { useDispatch, useSelector } from 'react-redux'
+import { setAnswer } from '../../redux/toolkitSlice'
 
 import CorrectIc from '../../assets/img/icons/correct.svg'
 import InCorrectIc from '../../assets/img/icons/incorrect.svg'
 import CloseIc from '../../assets/img/icons/close.svg'
-import { useDispatch, useSelector } from 'react-redux'
-import { setAnswer } from '../../redux/toolkitSlice'
+import { toast } from 'react-toastify'
 
 export const QuestResult = ({ endedQuest }) => {
 
@@ -17,8 +18,9 @@ export const QuestResult = ({ endedQuest }) => {
     const navigate = useNavigate();
 
     const closeResult = () => {
-        navigate('/map')
-        dispatch(setAnswer([]))
+        navigate('/map');
+        dispatch(setAnswer([]));
+        toast.success('You have successfully completed the quest');
     }
 
   return (

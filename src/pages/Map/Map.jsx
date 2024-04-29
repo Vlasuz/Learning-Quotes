@@ -164,7 +164,7 @@ export const Map = () => {
 
     const endDescription = (() => {
         setPopUp(false)
-        setCookie(tutorialCookie, 'true')
+        // setCookie(tutorialCookie, 'true')
     })
 
     const questInDevelopment = () => {
