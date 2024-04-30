@@ -60,18 +60,18 @@ export const BookQuest = ({QuestData}) => {
 
     if (AnswerQuestStore?.length === QuestStore?.questions?.length) {      
 
-      if (levelId === 'dlpt') {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-        axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
-          .then(({ data }) => {
-            setEndedQuest(data)
-          })
-          .catch((err) => {
-            console.error(err);
-            toast.error(err?.response?.data?.detail)
-            navigate('/map');
-          }) 
-      } else {
+      // if (levelId === 'dlpt') {
+      //   axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+      //   axios.post(getApiLink(`/api/quest/dlpt_end?id=${QuestStore.id}`), AnswerQuestStore)
+      //     .then(({ data }) => {
+      //       setEndedQuest(data)
+      //     })
+      //     .catch((err) => {
+      //       console.error(err);
+      //       toast.error(err?.response?.data?.detail)
+      //       navigate('/map');
+      //     }) 
+      // } else {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.post(getApiLink(`/api/quest/end?id=${QuestStore.id}`), AnswerQuestStore)
           .then(({ data }) => {
@@ -82,7 +82,7 @@ export const BookQuest = ({QuestData}) => {
             toast.error(err?.response?.data?.detail)
             navigate('/map');
           }) 
-      }
+      // }
     } else return;
 
   }, [AnswerQuestStore])
@@ -90,23 +90,24 @@ export const BookQuest = ({QuestData}) => {
   useEffect(() => {
     if (QuestStore?.id) return;
 
-    if (levelId === 'dlpt') {
-        axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
-        axios.get(getApiLink("/api/quest/active_dlpt"))
-            .then(({ data }) => {
-                dispatch(setQuest(data));
-                navigate(`/listening-quest/dlpt`)
-            })
-            .catch((err) => {
-                console.error(err);
-                toast.error(err?.response?.data?.detail)
-                navigate('/map');
-            }) 
-    } else {
+    // if (levelId === 'dlpt') {
+    //     axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
+    //     axios.get(getApiLink("/api/quest/active_dlpt"))
+    //         .then(({ data }) => {
+    //             dispatch(setQuest(data));
+    //             navigate(`/listening-quest/dlpt`)
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //             toast.error(err?.response?.data?.detail)
+    //             navigate('/map');
+    //         }) 
+    // } else {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
         axios.get(getApiLink("/api/quest/active_quest"))
             .then(({ data }) => {
                 dispatch(setQuest(data));
+                console.log(data);
                 return navigate(`/listening-quest/:levelId`)
             })
             .catch((err) => {
@@ -114,7 +115,7 @@ export const BookQuest = ({QuestData}) => {
                 toast.error(err?.response?.data?.detail)
                 navigate('/map');
             })
-    }
+    // }
   }, []);
 
   return (
@@ -125,14 +126,13 @@ export const BookQuest = ({QuestData}) => {
           {questStoreAudio ? (
             <ListeningQuestion 
               questStoreItem={questStoreItem}
-              questTitle={'Listen this audio'}
+              questTitle={questStoreItem?.name}
             />
           ) : (
 
             <QuestTxt
               dataItem={QuestStore}
-              questTitle={currentQuestion.titleDesc}
-              questTask={currentQuestion.description} 
+              questStoreItem={questStoreItem}
             />                    
           )}
 

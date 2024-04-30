@@ -25,9 +25,9 @@ export const QuestResult = ({ endedQuest }) => {
 
   return (
     <QuestResultStyle>
-        <div className='results_bgd' onClick={() => navigate('/map')}></div>
+        <div className='results_bgd' onClick={closeResult}></div>
         <div className="results">
-            <NavLink to={'/map'} className='close__btn'>
+            <NavLink to={'/map'} className='close__btn' onClick={closeResult}>
                 <img src={CloseIc} alt='close ic' />
             </NavLink>
             <h2>
@@ -59,7 +59,7 @@ export const QuestResult = ({ endedQuest }) => {
                     ))}
             </ul>
 
-            <button onClick={() => closeResult()} className='ok__btn'>OK</button>
+            <button onClick={closeResult} className='ok__btn'>OK</button>
         </div>
     </QuestResultStyle>
   )

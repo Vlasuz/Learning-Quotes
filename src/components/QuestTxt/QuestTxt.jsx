@@ -9,7 +9,7 @@ import getCookie from '../../functions/getCookie';
 import VocabularyPh from '../../assets/img/vocabulary.png'
 import { toast } from 'react-toastify';
 
-export const QuestTxt = ({ dataItem }) => {
+export const QuestTxt = ({ dataItem, questStoreItem }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenTranslate, setIsOpenTranslate] = useState(false);
     const [newTxt, setNewTxt] = useState('');
@@ -35,7 +35,7 @@ export const QuestTxt = ({ dataItem }) => {
         function replaceWords(text, words) {
             words?.forEach((wordObj) => {
                 const regex = new RegExp('\\b' + wordObj.word.toLowerCase() + '\\b', 'gi');
-                text = text.replace(regex, `<span className="add-word" data-id='${wordObj.id}' data-translate='${wordObj.description}'>${wordObj.word}</span>`);
+                text = text?.replace(regex, `<span className="add-word" data-id='${wordObj?.id}' data-translate='${wordObj?.description}'>${wordObj?.word}</span>`);
             });
             return text;
         }
@@ -73,12 +73,15 @@ export const QuestTxt = ({ dataItem }) => {
             })
     };
 
+    console.log(questStoreItem);
+
 
   return (
     <QuestTxtStyle>
         <h2 className='animate__animated animate__fadeIn'>
             {dataItem.name}
         </h2>
+        <p>{questStoreItem?.text}</p>
         <div className='translations__pos animate__animated animate__fadeIn'>
             <p onClick={handleOpenTranslate}>
                 {HTMLReactParser(newTxt ?? '')}

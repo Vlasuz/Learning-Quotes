@@ -5,7 +5,7 @@ import optionBgd from '../../assets/img/optionBgd.png'
 export const QuestOptionsStyle = styled.ul`
     
     margin-top: 60px !important;
-    padding: 0 50px !important;
+    padding-left: 30px !important;
     
 
     span svg {
@@ -23,7 +23,9 @@ export const QuestOptionsStyle = styled.ul`
         background: url(${optionBgd}) no-repeat;
         background-size: cover;
         overflow: hidden;
-        width: 50px;
+        width: 100%;
+        /* min-width: 50px; */
+        max-width: 50px;
         height: 50px;
         border-radius: 50%;
         cursor: pointer;
@@ -86,7 +88,7 @@ export const QuestOptionsStyle = styled.ul`
         }
 
         span{
-            width: 35px;
+            max-width: 35px;
             height: 35px;
             margin-right: 0;
         }

@@ -16,6 +16,7 @@ export const BookQuestStyle = styled.div`
     .book{
         display: flex;
         width: 100%;
+        height: 100%;
 
         &__lft{
             width: 50%;

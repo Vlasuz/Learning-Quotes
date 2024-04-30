@@ -199,7 +199,6 @@ export const Map = () => {
             toast.warning(err?.response?.data?.detail)
         });
     }, [])
-    console.log(questsState);
 
     useEffect(() => {
         const completedTutorial = getCookie(tutorialCookie) === 'true';

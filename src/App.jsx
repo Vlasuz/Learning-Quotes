@@ -24,9 +24,7 @@ export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const token = getCookie('token');
-  const langCook = getCookie('LangCookie')
-  const landuageStorage = useSelector(state => state.toolkit.language)
-  console.log(landuageStorage);
+  const langCook = getCookie('LangCookie');
 
   if (langCook === undefined) {
     setCookie('LangCookie', 'russian')
@@ -37,9 +35,13 @@ export const App = () => {
   }
 
   useEffect(() => {
-    setIsLoggedIn(!!token)
+    setIsLoggedIn(!!token);
+
+    if (!token) {
+      navigate('/');
+    }
     
-    token === undefined || token === '' ? navigate('/') : navigate('/map');
+    // token === undefined || token === '' ? navigate('/') : navigate('/map');
   }, [token])
 
   return (

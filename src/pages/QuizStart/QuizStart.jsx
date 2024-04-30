@@ -17,12 +17,12 @@ export const QuizStart = () => {
     const navigate = useNavigate();
     const { levelId } = useParams();
     const encodedLevelId = encodeURIComponent(levelId);
-    const QuestStore = useSelector(state => state.toolkit.quest);
+    // const QuestStore = useSelector(state => state.toolkit.quest);
 
     const QuestLanguage = getCookie('LangCookie')
 
     const handleActiveQuest = (test) => {
-        if (QuestStore?.id) return;
+        // if (QuestStore?.id) return;
 
         // if (levelId === 'dlpt') {
         //     axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;
@@ -99,7 +99,7 @@ export const QuizStart = () => {
                     <img src={Listening} alt="Listening ph" />
                     Listening <br />Comprehension
                 </button>
-                <button onClick={e => handleStartQuiz('reading', 'reading-quest')} className='animate__animated animate__fadeInRight'>
+                <button onClick={e => handleStartQuiz('reading', 'listening-quest')} className='animate__animated animate__fadeInRight'>
                     <img src={Book} alt="Book ph" />
                     Reading <br />Comprehension
                 </button>
