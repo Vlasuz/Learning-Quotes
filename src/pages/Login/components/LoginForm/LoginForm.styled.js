@@ -289,20 +289,34 @@ export const LoginFormStyle = styled.form`
             max-width: 272px;
             /* display: block; */
             position: relative;
+            overflow: hidden;
         }
 
         .loginGoogle{
             opacity: 0;
             position: absolute;
             top: 0;
-            overflow: hidden;
-            div{
+            height: 58px;
+
+            /* div{
                 transform: scale(1.6);
-            }
+            } */
             /* margin-top: 10px; */
 
             /* &:hover{
                 border: 1px solid #FBAC79;
+            } */
+        }
+
+        .loginFacebook{
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 58px;
+            opacity: 0;
+            /* div{
+                transform: scale(1.6);
             } */
         }
 

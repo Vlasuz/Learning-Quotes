@@ -5,19 +5,26 @@ import { useNavigate } from 'react-router-dom';
 import Apple from "../../../../../assets/img/icons/apple.svg";
 import Facebook from "../../../../../assets/img/icons/facebook.svg";
 import Google from "../../../../../assets/img/icons/google.svg";
-import Discord from "../../../../../assets/img/icons/discord.svg";
 import { useDispatch } from 'react-redux';
 import { getApiLink } from '../../../../../api/getApiLink';
 import { GoogleLogin } from '@react-oauth/google';
 import setCookie from '../../../../../functions/setCookie';
 import { setUser } from '../../../../../redux/toolkitSlice';
+import FacebookLogin from 'react-facebook-login';
 
 export const LoginFormSoc = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const SubmitAuthGoogle = (token) => {
-        axios.post(getApiLink(`/api/auth/soc_login?soc_auth=google&token=${token}`))
+    const responseFacebook = (response) => {
+        SubmitAuthGoogle('facebook', response.accessToken);
+    }
+    const responseGoogle = (credentialResponse) => {
+        SubmitAuthGoogle('google', credentialResponse.credential);
+    }
+
+    const SubmitAuthGoogle = (provider, token) => {
+        axios.post(getApiLink(`/api/auth/soc_login?soc_auth=${provider}&token=${token}`))
             .then(({data}) => {
                 console.log(data.access_token);
                 setCookie('token', data.access_token);
@@ -26,8 +33,8 @@ export const LoginFormSoc = () => {
                 axios.get(getApiLink("/api/user/me"))
                 .then(({ data }) => {
                   console.log("user-data", data);
-                //   dispatch(setUser(data.access_token));
-                //   setCookie('token', data.access_token);
+                  dispatch(setUser(data.access_token));
+                  setCookie('token', data.access_token);
                   navigate("/map");
                 })
                 .catch((error) => {
@@ -51,17 +58,13 @@ export const LoginFormSoc = () => {
 
             <ul>
                 <li>
-                    {/* <button onClick={() => login()}> */}
                     <button>
                         <img src={Google} alt="google ic" />
                         Google
                     </button>
                     <div className="loginGoogle">
                         <GoogleLogin
-                            onSuccess={credentialResponse => {
-                                console.log(credentialResponse);
-                                SubmitAuthGoogle(credentialResponse.credential)
-                            }}
+                            onSuccess={responseGoogle}
                             onError={() => {
                                 console.log('Login Failed');
                             }}
@@ -69,18 +72,27 @@ export const LoginFormSoc = () => {
 
                     </div>
                 </li>
+                <li>
+                    <button>
+                        <img src={Facebook} alt="faceboock ic" />
+                        Facebook
+                    </button>
+                    <div className="loginFacebook">
+                        <FacebookLogin
+                            appId="651671437112317"
+                            autoLoad={false}
+                            fields="name,email,picture"
+                            onClick={() => console.log("click")}
+                            callback={responseFacebook} 
+                        />,
+                    </div>
+                </li>
                 {/* <li>
                     <a href="foo">
                         <img src={Apple} alt="apple ic" />
                         Apple
                     </a>
-                </li> */}
-                {/* <li>
-                    <a href="foo">
-                        <img src={Facebook} alt="faceboock ic" />
-                        Facebook
-                    </a>
-                </li> */}
+                </li> */}                
                 {/* <li>
                     <a href="foo">
                         <img src={Discord} alt="discord ic" />
