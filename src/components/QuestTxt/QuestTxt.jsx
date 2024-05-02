@@ -56,7 +56,7 @@ export const QuestTxt = ({ dataItem, questStoreItem }) => {
             })
         }, 500)
     
-    }, [])
+    }, [questStoreItem?.text])
 
     const handleAddToVocabulary = (wordId) => {
         axios.defaults.headers.common["Authorization"] = `Bearer ${getCookie("token")}`;

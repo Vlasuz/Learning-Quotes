@@ -76,9 +76,9 @@ export const QuestResultStyle = styled.div`
             flex-direction: column;
             gap: 20px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border-bottom: 1px solid #fff;
-            padding-bottom: 10px;
+            padding-bottom: 30px;
             &:last-child{
                 margin-bottom: 0;
                 /* border-bottom: none; */
@@ -89,6 +89,7 @@ export const QuestResultStyle = styled.div`
             display: flex;
             gap: 15px;
             justify-content: center;
+            flex-direction: column;
         }
 
         &__answer{
@@ -98,9 +99,35 @@ export const QuestResultStyle = styled.div`
             gap: 5px;
         }
 
-        p{
+        &__desc{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
             color: #FFF;
             font-size: 32px;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        p{
+            color: #FFF;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 10px;
+            max-width: 640px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        span{
+            color: #FFF;
+            font-size: 25px;
             font-weight: 700;
             line-height: normal;
         }
@@ -142,6 +169,9 @@ export const QuestResultStyle = styled.div`
 
             li{
                 grid-template-columns: 1fr;
+            }
+            &__desc{
+                flex-direction: column;
             }
         }
 

@@ -9,7 +9,7 @@ import getCookie from '../../functions/getCookie'
 import Listening from '../../assets/img/listening.png'
 import Book from '../../assets/img/book.png'
 import { useDispatch, useSelector } from 'react-redux'
-import { setQuest } from '../../redux/toolkitSlice'
+import { setAnswer, setQuest } from '../../redux/toolkitSlice'
 import { toast } from 'react-toastify'
 
 export const QuizStart = () => {
@@ -71,6 +71,7 @@ export const QuizStart = () => {
             axios.defaults.headers.common['Authorization'] = `Bearer ${getCookie('token')}`;
             axios.post(getApiLink(`/api/quest/start?type=${type}&level=${encodedLevelId}&language=${QuestLanguage}`))
                 .then(({data}) => {
+                    dispatch(setAnswer([]));
                     dispatch(setQuest(data));
                     navigate(`/${test}`);
                 })

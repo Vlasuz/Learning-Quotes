@@ -17,6 +17,8 @@ export const QuestResult = ({ endedQuest }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    console.log(dataEndQuest);
+
     const closeResult = () => {
         navigate('/map');
         dispatch(setAnswer([]));
@@ -36,7 +38,7 @@ export const QuestResult = ({ endedQuest }) => {
             <ul className='question'>
                     {dataEndQuest?.map(item => (
                         <li key={item.id}>
-                            <p>{item.question}</p>
+                            <h3>{item.question}</h3>
                             <div className="question__inner">
 
                                 {item?.options
@@ -51,8 +53,24 @@ export const QuestResult = ({ endedQuest }) => {
                                             </p>
                                             {question.is_correct === true ? <img src={CorrectIc} alt="correct ic" /> : <img src={InCorrectIc} alt="incorrect ic" />}
                                             
-                                        </div>
+                                        </div>                                      
                                     ))
+                                }
+                                {item?.explanation && 
+                                    <div className="question__desc">
+                                        <span>
+                                            Explanation:
+                                        </span>
+                                        <p>{item?.explanation}</p>
+                                    </div>
+                                }
+                                {item?.text_of_audio && 
+                                    <div className="question__desc">
+                                        <span>
+                                            Description:
+                                        </span>
+                                        <p>{item?.text_of_audio}</p>
+                                    </div>
                                 }
                             </div>
                         </li>
