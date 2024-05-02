@@ -4,7 +4,6 @@ import { QuestTxt } from '../QuestTxt/QuestTxt'
 import { NavigationQuest } from '../NavigationQuest/NavigationQuest'
 import { QuestionsQuest } from '../QuestionsQuest/QuestionsQuest'
 import { QuestOptions } from '../QuestOptions/QuestOptions'
-import { questData } from '../../assets/quiz/quiz'
 import { ListeningQuestion } from '../ListeningQuestion/ListeningQuestion'
 import { QuestResult } from '../QuestResult/QuestResult'
 import axios from 'axios'
@@ -22,19 +21,21 @@ export const BookQuest = ({QuestData}) => {
   const [endedQuest, setEndedQuest] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { levelId } = useParams();
 
   const QuestStore = useSelector((state) => state.toolkit.quest);
   const AnswerQuestStore = useSelector((state) => state.toolkit.answerQuest);
 
-  const filteredReadingQuestions = questData.filter(question => question.type !== 'book-reading');
-  const currentQuestion = filteredReadingQuestions[currentQuestionIn];
+  // const filteredReadingQuestions = QuestData
+    
+  // const currentQuestion = filteredReadingQuestions[currentQuestionIn];
 
   const isLastQuestion = QuestStore?.questions && currentQuestionIn === QuestStore?.questions?.length - 1;
   const numQuest = currentQuestionIn + 1
 
   const questStoreAudio = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]?.audio_file
   const questStoreItem = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]
+
+  // console.log(filteredReadingQuestions);
 
   const handleNextQuestion = () => {
     const currentAnswers = {
@@ -118,6 +119,7 @@ export const BookQuest = ({QuestData}) => {
     // }
   }, []);
 
+
   return (
     <BookQuestStyle>
       <div className="book">
@@ -145,7 +147,7 @@ export const BookQuest = ({QuestData}) => {
             questionTxt={`Question №${numQuest}`}
             
           />
-          <QuestOptions currentQuestion={currentQuestion} dataItem={ QuestData?.questions && QuestData?.questions[currentQuestionIn]} setAnsQuestion={setAnsQuestion}/>
+          <QuestOptions currentQuestion={questStoreItem} dataItem={ QuestData?.questions && QuestData?.questions[currentQuestionIn]} setAnsQuestion={setAnsQuestion}/>
 
         </div>
       </div>

@@ -40,7 +40,7 @@ export const QuestTxt = ({ dataItem, questStoreItem }) => {
             return text;
         }
     
-        const replacedText = replaceWords(dataItem?.quest_text, dataItem?.words);
+        const replacedText = replaceWords(questStoreItem?.text, dataItem?.words);
         setNewTxt(replacedText)
     
         setTimeout(() => {
@@ -73,15 +73,13 @@ export const QuestTxt = ({ dataItem, questStoreItem }) => {
             })
     };
 
-    console.log(questStoreItem);
-
 
   return (
     <QuestTxtStyle>
         <h2 className='animate__animated animate__fadeIn'>
             {dataItem.name}
         </h2>
-        <p>{questStoreItem?.text}</p>
+        {/* <p>{questStoreItem?.text}</p> */}
         <div className='translations__pos animate__animated animate__fadeIn'>
             <p onClick={handleOpenTranslate}>
                 {HTMLReactParser(newTxt ?? '')}
