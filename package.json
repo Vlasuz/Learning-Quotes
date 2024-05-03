@@ -2,7 +2,6 @@
   "name": "Learning-Quotes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://VolodymyrBilichenko.github.io/Learning-Quotes",
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.2.2",
@@ -15,6 +14,7 @@
     "html-react-parser": "^5.0.11",
     "jwt-decode": "^4.0.0",
     "react": "^18.3.1",
+    "react-apple-signin-auth": "^1.1.0",
     "react-dom": "^18.3.1",
     "react-facebook-login": "^4.1.1",
     "react-loader-spinner": "^6.1.6",

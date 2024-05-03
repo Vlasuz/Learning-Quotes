@@ -5,6 +5,7 @@ import { getApiLink } from '../../../../../api/getApiLink';
 import { GoogleLogin } from '@react-oauth/google';
 import setCookie from '../../../../../functions/setCookie';
 import FacebookLogin from 'react-facebook-login';
+import AppleSignin from 'react-apple-signin-auth';
 
 import Apple from "../../../../../assets/img/icons/apple.svg";
 import Facebook from "../../../../../assets/img/icons/facebook.svg";
@@ -18,6 +19,9 @@ export const LoginFormSoc = () => {
     }
     const responseGoogle = (credentialResponse) => {
         SubmitAuthGoogle('google', credentialResponse.credential);
+    }
+    const responseApple = (response) => {
+        SubmitAuthGoogle('apple', response.credential);
     }
 
     const SubmitAuthGoogle = (provider, token) => {
@@ -82,12 +86,30 @@ export const LoginFormSoc = () => {
                         />,
                     </div>
                 </li>
-                {/* <li>
-                    <a href="foo">
+                <li>
+                    <button href="foo">
                         <img src={Apple} alt="apple ic" />
                         Apple
-                    </a>
-                </li> */}
+                    </button>
+                    <div className="loginApple">
+                        <AppleSignin
+                            authOptions={{
+                                clientId: '8FDM6UTX94',
+                                scope: 'email name',
+                                redirectURI: 'https://develop.8FDM6UTX94.com/',
+                                state: '',
+                                nonce: 'nonce',
+                                usePopup: true,
+                            }}
+                            uiType="dark"
+                            className="apple-auth-btn"
+                            onError={(e) => {
+                                console.log(e)
+                            }}
+                            onSuccess={responseApple}
+                        />
+                    </div>
+                </li>
             </ul>
         </div>  
     )

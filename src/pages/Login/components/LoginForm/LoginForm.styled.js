@@ -320,6 +320,19 @@ export const LoginFormStyle = styled.form`
             } */
         }
 
+        .loginApple{
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            height: 58px;
+            transform: scale(1.6);
+
+            button{
+                width: 100%;
+                height: 58px;
+            }
+        }
+
         button,
         a{
             width: 100%;
@@ -334,6 +347,7 @@ export const LoginFormStyle = styled.form`
             border-radius: 12px;
             border: 1px solid #E9EAEC;
             transition: all .3s ease;
+            overflow: hidden;
 
             &:hover{
                 border: 1px solid #FBAC79;
