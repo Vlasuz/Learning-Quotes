@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { QuestOptionsStyle } from './QuestOptions.styled'
 
-export const QuestOptions = ({ dataItem, setAnsQuestion}) => {
+export const QuestOptions = ({ dataItem, setAnsQuestion, setAnswerSelected}) => {
     const [selectedAnswer, setSelectedAnswer] = useState([]);
 
     const multiplyChoiceSelect = (answer) => {
@@ -26,7 +26,8 @@ export const QuestOptions = ({ dataItem, setAnsQuestion}) => {
 
     useEffect(() => {
         setAnsQuestion(selectedAnswer)
-    }, [selectedAnswer])
+        setAnswerSelected(selectedAnswer.length > 0);
+    }, [selectedAnswer, setAnsQuestion, setAnswerSelected])
 
   return (
     <QuestOptionsStyle className='animate__animated animate__fadeInRight'>

@@ -1,20 +1,17 @@
 import React from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { getApiLink } from '../../../../../api/getApiLink';
+import { GoogleLogin } from '@react-oauth/google';
+import setCookie from '../../../../../functions/setCookie';
+import FacebookLogin from 'react-facebook-login';
 
 import Apple from "../../../../../assets/img/icons/apple.svg";
 import Facebook from "../../../../../assets/img/icons/facebook.svg";
 import Google from "../../../../../assets/img/icons/google.svg";
-import { useDispatch } from 'react-redux';
-import { getApiLink } from '../../../../../api/getApiLink';
-import { GoogleLogin } from '@react-oauth/google';
-import setCookie from '../../../../../functions/setCookie';
-import { setUser } from '../../../../../redux/toolkitSlice';
-import FacebookLogin from 'react-facebook-login';
 
 export const LoginFormSoc = () => {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const responseFacebook = (response) => {
         SubmitAuthGoogle('facebook', response.accessToken);
@@ -33,8 +30,6 @@ export const LoginFormSoc = () => {
                 axios.get(getApiLink("/api/user/me"))
                 .then(({ data }) => {
                   console.log("user-data", data);
-                  dispatch(setUser(data.access_token));
-                  setCookie('token', data.access_token);
                   navigate("/map");
                 })
                 .catch((error) => {
@@ -91,12 +86,6 @@ export const LoginFormSoc = () => {
                     <a href="foo">
                         <img src={Apple} alt="apple ic" />
                         Apple
-                    </a>
-                </li> */}                
-                {/* <li>
-                    <a href="foo">
-                        <img src={Discord} alt="discord ic" />
-                        Discord
                     </a>
                 </li> */}
             </ul>

@@ -19,15 +19,12 @@ export const BookQuest = ({QuestData}) => {
   const [questResult, setQuestResult] = useState(false);
   const [ansQuestin, setAnsQuestion] = useState([]);
   const [endedQuest, setEndedQuest] = useState({});
+  const [answerSelected, setAnswerSelected] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const QuestStore = useSelector((state) => state.toolkit.quest);
   const AnswerQuestStore = useSelector((state) => state.toolkit.answerQuest);
-
-  // const filteredReadingQuestions = QuestData
-    
-  // const currentQuestion = filteredReadingQuestions[currentQuestionIn];
 
   const isLastQuestion = QuestStore?.questions && currentQuestionIn === QuestStore?.questions?.length - 1;
   const numQuest = currentQuestionIn + 1
@@ -35,9 +32,9 @@ export const BookQuest = ({QuestData}) => {
   const questStoreAudio = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]?.audio_file
   const questStoreItem = QuestStore?.questions && QuestStore?.questions[currentQuestionIn]
 
-  // console.log(filteredReadingQuestions);
-
   const handleNextQuestion = () => {
+    if (!answerSelected) return;
+
     const currentAnswers = {
       id: QuestStore?.questions[currentQuestionIn]?.id,
       answers_id: ansQuestin,
@@ -50,6 +47,8 @@ export const BookQuest = ({QuestData}) => {
     }
 
     dispatch(addAnswer(currentAnswers));
+
+    setAnswerSelected(false);
   };
 
   const handleEndQuest = () => {
@@ -147,18 +146,24 @@ export const BookQuest = ({QuestData}) => {
             questionTxt={`Question №${numQuest}`}
             
           />
-          <QuestOptions currentQuestion={questStoreItem} dataItem={ QuestData?.questions && QuestData?.questions[currentQuestionIn]} setAnsQuestion={setAnsQuestion}/>
+          <QuestOptions 
+            currentQuestion={questStoreItem} 
+            dataItem={ QuestData?.questions && QuestData?.questions[currentQuestionIn]} 
+            setAnsQuestion={setAnsQuestion}
+            setAnswerSelected={setAnswerSelected}
+          />
 
         </div>
+
       </div>
+        <NavigationQuest
+          nextPage={handleNextQuestion}
+          isLastQuestion={isLastQuestion}
+          handleEndQuest={handleEndQuest}
+        />
 
       {questResult && <QuestResult endedQuest={endedQuest} onClose={() => setQuestResult(false)}/>}
-
-      <NavigationQuest
-        nextPage={handleNextQuestion}
-        isLastQuestion={isLastQuestion}
-        handleEndQuest={handleEndQuest}
-      />
+      
 
     </BookQuestStyle>
   )
