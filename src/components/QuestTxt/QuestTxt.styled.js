@@ -22,7 +22,25 @@ export const QuestTxtStyle = styled.div`
         font-size: 20px;
         font-weight: 400;
         line-height: 28px;
-        max-width: 400px;
+        max-width: 450px;
+    }
+
+    .translations__pos {
+        max-height: 500px;
+        overflow: auto;
+        padding-right: 10px;
+
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: #783724;
+            border-radius: 12px;
+        }
+        &::-webkit-scrollbar-track{
+            background: #F2CCB3;
+            border-radius: 12px;
+        }
     }
 
     .vocabulary__ph{
