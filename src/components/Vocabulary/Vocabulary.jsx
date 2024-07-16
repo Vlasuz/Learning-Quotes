@@ -3,7 +3,7 @@ import { VocabularyStyle } from './Vocabulary.styled'
 
 import CloseIc from '../../assets/img/icons/close.svg'
 
-export const Vocabulary = ({ onClose, dataItem}) => {
+export const Vocabulary = ({ onClose, dataItem }) => {
     const dataWords = dataItem?.words
 
     return (
@@ -17,7 +17,7 @@ export const Vocabulary = ({ onClose, dataItem}) => {
                     Vocabulary
                 </h2>
                 <ul className='vocabulary__list'>
-                    {dataWords.map(item => (
+                    {dataWords?.length ? dataWords?.map(item => (
                         <li>
                             <div className="word">
                                 <h3>
@@ -30,7 +30,9 @@ export const Vocabulary = ({ onClose, dataItem}) => {
                                 </p>
                             </div>
                         </li>
-                    ))}
+                    )) : <h3>
+                        No words yet
+                    </h3>}
                 </ul>
 
                 <button className='vocabulary__ok' onClick={onClose}>OK</button>
